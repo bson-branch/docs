@@ -5,3 +5,44 @@ nav:
     - Fraud: guides/index.md
 theme:
   name: 'material'
+  language: 'kr'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+docs_dir: 'src'
+extra_css:
+  - 'css/main.css'
+extra_javascript:
+  - 'js/router.js'
+  - 'js/events.js'
+  - 'js/modals.js'
+  - 'js/images.js'
+  - 'js/buttons.js'
+  - 'js/progress.js'
+  - 'js/tabs.js'
+  - 'js/languages.js'
+  - 'js/utils.js'
+  - 'js/main.js'
+
+# Extensions
+markdown_extensions:
+  - admonition:
+  - codehilite: #(linenums=true)
+  - footnotes:
+  - toc:
+      permalink: true
+  - meta:
+  - markdown.extensions.tables:
+  - pymdownx.magiclink:
+  - pymdownx.betterem:
+  - pymdownx.tilde:
+  - pymdownx.emoji:
+  - pymdownx.tasklist:
+  - pymdownx.superfences:
+  - attr_list:
+  - markdown_include.include:
+      base_path: src/includes/

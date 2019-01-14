@@ -67,7 +67,7 @@
 ---
 ## 분석에 사용되는 타임스탬프와 래그타임
 
-![image](../images/dp_and_lags.png)
+![image](../img/dp_and_lags.png)
 
 #### 타임스탬프
 1. TCT (TMC Click Timestamp) : 매칭된 클릭이 기록된 시각

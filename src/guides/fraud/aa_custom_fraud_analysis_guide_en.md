@@ -70,7 +70,7 @@
 ---
 ## Timestamps and lag-times used for Analysis
 
-![image](../images/dp_and_lags.png)
+![image](../img/dp_and_lags.png)
 
 #### Timestamps
 1. TCT (TMC Click Timestamp) : Timestamp of matched click
