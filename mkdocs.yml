@@ -1,0 +1,7 @@
+site_name: Branch Docs
+nav:
+    - Home: index.md
+    - Translations: pages/index.md
+    - Fraud: guides/index.md
+theme:
+  name: 'material'
