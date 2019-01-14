@@ -6,7 +6,7 @@
 
     - `Always try to open app`와 `I have an Android App` 모두를 활성화 합니다.
 
-        ![image](/img/pages/dashboard/android.png?raw=true)
+        ![image](/img/pages/dashboard/android.png)
 
 - ### 브랜치 설치
 
