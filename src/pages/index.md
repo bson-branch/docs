@@ -3,11 +3,8 @@
 
 ## SDK Integration
  * Android
-    * [English](https://docs.branch.io/pages/apps/android/)
-    * [한국어 번역본](apps/android.md)
+    * [English](https://docs.branch.io/pages/apps/android/), [한국어번역본](apps/android.md)
  * iOS
-    * [English](https://docs.branch.io/pages/apps/ios/)
-    * 한국어 번역본
+    * [English](https://docs.branch.io/pages/apps/ios/), 한국어번역본(작업중)
  * Web
-    * [English](https://docs.branch.io/pages/web/integrate/)
-    * 한국어 번역본
+    * [English](https://docs.branch.io/pages/web/integrate/), 한국어번역본(작업중)

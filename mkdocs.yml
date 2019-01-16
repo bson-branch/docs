@@ -1,8 +1,8 @@
-site_name: Branch Docs
+site_name: Branch Korea Solutions Engineering
 nav:
     - Home: index.md
     - Translations: pages/index.md
-    - Fraud: guides/index.md
+    - Fraud: guides/fraud/index.md
 theme:
   name: 'material'
   language: 'kr'
