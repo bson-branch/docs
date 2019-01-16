@@ -43,6 +43,7 @@ markdown_extensions:
   - pymdownx.emoji:
   - pymdownx.tasklist:
   - pymdownx.superfences:
+  - pymdownx.critic:
   - attr_list:
   - markdown_include.include:
       base_path: src/includes/
