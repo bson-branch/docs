@@ -458,41 +458,51 @@
 <p><img alt="image" src="../../img/dp_and_lags.png" /></p>
 <h4 id="timestamps">Timestamps<a class="headerlink" href="#timestamps" title="Permanent link">&para;</a></h4>
 <ol>
-<li>TCT (TMC Click Timestamp) : Timestamp of matched click</li>
-<li>"Install Log Report" column name: Click/Impression Datetime</li>
 <li>
-<p>Reporting API/Install Log field name: session_datetime</p>
+<p>TCT (TMC Click Timestamp) : Timestamp of matched click</p>
+<ul>
+<li>"Install Log Report" column name: Click/Impression Datetime</li>
+<li>Reporting API/Install Log field name: session_datetime</li>
+</ul>
 </li>
 <li>
 <p>DIT (Device Install Timestamp) : The time app is installed on the device.</p>
-</li>
+<ul>
 <li>"Install Log Report" column name: Install Datetime</li>
-<li>
-<p>Reporting API/Install Log field name: install_date</p>
+<li>Reporting API/Install Log field name: install_date</li>
+</ul>
 </li>
 <li>
 <p>TIT (TMC Install Timestamp): The time app is first opened</p>
-</li>
+<ul>
 <li>"Install Log Report" column name: Datetime</li>
-<li>
-<p>Reporting API/Install Log field name: created</p>
+<li>Reporting API/Install Log field name: created</li>
+</ul>
 </li>
 <li>
 <p>TET (TMC Event Timestamp) : The time event is sent.</p>
-</li>
+<ul>
 <li>"Event Log Report" column name: Datetime</li>
 <li>Reporting API/Event Log field name: created</li>
+</ul>
+</li>
 </ol>
 <h4 id="lag-times">Lag-times<a class="headerlink" href="#lag-times" title="Permanent link">&para;</a></h4>
 <ol>
 <li>
 <p>TCTTIT : Lag-time between TCT and TIT</p>
+<ul>
+<li>
 <blockquote>
 <p>Formula: TIT - TCT</p>
 </blockquote>
 </li>
+</ul>
+</li>
 <li>
 <p>TCTDIT : Lag-time between TCT and DIT</p>
+<ul>
+<li>
 <blockquote>
 <p>Formula: DIT - TCT</p>
 </blockquote>
@@ -501,17 +511,21 @@
 <p>For the most of the installs this values are positive, but some installs could have negative values.
    Some normal users could install apps, but do not open the app. If the users first open the app later after ad click, then the lag-time is negative.</p>
 </li>
-<li>
-<p>For the click injected installs, clicks are fired as soon as device installation is detected by malware, so most of the lag-times will be concentrated between -100 and 0. Only a tiny fraction of normal installs could fall into this range.</p>
+<li>For the click injected installs, clicks are fired as soon as device installation is detected by malware, so most of the lag-times will be concentrated between -100 and 0. Only a tiny fraction of normal installs could fall into this range.</li>
+</ul>
 </li>
 <li>
 <p>TITTET : Lag-time between TIT and TET.</p>
+<ul>
+<li>
 <blockquote>
 <p>Formula: TET - TIT</p>
 </blockquote>
 </li>
 <li>
 <p>This lag-time is used to analyze user's post-install behavioral pattern.</p>
+</li>
+</ul>
 </li>
 </ol>
                 
