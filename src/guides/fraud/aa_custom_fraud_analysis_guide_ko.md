@@ -61,8 +61,8 @@
 #### NOTE:
 1. 각각의 분류에 대해서 매체 또는 하위매체별로 각각의 비중이 5~10% 이하의 소량을 보이고 모든 매체에 고르게 발생하는 경우는 일반적으로 정상으로 볼수 있으며 자체매체 또는 신뢰성있는 매체에서의 비중을 정상범위의 기준으로 삼으시는 것을 권장드립니다. 특정 매체 또는 하위매체에서 유의미하게 높은 비중을 가지는 경우에는 광고사기의 가능성이 높습니다.
 2. 특정분야의 앱의 경우에는 특정 분류의 인스톨들이 일반적인 경우보다 높은 비중을 보일 수 있습니다.
- * 예1) 여행관련 앱: 다른 앱들에 비해서 국가 불일치의 비중이 전반적으로 높을 수 있습니다.
- * 예2) MMORPG 게임: 일부 정상유저들은 조작 편의성을 위해서 데스크탑 또는 노트북에서 에뮬레이터를 사용해서 플레이 할 수 있습니다.
+    * 예1) 여행관련 앱: 다른 앱들에 비해서 국가 불일치의 비중이 전반적으로 높을 수 있습니다.
+    * 예2) MMORPG 게임: 일부 정상유저들은 조작 편의성을 위해서 데스크탑 또는 노트북에서 에뮬레이터를 사용해서 플레이 할 수 있습니다.
 
 ---
 ## 분석에 사용되는 타임스탬프와 래그타임
@@ -71,39 +71,39 @@
 
 #### 타임스탬프
 1. TCT (TMC Click Timestamp) : 매칭된 클릭이 기록된 시각
- * "Install Log Report" 컬럼이름: Click/Impression Datetime
- * Reporting API/Install Log 필드이름: session_datetime
+    * "Install Log Report" 컬럼이름: Click/Impression Datetime
+    * Reporting API/Install Log 필드이름: session_datetime
 
 
 2. DIT (Device Install Timestamp) : 앱이 기기에 설치된 시각
-  * "Install Log Report" 컬럼이름: Install Datetime
-  * Reporting API/Install Log 필드이름: install_date
+    * "Install Log Report" 컬럼이름: Install Datetime
+    * Reporting API/Install Log 필드이름: install_date
 
 
 3. TIT (TMC Install Timestamp): 앱이 설치이후 최초 오픈되어 인스톨이 발생한 시각
- * "Install Log Report" 컬럼이름: Datetime
- * Reporting API/Install Log 필드이름: created
+    * "Install Log Report" 컬럼이름: Datetime
+    * Reporting API/Install Log 필드이름: created
 
 
 4. TET (TMC Event Timestamp) : 이벤트가 기록된 시각
- * "Event Log Report" column name: Datetime
- * Reporting API/Event Log field name: created
+    * "Event Log Report" column name: Datetime
+    * Reporting API/Event Log field name: created
 
 
 #### 래그타임
 1. TCTTIT : 클릭후 인스톨발생(최초오픈)까지 걸린 시간
- > Formula: TIT - TCT
+    * > Formula: TIT - TCT
 
 2. TCTDIT : 클릭후 기기에 앱이 설치되기 까지 걸린 시간
- > Formula: DIT - TCT
+    * > Formula: DIT - TCT
 
- * 대부분의 인스톨의 경우 이 값은 양수입니다만, 일부의 경우 음수가 될 수도 있습니다.
+    * 대부분의 인스톨의 경우 이 값은 양수입니다만, 일부의 경우 음수가 될 수도 있습니다.
    이전에 앱을 인스톨 했지만 실행은 하지 않고 있다가, 나중에 광고 클릭후 최초실행을 하게 되는 경우 음수가 됩니다.
 
- * 클릭인젝션에 의한 인스톨인 경우 멀웨어가 앱설치를 인지하자마자 클릭이 발생 시키므로 대부분의 TCTDIT 값은 -100초에서 0초 사이에 집중되게 됩니다.
+    * 클릭인젝션에 의한 인스톨인 경우 멀웨어가 앱설치를 인지하자마자 클릭이 발생 시키므로 대부분의 TCTDIT 값은 -100초에서 0초 사이에 집중되게 됩니다.
    일부 소수의 정상인스톨들 일부 이 래그타임 범위에 포함될 수도 있으나 이런 경우는 매우 드물 것입니다.
 
 3. TITTET : 인스톨발생(최초오픈) 이후 이벤트가 기록되기 까지 걸린 시간
- > Formula: TET - TIT
+    * > Formula: TET - TIT
 
- * 이 래그타임은, 인스톨 이후 사용자의 행동 패턴을 분석하는데 사용됩니다.
+    * 이 래그타임은, 인스톨 이후 사용자의 행동 패턴을 분석하는데 사용됩니다.

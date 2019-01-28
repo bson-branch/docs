@@ -74,38 +74,38 @@
 
 #### Timestamps
 1. TCT (TMC Click Timestamp) : Timestamp of matched click
- * "Install Log Report" column name: Click/Impression Datetime
- * Reporting API/Install Log field name: session_datetime
+    * "Install Log Report" column name: Click/Impression Datetime
+    * Reporting API/Install Log field name: session_datetime
 
 
 2. DIT (Device Install Timestamp) : The time app is installed on the device.
- * "Install Log Report" column name: Install Datetime
- * Reporting API/Install Log field name: install_date
+    * "Install Log Report" column name: Install Datetime
+    * Reporting API/Install Log field name: install_date
 
 
 3. TIT (TMC Install Timestamp): The time app is first opened
- * "Install Log Report" column name: Datetime
- * Reporting API/Install Log field name: created
+    * "Install Log Report" column name: Datetime
+    * Reporting API/Install Log field name: created
 
 
 4. TET (TMC Event Timestamp) : The time event is sent.
- * "Event Log Report" column name: Datetime
- * Reporting API/Event Log field name: created
+    * "Event Log Report" column name: Datetime
+    * Reporting API/Event Log field name: created
 
 
 #### Lag-times
 1. TCTTIT : Lag-time between TCT and TIT
- > Formula: TIT - TCT
+    * > Formula: TIT - TCT
 
 2. TCTDIT : Lag-time between TCT and DIT
- > Formula: DIT - TCT
+    * > Formula: DIT - TCT
 
- * For the most of the installs this values are positive, but some installs could have negative values.
+    * For the most of the installs this values are positive, but some installs could have negative values.
    Some normal users could install apps, but do not open the app. If the users first open the app later after ad click, then the lag-time is negative.
- * For the click injected installs, clicks are fired as soon as device installation is detected by malware, so most of the lag-times will be concentrated between -100 and 0. Only a tiny fraction of normal installs could fall into this range.
+    * For the click injected installs, clicks are fired as soon as device installation is detected by malware, so most of the lag-times will be concentrated between -100 and 0. Only a tiny fraction of normal installs could fall into this range.
 
 
 3. TITTET : Lag-time between TIT and TET.
- > Formula: TET - TIT
+    * > Formula: TET - TIT
 
- * This lag-time is used to analyze user's post-install behavioral pattern.
+    * This lag-time is used to analyze user's post-install behavioral pattern.
