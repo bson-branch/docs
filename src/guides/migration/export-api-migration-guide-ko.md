@@ -28,7 +28,7 @@ TUNE에서 Branch로의 쉽게 전환 하실수 있도록 변경사항이 최소
 ## 고객사측의 대응이 필요한 사항들
 Branch Custom Export API접근에 대한 설명이 담인 메일을 받으실 것입니다.
 
-{--현재의 TUNE Export API의 요청 URL에 단순히 '&branch_redirect' 쿼리 파라메터를 추가 하시면됩니다.--}
+현재의 TUNE Export API의 요청 URL에 단순히 '&branch_redirect' 쿼리 파라메터를 추가 하시면됩니다.
 
 * **1단계**: TUNE과 브랜치의 익스포트 API를 통해서 데이터를 익스포트 하신후 양측의 데이터를 비교하셔야 합니다. Branch Custom Export API 데이터를 사용해서 익스포트 된 데이터가 현재의 ETL작업에 문제없이 처리가 되는지 확인하셔야합니다.
 * **2단계**: 현재의 데이터를 익스포트시 Branch Custom Export API를 사용하셔야 합니다. Branch Custom Export API사용방법은 조만간 메일로 전달될 것입니다.
