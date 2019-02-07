@@ -3,6 +3,7 @@ nav:
     - Home: index.md
     - Migration: guides/migration/index.md
     - Translations: pages/index.md
+    - Data Feeds: guides/data_feeds/index.md
     - Fraud: guides/fraud/index.md
 theme:
   name: 'material'
