@@ -355,9 +355,11 @@
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">TUNE에서 Branch로 웹앱이 마이그레이션 되지 않은 경우의 <code>site_id_web</code></p>
-<p>웹앱이 브랜치로의 마이그레이션이 안된 경우 해당 웹앱은 Branch시스템에서는 존재하지 않기 때문에 <code>site_id_web</code>으로 설정된 TUNE Link가 PC에서 클릭되었을때 정상적으로 동작하지 않습니다.
-<strong><code>site_id_web</code>이 설정된 현재 사용중인 TUNE Link에 대해서는 Branch로의 Migration이 종료되기 이전에 <code>url_web</code>으로 변경하셔야 합니다.</strong>
-예를들어 PC에서 클릭시 <a href="https://branch.io">https://branch.io</a>로 랜딩시키려는 경우, 해당 URL을 <a href="https://meyerweb.com/eric/tools/dencoder/">URL인코딩</a>후 <code>url_web=https%3A%2F%2Fbranch.io</code>과 같이 설정합니다.</p>
+<p>PC에서의 랜딩목적으로 생성된 웹앱이어서 브랜치로의 TUNE Link에서 사용되던 웹앱이 마이그레이션이 안된 경우 해당 웹앱은 Branch시스템에서는 존재하지 않기 때문에 <code>site_id_web</code>으로 설정된 TUNE Link가 PC에서 클릭되었을때 정상적으로 동작하지 않습니다.
+<strong>사용중인 TUNE Link중에서 <code>site_id_web</code>이 설정된 것이 있는 경우 Branch로의 Migration이 종료되기 이전에 TUNE Link에서 <code>site_id_web</code>은 제거해 주시고 대신 <code>url_web</code>을 사용하셔야 합니다.</strong>
+<code>url_web</code>에 설정되는 URL은 <a href="https://meyerweb.com/eric/tools/dencoder/">URL인코딩</a>후 설정하셔야 합니다.
+TUNE Link 생성 페이지에서 웹앱 선택 후 "Manually enter URL" 선택시 TUNE Link에 url_web파라메터가 추가되며, URL인코딩한 URL을 UI상에서 설정해 주시고, TUNE Link에서 <code>site_id_web=123456</code>부분은 삭제해 주시기 바라며 해당 부분을 삭제한 앞 또는 뒤에 <code>&amp;</code>이 두개가 중복된 경우 하나는 제거해 주시기 바랍니다.
+예를들어 PC에서 클릭시 <a href="https://branch.io">https://branch.io</a>로 랜딩시키려는 경우, <code>url_web</code>은  <code>url_web=https%3A%2F%2Fbranch.io</code>과 같이 설정되게 됩니다.</p>
 </div>
 </li>
 <li>
@@ -448,6 +450,10 @@
 1주일에 4만개이상의 고유한 값이 기록되면 Actuals리포트에서 설정된 값별로 구분된 갯수의 집계가 되지 않습니다.
 다만 로그리포트에서는 문제가 없으며, 이 제한에 사용되는 고유값의 갯수는 1주일마다 리셋됩니다.
 그러므로 많은 고유값이 설정될 수 있는 경우 My파라메터 대신 Sub1~5를 사용하시기 바랍니다.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">My파라메터 값 설정시 주의사항</p>
+<p>My파라메터에는 설정되는 값은 숫자와 알파벳 만으로 이루어져 있지 않은 경우 꼭 <a href="https://meyerweb.com/eric/tools/dencoder/">URL인코딩</a>후 설정해 주시기 바랍니다. 이는 예를들어 숫자와 알파벳 이외의 문자열의 경우 브라우저에 따라 해당 값이 깨지는 경우가 발생할 수 있기 때분입니다.</p>
 </div>
 <ul>
 <li><code>my_publisher</code> : 광고매체</li>
