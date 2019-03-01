@@ -57,8 +57,7 @@
         } else {
           my_char = '&';
         }
-				//final_deeplink = base_deeplink + my_char + 'mat_click_id='+mat_click_id;
-        final_deeplink = base_deeplink + my_char + decoded_referrer;
+				final_deeplink = base_deeplink + my_char + 'mat_click_id='+mat_click_id;
 			} else {
 				final_deeplink = base_deeplink
 			}
@@ -84,6 +83,9 @@
 			div.innerHTML += '<br>';
 			div.innerHTML += '<br><b>decoded referrer</b>';
 			div.innerHTML += '<br>' + decoded_referrer;
+			div.innerHTML += '<br>';
+      div.innerHTML += '<br><b>mat_click_id</b>';
+			div.innerHTML += '<br>' + mat_click_id;
 			div.innerHTML += '<br>';
 			div.innerHTML += '<br><b>Deep Link URL</b>';
 			div.innerHTML += '<br><b>Org</b>: ' + base_deeplink;
