@@ -74,7 +74,12 @@
 			}
 
 			var div = document.getElementById('log_message');
-			div.innerHTML += '<br><b>referrer</b>';
+      div.innerHTML += '<br><b>Google Play URL</b>';
+      div.innerHTML += '<br>' + base_google_play_url;
+      div.innerHTML += '<br><b>Deep Link URL</b>';
+      div.innerHTML += '<br>' + base_deeplink;
+      div.innerHTML += '<hr>';
+			div.innerHTML += '<br>';
 			div.innerHTML += '<br>' + referrer;
 			div.innerHTML += '<br>';
 			div.innerHTML += '<br><b>decoded referrer</b>';
