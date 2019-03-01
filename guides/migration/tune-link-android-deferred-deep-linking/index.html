@@ -36,7 +36,7 @@
     
     
       
-        <title>Branch Custom Export API 가이드 - Branch Korea Solutions Engineering</title>
+        <title>TUNE Link Deferred Deep Linking 가이드 (마이그레이션 이후) - Branch Korea Solutions Engineering</title>
       
     
     
@@ -82,7 +82,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#branch-custom-export-api" tabindex="1" class="md-skip">
+      <a href="#tune-link-deferred-deep-linking" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +108,7 @@
                 Branch Korea Solutions Engineering
               </span>
               <span class="md-header-nav__topic">
-                Branch Custom Export API 가이드
+                TUNE Link Deferred Deep Linking 가이드 (마이그레이션 이후)
               </span>
             
           
@@ -260,6 +260,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" title="브릿지페이지 구현 샘플" class="md-nav__link">
+    브릿지페이지 구현 샘플
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="구현 설명" class="md-nav__link">
+    구현 설명
+  </a>
+  
+</li>
+      
       
       
       
@@ -277,13 +291,72 @@
               
                 
                 
-                <h1 id="branch-custom-export-api">Branch Custom Export API 가이드<a class="headerlink" href="#branch-custom-export-api" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>Modified on: Feb 21, 2019
+                <h1 id="tune-link-deferred-deep-linking">TUNE Link Deferred Deep Linking 가이드 (마이그레이션 이후)<a class="headerlink" href="#tune-link-deferred-deep-linking" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span>Modified on: Feb 28, 2019
 </pre></div>
 
 
 <hr />
 <h2 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>안드로이드앱에서 TUNE Link를 사용해서 브릿지 페이지로 사용자를 랜딩 시키는 경우 구글의 디퍼드 딥링킹 기능을 이용해서 디퍼드 딥링킹을 구현하는 방법을 설명드립니다.</p>
+<p>iOS앱의 경우는 앱스토어에서 유사한 기능을 제공하지 않기 때문에 디퍼드 딥링킹을 하기 위해서는 Attribution Analytics의 디퍼드 딥링킹 기능을 사용하셔야 함을 알려드립니다.</p>
+<ul>
+<li>
+<p><a href="https://help.tune.com/marketing-console/deferred-deeplinking-with-attribution-analytics/">Deferred Deep Linking with Attribution Analytics</a></p>
+</li>
+<li>
+<p><a href="https://developers.tune.com/sdk/implementing-a-deferred-deep-link/#code-platform-ios">Implementing a Deferred Deep Link (SDK연동방법)</a></p>
+</li>
+</ul>
+<h2 id="_2">브릿지페이지 구현 샘플<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="../bridge/">샘플 페이지</a></p>
+</li>
+<li>
+<p>샘플페이지내의 TUNE Link는 아래와 같습니다.
+<div class="codehilite"><pre><span></span>https://s9u-6.tlnk.io/serve?
+          action=click&amp;
+          publisher_id=174354&amp;
+          site_id_android=2385&amp;site_id_ios=2962&amp;
+          campaign_id_android=236537&amp;
+          campaign_id_ios=237906&amp;
+          url_android=https%3A%2F%2Fbson-branch.github.io%2Fdocs%2Fguides%2Fmigration%2Fbridge%2Fbridge.html&amp;
+          url_ios=https%3A%2F%2Fbson-branch.github.io%2Fdocs%2Fguides%2Fmigration%2Fbridge%2Fbridge.html
+</pre></div></p>
+<ul>
+<li>안드로이드와 iOS모두 <a href="https://bson-branch.github.io/docs/guides/migration/bridge/bridge.html">https://bson-branch.github.io/docs/guides/migration/bridge/bridge.html</a> 페이지로 랜딩시키도록 되어있습니다.</li>
+<li>랜딩페이지의 URL은 <strong><a href="https://meyerweb.com/eric/tools/dencoder/">URL인코딩</a></strong>을 한다음 설정하는 것이 권장됩니다.</li>
+<li>랜딩시 <strong>HTTPS를 사용하는 페이지로 랜딩</strong>시키야 웹뷰내에서 랜딩시 이상없이 랜딩될 수 있습니다.</li>
+<li>안드로이드앱에서 구글플레이로 랜딩시만 해당 작업이 필요하며 iOS에서 앱스토어로 리다이렉트시에는 특별한 작업이 필요 없습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="_3">구현 설명<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>샘플페이지내의 JavaScript 소스코드에도 설명되어있는 사항을 다시한번 요약정리 하면 아래와 같습니다.</p>
+<ol>
+<li>
+<p>TUNE Link클릭시 브릿지페이지 랜딩시 쿼리파라메터에 <code>referrer</code>가 추가되되며,
+    <code>mat_click_id=3e4c2abeef0d74958ae4bff96be434b6-20190301-877</code>를 URL 인코딩한  <code>mat_click_id%3D3e4c2abeef0d74958ae4bff96be434b6-20190301-877</code>이 설정됩니다.</p>
+<ul>
+<li>mat_click_id는 클릭시마다 매번 고유한 값이 생성됩니다.</li>
+<li>추가 리다이렉트가 발생하는 경우 <code>referrer</code>를 계속 다음페이지로 전달하면서 값을 가지고 있어야 합니다.</li>
+</ul>
+</li>
+<li>
+<p>referrer에 인코딩 설정된 된 mat_click_id를 디코딩합니다.</p>
+</li>
+<li>
+<p>사용할 딥링크의 쿼리파라메터에 mat_click_id를 추가해서 실제 사용할 최종 딥링크URL을 생성합니다.
+    위의 단계에서 디코딩한 값을 쿼리파라메터에 추가하면됩니다.</p>
+</li>
+<li>
+<p>구글 플레이 랜딩 URL에 브릿지페이지 랜딩시 전달 받은 referrer를 그대로 추가합니다.</p>
+</li>
+<li>
+<p>그다음 3번에서 생성한 최종딥링크를 한번 URL인코딩 한 후 url파라메터에 설정합니다.</p>
+</li>
+</ol>
                 
                   
                 

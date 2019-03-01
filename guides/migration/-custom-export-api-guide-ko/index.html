@@ -1,0 +1,507 @@
+
+
+
+
+<!doctype html>
+<html lang="kr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="클립보드로 복사">
+      
+        <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="검색어와 일치하는 문서가 없습니다">
+      
+        <meta name="lang:search.result.one" content="1개의 일치하는 문서">
+      
+        <meta name="lang:search.result.other" content="#개의 일치하는 문서">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>Branch Custom Export API 가이드 - Branch Korea Solutions Engineering</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#branch-custom-export-api" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Branch Korea Solutions Engineering" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Branch Korea Solutions Engineering
+              </span>
+              <span class="md-header-nav__topic">
+                Branch Custom Export API 가이드
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            검색어를 입력하세요
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Branch Korea Solutions Engineering" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Branch Korea Solutions Engineering
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Migration" class="md-nav__link">
+      Migration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../pages/" title="Translations" class="md-nav__link">
+      Translations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../data_feeds/" title="Data Feeds" class="md-nav__link">
+      Data Feeds
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../fraud/" title="Fraud" class="md-nav__link">
+      Fraud
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">목차</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="개요" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-freshness" title="Data Freshness" class="md-nav__link">
+    Data Freshness
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-availability" title="Data availability" class="md-nav__link">
+    Data availability
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#log" title="Log 및 집계 데이터" class="md-nav__link">
+    Log 및 집계 데이터
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reporting-api-v3" title="Reporting API (V3)를 통한 로그 익스포트" class="md-nav__link">
+    Reporting API (V3)를 통한 로그 익스포트
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="branch-custom-export-api">Branch Custom Export API 가이드<a class="headerlink" href="#branch-custom-export-api" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span>Modified on: Feb 28, 2019
+</pre></div>
+
+
+<hr />
+<h2 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>기존 Attribution Analytics(이후 AA)에서 제공되던 <strong>Reporting API</strong>는 Branch에서 최소한의 변경으로 최대한 동일한 가능을 지원할 수 있도록 개발된 <strong>Custom Export API</strong>로 쉽게 마이그레이션이 가능합니다.
+현재 문서는 기존 Reporting API 가이드를 기준으로 작성되었으며, 추후 일부 내용이 변경될 수 있습니다.</p>
+<p>Reporting API의 마이그레이션에 관련된 자세한 사항은 <a href="custom-export-api-guide-ko.md">Export API Migration Guide(번역본)</a>을 함께 참고 해주시기 바랍니다.</p>
+<h2 id="data-freshness">Data Freshness<a class="headerlink" href="#data-freshness" title="Permanent link">&para;</a></h2>
+<ul>
+<li>내부 지표를 통해서 데이터의 적시성을 관리하고 있습니다.</li>
+<li>각각의 로그 타입별(Log, Actuals) 신규데이터가 업데이트 되는 시기가 다르며,
+    추후 구현 변경에 의해서 업데이트 주기가 변경이 될 수 있습니다.</li>
+<li>데이터의 업데이트 지연은 데이터 처리, 서버로드 및 여러가지 요인에 의해서 발생할 수 있으며,
+    지연은 각각의 리포트 별로 서로 독립적입니다.</li>
+<li>엔지니어링팀에서는 내부적으로 관리되는 지표에 의한 허용 가능한 범위를 넘는 지연이 발생할 경우
+    이를 즉시 해결하기위해서 최선의 노력을 다하고 있습니다.</li>
+</ul>
+<h2 id="data-availability">Data availability<a class="headerlink" href="#data-availability" title="Permanent link">&para;</a></h2>
+<p>접근 가능한 데이터의 범위는 추후 내부적인 정책,구현 변경이나 성능향상을 위해서 변경될 수 있습니다.</p>
+<ul>
+<li>Actuals : (Aggregated Report, 집계 리포트)<ul>
+<li>데이터 접근 가능 기간: 이전 6개월 (추후 변경가능)</li>
+</ul>
+</li>
+<li>Logs :<ul>
+<li>데이터 접근 가능 기간: 이전 6개월 (추후 변경가능)</li>
+<li>GDPR관련<ul>
+<li><strong>광고아이디를 포함한 일부 민감한 데이터는 현재 7일 이후 Salt와 함께 해슁(원본복구불가)</strong>됩니다. (향후 60일 이후에 해슁되도록 변경될 예정)</li>
+<li>참고로, Branch와 AA는 광고아이디에 대해서 다르게 처리되고 있습니다. AA에서는 광고아이디 원본 수집시 MD5, SHA1, SHA256으로 해슁된 광고아이디가 별도 필드로 자동 저장되었으며, EU지역으로 판단된 경우 수집된 광고아이디 원본은 삭제되었습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="log">Log 및 집계 데이터<a class="headerlink" href="#log" title="Permanent link">&para;</a></h2>
+<ul>
+<li>일반적으로 현재 시각부터 1~2 시간 이전의 데이터에 접근할 수 있습니다. 데이터 처리에 대한 로드가 높아질 경우에는 일시적으로 이보다 좀더 지연될 수 있습니다.
+  대부분의 경우, 6시간 이후에는 해당 시간대의 데이터가 모두 업데이트 되도록 관리되고 있습니다.</li>
+<li>단기분석을 위한 익스포트시 주의 사항 :<ul>
+<li>현재로부터 6시간 이내의 데이터의 경우는 해당 시간대의 모든 데이터가 익스포트 되지 않을 수 있으므로 단기적인 분석 용도로만 사용하시는 것이 권장됩니다.</li>
+</ul>
+</li>
+<li>장기분석을 위한 익스포트시 주의 사항 :<ul>
+<li>6시간 이전의 데이터의 경우는 특별한 이슈가 없는한 해당 범위의 데이터를 거의 모두 익스포트되므로 장기분석 목적으로 저장 할 수 있습니다.</li>
+<li>아주 드물게 심각한 장애로 인한 데이터 지연이 발생할 수도 있기 때문에 이에 대응하기 위해 동일한 기간의 데이터를 일주일 후에 다시 한번
+    익스포트해서 기존 익스포트에서 포함되지 않았던 데이터를 추가 업데이트 하는 방법도 고려할 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="reporting-api-v3">Reporting API (V3)를 통한 로그 익스포트<a class="headerlink" href="#reporting-api-v3" title="Permanent link">&para;</a></h2>
+<p>Technical Document</p>
+<blockquote>
+<p>Reporting API Docs
+        <a href="https://developers.tune.com/reporting/">https://developers.tune.com/reporting/</a>
+V2 to V3 migration guide.
+        <a href="https://developers.tune.com/reporting-docs/log-endpoints-v2-to-v3-migration-guide/">https://developers.tune.com/reporting-docs/log-endpoints-v2-to-v3-migration-guide/</a>
+Supported Log Export Endpoints
+        <a href="https://developers.tune.com/reporting/exports/">https://developers.tune.com/reporting/exports/</a></p>
+</blockquote>
+<p>API Rate-limit : <a href="https://developers.tune.com/reporting-docs/reporting-api-rate-limits/">https://developers.tune.com/reporting-docs/reporting-api-rate-limits/</a>
+  - Search/export endpoint : 시간당 180회
+  - Polling endpoint (진행중인 작업의 진행상태 확인) : 시간당 480회
+  % 빈도제한에 의해서 요청이 실패할 경우, 응답에 제한이 해제되는 시각 정보가 리턴됩니다.</p>
+<p>요청시 리턴되는 최대 레코드 제한
+ - Search Endpoint : 5000건
+ - Export Endpoint : 2백만건
+    % 각각의 로그별 1시간에 2백만건 이상의 레코드가 있어 더 이상 시간범위를 줄이기 힘들 경우,
+        내부 검토를 거쳐서 필요하다고 판단될 경우 2백만건 제한을 상향 해드릴 수 있습니다.)</p>
+<p>요청시 최대 레코드 제한을 넘는 경우 처리 방법</p>
+<blockquote>
+<p>리턴된 레코드의 갯수가 최대 레코드 제한 갯수(2백만건)와 동일하다면,
+        이것은 최대 레코드 제한에 의해서 일부 레코드가 리턴되지 않았다는 것을 의미합니다.
+요청시 최대 레코드 제한을 넘는 레코드가 있다면:
+        앱별 또는 이벤트별로 나누어서 요청하거나,
+        일반적인 일단위 대신 더 짧은 시간범위를 나누어서 요청 하시기 바랍니다.</p>
+</blockquote>
+<p>HTTP응답이 200이 아닐 경우 처리방법
+  - 4xx : 리퀘스트 자체에 문제가 있다는 것입니다. 개발팀에서는 리퀘스트에 문제가 있는지 확인하세요.
+  - 5xx : TUNE의 서비스에 문제가 있음을 의미합니다.
+           일정 기간 대기 후에 다시 요청하시는 것을 권장드립니다.
+            예를들어 1시간 이상 지속되어 일시적인 이슈가 아니라고 생각되시면
+            TMC Support Team(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#116;&#109;&#99;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#116;&#117;&#110;&#101;&#46;&#99;&#111;&#109;">&#116;&#109;&#99;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#116;&#117;&#110;&#101;&#46;&#99;&#111;&#109;</a>) 으로 메일을 보내 주시기 바랍니다.</p>
+<p>익스포트가 처리되는 방법:
+ - 익스포트가 요청되면 시스템은 해당 작업에 대해서 고유한 Job ID를 할당한뒤 작업큐에 저장합니다.
+    작업큐에 저장된 작업들은 이전에 요청된 작업들 완료되면 이후 실제 큐에서 나와 처리가 되게 됩니다.
+ - 작업 큐는 여러 광고주들과 공유하게 되며, 각각의 작업은 큐에 FIFO방식으로 처리됩니다.
+ - 동시에 너무 많은 작업이 요청될 경우에는 작업들이 큐에서 얼마간 대기 했다가 처리되며,
+    이것은 TUNE에서 동시에 처리할수 있는 작업에 제한이 있기 때문입니다.
+ - 익스포트가 요청시 리턴된 Job ID로, 작업이 완료될 때까지 계속해서 진행상태를 확인하게 됩니다.
+ - 진행상태를 확인하는 경우 시간당 480번으로 제한이 되며, 1분에 한번씩 작업 상태를 확인하시는것이
+    권장됩니다.
+ - 작업의 “status”는 “pending”, “running”, “complete”, “fail” 중 하나가 리턴됩니다.
+ - 해당 작업이 큐에서 대기중 이라면 “pending” status 가 리턴됩니다.
+    추후 작업이 처리중일 경우 “running” status 로 변경됩니다.</p>
+<p>“Pending” 상태가 오래 지속될 때 처리방법
+ - 이전에 언급 되었듯이, 너무 많은 익스포트 요청이 한번에 들어오면, 일부 작업들은 큐에서 대기하게 되며
+    이 경우 “pending” 상태가 리턴됩니다.
+    이런 경우  수십분또는 1시간 이상 “pending”상태가 리턴될 수 있습니다.
+    비정상적으로 너무 오래 (예를들어 6시간 이상) “pending” 상태에 있다면,
+    서포트 팀(tmcsupport@team)으로 해당 Job ID와 함께 문의 해주시기 바랍니다.
+ - “pending” 상태의 작업은 서버로드에 따라 시간이 걸릴수 있으나 결국은 “running” 상태로 변경됩니다.
+    그러므로 “fail” 상태가 리턴되는 경우가 아니라면, 해당 작업이 최종적으로 “complete” 상태가 될때까지
+    계속 상태를 확인하며 대기하여야 합니다.
+ - “pending” 상태가 오래된다고 해서, 동일한 익스포트를 다시 요청하는것은 꼭 지양되어야 합니다.
+    새롭게 익스포트를 요청해도 신규작업은 기존 작업의 뒤에서 대기 하게 되므로,
+    먼저 큐에 들어간 “pending”상태의 작업이 항상 먼저 처리됨을 유의하시기 바랍니다.
+    현재는 생성된 작업을 API를 통해서 강제 종료할수 있는 방법은 제공되고 있지 않습니다.
+ - 작업 큐는 여러 광고주와 함께 공유되므로, 매시 정각과 같이 요청이 몰리는 시간을 피하는 것은 좋은 방법이
+    될 수 있습니다.
+ - 여러 종류의 리포트나 로그를 익스포트 할 경우, 한번에 모든 리포트/Log에 대한 요청을 보내는 것보다
+    각각의 리포트/로그를 한번에 하나씩 순차적으로 익스포트 하는것이 바람직 합니다.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/router.js"></script>
+      
+        <script src="../../../js/events.js"></script>
+      
+        <script src="../../../js/modals.js"></script>
+      
+        <script src="../../../js/images.js"></script>
+      
+        <script src="../../../js/buttons.js"></script>
+      
+        <script src="../../../js/progress.js"></script>
+      
+        <script src="../../../js/tabs.js"></script>
+      
+        <script src="../../../js/languages.js"></script>
+      
+        <script src="../../../js/utils.js"></script>
+      
+        <script src="../../../js/main.js"></script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+  </body>
+</html>
