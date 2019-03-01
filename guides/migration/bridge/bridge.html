@@ -47,7 +47,7 @@
 			// TUNE에서 리다이렉트시 추가한 referrer를 디코딩
 			decoded_referrer = getDecodedUrlParameter(location.search, 'referrer');
 			// TUNE에서 리다이렉트시 추가한 referrer에서 mat_click_id 추출
-			mat_click_id = getDecodedUrlParameter(decoded_referrer, 'mat_click_id');
+			//mat_click_id = getDecodedUrlParameter(decoded_referrer, 'mat_click_id');
 
 			// 앱 딥링크의 쿼리파라메터에 mat_click_id 추가 해서 딥링킹
 			if (mat_click_id.length > 0) {
@@ -57,7 +57,8 @@
         } else {
           my_char = '&';
         }
-				final_deeplink = base_deeplink + my_char + 'mat_click_id='+mat_click_id;
+				//final_deeplink = base_deeplink + my_char + 'mat_click_id='+mat_click_id;
+        final_deeplink = base_deeplink + my_char + decoded_referrer;
 			} else {
 				final_deeplink = base_deeplink
 			}
@@ -83,9 +84,6 @@
 			div.innerHTML += '<br>';
 			div.innerHTML += '<br><b>decoded referrer</b>';
 			div.innerHTML += '<br>' + decoded_referrer;
-			div.innerHTML += '<br>';
-			div.innerHTML += '<br><b>mat_click_id from referrer</b>';
-			div.innerHTML += '<br>' + mat_click_id;
 			div.innerHTML += '<br>';
 			div.innerHTML += '<br><b>Deep Link URL</b>';
 			div.innerHTML += '<br><b>Org</b>: ' + base_deeplink;
