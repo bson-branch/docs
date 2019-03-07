@@ -79,6 +79,7 @@
       div.innerHTML += '<br><b>Deep Link URL</b>';
       div.innerHTML += '<br>' + base_deeplink;
       div.innerHTML += '<hr>';
+      div.innerHTML += '<br><b>referrer</b>';
 			div.innerHTML += '<br>' + referrer;
 			div.innerHTML += '<br>';
 			div.innerHTML += '<br><b>decoded referrer</b>';
@@ -95,8 +96,12 @@
 			div.innerHTML += '<br><b>Org URL</b>: ' + base_google_play_url;
 			div.innerHTML += '<br><b>Final URL </b>: ' + final_google_play_url;
 			div.innerHTML += '<br><b>Final URL With Deferred Deep Linking</b>: ' + final_google_play_url_with_deferred_deeplink;
+      div.innerHTML += '<br>';
+      div.innerHTML += '<br>';
 
 		}
+
+
 	</script>
 
     </head>
@@ -106,7 +111,10 @@
         </div>
 
         <div id="log_message">
-		로그
+		        로그
+            <hr>
         </div>
+
+
   </body>
 </html>
