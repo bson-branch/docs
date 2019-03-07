@@ -110,9 +110,15 @@
 
 
         var output = document.getElementById('log_msg');
-        output.innerHTML = '';
+        output.innerHTML = '<br>';
+        output.innerHTML = '<label>Destination URL</label><br>';
+        output.innerHTML = '<input type="text" id="and_dest_url" size="250"  value="'+destination_url+'"/><br>'
+        output.innerHTML = '<br>';
         output.innerHTML += '<a href="'+ destination_url +'">Destination URL</a><br>';
         output.innerHTML += '<br><b>'+destination_url+'</b>';
+
+        output.innerHTML += '<a href="'+ "hellochatty://hellochatty.co/login" +'">Chat</a><br>';
+        output.innerHTML += '<a href="'+ "hellochatty://hellochatty.co/chat" +'">Login</a><br>';
 
 
       };
@@ -137,15 +143,7 @@
         <form>
           <input type="button" onclick="do_process()"  value="Generate" />
         </form>
-        <div>
-          <br>
-          <label>Destination URL:</label><br>
-          <input type="text" id="and_dest_url" size="250"  value=""/><br>
-        </div>
         <div id="log_msg">
-        </div>
-        <hr>
-        <div id="log">
         </div>
 
   </body>
