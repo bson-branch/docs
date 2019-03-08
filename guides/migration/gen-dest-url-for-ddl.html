@@ -102,11 +102,22 @@
         console.log("new_deep_link_url: " + new_deep_link_url);
 
         destination_url = org_gps_url +
-                          //"&referrer=mat_click_id%3D{click_id}" +
-                          "&url=" + encodeURIComponent(org_deep_link_url);
-                          //'{click_id}';
+                          "&referrer=mat_click_id%3D{click_id}" +
+                          "&url=" + encodeURIComponent(org_deep_link_url) +
+                          my_char +
+                          'mat_click_id=' +
+                          '{click_id}';
         console.log("destination_url: " + destination_url);
 
+        encoded_destination_url = encodeURIComponent(org_gps_url) +
+                          encodeURIComponent("&referrer=mat_click_id%3D") +
+                          "{click_id}" +
+                          encodeURIComponent("&url=") +
+                          encodeURIComponent(encodeURIComponent(org_deep_link_url)) +
+                          encodeURIComponent(my_char) +
+                          encodeURIComponent('mat_click_id=') +
+                          '{click_id}';
+        console.log("encoded_destination_url: " + encoded_destination_url);
 
 
         var output = document.getElementById('log_msg');
@@ -115,10 +126,14 @@
         //output.innerHTML += '<input type="text" id="and_dest_url" size="250"  value="'+destination_url+'"/><br>'
         output.innerHTML += ''+destination_url+'<br>';
         output.innerHTML += '<br>';
-        output.innerHTML += '<a href="'+ destination_url +'">Destination URL</a><br>';
-        output.innerHTML += '<br><b>'+destination_url+'</b>';
+        output.innerHTML += '<label>URL Encoded Destination URL</label><br>';
+        //output.innerHTML += '<input type="text" id="and_dest_url" size="250"  value="'+destination_url+'"/><br>'
+        output.innerHTML += ''+encoded_destination_url+'<br>';
+        //output.innerHTML += '<br>';
+        //output.innerHTML += '<a href="'+ destination_url +'">Destination URL</a><br>';
+        //output.innerHTML += '<br><b>'+destination_url+'</b>';
         output.innerHTML += '<br>';
-        output.innerHTML += '<a href="'+ org_deep_link_url +'">Deep Link</a><br>';
+        output.innerHTML += '<a href="'+ org_deep_link_url +'">Deep Link URL</a><br>';
         //output.innerHTML += '<a href="'+ "hellochatty://hellochatty.co/chat" +'">Login</a><br>';
 
 
@@ -138,7 +153,7 @@
           <label>Google Play URL:</label><br>
           <input type="text" id="org_gps_url" size="100" value="https://play.google.com/store/apps/details?id=com.hellochatty"/><br><br>
           <label>Deep Link URL:</label><br>
-          <input type="text" id="org_deep_link_url" size="100" value="hellochatty://hellochatty.co/login" /><br>
+          <input type="text" id="org_deep_link_url" size="100" value="hellochatty://hellochatty.co/chat" /><br>
         </div>
         <hr>
         <form>
@@ -147,8 +162,6 @@
         <div id="log_msg">
         </div>
         <div>
-          <a href="hellochatty://hellochatty.co/login">Deep Link1</a><br>
-          <a href="hellochatty://hellochatty.co/chat">Deep Link2</a><br>
           <br>
           <a href="https://w0y-5.tlnk.io/serve?action=click&campaign_id_android=236537&publisher_id=174354&site_id_android=2385&url_android=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.hellochatty%26url%3Dhellochatty%253A%252F%252Fhellochatty.co%252Flogin">TUNE Link</a><br>
         </div>
