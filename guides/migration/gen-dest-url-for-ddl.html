@@ -101,23 +101,25 @@
         new_deep_link_url = org_deep_link_url + my_char + 'mat_click_id='
         console.log("new_deep_link_url: " + new_deep_link_url);
 
+        new_deep_link_url = org_deep_link_url + my_char + 'mat_click_id=';
+        console.log("new_deep_link_url: " + new_deep_link_url);
+
+        destination_url_wo_click_id = org_gps_url +
+                          "&referrer=mat_click_id%3D{click_id}" +
+                          "&url=" +
+                          encodeURIComponent(new_deep_link_url);
+
         destination_url = org_gps_url +
                           "&referrer=mat_click_id%3D{click_id}" +
                           "&url=" +
-                          encodeURIComponent(org_deep_link_url) +
-                          encodeURIComponent(my_char) +
-                          encodeURIComponent('mat_click_id=') +
+                          encodeURIComponent(new_deep_link_url) +
                           '{click_id}';
+
         console.log("destination_url: " + destination_url);
 
-        encoded_destination_url = encodeURIComponent(org_gps_url) +
-                          encodeURIComponent("&referrer=mat_click_id%3D") +
-                          encodeURIComponent("{click_id}") +
-                          encodeURIComponent("&url=") +
-                          encodeURIComponent(encodeURIComponent(org_deep_link_url)) +
-                          encodeURIComponent(encodeURIComponent(my_char)) +
-                          encodeURIComponent(encodeURIComponent('mat_click_id=')) +
+        encoded_destination_url = encodeURIComponent(destination_url_wo_click_id) +
                           '{click_id}';
+
         console.log("encoded_destination_url: " + encoded_destination_url);
 
 
@@ -165,7 +167,7 @@
         <div>
           <br>
           <a href="https://w0y-5.tlnk.io/serve?action=click&campaign_id_android=236537&publisher_id=174354&site_id_android=2385&url_android=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.hellochatty%26referrer%3Dmat_click_id%253D%7Bclick_id%7D%26url%3Dhellochatty%253A%252F%252Fhellochatty.co%252Fchat%253Fmat_click_id%253D{click_id}">
-            TUNE Link :-()</a><br>
+            TUNE Link !!!</a><br>
         </div>
   </body>
 </html>
