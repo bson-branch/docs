@@ -121,7 +121,10 @@
 
         console.log("encoded_destination_url: " + encoded_destination_url);
 
+        document.getElementById('gps_dest_url').value = destination_url;
+        document.getElementById('enc_gps_dest_url').value = encoded_destination_url;
 
+        /*
         var output = document.getElementById('log_msg');
         output.innerHTML = '<br>';
         output.innerHTML += '<label>Destination URL</label><br>';
@@ -137,9 +140,10 @@
         output.innerHTML += '<br>';
         output.innerHTML += '<a href="'+ org_deep_link_url +'">Deep Link URL</a><br>';
         //output.innerHTML += '<a href="'+ "hellochatty://hellochatty.co/chat" +'">Login</a><br>';
-
+        */
 
       };
+
 
   	</script>
 
@@ -161,12 +165,20 @@
         <form>
           <input type="button" onclick="do_process()"  value="Generate" />
         </form>
+        <hr>
+        <div>
+          <label>New Google Play URL:</label><br>
+          <input type="text" id="gps_dest_url" size="100" value="" disabled /><br><br>
+          <label>Encoded New Google Play URL:</label><br>
+          <input type="text" id="enc_gps_dest_url" size="100" value="" disabled /><br>
+        </div>
+
         <div id="log_msg">
         </div>
         <div>
           <br>
-          <a href="https://w0y-5.tlnk.io/serve?action=click&campaign_id_android=236537&publisher_id=174354&site_id_android=2385&url_android=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.hellochatty%26referrer%3Dmat_click_id%253D%7Bclick_id%7D%26url%3Dhellochatty%253A%252F%252Fhellochatty.co%252Fchat%253Fmat_click_id%253D%7Bclick_id%7D">
-            TUNE Link )</a><br>
+          <a href="https://w0y-5.tlnk.io/serve?action=click&campaign_id_android=236537&publisher_id=174354&site_id_android=2385&url_android=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.hellochatty%26referrer%3Dmat_click_id%253D%7Bclick_id%7D%26url%3Dhellochatty%253A%252F%252Fhellochatty.co%252Fchat%253Fmat_tracking_id%253D%7Btracking_id%7D">
+            TUNE Link :)</a><br>
         </div>
   </body>
 </html>
