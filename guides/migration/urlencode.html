@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+    <title>Bohyung</title>
+    <script>
+      function enc() {
+        text = document.getElementById('text').value;
+        output = encodeURIComponent(text).replace(/'/g,"%27").replace(/"/g,"%22");
+        document.getElementById('text').value = output;
+
+      };
+      function dec() {
+        text = document.getElementById('text').value;
+        output = decodeURIComponent(text.replace(/\+/g,  " "));
+        document.getElementById('text').value = output;
+      };
+
+  	</script>
+
+  </head>
+      <body>
+        <div id="siteInfo">
+        URL Encoding<br>
+        </div>
+        <hr>
+        <div>
+          <label>Text:</label><br>
+          <textarea cols="100" rows="10" id="text"></textarea>
+        </div>
+        <hr>
+        <form>
+          <input type="button" onclick="enc()"  value="Encode" />
+          <input type="button" onclick="dec()"  value="Decode" />
+        </form>
+        <hr>
+  </body>
+</html>

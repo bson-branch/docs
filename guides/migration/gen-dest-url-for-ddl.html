@@ -98,22 +98,14 @@
           my_char = '&';
         }
         //new_deep_link_url = org_deep_link_url + my_char + 'mat_click_id={click_id}'
-        new_deep_link_url = org_deep_link_url + my_char + 'mat_click_id='
+        new_deep_link_url = org_deep_link_url + my_char + 'mat_tracking_id='
         console.log("new_deep_link_url: " + new_deep_link_url);
-
-        new_deep_link_url = org_deep_link_url + my_char + 'mat_click_id=';
-        console.log("new_deep_link_url: " + new_deep_link_url);
-
-        destination_url_wo_click_id = org_gps_url +
-                          "&referrer=mat_click_id%3D{click_id}" +
-                          "&url=" +
-                          encodeURIComponent(new_deep_link_url);
 
         destination_url = org_gps_url +
                           "&referrer=mat_click_id%3D{click_id}" +
                           "&url=" +
                           encodeURIComponent(new_deep_link_url) +
-                          '{click_id}';
+                          '{tracking_id}';
 
         console.log("destination_url: " + destination_url);
 
