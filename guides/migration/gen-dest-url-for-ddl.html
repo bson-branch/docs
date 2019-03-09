@@ -103,19 +103,20 @@
 
         destination_url = org_gps_url +
                           "&referrer=mat_click_id%3D{click_id}" +
-                          "&url=" + encodeURIComponent(org_deep_link_url) +
-                          my_char +
-                          'mat_click_id=' +
+                          "&url=" +
+                          encodeURIComponent(org_deep_link_url) +
+                          encodeURIComponent(my_char) +
+                          encodeURIComponent('mat_click_id=') +
                           '{click_id}';
         console.log("destination_url: " + destination_url);
 
         encoded_destination_url = encodeURIComponent(org_gps_url) +
                           encodeURIComponent("&referrer=mat_click_id%3D") +
-                          "{click_id}" +
+                          encodeURIComponent("{click_id}") +
                           encodeURIComponent("&url=") +
                           encodeURIComponent(encodeURIComponent(org_deep_link_url)) +
-                          encodeURIComponent(my_char) +
-                          encodeURIComponent('mat_click_id=') +
+                          encodeURIComponent(encodeURIComponent(my_char)) +
+                          encodeURIComponent(encodeURIComponent('mat_click_id=')) +
                           '{click_id}';
         console.log("encoded_destination_url: " + encoded_destination_url);
 
