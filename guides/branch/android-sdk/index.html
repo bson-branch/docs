@@ -273,6 +273,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sdk_1" title="안드로이드 SDK 정보" class="md-nav__link">
+    안드로이드 SDK 정보
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" title="샘플 코드 관련 주의사항" class="md-nav__link">
     샘플 코드 관련 주의사항
   </a>
@@ -295,13 +302,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#branch-sdk" title="Branch 안드로이드 SDK 관련 정보" class="md-nav__link">
-    Branch 안드로이드 SDK 관련 정보
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_5" title="브랜치 라이브러리 임포트/설치" class="md-nav__link">
     브랜치 라이브러리 임포트/설치
   </a>
@@ -316,7 +316,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#sdk_1" title="브랜치 SDK 초기화" class="md-nav__link">
+  <a href="#sdk_2" title="브랜치 SDK 초기화" class="md-nav__link">
     브랜치 SDK 초기화
   </a>
   
@@ -494,6 +494,15 @@
 <ul>
 <li><a href="https://docs.branch.io/apps/android/">영문</a>, <a href="https://bson-branch.github.io/docs/pages/apps/android/">국문</a></li>
 </ul>
+<h2 id="sdk_1">안드로이드 SDK 정보<a class="headerlink" href="#sdk_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>사이즈는 대략 200KB 입니다.</li>
+<li>버전 3.0부터는 안드로이드 API LEVEL 16 (Android 4.1, 4.1.1 JELLY_BEAN) 이상을 지원하고 있습니다.<ul>
+<li><a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels">Android API Level 정보</a></li>
+</ul>
+</li>
+<li>버전 3.0부터는 TLS1.2를 사용하여 통신하고 있습니다.</li>
+</ul>
 <h2 id="_2">샘플 코드 관련 주의사항<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>이곳의 샘플코드는 <a href="https://play.google.com/store/apps/details?id=com.bson.branchtesters">Branch Testers</a>에 사용된 코드이며 고객사의 이해를 돕기위해서 작성되었습니다.</li>
@@ -518,17 +527,6 @@
 </li>
 </ul>
 <p><img alt="image" src="../../img/android_linksettings_general.png" /></p>
-</li>
-<li>
-<h3 id="branch-sdk">Branch 안드로이드 SDK 관련 정보<a class="headerlink" href="#branch-sdk" title="Permanent link">&para;</a></h3>
-<ul>
-<li>SDK 사이즈는 대략 200KB 입니다.</li>
-<li>지원하는 최소 SDK LEVEL은 16 (Android 4.1, 4.1.1 JELLY_BEAN)입니다.<ul>
-<li><a href="https://developer.android.com/guide/topics/manifest/uses-sdk-element#ApiLevels">Android API Level 정보</a></li>
-</ul>
-</li>
-<li>버전 3.0부터는 TLS1.2를 사용하여 통신하고 있습니다.</li>
-</ul>
 </li>
 <li>
 <h3 id="_5">브랜치 라이브러리 임포트/설치<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -666,7 +664,7 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
 </div>
 </li>
 <li>
-<h3 id="sdk_1">브랜치 SDK 초기화<a class="headerlink" href="#sdk_1" title="Permanent link">&para;</a></h3>
+<h3 id="sdk_2">브랜치 SDK 초기화<a class="headerlink" href="#sdk_2" title="Permanent link">&para;</a></h3>
 <ul>
 <li><code>CustomApplicationClass.java</code>에 Branch를 추가합니다.</li>
 <li>
