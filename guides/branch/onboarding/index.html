@@ -443,7 +443,17 @@
 <ul>
 <li>마케팅팀과 개발팀이 함께 작업하셔야 하는 부분입니다.</li>
 <li>마케팅팀은 마케팅효율을 측정하기 위한 이벤트를 선정하셔야하며, 개발팀에서도 트래킹이 필요한 이벤트들을 추가 하실 수 있습니다.</li>
-<li><a href="../event-guide/">이벤트 연동 가이드(작업중)</a></li>
+<li>개인정보에 관련된 정보들은 가급적으로 설정하지 않으시는것을 권장드리며, 개인정보로 판단될수 있는 정보를 이벤트에 설정시 사내 개인정보 관련부서의 리뷰를 받으시는 것을 권장드립니다.</li>
+<li>개발팀에서는 이벤트연동시 내부의 사내에서 검토받은 정보들만 설정하시고, 요청되지 않은 정보를 개인적인 판단으로 설정하시는것은 지양해 주시기 바랍니다.</li>
+<li>
+<p>Branch에서 수집하는 정보들과 개인정보 정책은 아래의 문서를 참고 해주시기 바랍니다.</p>
+<ul>
+<li><a href="https://branch.io/policies/#privacy">Branch의 개인정보 정책</a></li>
+</ul>
+</li>
+<li>
+<p><a href="../event-guide/">이벤트 연동 가이드(작업중)</a></p>
+</li>
 </ul>
 <h3 id="branch-sdk">Branch SDK 연동<a class="headerlink" href="#branch-sdk" title="Permanent link">&para;</a></h3>
 <ul>
@@ -451,6 +461,20 @@
 <li><a href="../android-sdk/">Android SDK 연동 가이드 (드래프트)</a></li>
 <li><a href="../ios-sdk/">iOS SDK 연동 가이드 (작업중)</a></li>
 <li><a href="../web-sdk/">Web SDK 연동 가이드 (작업중)</a></li>
+</ul>
+</li>
+<li>GDPR및 개인정보 보호관련 법규를 준수 관련<ul>
+<li>Branch SDK에서는 특정 사용자를 트래킹하지 않기위한 방법이 제공됩니다.<ul>
+<li><strong>SDK의 <code>Do Not Track Mode</code>를 활성화 하시면 Branch 서버로 해당 사용자의 데이터가 전송되지 않습니다.</strong><ul>
+<li><a href="https://docs.branch.io/apps/android/#enable-disable-user-tracking">Android SDK</a>,
+  <a href="https://docs.branch.io/apps/ios/#enable-disable-user-tracking">iOS SDK</a>,
+  <a href="https://docs.branch.io/web/integrate/#enable-disable-user-tracking">Web SDK</a></li>
+</ul>
+</li>
+<li>사용자가 요청시 해당 사용자의 데이터의 수집을 앱단에서 중단시키기 위해서 SDK에서 <code>Do Not Track Mode</code> 기능을 앱단에서 활성화 해주시는 부분을 사용 하실 수 있습니다.</li>
+<li>단, <code>Do Not Track Mode</code>이 활성화된 기기의 경우에도 Branch Link는 동작합니다만 딥링킹의 정확도가 낮아질 수 있습니다.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
