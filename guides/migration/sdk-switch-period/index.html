@@ -299,16 +299,31 @@
 <ul>
 <li>기본적으로 TUNE SDK를 연동한 앱은 TUNE Link만 애트리뷰션이 가능하며,
   Branch SDK를 연동한 앱은 Branch Link만 애트리뷰션이 가능합니다.</li>
-<li>TUNE SDK에서 Branch SDK로 변경해서 릴리즈하는 시점에 모든 링크를 Branch Link로 변경하시게 될 것입니다.
-   하지만 일정기간 두 SDK를 사용하는 사용자들이 공존하는 기간이 발생하게 될것이며 신규인스톨의 경우에는 문제가 없지만 최신버전으로 앱업데이트를 하지 않은 기설치자들은 애트리뷰션이 불가합니다.</li>
-<li>이런 경우에 대응하기 위해서 최신버전의 Android/iOS SDK에서는 브랜치 링크 클릭시에도 애트리뷰션을 지원하는 기능이 추가된 TUNE SDK를 릴리즈 하였으며 해당 버전은 아래와 같습니다.<ul>
+<li>
+<p>TUNE SDK에서 Branch SDK로 변경해서 릴리즈하는 시점에 모든 링크를 Branch Link로 변경하시게 될 것입니다.
+   하지만 일정기간 두 SDK를 사용하는 사용자들이 공존하는 기간이 발생하게 될것이며 신규인스톨의 경우에는 문제가 없지만 최신버전으로 앱업데이트를 하지 않은 기설치자들은 애트리뷰션이 불가합니다.</p>
+</li>
+<li>
+<p><strong>Branch SDK로의 변경시 경우에 따른 대응방법</strong></p>
+<ul>
+<li><strong>인스톨 캠페인 위주로 집행하시는 경우</strong> : 신규인스돌의 경우에는 Branch SDK가 탑재된 버전으로 최초실행 하게되므로 현재 TUNE SDK에서 바로 Branch SDK로 전환 하셔도 인스톨 애트리뷰션에 문제가 없습니다.</li>
+<li><strong>리인게이지먼트 캠페인의 볼륨이 큰 경우</strong>: 앱에 따라 다르겠지만 대부분의 앱사용자가 앱업데이트를 진행하기에는 대략 1~2주정도 소요될 것으로 예상합니다.<ul>
+<li><strong>1안</strong> : 1~2주 동안 다수의 사용자들이 Branch SDK 탑재 버전으로 업데이트되는것을 기다리면서 리인게이지먼트 캠페인의 집행을 비중을 줄이는 방법.</li>
+<li><strong>2안</strong> : 캠페인 볼륨을 줄이기 힘드신 경우 Branch SDK로의 변경에 앞서 최신버전의 TUNE SDK로의 업데이트를 먼저 진행하신후 다수의 사용자가 최신버전으로 업데이트 한 다음 Branch SDK탑재버전 릴리즈 진행합니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>리인게이지먼트 캠페인의 볼륨이 경우에 대응하기 위해서 최신버전의 Android/iOS SDK에서는 브랜치 링크 클릭시에도 애트리뷰션을 지원하는 기능이 추가된 TUNE SDK를 릴리즈 하였으며 해당 버전은 아래와 같습니다.</p>
+<ul>
 <li>TUNE Android SDK (Release History) : <a href="https://developers.tune.com/sdk/android-version-history/">6.0.3</a></li>
 <li>TUNE iOS SDK (Release History) : <a href="https://developers.tune.com/sdk/ios-sdk-version-history/">6.0.4</a></li>
 </ul>
 </li>
-<li>SDK를 변경하는 과도기 동안 최대한 애트리뷰션을 보장하시려면, 우선 최신 SDK로 업데이트한 앱을 먼저 릴리즈 하신 다음 Branch SDK릴리즈와 Branch Link로 변경을 동시에 진행하시는 것을 권장드립니다.<ul>
-<li>SDK 버전 4.x 또는 5.x버전의 경우 대부분의 경우 단순 라이브러리 업데이트로 진행이 가능합니다.</li>
-<li>최신 버전으로의 업데이트중 이슈만 문의사항이 있으실 경우 담당 Solutions Engineer에게 문의주시기 바랍니다.</li>
+<li>최신버전의 TUNE SDK로 업데이트시 고려사항<ul>
+<li>현재 TUNE SDK 버전 4.x 또는 5.x버전의 경우 대부분의 경우 단순 라이브러리 업데이트또는 최소한의 코드 변경으로 진행이 가능합니다.</li>
+<li>최신 버전으로의 업데이트중 이슈만 문의사항이 있으실 경우 담당 Solutions Engineer에게 문의주시면 앱별로 업데이트관련 가이드를 드리도록 하겠습니다.</li>
 </ul>
 </li>
 </ul>
