@@ -272,20 +272,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" title="마이그레이션 관련 유의사항" class="md-nav__link">
-    마이그레이션 관련 유의사항
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tune-link" title="TUNE Link 구조" class="md-nav__link">
-    TUNE Link 구조
-  </a>
-  
-</li>
-      
       
       
       
@@ -312,64 +298,7 @@
 <p>이 문서는 TUNE SDK에서 Branch SDK로 변경하시는 경우 기존 TUNE SDK에 의해서 기록된 로그와 Branch SDK에서 기론된 로그가 동일하게 저장될 수 있도록 설명드리는 가이드입니다.</p>
 <h2 id="_1">참고문서<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><a href="https://help.tune.com/marketing-console/effective-tune-links/">Effective TUNE Links</a> :
-    TUNE Link 생성 가이드 (광고주용)</li>
-<li><a href="https://developers.tune.com/measurement-docs/measuring-clicks/">Measuring Clicks</a> :
-    클릭 측정 가이드 (광고매체용)</li>
-</ul>
-<h2 id="_2">마이그레이션 관련 유의사항<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>TUNE Link는 계속 서비스가 유지되므로 기존에 사용하시고 계시던 Link들과 신규 생성하시는것 모두 동작합니다.</li>
-<li>브랜치 대쉬보드에서도 TUNE 대쉬보드와 거의 동일한 TUNE Link 생성 페이지가 3월 중으로 제공될 예정입니다.</li>
-<li>브랜치 대쉬보드에서는 TUNE 대쉬보드의 <code>PARTNERS - TUNE Links</code> 페이지에서 확인하실 수 있었던 저장했던 TUNE Link들의 기록을 보는 기능은 제공되지 않으며,
-   Branch 대쉬보드에서 신규 생성하신 TUNE Link에 대해서는 저장하는 기능은 지원되지 않습니다.</li>
-<li>Internal Publisher :<ul>
-<li>마이그레이션 시작 후: TMC 대쉬보드에서 생성하시면 Branch 시스템/대쉬보드로도 자동으로 반영 됩니다.</li>
-<li>마이그레이션 완료 이후 : Branch 대쉬보드내 생성 페이지 개발이 완료될 때 까지는 필요시에 별도로 요청해주시면 생성을 해드립니다. 3월중으로 해당 페이지가 개발될 예정입니다.</li>
-</ul>
-</li>
-<li><strong>Destination URL &amp; Deep Link URL</strong> :<ul>
-<li>기존에 이미 생성된 <code>Destination URL</code>과 <code>Deep Link URL</code>은 계속 사용이 가능하나 신규 생성 기능은 제공되지 않을 예정입니다.</li>
-<li>Campaign 페이지에서 생성 후 드랍다운 메뉴에서 미리 생성된 URL을 선택하는 방법을 사용하셨던 경우<ul>
-<li>이 경우 TUNE Link에 선택한 URL의 ID가 <code>destination_id_{ios|android}</code> &amp; <code>invoke_id_{ios|android}</code>에 설정됩니다.</li>
-<li><code>Destination URL</code>과 <code>딥링크 URL</code>를 TUNE Link에 직접 설정하는 방법으로 변경하셔야 합니다.<ul>
-<li>이는 <code>url_{ios|android}</code> 와 <code>invoke_url_{ios|android}</code> 에 URL인코딩 한것을 직접 설정하는 방식입니다.</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>관련된 자세한 사항은 현재문서 아래에 좀더 자세히 설명되어 있습니다.</li>
-</ul>
-</li>
-<li><strong>웹앱 (Web App)</strong><ul>
-<li>TUNE Link 생성시 PC에서 클릭시 단순 랜딩시킬 목적으로 생성하셨던 웹앱은 마이그레이션 되지 않습니다.</li>
-<li>기존에 데스크탑에서 클릭시 특정 웹페이지로 (단순) 랜딩을 시키기 위한 목적의 Web App을 생성하고 TUNE Link에서 해당앱을 선택했던 경우에는 TUNE Link에 <code>site_id_web=123456</code> 과 같은 형식으로 파라메터가 추가되었습니다.
-이와 같은 경우 웹앱은 마이그레이션이 되지 않기 때문에 <code>url_web</code> 파라메터에 해당 URL을 URL인코딩한다음 TUNE Link에 직접 설정하시면됩니다.</li>
-</ul>
-</li>
-</ul>
-<h2 id="tune-link">TUNE Link 구조<a class="headerlink" href="#tune-link" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>https://az1-4.tlnk.io/serve?
-        action=click&amp;
-        site_id_android=142773&amp;site_id_ios=142753&amp;site_id_web=142774
-        campaign_id_android=442580&amp;campaign_id_ios=442555&amp;campaign_id_web=442581&amp;
-        publisher_id=366935&amp;
-        destination_id_android=536339&amp;destination_id_ios=536281&amp;destination_id_web=536340
-</pre></div>
-
-<ul>
-<li><strong>베이스 도메인 URL</strong><ul>
-<li>TUNE 대쉬보드에서 TUNE Link 생성시 아래와 같은 형식으로 생성됩니다.
-    <div class="codehilite"><pre><span></span>https://az1-4.tlnk.io/serve
-</pre></div><ul>
-<li><code>tlnk.io</code>는 TUNE Link용 도메인이며, <code>az1-4</code>와 같은 서브도메인은 앱별로 고유하게 생성된 문자열이 사용됩니다.</li>
-</ul>
-</li>
-<li>광고매체에서 클릭측정을 위한 URL 생성시 아래와 같은 형식으로 베이스 도메인 URL을 생성할 수 있습니다.
-    ```
-    <a href="https://YOUR_PUBLISHER_ID.api-01.com/serve">https://YOUR_PUBLISHER_ID.api-01.com/serve</a></li>
-</ul>
-</li>
+<li><a href="https://docs.branch.io/apps/v2event/">V2 Event</a> : V2 이벤트</li>
 </ul>
                 
                   
