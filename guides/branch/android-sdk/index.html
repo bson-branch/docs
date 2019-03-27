@@ -719,12 +719,13 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
 <span class="hll">        <span class="c1">// Branch logging for debugging</span>
 </span><span class="hll">        <span class="c1">// 디버깅목적으로 SDK 내부의 로그를 확인할 필요가 있을 때만 선택적으로 활성화 합니다.</span>
 </span><span class="hll">        <span class="c1">// 릴리즈 빌드에서는 꼭 비활성화 하시기 바랍니다.</span>
-</span><span class="hll">        <span class="n">Branch</span><span class="o">.</span><span class="na">enableLogging</span><span class="o">();</span>
-</span>
-<span class="hll">        <span class="c1">// Branch object initialization</span>
+</span><span class="hll">        <span class="c1">//Branch.enableLogging()는 deprecated 되었습니다.</span>
+</span>        <span class="n">Branch</span><span class="o">.</span><span class="na">enableDebugMode</span><span class="o">();</span>
+<span class="hll">
+</span><span class="hll">        <span class="c1">// Branch object initialization</span>
 </span><span class="hll">        <span class="c1">// 브랜치 객체를 초기화 합니다.</span>
-</span><span class="hll">        <span class="n">Branch</span><span class="o">.</span><span class="na">getAutoInstance</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
-</span>    <span class="o">}</span>
+</span>        <span class="n">Branch</span><span class="o">.</span><span class="na">getAutoInstance</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
 <span class="o">}</span>
 </pre></div></p>
 </li>
@@ -1487,7 +1488,7 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
 <ul>
 <li>
 <p><em>Java</em></p>
-<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">enableLogging</span><span class="o">();</span>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">enableDebugMode</span><span class="o">();</span>
 </pre></div>
 
 </li>
