@@ -1125,8 +1125,8 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
                                     <span class="k">if</span> <span class="o">(</span><span class="n">DEEP_LINK_ONLY_FOR_STRONG_MATCHING</span> <span class="o">&amp;&amp;</span> <span class="n">plusClickedBranchLink</span> <span class="o">==</span> <span class="kc">true</span><span class="o">)</span> <span class="o">{</span>
                                         <span class="c1">// 이 샘플앱에서는 정확한 매칭일 경우만 딥링킹을 수행하도록 하였습니다.</span>
                                         <span class="c1">// 앱별 필요에 따라서 추측성 매칭의 경우에도 딥링킹을 수행하실수도 있습니다.</span>
-                                        <span class="c1">// 딥링크 처리 메쏘드를 처리합니다.</span>
-                                        <span class="c1">// 딥링크의 패쓰이하만 리턴되기 때문에 앞부분을 추가하셔서 딥링크를 만드셔야 합니다.</span>
+                                        <span class="c1">// 딥링크 처리 메쏘드에서 처리합니다.</span>
+                                        <span class="c1">// 딥링크의 Path 이하만 리턴되기 때문에 앞부분을 추가하셔서 딥링크를 만드셔야 합니다.</span>
                                         <span class="n">handleDeeplink</span><span class="o">(</span><span class="n">DEEP_LINK_SCHEME</span> <span class="o">+</span> <span class="n">dollorDeeplinkPath</span><span class="o">,</span> <span class="n">referringParams</span><span class="o">);</span>
                                     <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
                                         <span class="c1">// 이 샘플앱은 추측성 매칭의 경우에는 딥링킹을 수행하지 않습니다.</span>
