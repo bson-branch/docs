@@ -266,64 +266,93 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="참고문서" class="md-nav__link">
-    참고문서
+  <a href="#api-sdk" title="마이그레이션 관련 API필드와 SDK메소드 맵핑문서 별도 제공 공지" class="md-nav__link">
+    마이그레이션 관련 API필드와 SDK메소드 맵핑문서 별도 제공 공지
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="참고문서" class="md-nav__link">
-    참고문서
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#registration" title="registration" class="md-nav__link">
-    registration
+  <a href="#_1" title="참고 문서" class="md-nav__link">
+    참고 문서
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#login" title="login" class="md-nav__link">
-    login
+      
+        <li class="md-nav__item">
+  <a href="#branch-event-category" title="Branch의 이벤트분류(Event Category) 및 이벤트이름" class="md-nav__link">
+    Branch의 이벤트분류(Event Category) 및 이벤트이름
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#content_view" title="content_view" class="md-nav__link">
-    content_view
+      
+        <li class="md-nav__item">
+  <a href="#tune" title="TUNE 이벤트타입 처리에 따른 주의사항" class="md-nav__link">
+    TUNE 이벤트타입 처리에 따른 주의사항
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#add_to_cart" title="add_to_cart" class="md-nav__link">
-    add_to_cart
+      
+        <li class="md-nav__item">
+  <a href="#tune-branch" title="TUNE의 이벤트아이템과 Branch의 컨텐츠 아이템" class="md-nav__link">
+    TUNE의 이벤트아이템과 Branch의 컨텐츠 아이템
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#purchase" title="purchase" class="md-nav__link">
-    purchase
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="구현 샘플" class="md-nav__link">
+    구현 샘플
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#search" title="search" class="md-nav__link">
-    search
+      
+        <li class="md-nav__item">
+  <a href="#registration" title="Registration : 회원가입 완료" class="md-nav__link">
+    Registration : 회원가입 완료
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#login" title="Login : 로그인 완료" class="md-nav__link">
+    Login : 로그인 완료
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#purchase" title="Purchase : 구매완료" class="md-nav__link">
+    Purchase : 구매완료
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#content-view" title="Content View : 컨텐츠/상품상세 보기" class="md-nav__link">
+    Content View : 컨텐츠/상품상세 보기
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-to-cart" title="Add To Cart" class="md-nav__link">
+    Add To Cart
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search" title="Search : 검색" class="md-nav__link">
+    Search : 검색
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-id" title="User ID 설정" class="md-nav__link">
+    User ID 설정
+  </a>
   
 </li>
       
@@ -351,147 +380,897 @@
 
 <hr />
 <p>이 문서는 TUNE SDK에서 Branch SDK로 변경하시는 경우 기존 TUNE SDK에 의해서 기록된 로그와 Branch SDK에서 기론된 로그가 동일하게 저장될 수 있도록 설명드리는 가이드입니다.</p>
-<h2 id="_1">참고문서<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="api-sdk">마이그레이션 관련 API필드와 SDK메소드 맵핑문서 별도 제공 공지<a class="headerlink" href="#api-sdk" title="Permanent link">&para;</a></h2>
+<ul>
+<li>TUNE Reporting API, Branch Custom Export API(TUNE과의 호환성을 위해 별도 구현된 API, <code>branch_redirect=3</code>), Branch Export API간의 필드 맵핑과 Branch/TUNE SDK간 메쏘드 맵핑문서는 별도로 bson@branch.io로 메일 주시면 전달드리겠습니다.</li>
+</ul>
+<h2 id="_1">참고 문서<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://docs.branch.io/apps/v2event/">V2 Event</a> : V2 이벤트</li>
+<li><a href="https://docs.branch.io/exports/event_ontology_data_schema/#event-ontology-data-schema">Event Ontology Data Schema</a> : Branch 이벤트 데이터 스키마</li>
 </ul>
-<h2 id="_2">참고문서<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<h3 id="registration">registration<a class="headerlink" href="#registration" title="Permanent link">&para;</a></h3>
+<h2 id="branch-event-category">Branch의 이벤트분류(Event Category) 및 이벤트이름<a class="headerlink" href="#branch-event-category" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>회원가입</p>
+<p>TUNE에서는 모든 (인스톨이후)이벤트가 하나의 데이터 소스인 Event Log에 포함 되었지만 Branch에서는 이벤트를 4가지로 분류하며 로그익스포트시에도 각각 익스포트 합니다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트 카테고리</th>
+<th align="center">EO 데이터소스</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">User lifecycle Event</td>
+<td align="center">eo_user_lifecycle_event</td>
+</tr>
+<tr>
+<td align="center">Content Event</td>
+<td align="center">eo_content_event</td>
+</tr>
+<tr>
+<td align="center">Commerce Event</td>
+<td align="center">eo_commerce_event</td>
+</tr>
+<tr>
+<td align="center">Custom Event</td>
+<td align="center">eo_cucstom_event</td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
-<p><em>TUNE</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p><strong>이벤트 네임</strong></p>
+<ul>
+<li>Branch에서는 Custom 이벤트 카테고리가 아닌 표준이벤트의 경우 이벤트 이름은 대문자로 설정됩니다. 아래의 표를 참고하세요.</li>
+<li>TUNE에서 마이그레이션 된앱의 경우  Branch Custom(TUNE호환) Export API이 아닌 Branch Export API로 익스포트시 이름이 대문자로 설정됩니다.<ul>
+<li>예) TUNE 이벤트 네임: <code>purchase</code>, Branch 이벤트 네임: <code>PURCHASE</code></li>
+</ul>
+</li>
+<li>Branch 이벤트 로그에서 이벤트의 이름은 <code>name</code> 필드에 설정됩니다.</li>
+<li>Branch 이벤트 로그에서 TUNE에서 마이그레이션된 이벤트의 이름은 <code>customer_event_alias</code> 필드에 별도로 설정됩니다.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">TUNE에서 마이그레이션 된 앱인 경우, TUNE호환성을 위해 제공되는 추가필드들을 익스포트하는 방법</p>
+<p>Branch Export API에서 로그 익스포트시 기본설정상 <code>customer_event_alias</code>과 같은 TUNE호환 필드들은 익스포트 되지않습니다.
+별도로 서포트팀을 통해서 요청을 주시면 해당 필드들이 추가로 익스포트가 가능합니다.</p>
+</div>
+</li>
+<li>
+<p><strong>User lifecycle Event</strong> : 사용자가 앱을 사용하면서 어떤 단계별로 발생되는 이벤트</p>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">TUNE 이벤트네임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">COMPLETE_REGISTRATION</td>
+<td align="center">registration</td>
+</tr>
+<tr>
+<td align="center">LOGIN</td>
+<td align="center">login</td>
+</tr>
+<tr>
+<td align="center">INVITE</td>
+<td align="center">invite</td>
+</tr>
+<tr>
+<td align="center">COMPLETE_TUTORIAL</td>
+<td align="center">tutorial_complete</td>
+</tr>
+<tr>
+<td align="center">ACHIEVE_LEVEL</td>
+<td align="center">level_achieved</td>
+</tr>
+<tr>
+<td align="center">UNLOCK_ACHIEVEMENT</td>
+<td align="center">achievement_unlocked</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Content Event</strong> : 앱내 컨텐츠에 관련된 이벤트</p>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">TUNE 이벤트네임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">VIEW_ITEM</td>
+<td align="center">content_view</td>
+</tr>
+<tr>
+<td align="center">SEARCH</td>
+<td align="center">search</td>
+</tr>
+<tr>
+<td align="center">RATE</td>
+<td align="center">rated</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Commerce Event</strong> : 상품 구매에 관련된 이벤트</p>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">TUNE 이벤트네임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ADD_TO_CART</td>
+<td align="center">add_to_cart</td>
+</tr>
+<tr>
+<td align="center">ADD_TO_WISHLIST</td>
+<td align="center">add_to_wishlist</td>
+</tr>
+<tr>
+<td align="center">VIEW_CART</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">INITIATE_PURCHASE</td>
+<td align="center">checkout_initiated</td>
+</tr>
+<tr>
+<td align="center">ADD_PAYMENT_INFO</td>
+<td align="center">added_payment_info</td>
+</tr>
+<tr>
+<td align="center">PURCHASE</td>
+<td align="center">purchase</td>
+</tr>
+<tr>
+<td align="center">SPEND_CREDITS</td>
+<td align="center">spent_credits</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Custom Event</strong> : 위의 표준이벤트에 속하지 않는 이벤트들</p>
+</li>
+</ul>
+<h2 id="tune">TUNE 이벤트타입 처리에 따른 주의사항<a class="headerlink" href="#tune" title="Permanent link">&para;</a></h2>
+<ul>
+<li>TUNE에서는 이벤트별로 이벤트타입(Event Type)을 대쉬보드 상에서 설정할 수 있었습니다. 이는 Branch의 이벤트분류(Event Category)와 유사합니다만 일치하지는 않습니다.</li>
+<li><strong>마이그레이션 과정에서 일부 TUNE이벤트의 경우</strong> TUNE 이벤트네임이 Branch의 이벤트네임 네임으로 사용되지 않고 <strong>TUNE 이벤트타입이 Branch 이벤트네임으로 사용될수 있습니다.</strong>
+  단, TUNE 이벤트네임은 Branch로그에서 <code>customer_event_alias</code>에 별도로 저장되므로 익스포트 가능합니다.</li>
+<li>
+<p>아래의 예를 참고 하시기 바랍니다.</p>
+<ul>
+<li><code>buy</code>이벤트는 이름은 <code>purchase</code>가 아니나 TUNE이벤트타입에 의해서 Branch의 구매이벤트로 기록됩니다.</li>
+<li><strong><code>logout</code>이벤트는 TUNE이벤트타입이 <code>login</code>이기 때문에 Branch의 'LOGIN'이벤트로 기록됩니다. 단, 원래이름은 <code>customer_event_alias</code> 필드로 알수 있습니다.</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">TUNE 이벤트네임</th>
+<th align="center">TUNE 이벤트타입</th>
+<th align="center">Branch 이벤트네임 <code>name</code></th>
+<th align="center">Branch <code>customer_event_alias</code></th>
+<th align="center">Branch 데이터소스</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">purchase</td>
+<td align="center">purchase</td>
+<td align="center">PURCHASE</td>
+<td align="center">purchase</td>
+<td align="center">eo_commerce_event</td>
+</tr>
+<tr>
+<td align="center"><strong>buy</strong></td>
+<td align="center"><strong>purchase</strong></td>
+<td align="center"><strong>PURCHASE</strong></td>
+<td align="center">buy</td>
+<td align="center"><strong>eo_commerce_event</strong></td>
+</tr>
+<tr>
+<td align="center">login</td>
+<td align="center">login</td>
+<td align="center">LOGIN</td>
+<td align="center">login</td>
+<td align="center">eo_user_lifecycle_event</td>
+</tr>
+<tr>
+<td align="center"><strong>logout</strong></td>
+<td align="center"><strong>login</strong></td>
+<td align="center"><strong>LOGIN</strong></td>
+<td align="center">logout</td>
+<td align="center"><strong>eo_user_lifecycle_event</strong></td>
+</tr>
+<tr>
+<td align="center"><strong>auto-login</strong></td>
+<td align="center"><strong>login</strong></td>
+<td align="center"><strong>LOGIN</strong></td>
+<td align="center">auto-login</td>
+<td align="center"><strong>eo_user_lifecycle_event</strong></td>
+</tr>
+<tr>
+<td align="center">logout</td>
+<td align="center"><strong>generic</strong></td>
+<td align="center"><strong>logout</strong></td>
+<td align="center">logout</td>
+<td align="center"><strong>eo_custom_event</strong></td>
+</tr>
+<tr>
+<td align="center">auto-login</td>
+<td align="center"><strong>generic</strong></td>
+<td align="center"><strong>auto-login</strong></td>
+<td align="center">auto-login</td>
+<td align="center"><strong>eo_custom_event</strong></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h2 id="tune-branch">TUNE의 이벤트아이템과 Branch의 컨텐츠 아이템<a class="headerlink" href="#tune-branch" title="Permanent link">&para;</a></h2>
+<ul>
+<li>TUNE의 이벤트아이템은 Branch의 컨텐츠아이템으로 맵핑됩니다.</li>
+<li>TUNE에서는 이벤트아이템은 별도의 리포트였으나 Branch에서는 이벤트로그내의 <code>content_items[]</code>에 포함되어있습니다.</li>
+<li>Branch에서는 디폴트로 <code>content_items[]</code>은 비어서 익스포트 되며, 컨텐츠아이템을 포함해서 익스포트 하기위해서는 서포트팀을 통해서 별도 요청을 해주셔야 합니다.</li>
+</ul>
+<h2 id="_2">구현 샘플<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이벤트 연동시 아래의 샘플을 참고해서 구현 하시기 바랍니다.</li>
+</ul>
+<h2 id="registration">Registration : 회원가입 완료<a class="headerlink" href="#registration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이벤트 전송시점<ul>
+<li>앱설치후 1회에 한대 사용자가 회원가입을 완료한 시점에 전송하세요.</li>
+</ul>
+</li>
+<li>이벤트에 포함되는 정보<ul>
+<li>없음.</li>
+</ul>
+</li>
+<li>
+<p>참고사항</p>
+<ul>
+<li>TUNE에서의 이벤트네임은 <code>registration</code> 이지만 Branch에서는 이벤트네임이 <code>COMPLETE_REGISTRATION</code>으로 설정됩니다.</li>
+<li>Branch로그에서도 <code>customer_event_alias</code>를 통해서 TUNE SDK에서 실제로 설정한 이벤트네임을 확인할 수 있습니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>TUNE SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="n">Tune</span> <span class="n">tune</span> <span class="o">=</span> <span class="n">Tune</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">TuneEvent</span> <span class="n">event</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEvent</span><span class="o">(</span><span class="n">TuneEvent</span><span class="o">.</span><span class="na">REGISTRATION</span><span class="o">);</span>
+<span class="n">tune</span><span class="o">.</span><span class="na">measureEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
 </pre></div>
 
 </li>
 <li>
-<p><em>Branch</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="n">TuneEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">TuneEvent</span> <span class="nl">eventWithName</span><span class="p">:</span><span class="n">TUNE_EVENT_REGISTRATION</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Tune</span> <span class="nl">measureEvent</span><span class="p">:</span><span class="n">event</span><span class="p">];</span>
 </pre></div>
 
 </li>
 </ul>
-<h3 id="login">login<a class="headerlink" href="#login" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>로그인</p>
 </li>
 <li>
-<p><em>TUNE</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p><strong>Branch SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="k">new</span> <span class="n">BranchEvent</span><span class="o">(</span><span class="n">BRANCH_STANDARD_EVENT</span><span class="o">.</span><span class="na">COMPLETE_REGISTRATION</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
 </pre></div>
 
 </li>
 <li>
-<p><em>Branch</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="n">BranchStandardEventCompleteRegistration</span><span class="p">];</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
 </pre></div>
 
 </li>
 </ul>
-<h3 id="content_view">content_view<a class="headerlink" href="#content_view" title="Permanent link">&para;</a></h3>
+</li>
+</ul>
+<h2 id="login">Login : 로그인 완료<a class="headerlink" href="#login" title="Permanent link">&para;</a></h2>
 <ul>
-<li>
-<p>상품보기</p>
+<li>이벤트 전송 시점.<ul>
+<li>사용자가 로그인에 성공할 경우 전송하세요.</li>
+</ul>
+</li>
+<li>이벤트에 포함되는 정보<ul>
+<li>없음.</li>
+<li>필요에 따라 로그인 성공시 해당 사용자의 유저아이디 또는 해슁된 유저아이디를 설정할 수도 있으며, 유저 아이디 설정은 이 문서 하단을 참고해 주시기 바랍니다.</li>
+</ul>
 </li>
 <li>
-<p><em>TUNE</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p>참고사항</p>
+<ul>
+<li>TUNE에서의 이벤트네임은 <code>login</code> 이지만 Branch에서는 이벤트네임이 <code>LOGIN</code>으로 설정됩니다.</li>
+<li>Branch로그에서도 <code>customer_event_alias</code>를 통해서 TUNE SDK에서 실제로 설정한 이벤트네임을 확인할 수 있습니다.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">TUNE에서 자동로그인, 로그아웃 이벤트의 이벤트 타입을 <code>login</code>으로 설정한 경우</p>
+<p>Branch Export API의 로그에서 <code>name</code>이 이벤트 타입으로 인해 <code>LOGIN</code>으로 설정됩니다.
+하지만 <code>customer_event_alias</code>필드에서 TUNE에서 사용한 실제 이벤트이름이 설정되므로 이를 사용해서 TUNE에서 설정한 이름을 확인할 수 있습니다.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">자동로그인(<code>auto-login</code>), 로그아웃(<code>logout</code>) 이벤트 트래킹</p>
+<p>표준 이벤트인 <code>LOGIN</code>이벤트는 User Lifecycle로 분류되지만 다른 이벤트들은 Custom 카테고리로 분류됩니다.
+예를들어 비표준이벤트인 <code>logout</code>의 경우 iOS에서는 <code>[BranchEvent customEventWithName:@"logout"]</code>라는 별도 메쏘드를 사용하세요.</p>
+</div>
+</li>
+<li>
+<p><strong>TUNE SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="n">Tune</span> <span class="n">tune</span> <span class="o">=</span> <span class="n">Tune</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">TuneEvent</span> <span class="n">event</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEvent</span><span class="o">(</span><span class="n">TuneEvent</span><span class="o">.</span><span class="na">LOGIN</span><span class="o">);</span>
+<span class="n">tune</span><span class="o">.</span><span class="na">measureEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
 </pre></div>
 
 </li>
 <li>
-<p><em>Branch</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="n">TuneEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">TuneEvent</span> <span class="nl">eventWithName</span><span class="p">:</span><span class="n">TUNE_EVENT_LOGIN</span><span class="p">];</span>
+<span class="p">[</span><span class="n">Tune</span> <span class="nl">measureEvent</span><span class="p">:</span><span class="n">event</span><span class="p">];</span>
 </pre></div>
 
 </li>
 </ul>
-<h3 id="add_to_cart">add_to_cart<a class="headerlink" href="#add_to_cart" title="Permanent link">&para;</a></h3>
-<ul>
-<li>
-<p>카트넣기</p>
 </li>
 <li>
-<p><em>TUNE</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p><strong>Branch SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="k">new</span> <span class="n">BranchEvent</span><span class="o">(</span><span class="n">BRANCH_STANDARD_EVENT</span><span class="o">.</span><span class="na">LOGIN</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
 </pre></div>
 
 </li>
 <li>
-<p><em>Branch</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="s">@&quot;LOGIN&quot;</span><span class="p">];</span> <span class="c1">// No BranchStandardEventLogin 상수가 아직 추가되지 않았습니다. 임시로 문자열로 설정합니다.</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
 </pre></div>
 
 </li>
 </ul>
-<h3 id="purchase">purchase<a class="headerlink" href="#purchase" title="Permanent link">&para;</a></h3>
-<ul>
-<li>구매</li>
-<li>
-<p><em>TUNE</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
-</pre></div>
-
 </li>
-<li>
-<p><em>Branch</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
-</pre></div>
-
-<h3 id="search">search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h3>
-<ul>
-<li>검색</li>
-<li><em>TUNE</em></li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<h2 id="purchase">Purchase : 구매완료<a class="headerlink" href="#purchase" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이벤트 전송시점<ul>
+<li>구매가 완료된 시점에 전송해주세요.</li>
+</ul>
+</li>
+<li>이벤트에 포함되는 정보<ul>
+<li>Event:<ul>
+<li>revenue : 매출액을 설정하세요.</li>
+<li>currency code : 통화코드, . <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217 3-character 대문자</a></li>
+<li>advertiser ref id : 해당 구매에 고유하게 할당된 오더/영수증/구매 ID를 설정하세요.</li>
+<li>(참고 예) attribute1 : 구매시 적용된 쿠폰번호</li>
+</ul>
+</li>
+<li>Event Item :<ul>
+<li>name : 제품 아이디/코드</li>
+<li>unit price : 해당 아이템의 단가</li>
+<li>quantity : 해당 아이템 갯수</li>
+<li>revenue : 설정하지 않으면 unit price * quantity로 자동 계산</li>
+<li><em>(참고 예) attribute1 : 제품의 대분류 아이디</em></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>참고사항<ul>
+<li>TUNE에서의 이벤트네임은 <code>purchase</code> 이지만 Branch에서는 이벤트네임이 <code>PURCHASE</code>로 설정됩니다.</li>
+<li>Branch로그에서도 <code>customer_event_alias</code>를 통해서 TUNE SDK에서 실제로 설정한 이벤트네임을 확인할 수 있습니다.</li>
+</ul>
+</li>
+<li>
+<p>주의사항</p>
+<ul>
+<li>TUNE에서는 이벤트에만 통화코드를 설정했지만, Branch에서는 이벤트와 BranchUniversalObject에 모두 통화코드를 설정하세요.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">매출액 설정</p>
+<p>이벤트 아이템에 설정된 상품가격의 합산액이 이벤트의 매출액에 자동으로 계산되지 않으므로 이벤트에도 별도로 매출액을 설정합니다.</p>
+</div>
+</li>
+<li>
+<p><strong>TUNE SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="n">Tune</span> <span class="n">tune</span> <span class="o">=</span> <span class="n">Tune</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">TuneItem</span><span class="o">&gt;</span> <span class="n">itemList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">TuneEventItem</span><span class="o">&gt;();</span>
+<span class="n">TuneEventItem</span> <span class="n">item1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEventItem</span><span class="o">(</span><span class="err">“</span><span class="n">ProductID1111</span><span class="err">”</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withQuantity</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withUnitPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withAttribute1</span><span class="o">(</span><span class="s">&quot;Snack&quot;</span><span class="o">);</span> <span class="c1">// sample code for attribute1</span>
+<span class="n">itemList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item1</span><span class="o">);</span>
+<span class="n">TuneEventItem</span> <span class="n">item2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEventItem</span><span class="o">(</span><span class="err">“</span><span class="n">ProductID2222</span><span class="err">”</span><span class="o">)</span>
+                              <span class="o">.</span><span class="na">withQuantity</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                              <span class="o">.</span><span class="na">withUnitPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">)</span>
+                              <span class="o">.</span><span class="na">withAttribute1</span><span class="o">(</span><span class="s">&quot;Fruit&quot;</span><span class="o">);</span> <span class="c1">// sample code for attribute1</span>
+<span class="n">itemList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item2</span><span class="o">);</span>
+
+<span class="n">TuneEvent</span> <span class="n">event</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEvent</span><span class="o">(</span><span class="n">TuneEvent</span><span class="o">.</span><span class="na">PURCHASE</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withEventItems</span><span class="o">(</span><span class="n">itemList</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withRevenue</span><span class="o">(</span><span class="mf">3000.0</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withCurrencyCode</span><span class="o">(</span><span class="err">“</span><span class="n">KRW</span><span class="err">”</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withAdvertiserRefId</span><span class="o">(</span><span class="err">“</span><span class="n">OrderID_1234</span><span class="o">-</span><span class="n">ABCD</span><span class="err">”</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withAttribute1</span><span class="o">(</span><span class="s">&quot;Coupon0001&quot;</span><span class="o">);</span> <span class="c1">// sample code for attribute1</span>
+<span class="n">tune</span><span class="o">.</span><span class="na">measureEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
 </pre></div>
 
 </li>
 <li>
-<p><em>Branch</em></p>
-<div class="codehilite"><pre><span></span><span class="nd">@Override</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">onNewIntent</span><span class="o">(</span><span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span> <span class="o">{</span>
-  <span class="k">this</span><span class="o">.</span><span class="na">setIntent</span><span class="o">(</span><span class="n">intent</span><span class="o">);</span>
-<span class="o">}</span>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="bp">NSMutableArray</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+<span class="n">TuneEventItem</span> <span class="n">item1</span> <span class="o">=</span>
+    <span class="p">[</span><span class="n">TuneEventItem</span> <span class="nl">eventItemWithName</span><span class="p">:@</span><span class="err">“</span><span class="n">ProductID1111</span><span class="err">”</span> <span class="nl">unitPrice</span><span class="p">:</span><span class="mf">1000.0</span> <span class="nl">quantity</span><span class="p">:</span><span class="mi">2</span><span class="p">];</span>
+<span class="n">item1</span><span class="p">.</span><span class="n">attribute1</span> <span class="o">=</span> <span class="s">@&quot;Snack&quot;</span><span class="p">;</span> <span class="c1">// sample code for attribute1</span>
+<span class="p">[</span><span class="n">items</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">item1</span><span class="p">];</span>
+<span class="n">TuneEventItem</span> <span class="n">item2</span> <span class="o">=</span>
+    <span class="p">[</span><span class="n">TuneEventItem</span> <span class="nl">eventItemWithName</span><span class="p">:@</span><span class="err">“</span><span class="n">ProductID2222</span><span class="err">”</span> <span class="nl">unitPrice</span><span class="p">:</span><span class="mf">1000.0</span> <span class="nl">quantity</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">item2</span><span class="p">.</span><span class="n">attribute1</span> <span class="o">=</span> <span class="s">@&quot;Fruit&quot;</span><span class="p">;</span>  <span class="c1">// sample code for attribute1</span>
+<span class="p">[</span><span class="n">items</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">item2</span><span class="p">];</span>
+
+<span class="n">TuneEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">TuneEvent</span> <span class="nl">eventWithName</span><span class="p">:</span><span class="n">TUNE_EVENT_PURCHASE</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventItems</span> <span class="o">=</span> <span class="n">items</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">revenue</span> <span class="o">=</span> <span class="mf">50.0</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currencyCode</span> <span class="o">=</span> <span class="p">@</span><span class="err">“</span><span class="n">USD</span><span class="err">”</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">refId</span> <span class="o">=</span> <span class="p">@</span><span class="err">“</span><span class="n">OrderID_1234</span><span class="o">-</span><span class="n">ABCD</span><span class="err">”</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">attribute1</span> <span class="o">=</span> <span class="s">@&quot;Coupon00001&quot;</span><span class="p">;</span> <span class="c1">// sample code for attribute1</span>
+<span class="p">[</span><span class="n">Tune</span> <span class="nl">measureEvent</span><span class="p">:</span><span class="n">event</span><span class="p">];</span>
 </pre></div>
 
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Branch SDK</strong></p>
+<ul>
+<li>
+<p><em>Android</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="n">buo1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">setContentMetadata</span><span class="o">(</span>
+        <span class="k">new</span> <span class="n">ContentMetadata</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">setProductName</span><span class="o">(</span><span class="s">&quot;ProductID1111&quot;</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">setPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">,</span> <span class="n">CurrencyType</span><span class="o">.</span><span class="na">KRW</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">setQuantity</span><span class="o">(</span><span class="mf">2.0</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">addCustomMetadata</span><span class="o">(</span><span class="s">&quot;sub1&quot;</span><span class="o">,</span> <span class="s">&quot;Snack&quot;</span><span class="o">)</span>
+<span class="o">);</span>
+<span class="n">BranchUniversalObject</span> <span class="n">buo2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">setContentMetadata</span><span class="o">(</span>
+          <span class="k">new</span> <span class="n">ContentMetadata</span><span class="o">()</span>
+              <span class="o">.</span><span class="na">setProductName</span><span class="o">(</span><span class="s">&quot;ProductID2222&quot;</span><span class="o">)</span>
+              <span class="o">.</span><span class="na">setPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">,</span> <span class="n">CurrencyType</span><span class="o">.</span><span class="na">KRW</span><span class="o">)</span>
+              <span class="o">.</span><span class="na">setQuantity</span><span class="o">(</span><span class="mf">1.0</span><span class="o">)</span>
+              <span class="o">.</span><span class="na">addCustomMetadata</span><span class="o">(</span><span class="s">&quot;sub1&quot;</span><span class="o">,</span> <span class="s">&quot;Fruit&quot;</span><span class="o">)</span>
+<span class="o">);</span>
+
+<span class="k">new</span> <span class="n">BranchEvent</span><span class="o">(</span><span class="n">BRANCH_STANDARD_EVENT</span><span class="o">.</span><span class="na">PURCHASE</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setRevenue</span><span class="o">(</span><span class="mf">3000.0</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setCurrency</span><span class="o">(</span><span class="n">CurrencyType</span><span class="o">.</span><span class="na">KRW</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setTransactionID</span><span class="o">(</span><span class="s">&quot;OrderID_1234-ABCD&quot;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">addCustomDataProperty</span><span class="o">(</span><span class="s">&quot;attribute_sub1&quot;</span><span class="o">,</span> <span class="s">&quot;Coupon0001&quot;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">addContentItems</span><span class="o">(</span><span class="n">buo1</span><span class="o">,</span> <span class="n">buo2</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>iOS</em></p>
+<div class="codehilite"><pre><span></span><span class="c1">// Create a BranchUniversalObject with your content data:</span>
+<span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">buo1</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchUniversalObject</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">buo1</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productName</span>       <span class="o">=</span> <span class="s">@&quot;ProductID1111&quot;</span><span class="p">;</span>
+<span class="n">buo1</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">price</span>             <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;1000.0&quot;</span><span class="p">];</span>
+<span class="n">buo1</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">quantity</span>          <span class="o">=</span> <span class="mf">2.0</span><span class="p">;</span>
+<span class="n">buo1</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">currency</span>          <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+<span class="n">buo1</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">customMetadata</span> <span class="o">=</span> <span class="p">(</span><span class="bp">NSMutableDictionary</span><span class="o">*</span><span class="p">)</span> <span class="l">@{</span> <span class="s">@&quot;sub1&quot;</span><span class="o">:</span> <span class="s">@&quot;Snack&quot;</span> <span class="l">}</span><span class="p">;</span>
+
+<span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">buo2</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchUniversalObject</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">buo2</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productName</span>       <span class="o">=</span> <span class="s">@&quot;ProductID1111&quot;</span><span class="p">;</span>
+<span class="n">buo2</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">price</span>             <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;1000.0&quot;</span><span class="p">];</span>
+<span class="n">buo2</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">quantity</span>          <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">buo2</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">currency</span>          <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+<span class="n">buo2</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">customMetadata</span> <span class="o">=</span> <span class="p">(</span><span class="bp">NSMutableDictionary</span><span class="o">*</span><span class="p">)</span> <span class="l">@{</span> <span class="s">@&quot;sub1&quot;</span><span class="o">:</span> <span class="s">@&quot;Fruid&quot;</span> <span class="l">}</span><span class="p">;</span>
+
+<span class="c1">// Create an event and add the BranchUniversalObject to it.</span>
+<span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span>     <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="n">BranchStandardEventPurchase</span><span class="p">];</span>
+
+<span class="c1">// Add the BranchUniversalObjects with the content:</span>
+<span class="n">event</span><span class="p">.</span><span class="n">contentItems</span>     <span class="o">=</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="l">@[</span> <span class="n">buo1</span><span class="p">,</span> <span class="n">buo2</span> <span class="l">]</span><span class="p">;</span>
+<span class="c1">// Add relevant event data:</span>
+<span class="n">event</span><span class="p">.</span><span class="n">transactionID</span>    <span class="o">=</span> <span class="s">@&quot;OrderID_1234-ABCD&quot;</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">revenue</span>          <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;3000.0&quot;</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currency</span>         <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">customData</span>       <span class="o">=</span> <span class="p">(</span><span class="bp">NSMutableDictionary</span><span class="o">*</span><span class="p">)</span> <span class="l">@{</span> <span class="s">@&quot;attribute_sub1&quot;</span><span class="o">:</span> <span class="s">@&quot;Coupon0001&quot;</span> <span class="l">}</span><span class="p">;</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="content-view">Content View : 컨텐츠/상품상세 보기<a class="headerlink" href="#content-view" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이벤트 전송시점<ul>
+<li>사용자가 제품의 상세페이지를 확인할 경우 전송하세요.</li>
+</ul>
+</li>
+<li>이벤트에 포함되는 정보<ul>
+<li>이벤트<ul>
+<li>통화코드</li>
+</ul>
+</li>
+<li>이벤트아이템<ul>
+<li>상품 아이디/코드</li>
+<li>갯수</li>
+<li>단가</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>참고사항</p>
+<ul>
+<li>TUNE에서의 이벤트네임은 <code>countent_view</code> 이지만 Branch에서는 이벤트네임이 <code>VIEW_ITEM</code>으로 설정됩니다.</li>
+<li>Branch로그에서도 <code>customer_event_alias</code>를 통해서 TUNE SDK에서 실제로 설정한 이벤트네임을 확인할 수 있습니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>TUNE SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="n">Tune</span> <span class="n">tune</span> <span class="o">=</span> <span class="n">Tune</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">TuneItem</span><span class="o">&gt;</span> <span class="n">itemList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">TuneEventItem</span><span class="o">&gt;();</span>
+<span class="n">TuneEventItem</span> <span class="n">item1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEventItem</span><span class="o">(</span><span class="err">“</span><span class="n">ProductID1111</span><span class="err">”</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withQuantity</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withUnitPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">);</span>
+<span class="n">itemList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item1</span><span class="o">);</span>
+
+<span class="n">TuneEvent</span> <span class="n">event</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEvent</span><span class="o">(</span><span class="n">TuneEvent</span><span class="o">.</span><span class="na">CONTENT_VIEW</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withEventItems</span><span class="o">(</span><span class="n">itemList</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withCurrencyCode</span><span class="o">(</span><span class="err">“</span><span class="n">KRW</span><span class="err">”</span><span class="o">);</span>
+<span class="n">tune</span><span class="o">.</span><span class="na">measureEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="bp">NSMutableArray</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+<span class="n">TuneEventItem</span> <span class="n">item1</span> <span class="o">=</span>
+    <span class="p">[</span><span class="n">TuneEventItem</span> <span class="nl">eventItemWithName</span><span class="p">:@</span><span class="err">“</span><span class="n">ProductID1111</span><span class="err">”</span> <span class="nl">unitPrice</span><span class="p">:</span><span class="mf">1000.0</span> <span class="nl">quantity</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">[</span><span class="n">items</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">item1</span><span class="p">];</span>
+
+<span class="n">TuneEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">TuneEvent</span> <span class="nl">eventWithName</span><span class="p">:</span><span class="n">TUNE_EVENT_CONTENT_VIEW</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventItems</span> <span class="o">=</span> <span class="n">items</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currencyCode</span> <span class="o">=</span> <span class="p">@</span><span class="err">“</span><span class="n">USD</span><span class="err">”</span><span class="p">;</span>
+<span class="p">[</span><span class="n">Tune</span> <span class="nl">measureEvent</span><span class="p">:</span><span class="n">event</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Branch SDK</strong></p>
+<ul>
+<li>
+<p><em>Android</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="n">buo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">setContentMetadata</span><span class="o">(</span>
+        <span class="k">new</span> <span class="n">ContentMetadata</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">setProductName</span><span class="o">(</span><span class="s">&quot;ProductID1111&quot;</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">setPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">,</span> <span class="n">CurrencyType</span><span class="o">.</span><span class="na">KRW</span><span class="o">)</span>
+            <span class="o">.</span><span class="na">setQuantity</span><span class="o">(</span><span class="mf">1.0</span><span class="o">)</span>
+    <span class="o">);</span>
+
+<span class="k">new</span> <span class="n">BranchEvent</span><span class="o">(</span><span class="n">BRANCH_STANDARD_EVENT</span><span class="o">.</span><span class="na">VIEW_ITEM</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">addContentItems</span><span class="o">(</span><span class="n">buo</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>iOS</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">buo</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchUniversalObject</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productName</span>       <span class="o">=</span> <span class="s">@&quot;ProductID1111&quot;</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">price</span>             <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;1000.0&quot;</span><span class="p">];</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">quantity</span>          <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">currency</span>          <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+
+<span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span>     <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="n">BranchStandardEventViewItem</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">contentItems</span>     <span class="o">=</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="l">@[</span> <span class="n">buo</span> <span class="l">]</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currency</span>         <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="add-to-cart">Add To Cart<a class="headerlink" href="#add-to-cart" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이벤트 전송시점<ul>
+<li>사용자가 상품을 장바구니에 넣을 경우 전송하세요.</li>
+</ul>
+</li>
+<li>이벤트에 포함되는 정보<ul>
+<li>이벤트<ul>
+<li>통화코드</li>
+</ul>
+</li>
+<li>이벤트아이템<ul>
+<li>상품 아이디/코드</li>
+<li>갯수</li>
+<li>단가</li>
+<li>(참고 예) attribute1: 특정값 설정</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>참고사항</p>
+<ul>
+<li>TUNE에서의 이벤트네임은 <code>add_to_cart</code> 이지만 Branch에서는 이벤트네임이 <code>ADD_TO_CART</code>으로 설정됩니다.</li>
+<li>Branch로그에서도 <code>customer_event_alias</code>를 통해서 TUNE SDK에서 실제로 설정한 이벤트네임을 확인할 수 있습니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>TUNE SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="n">Tune</span> <span class="n">tune</span> <span class="o">=</span> <span class="n">Tune</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">TuneItem</span><span class="o">&gt;</span> <span class="n">itemList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">TuneEventItem</span><span class="o">&gt;();</span>
+<span class="n">TuneEventItem</span> <span class="n">item1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEventItem</span><span class="o">(</span><span class="err">“</span><span class="n">ProductID1111</span><span class="err">”</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withUnitPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withQuantity</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withAttribute1</span><span class="o">(</span><span class="s">&quot;abcd&quot;</span><span class="o">);</span>
+<span class="n">itemList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item1</span><span class="o">);</span>
+
+<span class="n">TuneEvent</span> <span class="n">event</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEvent</span><span class="o">(</span><span class="n">TuneEvent</span><span class="o">.</span><span class="na">ADD_TO_CART</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withEventItems</span><span class="o">(</span><span class="n">itemList</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withCurrencyCode</span><span class="o">(</span><span class="err">“</span><span class="n">KRW</span><span class="err">”</span><span class="o">);</span>
+<span class="n">tune</span><span class="o">.</span><span class="na">measureEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="bp">NSMutableArray</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+<span class="n">TuneEventItem</span> <span class="n">item1</span> <span class="o">=</span>
+    <span class="p">[</span><span class="n">TuneEventItem</span> <span class="nl">eventItemWithName</span><span class="p">:@</span><span class="err">“</span><span class="n">ProductID1111</span><span class="err">”</span> <span class="nl">unitPrice</span><span class="p">:</span><span class="mf">1000.0</span> <span class="nl">quantity</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="n">item1</span><span class="p">.</span><span class="n">attribute1</span> <span class="o">=</span> <span class="s">@&quot;abcd&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">items</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">item1</span><span class="p">];</span>
+
+<span class="n">TuneEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">TuneEvent</span> <span class="nl">eventWithName</span><span class="p">:</span><span class="n">TUNE_EVENT_ADD_TO_CART</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventItems</span> <span class="o">=</span> <span class="n">items</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currencyCode</span> <span class="o">=</span> <span class="p">@</span><span class="err">“</span><span class="n">KRW</span><span class="err">”</span><span class="p">;</span>
+<span class="p">[</span><span class="n">Tune</span> <span class="nl">measureEvent</span><span class="p">:</span><span class="n">event</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Branch SDK</strong></p>
+<ul>
+<li>
+<p><em>Android</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="n">buo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="o">()</span>
+        <span class="o">.</span><span class="na">setContentMetadata</span><span class="o">(</span>
+                <span class="k">new</span> <span class="n">ContentMetadata</span><span class="o">()</span>
+                        <span class="o">.</span><span class="na">setProductName</span><span class="o">(</span><span class="s">&quot;ProductID1111&quot;</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">setPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">,</span> <span class="n">CurrencyType</span><span class="o">.</span><span class="na">KRW</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">setQuantity</span><span class="o">(</span><span class="mf">1.0</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">addCustomMetadata</span><span class="o">(</span><span class="s">&quot;sub1&quot;</span><span class="o">,</span> <span class="s">&quot;abcd&quot;</span><span class="o">)</span>
+                        <span class="o">);</span>
+
+<span class="k">new</span> <span class="n">BranchEvent</span><span class="o">(</span><span class="n">BRANCH_STANDARD_EVENT</span><span class="o">.</span><span class="na">ADD_TO_CART</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">addContentItems</span><span class="o">(</span><span class="n">buo</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>iOS</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">buo</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchUniversalObject</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productName</span>       <span class="o">=</span> <span class="s">@&quot;ProductID1111&quot;</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">price</span>             <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;1000.0&quot;</span><span class="p">];</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">quantity</span>          <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">currency</span>          <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">customMetadata</span>    <span class="o">=</span> <span class="p">(</span><span class="bp">NSMutableDictionary</span><span class="o">*</span><span class="p">)</span> <span class="l">@{</span> <span class="s">@&quot;sub1&quot;</span><span class="o">:</span> <span class="s">@&quot;abcd&quot;</span> <span class="l">}</span><span class="p">;</span>
+
+<span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span>     <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="n">BranchStandardEventAddToCart</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">contentItems</span>     <span class="o">=</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="l">@[</span> <span class="n">buo</span> <span class="l">]</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currency</span>         <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="search">Search : 검색<a class="headerlink" href="#search" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이벤트 전송시점<ul>
+<li>사용자가 검색후 상품이 노출되었을때 노출상위 5개의 상품정보를 포함해서 전송하세요.</li>
+</ul>
+</li>
+<li>이벤트에 포함되는 정보<ul>
+<li>이벤트<ul>
+<li>통화코드</li>
+<li>search string</li>
+</ul>
+</li>
+<li>이벤트아이템<ul>
+<li>상품 아이디/코드</li>
+<li>갯수</li>
+<li>단가</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>참고사항</p>
+<ul>
+<li>TUNE에서의 이벤트네임은 <code>search</code> 이지만 Branch에서는 이벤트네임이 <code>SEARCH</code>로 설정됩니다.</li>
+</ul>
+</li>
+<li>
+<p><strong>TUNE SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="n">Tune</span> <span class="n">tune</span> <span class="o">=</span> <span class="n">Tune</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">TuneItem</span><span class="o">&gt;</span> <span class="n">itemList</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">TuneEventItem</span><span class="o">&gt;();</span>
+<span class="n">TuneEventItem</span> <span class="n">item1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEventItem</span><span class="o">(</span><span class="err">“</span><span class="n">Banana_ID1111</span><span class="err">”</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withQuantity</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+                            <span class="o">.</span><span class="na">withUnitPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">);</span>
+<span class="n">itemList</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">item1</span><span class="o">);</span>
+
+<span class="n">TuneEvent</span> <span class="n">event</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TuneEvent</span><span class="o">(</span><span class="n">TuneEvent</span><span class="o">.</span><span class="na">SEARCH</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withEventItems</span><span class="o">(</span><span class="n">itemList</span><span class="o">)</span>   <span class="c1">// Add top N search results</span>
+                        <span class="o">.</span><span class="na">withCurrencyCode</span><span class="o">(</span><span class="s">&quot;KRW&quot;</span><span class="o">)</span>
+                        <span class="o">.</span><span class="na">withSearchString</span><span class="o">(</span><span class="s">&quot;Fruit&quot;</span><span class="o">);</span> <span class="c1">// Optional</span>
+<span class="n">tune</span><span class="o">.</span><span class="na">measureEvent</span><span class="o">(</span><span class="n">event</span><span class="o">);</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="bp">NSMutableArray</span> <span class="n">items</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableArray</span> <span class="n">array</span><span class="p">];</span>
+<span class="n">TuneEventItem</span> <span class="n">item1</span> <span class="o">=</span>
+    <span class="p">[</span><span class="n">TuneEventItem</span> <span class="nl">eventItemWithName</span><span class="p">:@</span><span class="err">“</span><span class="n">Banana_ID1111</span><span class="err">”</span> <span class="nl">unitPrice</span><span class="p">:</span><span class="mf">1000.0</span> <span class="nl">quantity</span><span class="p">:</span><span class="mi">1</span><span class="p">];</span>
+<span class="p">[</span><span class="n">items</span> <span class="nl">addObject</span><span class="p">:</span><span class="n">item1</span><span class="p">];</span>
+
+<span class="n">TuneEvent</span> <span class="o">*</span><span class="n">event</span> <span class="o">=</span> <span class="p">[</span><span class="n">TuneEvent</span> <span class="nl">eventWithName</span><span class="p">:</span><span class="n">TUNE_EVENT_SEARCH</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">eventItems</span> <span class="o">=</span> <span class="n">items</span><span class="p">;</span>      <span class="c1">// Add top N search results</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currencyCode</span> <span class="o">=</span> <span class="p">@</span><span class="n">KRW</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">searchString</span> <span class="o">=</span> <span class="s">@&quot;Fruit&quot;</span><span class="p">;</span> <span class="c1">// Optional</span>
+<span class="p">[</span><span class="n">Tune</span> <span class="nl">measureEvent</span><span class="p">:</span><span class="n">event</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Branch SDK</strong></p>
+<ul>
+<li>
+<p><em>Android</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="n">buo</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BranchUniversalObject</span><span class="o">()</span>
+<span class="o">.</span><span class="na">setContentMetadata</span><span class="o">(</span>
+        <span class="k">new</span> <span class="n">ContentMetadata</span><span class="o">()</span>
+                <span class="o">.</span><span class="na">setProductName</span><span class="o">(</span><span class="s">&quot;Banana_ID1111&quot;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setPrice</span><span class="o">(</span><span class="mf">1000.0</span><span class="o">,</span> <span class="n">CurrencyType</span><span class="o">.</span><span class="na">KRW</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">setQuantity</span><span class="o">(</span><span class="mf">1.0</span><span class="o">)</span>
+<span class="o">);</span>
+<span class="k">new</span> <span class="n">BranchEvent</span><span class="o">(</span><span class="n">BRANCH_STANDARD_EVENT</span><span class="o">.</span><span class="na">SEARCH</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">setSearchQuery</span><span class="o">(</span><span class="s">&quot;Fruit&quot;</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">addContentItems</span><span class="o">(</span><span class="n">buo</span><span class="o">)</span> <span class="c1">// Add top N search results.</span>
+    <span class="o">.</span><span class="na">logEvent</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>iOS</em></p>
+<div class="codehilite"><pre><span></span><span class="n">BranchUniversalObject</span> <span class="o">*</span><span class="n">buo</span> <span class="o">=</span> <span class="p">[</span><span class="n">BranchUniversalObject</span> <span class="n">new</span><span class="p">];</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">productName</span>       <span class="o">=</span> <span class="s">@&quot;Banana_ID1111&quot;</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">price</span>             <span class="o">=</span> <span class="p">[</span><span class="bp">NSDecimalNumber</span> <span class="nl">decimalNumberWithString</span><span class="p">:</span><span class="s">@&quot;1000.0&quot;</span><span class="p">];</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">quantity</span>          <span class="o">=</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="n">buo</span><span class="p">.</span><span class="n">contentMetadata</span><span class="p">.</span><span class="n">currency</span>          <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+
+<span class="n">BranchEvent</span> <span class="o">*</span><span class="n">event</span>     <span class="o">=</span> <span class="p">[</span><span class="n">BranchEvent</span> <span class="nl">standardEvent</span><span class="p">:</span><span class="n">BranchStandardEventSearch</span><span class="p">];</span>
+<span class="n">event</span><span class="p">.</span><span class="n">contentItems</span>     <span class="o">=</span> <span class="p">(</span><span class="kt">id</span><span class="p">)</span> <span class="l">@[</span> <span class="n">buo</span> <span class="l">]</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">currency</span>         <span class="o">=</span> <span class="n">BNCCurrencyKRW</span><span class="p">;</span>
+<span class="n">event</span><span class="p">.</span><span class="n">searchQuery</span>      <span class="o">=</span> <span class="s">@&quot;Fruit&quot;</span><span class="p">;</span>
+<span class="p">[</span><span class="n">event</span> <span class="n">logEvent</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="user-id">User ID 설정<a class="headerlink" href="#user-id" title="Permanent link">&para;</a></h2>
+<ul>
+<li>사용자가 로그인과 로그아웃 할경우에 User ID를 처리합니다.</li>
+<li><strong>USER ID설정은 꼭 사내에서 개인정보 관련 검토를 받은 경우에만 설정하고, 개발팀에서 임의적으로 설정하지 않습니다.</strong></li>
+<li>가급적 UUID형식의 User ID를 설정해 주시기 바랍니다.</li>
+<li>
+<p>꼭 원본 User ID를 설정하실 필요는 없으며, 필요시는 해슁된 값을 설정하셔도 됩니다.</p>
+</li>
+<li>
+<p><strong>TUNE SDK</strong></p>
+<ul>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="n">ITune</span> <span class="n">tune</span> <span class="o">=</span> <span class="n">Tune</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<span class="c1">// 로그인 시</span>
+<span class="n">tune</span><span class="o">.</span><span class="na">setUserId</span><span class="o">(</span><span class="s">&quot;your_user_id&quot;</span><span class="o">);</span>
+
+<span class="c1">// 로그아웃 시</span>
+<span class="n">tune</span><span class="o">.</span><span class="na">setUserId</span><span class="o">(</span><span class="s">&quot;&quot;</span><span class="o">);</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>Objective-C</em></p>
+<div class="codehilite"><pre><span></span><span class="c1">// 로그인 시</span>
+<span class="p">[</span><span class="n">Tune</span> <span class="nl">setUserId</span><span class="p">:</span><span class="s">@&quot;your_user_id&quot;</span><span class="p">];</span>
+
+<span class="c1">// 로그아웃 시</span>
+<span class="p">[</span><span class="n">Tune</span> <span class="nl">setUserId</span><span class="p">:</span><span class="s">@&quot;&quot;</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Branch SDK</strong></p>
+<ul>
+<li>
+<p><em>Android</em></p>
+<div class="codehilite"><pre><span></span><span class="c1">// 로그인 시</span>
+<span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setIdentity</span><span class="o">(</span><span class="s">&quot;your_user_id&quot;</span><span class="o">);</span>
+
+<span class="c1">// 로그아웃 시</span>
+<span class="n">Branch</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">logout</span><span class="o">();</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>iOS</em></p>
+<div class="codehilite"><pre><span></span><span class="c1">// 로그인 시</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="nl">setIdentity</span><span class="p">:</span><span class="s">@&quot;your_user_id&quot;</span><span class="p">];</span>
+
+<span class="c1">// 로그아웃 시</span>
+<span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">logout</span><span class="p">];</span>
+</pre></div>
+
+</li>
+</ul>
 </li>
 </ul>
                 
