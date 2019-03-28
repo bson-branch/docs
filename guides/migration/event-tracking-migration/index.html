@@ -424,6 +424,9 @@
 <p><strong>이벤트 네임</strong></p>
 <ul>
 <li>Branch에서는 Custom 이벤트 카테고리가 아닌 표준이벤트의 경우 이벤트 이름은 대문자로 설정됩니다. 아래의 표를 참고하세요.</li>
+<li>표준이벤트에 대해서는 실제 이벤트 연동시에는 (오타방지를 위해서) 아래의 문자열 대신 클래스에 선언된 Constant를 사용해주시는 것이 권장됩니다.</li>
+<li>Android : <a href="https://github.com/BranchMetrics/android-branch-deep-linking/blob/e8fa5f4f6b119156405779bc792f7573878afeb6/Branch-SDK/src/io/branch/referral/util/BRANCH_STANDARD_EVENT.java">BRANCH_STANDARD_EVENT.java</a></li>
+<li>iOS : <a href="https://github.com/BranchMetrics/ios-branch-deep-linking/blob/faada7bfdd643f899f39c9afaf3a8369d74dd4f8/Branch-SDK/Branch-SDK/BranchEvent.m">BranchEvent.m</a></li>
 <li>TUNE에서 마이그레이션 된앱의 경우  Branch Custom(TUNE호환) Export API이 아닌 Branch Export API로 익스포트시 이름이 대문자로 설정됩니다.<ul>
 <li>예) TUNE 이벤트 네임: <code>purchase</code>, Branch 이벤트 네임: <code>PURCHASE</code></li>
 </ul>
