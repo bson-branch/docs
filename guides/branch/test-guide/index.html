@@ -413,6 +413,9 @@ I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&qu
 <ul>
 <li>구글 광고아이디가 잘 수집되었는지 확인합니다.<ul>
 <li><code>google_advertising_id</code>에 Google 광고아이디가 설정됩니다. (단, 라이브키 일때 만 실제 기기의 광고아이디가 설정됩니다.)</li>
+<li>미수집 된 경우에는 그래들에 아래와 같이 구글 플레이서비스 라이브러리가 임포트 되었는지 확인합니다.
+<div class="codehilite"><pre><span></span>implementation &#39;com.google.android.gms:play-services-ads:9+&#39; // GAID matching
+</pre></div></li>
 </ul>
 </li>
 <li>앱 실행시 아래와 같은 익셉션로그가 출력되면 Gradle파일에 구글 인스톨 레퍼러 라이브러리를 추가 합니다.</li>
