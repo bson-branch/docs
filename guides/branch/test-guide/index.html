@@ -347,9 +347,13 @@
 <li>기기의 로그 콘솔에서 이벤트가 실제 전송되는지 확인하고, 주요한 정보들이 잘 수집되는지 확인합니다.</li>
 </ul>
 <h3 id="android">로깅기능 활성화 (Android)<a class="headerlink" href="#android" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">마켓 릴리즈 빌드에서는 꼭 비활성화 하세요.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">테스트키일 경우에는 실제 기기의 Google AID가 전송되지 않고 랜덤UUID가 설정됩니다.</p>
+</div>
 <ul>
-<li><strong>릴리즈 빌드에서는 꼭 비활성화 하세요.</strong></li>
-<li><strong>테스트키일 경우에는 실제 기기의 Google AID가 전송되지 않고 랜덤UUID가 설정됩니다.</strong></li>
 <li>3.1.0에서 enableLogging()에서 enableDebugMode()로 메쏘드 이름변경</li>
 <li><code>Branch.getAutoInstance(this);</code> 앞에서 호출하세요.</li>
 <li>
@@ -360,9 +364,13 @@
 </li>
 </ul>
 <h3 id="ios">로깅기능 활성화 (iOS)<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">앱스토어 릴리즈 빌드에서는 꼭 비활성화 하세요.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">로깅기능을 활성화 하면 실제 기기의 IDFA 대신 랜덤UUID가 설정됩니다.</p>
+</div>
 <ul>
-<li><strong>릴리즈 빌드에서는 꼭 비활성화 하세요.</strong></li>
-<li><strong>로깅기능을 활성화 하면 실제 기기의 IDFA 대신 랜덤UUID가 설정됩니다.</strong></li>
 <li><code>initSession</code> 앞에서 호출해 주세요.</li>
 <li>
 <p><code>OS_ACTIVITY_MODE</code>는 꼭 비활성화 되어야 합니다. (<a href="https://stackoverflow.com/a/39503602/2690774">link</a>)</p>
