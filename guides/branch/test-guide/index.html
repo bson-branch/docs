@@ -262,6 +262,63 @@
     
   
   
+    <label class="md-nav__title" for="__toc">목차</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="테스트 순서" class="md-nav__link">
+    테스트 순서
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-sdk" title="1. SDK의 로깅기능 활성화" class="md-nav__link">
+    1. SDK의 로깅기능 활성화
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android" title="로깅기능 활성화 (Android)" class="md-nav__link">
+    로깅기능 활성화 (Android)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios" title="로깅기능 활성화 (iOS)" class="md-nav__link">
+    로깅기능 활성화 (iOS)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" title="2. 기기 로그 샘플" class="md-nav__link">
+    2. 기기 로그 샘플
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" title="3. 로그확인" class="md-nav__link">
+    3. 로그확인
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -279,6 +336,91 @@
 <li>업데이트: 2019년 3월 11일</li>
 </ul>
 <hr />
+<h2 id="_2">테스트 순서<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ol>
+<li>SDK 로깅기능 활성화 (릴리즈 빌드에서는 꼭 제거)</li>
+<li>기기로그 에서 이벤트 전송 확인</li>
+<li>광고아이디등 주요정보 확인</li>
+</ol>
+<h2 id="1-sdk">1. SDK의 로깅기능 활성화<a class="headerlink" href="#1-sdk" title="Permanent link">&para;</a></h2>
+<ul>
+<li>기기의 로그 콘솔에서 이벤트가 실제 전송되는지 확인하고, 주요한 정보들이 잘 수집되는지 확인합니다.</li>
+</ul>
+<h3 id="android">로깅기능 활성화 (Android)<a class="headerlink" href="#android" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>릴리즈 빌드에서는 꼭 비활성화 하세요.</strong></li>
+<li><strong>테스트키일 경우에는 실제 기기의 Google AID가 전송되지 않고 랜덤UUID가 설정됩니다.</strong></li>
+<li>3.1.0에서 enableLogging()에서 enableDebugMode()로 메쏘드 이름변경</li>
+<li><code>Branch.getAutoInstance(this);</code> 앞에서 호출하세요.</li>
+<li>
+<p><em>Java</em></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">enableDebugMode</span><span class="o">();</span>
+</pre></div>
+
+</li>
+</ul>
+<h3 id="ios">로깅기능 활성화 (iOS)<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>릴리즈 빌드에서는 꼭 비활성화 하세요.</strong></li>
+<li><strong>로깅기능을 활성화 하면 실제 기기의 IDFA 대신 랜덤UUID가 설정됩니다.</strong></li>
+<li><code>initSession</code> 앞에서 호출해 주세요.</li>
+<li>
+<p><code>OS_ACTIVITY_MODE</code>는 꼭 비활성화 되어야 합니다. (<a href="https://stackoverflow.com/a/39503602/2690774">link</a>)</p>
+</li>
+<li>
+<p><em>Objective C</em></p>
+<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">setDebug</span><span class="p">];</span>
+</pre></div>
+
+</li>
+<li>
+<p><em>Swift</em></p>
+<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">setDebug</span><span class="p">()</span>
+</pre></div>
+
+</li>
+</ul>
+<h2 id="2">2. 기기 로그 샘플<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Install 이벤트 샘플
+    <div class="codehilite"><pre><span></span>I/BranchSDK: posting to https://api2.branch.io/v1/install
+I/BranchSDK: Post value = {&quot;hardware_id&quot;:&quot;92b67271-824c-4c42-96cf-3636bbeeb637&quot;,&quot;is_hardware_id_real&quot;:false,&quot;brand&quot;:&quot;samsung&quot;,&quot;model&quot;:&quot;SM-G955N&quot;,&quot;screen_dpi&quot;:560,&quot;screen_height&quot;:2792,&quot;screen_width&quot;:1440,&quot;wifi&quot;:false,&quot;ui_mode&quot;:&quot;UI_MODE_TYPE_NORMAL&quot;,&quot;os&quot;:&quot;Android&quot;,&quot;os_version&quot;:28,&quot;country&quot;:&quot;US&quot;,&quot;language&quot;:&quot;en&quot;,&quot;local_ip&quot;:&quot;102.45.125.187&quot;,&quot;app_version&quot;:&quot;1.0.2&quot;,&quot;facebook_app_link_checked&quot;:false,&quot;is_referrable&quot;:1,&quot;debug&quot;:true,&quot;update&quot;:0,&quot;latest_install_time&quot;:1554446038595,&quot;latest_update_time&quot;:1554446038595,&quot;first_install_time&quot;:1554446038595,&quot;previous_update_time&quot;:0,&quot;environment&quot;:&quot;FULL_APP&quot;,&quot;cd&quot;:{&quot;mv&quot;:&quot;-1&quot;,&quot;pn&quot;:&quot;com.bson.branchtesters&quot;},&quot;install_begin_ts&quot;:1554444525,&quot;metadata&quot;:{},&quot;google_advertising_id&quot;:&quot;4fd96af5-98d3-4681-9d1d-33292ffecc83&quot;,&quot;lat_val&quot;:0,&quot;instrumentation&quot;:{&quot;v1\/install-qwt&quot;:&quot;0&quot;},&quot;sdk&quot;:&quot;android3.1.1&quot;,&quot;branch_key&quot;:&quot;key_live_1gfd5689QW53b54H456456kG9BEhcb12&quot;}
+I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600168734516567&quot;,&quot;identity_id&quot;:&quot;642600168721700181&quot;,&quot;link&quot;:&quot;https://branchtesters.app.link?%24identity_id=642600168721700181&quot;,&quot;data&quot;:&quot;{\&quot;+clicked_branch_link\&quot;:false,\&quot;+is_first_session\&quot;:true}&quot;,&quot;device_fingerprint_id&quot;:&quot;642600168667338007&quot;}
+</pre></div></p>
+</li>
+<li>
+<p>Open 이벤트 샘플
+    <div class="codehilite"><pre><span></span>I/BranchSDK: posting to https://api2.branch.io/v1/open
+I/BranchSDK: Post value = {&quot;device_fingerprint_id&quot;:&quot;642600168667338007&quot;,&quot;identity_id&quot;:&quot;642600168721700181&quot;,&quot;hardware_id&quot;:&quot;92b67271-824c-4c42-96cf-3636bbeeb637&quot;,&quot;is_hardware_id_real&quot;:false,&quot;brand&quot;:&quot;samsung&quot;,&quot;model&quot;:&quot;SM-G955N&quot;,&quot;screen_dpi&quot;:560,&quot;screen_height&quot;:2792,&quot;screen_width&quot;:1440,&quot;wifi&quot;:false,&quot;ui_mode&quot;:&quot;UI_MODE_TYPE_NORMAL&quot;,&quot;os&quot;:&quot;Android&quot;,&quot;os_version&quot;:28,&quot;country&quot;:&quot;US&quot;,&quot;language&quot;:&quot;en&quot;,&quot;local_ip&quot;:&quot;102.45.125.187&quot;,&quot;app_version&quot;:&quot;1.0.2&quot;,&quot;facebook_app_link_checked&quot;:false,&quot;is_referrable&quot;:1,&quot;debug&quot;:true,&quot;update&quot;:1,&quot;latest_install_time&quot;:1554446038595,&quot;latest_update_time&quot;:1554446038595,&quot;first_install_time&quot;:1554446038595,&quot;previous_update_time&quot;:1554446038595,&quot;environment&quot;:&quot;FULL_APP&quot;,&quot;cd&quot;:{&quot;mv&quot;:&quot;-1&quot;,&quot;pn&quot;:&quot;com.bson.branchtesters&quot;},&quot;metadata&quot;:{},&quot;google_advertising_id&quot;:&quot;4fd96af5-98d3-4681-9d1d-33292ffecc83&quot;,&quot;lat_val&quot;:0,&quot;instrumentation&quot;:{&quot;v1\/close-brtt&quot;:&quot;677&quot;,&quot;v1\/open-qwt&quot;:&quot;0&quot;},&quot;sdk&quot;:&quot;android3.1.1&quot;,&quot;branch_key&quot;:&quot;key_live_1gfd5689QW53b54H456456kG9BEhcb12&quot;}
+I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&quot;identity_id&quot;:&quot;642600168721700181&quot;,&quot;link&quot;:&quot;https://branchtesters.app.link?%24identity_id=642600168721700181&quot;,&quot;data&quot;:&quot;{\&quot;+clicked_branch_link\&quot;:false,\&quot;+is_first_session\&quot;:false}&quot;,&quot;device_fingerprint_id&quot;:&quot;642600168667338007&quot;}
+</pre></div></p>
+</li>
+</ul>
+<h2 id="3">3. 로그확인<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<ol>
+<li>아래와 같이 install (최초실행시) 또는 open 이벤트가 앱실행시 전송되는지 확인합니다.<ul>
+<li><code>posting to</code> 뒤의 URL로 어떤 이벤트인지 확인할 수 있습니다.</li>
+</ul>
+</li>
+<li>현재 라이브 또는 테스트 빌드인지 확인<ul>
+<li><code>Post value</code> 에 JSON으로 설정된 해당이벤트의 정보가 표시됩니다.</li>
+<li><code>branch_key</code>에 설정된 키값을 확인합니다. <code>key_live_</code>로 시작되면 라이브키, <code>key_test_</code>로 시작되면 테스트 키입니다.</li>
+</ul>
+</li>
+<li>Android에서는 구글 광고아이디가 잘 수집되었는지 확인합니다.<ul>
+<li>안드로이드는 <code>google_advertising_id</code>에 Google 광고아이디가 잘 수집되었는지 확인합니다.</li>
+</ul>
+</li>
+<li>
+<p>Android에서는 아래와 같은 에러가 실행시 로그에 출력되면 아래와 같이 Gradle에 구글 인스톨 레퍼러 라이브러리를 추가 합니다.
+    <div class="codehilite"><pre><span></span><span class="nt">ReferrerClientWrapper</span> <span class="nt">Exception</span><span class="o">:</span> <span class="nt">Failed</span> <span class="nt">resolution</span> <span class="nt">of</span><span class="o">:</span> <span class="nt">Lcom</span><span class="o">/</span><span class="nt">android</span><span class="o">/</span><span class="nt">installreferrer</span><span class="o">/</span><span class="nt">api</span><span class="o">/</span><span class="nt">InstallReferrerClient</span><span class="o">;</span>
+</pre></div></p>
+<div class="codehilite"><pre><span></span>implementation &#39;com.android.installreferrer:installreferrer:1.0&#39;
+</pre></div>
+
+</li>
+</ol>
                 
                   
                 
