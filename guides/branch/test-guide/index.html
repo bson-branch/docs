@@ -400,22 +400,26 @@ I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&qu
 <h2 id="3">3. 로그확인<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
 <ol>
 <li>아래와 같이 install (최초실행시) 또는 open 이벤트가 앱실행시 전송되는지 확인합니다.<ul>
-<li><code>posting to</code> 뒤의 URL로 어떤 이벤트인지 확인할 수 있습니다.</li>
+<li><code>posting to</code> 뒤의 엔드포인트 URL로 어떤 종류의 이벤트가 전송되는지 확인할 수 있습니다.</li>
 </ul>
 </li>
-<li>현재 라이브 또는 테스트 빌드인지 확인<ul>
-<li><code>Post value</code> 에 JSON으로 설정된 해당이벤트의 정보가 표시됩니다.</li>
+<li>현재 라이브 또는 테스트 빌드/키 인지 확인하는 방법<ul>
+<li>이벤트의 정보는 POST요청의 바디에 JSON으로 설정되며, <code>Post value</code> 뒤에 출력됩니다.</li>
 <li><code>branch_key</code>에 설정된 키값을 확인합니다. <code>key_live_</code>로 시작되면 라이브키, <code>key_test_</code>로 시작되면 테스트 키입니다.</li>
 </ul>
 </li>
-<li>Android에서는 구글 광고아이디가 잘 수집되었는지 확인합니다.<ul>
-<li>안드로이드는 <code>google_advertising_id</code>에 Google 광고아이디가 잘 수집되었는지 확인합니다.</li>
+<li>
+<p>Android에서의 확인 사항</p>
+<ul>
+<li>구글 광고아이디가 잘 수집되었는지 확인합니다.<ul>
+<li><code>google_advertising_id</code>에 Google 광고아이디가 설정됩니다. (단, 라이브키 일때 만 실제 기기의 광고아이디가 설정됩니다.)</li>
 </ul>
 </li>
-<li>
-<p>Android에서는 아래와 같은 에러가 실행시 로그에 출력되면 아래와 같이 Gradle에 구글 인스톨 레퍼러 라이브러리를 추가 합니다.
-    <div class="codehilite"><pre><span></span><span class="nt">ReferrerClientWrapper</span> <span class="nt">Exception</span><span class="o">:</span> <span class="nt">Failed</span> <span class="nt">resolution</span> <span class="nt">of</span><span class="o">:</span> <span class="nt">Lcom</span><span class="o">/</span><span class="nt">android</span><span class="o">/</span><span class="nt">installreferrer</span><span class="o">/</span><span class="nt">api</span><span class="o">/</span><span class="nt">InstallReferrerClient</span><span class="o">;</span>
-</pre></div></p>
+<li>앱 실행시 아래와 같은 익셉션로그가 출력되면 Gradle파일에 구글 인스톨 레퍼러 라이브러리를 추가 합니다.</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nt">ReferrerClientWrapper</span> <span class="nt">Exception</span><span class="o">:</span> <span class="nt">Failed</span> <span class="nt">resolution</span> <span class="nt">of</span><span class="o">:</span> <span class="nt">Lcom</span><span class="o">/</span><span class="nt">android</span><span class="o">/</span><span class="nt">installreferrer</span><span class="o">/</span><span class="nt">api</span><span class="o">/</span><span class="nt">InstallReferrerClient</span><span class="o">;</span>
+</pre></div>
+
 <div class="codehilite"><pre><span></span>implementation &#39;com.android.installreferrer:installreferrer:1.0&#39;
 </pre></div>
 
