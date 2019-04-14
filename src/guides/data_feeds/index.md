@@ -7,17 +7,16 @@ Data Feeds는 브랜치 시스템내의 데이터에 대한 익스포트(Export)
 
 ---
 
-## 제공되는 서비스
-* [Data Integration](https://docs.branch.io/pages/integrations/data-integrations/)
-* [Webhooks](https://docs.branch.io/pages/exports/ua-webhooks/)
-* [Data Export API](https://docs.branch.io/pages/exports/api-v3/)
-* [Query API](https://docs.branch.io/pages/exports/query-api/)
+## 공식문서
+* [Overview](https://docs.branch.io/pages/exports/data-feeds-overview/)
+    * [Data Integration](https://docs.branch.io/pages/integrations/data-integrations/)
+    * [Webhooks](https://docs.branch.io/pages/exports/ua-webhooks/)
+    * [Data Export API](https://docs.branch.io/pages/exports/api-v3/)
+    * [Query API](https://docs.branch.io/pages/exports/query-api/)
+    * [Query Recipe Book](https://docs.branch.io/pages/exports/query-recipe-book/)
 
-## Branch Export API
-* 한국어 가이드(작업중)
+## Branch Export API 가이드
+* [한국어 가이드(작업중)](branch-export-api.md)
 
-## Branch Query API
-* 한국어 가이드(작업중)
-
-## Branch Custom Export API (Old AA Reporting API)
-* 한국어 가이드(작업중)
+## Branch Query API 가이드
+* [한국어 가이드(작업중)](branch-query-api.md)

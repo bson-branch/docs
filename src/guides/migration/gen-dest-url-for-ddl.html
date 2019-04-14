@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+
+    <title>Bohyung</title>
+    <script>
+  		function getUrlParameter(query, name) {
+  			//console.log("getParameter: "+query)
+  			if (query != null && query.charAt(0) != '?') {
+  				query = '?' + query
+  			}
+  		    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  		    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  		    var results = regex.exec(query);
+  			return results === null ? '' : results[1].replace(/\+/g, ' ');
+  		};
+
+  		function getDecodedUrlParameter(query, name) {
+  			//console.log("getDecodedUrlParameter: "+query)
+  			if (query != null && query.charAt(0) != '?') {
+  				query = '?' + query
+  			}
+
+  		    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+  		    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+  		    var results = regex.exec(query);
+  		    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  		};
+
+  		function process_referrer() {
+  			// 안드로이드앱 구글 플레이 주소
+  			base_google_play_url = 'https://play.google.com/store/apps/details?id=com.hellochatty'
+  			// 딥링크 샘플 (랜덥채팅)
+  			base_deeplink = 'hellochatty://hellochatty.co/chat'
+
+  			// TUNE에서 리다이렉트시 추가한 referrer. mat_click_id가 URL 인코딩되어 있음.
+  			referrer = getUrlParameter(location.search, 'referrer');
+  			// TUNE에서 리다이렉트시 추가한 referrer를 디코딩
+  			decoded_referrer = getDecodedUrlParameter(location.search, 'referrer');
+  			// TUNE에서 리다이렉트시 추가한 referrer에서 mat_click_id 추출
+  			mat_click_id = getDecodedUrlParameter(decoded_referrer, 'mat_click_id');
+
+  			// 앱 딥링크의 쿼리파라메터에 mat_click_id 추가 해서 딥링킹
+  			if (mat_click_id.length > 0) {
+          my_char = '';
+          if (base_deeplink.indexOf('?') == -1) {
+            my_char = '?';
+          } else {
+            my_char = '&';
+          }
+  				final_deeplink = base_deeplink + my_char + 'mat_click_id='+mat_click_id;
+  			} else {
+  				final_deeplink = base_deeplink
+  			}
+  			// 안드로이드 앱을 구글 플레이로 리다이렉트시
+  			// 1. 허브페이지 랜딩시 추가된 referrer를 이후 다른 페이지로 추가 리다이렉트 될 경우에도 계속 가지고 있다가 최종적으로 구글 플레이 랜딩시 쿼리 파라메터에 referrer를 추가함
+  			// 2. 해당페이지에서 실행할 딥링크에 mat_click_id를 추가한뒤, URL인코딩한후 url 쿼리파라메터를 추가. (단순 메인페이지 실행이 아닌 디퍼드 딥링킹을 하기 위함)
+  			// iOS앱은 특별한 처리 없이 마켓 주소로 그냥 랜딩
+  			if (referrer.length > 0) {
+  				final_google_play_url = base_google_play_url + '&referrer=' + referrer;
+  				final_google_play_url_with_deferred_deeplink = base_google_play_url + '&referrer=' + referrer + '&url=' + encodeURIComponent(final_deeplink);
+  			} else {
+  				final_google_play_url = base_google_play_url;
+  				final_google_play_url_with_deferred_deeplink = base_google_play_url + '&url=' + encodeURIComponent(final_deeplink);
+  			}
+  		};
+
+      function process_tune_link() {
+        tune_link_org = document.getElementById('tune_link_org').value;
+
+        var log = document.getElementById('log');
+        log.innerHTML = '<b>Log</b>';
+        log.innerHTML += '<br>'+tune_link_org+'';
+
+      };
+
+
+      function do_process() {
+
+        //process_tune_link();
+
+        //return;
+
+        // Google Play Store URL
+        org_gps_url = document.getElementById('org_gps_url').value;
+        // Deep Link URL
+        org_deep_link_url = document.getElementById('org_deep_link_url').value;
+
+        console.log("org_gps_url: " + org_gps_url);
+        console.log("org_deep_link_url: " + org_deep_link_url);
+
+        my_char = '';
+        if (org_deep_link_url.indexOf('?') == -1) {
+          my_char = '?';
+        } else {
+          my_char = '&';
+        }
+        //new_deep_link_url = org_deep_link_url + my_char + 'mat_click_id={click_id}'
+        new_deep_link_url = org_deep_link_url + my_char + 'mat_tracking_id='
+        console.log("new_deep_link_url: " + new_deep_link_url);
+
+        destination_url = org_gps_url +
+                          "&referrer=mat_click_id%3D{click_id}" +
+                          "&url=" +
+                          encodeURIComponent(new_deep_link_url) +
+                          '{tracking_id}';
+
+        console.log("destination_url: " + destination_url);
+
+        encoded_destination_url = encodeURIComponent(destination_url);
+
+        console.log("encoded_destination_url: " + encoded_destination_url);
+
+        document.getElementById('gps_dest_url').value = destination_url;
+        document.getElementById('enc_gps_dest_url').value = encoded_destination_url;
+
+        /*
+        var output = document.getElementById('log_msg');
+        output.innerHTML = '<br>';
+        output.innerHTML += '<label>Destination URL</label><br>';
+        //output.innerHTML += '<input type="text" id="and_dest_url" size="250"  value="'+destination_url+'"/><br>'
+        output.innerHTML += ''+destination_url+'<br>';
+        output.innerHTML += '<br>';
+        output.innerHTML += '<label>URL Encoded Destination URL</label><br>';
+        //output.innerHTML += '<input type="text" id="and_dest_url" size="250"  value="'+destination_url+'"/><br>'
+        output.innerHTML += ''+encoded_destination_url+'<br>';
+        //output.innerHTML += '<br>';
+        //output.innerHTML += '<a href="'+ destination_url +'">Destination URL</a><br>';
+        //output.innerHTML += '<br><b>'+destination_url+'</b>';
+        output.innerHTML += '<br>';
+        output.innerHTML += '<a href="'+ org_deep_link_url +'">Deep Link URL</a><br>';
+        //output.innerHTML += '<a href="'+ "hellochatty://hellochatty.co/chat" +'">Login</a><br>';
+        */
+
+      };
+
+
+  	</script>
+
+    </head>
+      <body>
+        <div id="siteInfo">
+        Post-migration Compatible TUNE Link Generation<br>
+        마이그레이션이후 호환 TUNE Link 생성<br>
+        </div>
+        <hr>
+        <div>
+          <b>Android</b><br><br>
+          <label>Google Play URL:</label><br>
+          <input type="text" id="org_gps_url" size="100" value="https://play.google.com/store/apps/details?id=com.hellochatty"/><br><br>
+          <label>Deep Link URL:</label><br>
+          <input type="text" id="org_deep_link_url" size="100" value="hellochatty://hellochatty.co/chat" /><br>
+        </div>
+        <hr>
+        <form>
+          <input type="button" onclick="do_process()"  value="Generate" />
+        </form>
+        <hr>
+        <div>
+          <label>New Google Play URL:</label><br>
+          <input type="text" id="gps_dest_url" size="100" value="" disabled /><br><br>
+          <label>Encoded New Google Play URL:</label><br>
+          <input type="text" id="enc_gps_dest_url" size="100" value="" disabled /><br>
+        </div>
+
+        <div id="log_msg">
+        </div>
+        <div>
+          <br>
+          <!--<a href="https://w0y-5.tlnk.io/serve?action=click&campaign_id_android=236537&publisher_id=174354&site_id_android=2385&url_android=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.hellochatty%26referrer%3Dmat_click_id%253D%7Bclick_id%7D%26url%3Dhellochatty%253A%252F%252Fhellochatty.co%252Fchat%253Fmat_tracking_id%253D%7Btracking_id%7D">
+            TUNE Link :)</a><br>
+          -->
+        </div>
+  </body>
+</html>

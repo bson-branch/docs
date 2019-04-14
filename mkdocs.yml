@@ -1,6 +1,7 @@
 site_name: Branch Korea Solutions Engineering
 nav:
     - Home: index.md
+    - Guides: guides/branch/index.md
     - Migration: guides/migration/index.md
     - Translations: pages/index.md
     - Data Feeds: guides/data_feeds/index.md
@@ -49,3 +50,5 @@ markdown_extensions:
   - attr_list:
   - markdown_include.include:
       base_path: src/includes/
+
+google_analytics: ['UA-134914613-1', 'bson-branch.github.io/docs/']

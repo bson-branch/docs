@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>Bohyung</title>
+    <style type="text/css">
+      body{font-family:Helvetica,Arial,Verdana,sans-serif;margin:0;padding:5px;text-align:center}
+      h1,img{font-size:20px;font-weight:700;margin:10px 0 20px}button{font-size:20px}
+      img{max-width:150px}form{margin:0;padding:0}div{margin-bottom:20px}a{text-decoration: none;}
+      iframe{border:none;height:1px;width:1px;}
+      @media screen and (max-device-width:480px){body{-webkit-text-size-adjust:none}}
+    </style>
+
+	<script>
+		function getUrlParameter(query, name) {
+			//console.log("getParameter: "+query)
+			if (query != null && query.charAt(0) != '?') {
+				query = '?' + query
+			}
+		    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		    var results = regex.exec(query);
+			return results === null ? '' : results[1].replace(/\+/g, ' ');
+		};
+		function getDecodedUrlParameter(query, name) {
+			//console.log("getDecodedUrlParameter: "+query)
+			if (query != null && query.charAt(0) != '?') {
+				query = '?' + query
+			}
+
+		    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+		    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+		    var results = regex.exec(query);
+		    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+		};
+
+		function process_referrer() {
+			// 안드로이드앱 구글 플레이 주소
+			base_google_play_url = 'https://play.google.com/store/apps/details?id=com.hellochatty'
+			// 딥링크 샘플 (랜덥채팅)
+			base_deeplink = 'hellochatty://hellochatty.co/chat'
+
+			// TUNE에서 리다이렉트시 추가한 referrer. mat_click_id가 URL 인코딩되어 있음.
+			referrer = getUrlParameter(location.search, 'referrer');
+			// TUNE에서 리다이렉트시 추가한 referrer를 디코딩
+			decoded_referrer = getDecodedUrlParameter(location.search, 'referrer');
+			// TUNE에서 리다이렉트시 추가한 referrer에서 mat_click_id 추출
+			mat_click_id = getDecodedUrlParameter(decoded_referrer, 'mat_click_id');
+
+			// 앱 딥링크의 쿼리파라메터에 mat_click_id 추가 해서 딥링킹
+			if (mat_click_id.length > 0) {
+        my_char = '';
+        if (base_deeplink.indexOf('?') == -1) {
+          my_char = '?';
+        } else {
+          my_char = '&';
+        }
+				final_deeplink = base_deeplink + my_char + 'mat_click_id='+mat_click_id;
+			} else {
+				final_deeplink = base_deeplink
+			}
+			// 안드로이드 앱을 구글 플레이로 리다이렉트시
+			// 1. 허브페이지 랜딩시 추가된 referrer를 이후 다른 페이지로 추가 리다이렉트 될 경우에도 계속 가지고 있다가 최종적으로 구글 플레이 랜딩시 쿼리 파라메터에 referrer를 추가함
+			// 2. 해당페이지에서 실행할 딥링크에 mat_click_id를 추가한뒤, URL인코딩한후 url 쿼리파라메터를 추가. (단순 메인페이지 실행이 아닌 디퍼드 딥링킹을 하기 위함)
+			// iOS앱은 특별한 처리 없이 마켓 주소로 그냥 랜딩
+			if (referrer.length > 0) {
+				final_google_play_url = base_google_play_url + '&referrer=' + referrer;
+				final_google_play_url_with_deferred_deeplink = base_google_play_url + '&referrer=' + referrer + '&url=' + encodeURIComponent(final_deeplink);
+			} else {
+				final_google_play_url = base_google_play_url;
+				final_google_play_url_with_deferred_deeplink = base_google_play_url + '&url=' + encodeURIComponent(final_deeplink);
+			}
+
+			var div = document.getElementById('log_message');
+      div.innerHTML += '<br><b>Google Play URL</b>';
+      div.innerHTML += '<br>' + base_google_play_url;
+      div.innerHTML += '<br><b>Deep Link URL</b>';
+      div.innerHTML += '<br>' + base_deeplink;
+      div.innerHTML += '<hr>';
+      div.innerHTML += '<br><b>referrer</b>';
+			div.innerHTML += '<br>' + referrer;
+			div.innerHTML += '<br>';
+			div.innerHTML += '<br><b>decoded referrer</b>';
+			div.innerHTML += '<br>' + decoded_referrer;
+			div.innerHTML += '<br>';
+      div.innerHTML += '<br><b>mat_click_id</b>';
+			div.innerHTML += '<br>' + mat_click_id;
+			div.innerHTML += '<br>';
+			div.innerHTML += '<br><b>Deep Link URL</b>';
+			div.innerHTML += '<br><b>Org</b>: ' + base_deeplink;
+			div.innerHTML += '<br><b>Final</b>: ' + final_deeplink;
+			div.innerHTML += '<br>';
+			div.innerHTML += '<br><b>Google Play URL</b>';
+			div.innerHTML += '<br><b>Org URL</b>: ' + base_google_play_url;
+			div.innerHTML += '<br><b>Final URL </b>: ' + final_google_play_url;
+			div.innerHTML += '<br><b>Final URL With Deferred Deep Linking</b>: ' + final_google_play_url_with_deferred_deeplink;
+      div.innerHTML += '<br>';
+      div.innerHTML += '<br>';
+
+		}
+
+
+	</script>
+
+    </head>
+      <body onload="process_referrer()">
+        <div id="siteInfo">
+        모바일웹 자체 브릿지 페이지 샘플
+        </div>
+
+        <div id="log_message">
+		        로그
+            <hr>
+        </div>
+
+
+  </body>
+</html>
