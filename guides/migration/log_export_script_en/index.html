@@ -36,7 +36,7 @@
     
     
       
-        <title>로그 익스포트 스크립트 가이드 - Branch Korea Solutions Engineering</title>
+        <title>Log Export Script Guide - Branch Korea Solutions Engineering</title>
       
     
     
@@ -82,7 +82,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#log-export-script-guide" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -108,7 +108,7 @@
                 Branch Korea Solutions Engineering
               </span>
               <span class="md-header-nav__topic">
-                로그 익스포트 스크립트 가이드
+                Log Export Script Guide
               </span>
             
           
@@ -266,64 +266,64 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="개요" class="md-nav__link">
+  <a href="#_1" title="개요" class="md-nav__link">
     개요
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" title="1. 파이썬 설치" class="md-nav__link">
-    1. 파이썬 설치
+  <a href="#1-install-python" title="1. Install Python" class="md-nav__link">
+    1. Install Python
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-python" title="2. Python 설치확인" class="md-nav__link">
-    2. Python 설치확인
+  <a href="#2-verify-python-installation" title="2. Verify Python installation." class="md-nav__link">
+    2. Verify Python installation.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-pip" title="3. PIP 설치확인" class="md-nav__link">
-    3. PIP 설치확인
+  <a href="#3-verify-pip-installation" title="3. Verify PIP installation." class="md-nav__link">
+    3. Verify PIP installation.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-requests" title="4. requests 패키지(라이브러리) 설치" class="md-nav__link">
-    4. requests 패키지(라이브러리) 설치
+  <a href="#4-install-requests-package" title="4. Install requests package." class="md-nav__link">
+    4. Install requests package.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" title="5. 스크립트 실행" class="md-nav__link">
-    5. 스크립트 실행
+  <a href="#5-running-script" title="5. Running script." class="md-nav__link">
+    5. Running script.
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" title="6. 스크립트 설정파일" class="md-nav__link">
-    6. 스크립트 설정파일
+  <a href="#6-script-configuration" title="6. Script Configuration" class="md-nav__link">
+    6. Script Configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7" title="7. 추출필드 설정파일" class="md-nav__link">
-    7. 추출필드 설정파일
+  <a href="#7-field-configuration" title="7. Field configuration" class="md-nav__link">
+    7. Field configuration
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8" title="8. 다운로드된 로그파일" class="md-nav__link">
-    8. 다운로드된 로그파일
+  <a href="#8-filename-of-exported-log" title="8. Filename of exported log." class="md-nav__link">
+    8. Filename of exported log.
   </a>
   
 </li>
@@ -345,43 +345,45 @@
               
                 
                 
-                <h1 id="_1">로그 익스포트 스크립트 가이드<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>최종 수정일 : 2019년 4월 15일
+                <h1 id="log-export-script-guide">Log Export Script Guide<a class="headerlink" href="#log-export-script-guide" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span>Last updated: Apr 15th, 2019
 </pre></div>
 
 
 <hr />
-<h2 id="_2">개요<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>이 스크립트는 TUNE과 Branch시스템에서 익스포트 하는 스크립트입니다.</li>
-<li>이 스크립트는 Python v3.7.x에서 실행되며, v2.x에서는 실행되지 않습니다.</li>
-<li>현재는 <strong>한번의 요청당 최대 2백만개의 레코드까지만 익스포트가 가능</strong>합니다. 그러므로 익스포트시 레코드 갯수가 2백만개 라면, 더 많은 레코드가 있으나 일부 레코드가 익스포트되지 못함을 의미합니다. 볼륨이 많은 특정이벤트나 오픈로그의 이런 경우가 있을 수 있으며, 이 경우 시간별 또는 이벤트별로 나누어서 익스포트 하시기 바랍니다.</li>
+<li>This script is able to export log from TUNE and Branch, but export from TUNE will be stop on Apr. 30.</li>
+<li>Compatible only Python v3.7.x.</li>
+<li>For now <strong>maximum 2-mil records are returned per one request.</strong>
+  So if 2-mil records are returned, it means there would be more than 2-mil records within the request date range.
+  For this case, please divide calls to shorter date range, or divide per event.</li>
 </ul>
-<h2 id="1">1. 파이썬 설치<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<h2 id="1-install-python">1. Install Python<a class="headerlink" href="#1-install-python" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><strong>아래의 웹사이트에서 Python 3.7.x을 설치합니다. Python 2.x와는 호환되지 않습니다.</strong></p>
+<p>** Install Python 3.7.x from below link. This script is not compatible with Python 2.x.**</p>
 <ul>
 <li><a href="https://www.python.org">https://www.python.org</a></li>
 <li><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
 </ul>
 </li>
 <li>
-<p><strong>맥</strong>: 특이사항 없음.</p>
+<p><strong>Mac</strong>: N/A</p>
 </li>
 <li>
-<p><strong>윈도우</strong>: 설치시 주의사항</p>
+<p>*<em>Windows</em>: NOTE</p>
 <ul>
-<li>설치 인스톨러의 화면하단 <code>Add Python 3.7. to PATH</code> 체크</li>
+<li>Check <code>Add Python 3.7. to PATH</code> in the bottom of the installer window.</li>
 </ul>
 <p><img alt="image" src="../../img/python_install_windows.png" /></p>
 </li>
 </ul>
-<h2 id="2-python">2. Python 설치확인<a class="headerlink" href="#2-python" title="Permanent link">&para;</a></h2>
+<h2 id="2-verify-python-installation">2. Verify Python installation.<a class="headerlink" href="#2-verify-python-installation" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>맥</strong>: 맥에서는 2.x가 기본적으로 설치되어 있으며, 여기에 3.x를 추가로 설치하게 됩니다.<ul>
-<li><code>python</code> 명령어로는 2.x가 사용되며, <code>python3</code> 명령으로 3.x버전을 사용할 수 있습니다.</li>
-<li>아래와 같이 명령어가 수행되면 정상입니다.
+<li><strong>Mac</strong>: 2.x is install by default. We need to additionally install 3.x.<ul>
+<li><code>python</code> command run Python 2.x interpreter, <code>python3</code> command run Python 3.x interpreter.</li>
+<li>Please verify installed Python version with below command.
 <div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python --version
 Python 2.7.10
 
@@ -390,88 +392,88 @@ Python 3.7.3
 </pre></div></li>
 </ul>
 </li>
-<li><strong>윈도우</strong>: Python이 기본으로 설치되어있지 않으며, 3.7을 설치하게 되면 <code>python</code>명령어로 Python 3.x를 사용하게 됩니다.<ul>
-<li>아래와 같이 명령어가 수행되면 정상입니다.
+<li><strong>Windows</strong>: Python is not installed by default. Once install Python 3.7, you can run Python 4.x using <code>python</code> command.<ul>
+<li>Please verify installed Python version with below command.
 <div class="codehilite"><pre><span></span>C:\Users\Bo&gt;python --version
 Python 3.7.3
 </pre></div></li>
 </ul>
 </li>
 </ul>
-<h2 id="3-pip">3. PIP 설치확인<a class="headerlink" href="#3-pip" title="Permanent link">&para;</a></h2>
+<h2 id="3-verify-pip-installation">3. Verify PIP installation.<a class="headerlink" href="#3-verify-pip-installation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>PIP는 Python에서 패키지(라이브러리)를 설치해주는 툴입니다. PIP가 정상적으로 실행되는지 확인합니다.</li>
-<li><strong>맥</strong>: <code>python3</code> 명령어 사용.<ul>
-<li>아래와 같이 명령어가 수행되면 정상입니다.
+<li>PIP is Python's package(library) installation too. please verify whether PIP is properly installed.</li>
+<li><strong>Mac</strong>: Use <code>python3</code> command.<ul>
+<li>Please verify PIP installation with below command.
 <div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:~ son$ pip3 --version
 pip 19.0.3 from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pip (python 3.7)
 </pre></div></li>
 </ul>
 </li>
-<li><strong>윈도우</strong>: <code>python</code> 명령어 사용.<ul>
-<li>아래와 같이 명령어가 수행되면 정상입니다.
+<li><strong>Windows</strong>: Use <code>python</code> command.<ul>
+<li>Please verify PIP installation with below command.
 <div class="codehilite"><pre><span></span>C:\Users\Bo&gt;pip --version
 pip 19.0.3 from c:\users\bo\appdata\local\programs\python\python37-32\lib\site-packages\pip (python 3.7)
 </pre></div></li>
 </ul>
 </li>
 </ul>
-<h2 id="4-requests">4. <code>requests</code> 패키지(라이브러리) 설치<a class="headerlink" href="#4-requests" title="Permanent link">&para;</a></h2>
+<h2 id="4-install-requests-package">4. Install <code>requests</code> package.<a class="headerlink" href="#4-install-requests-package" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><code>requests</code>는 로그 익스포트에서 사용되는 추가 설치가 필요한 패키지(라이브러리)이므로 스크립트 실행전 인스톨 하셔야합니다.</p>
+<p><code>requests</code> is a package required for this script, please install this package before running the script.</p>
 </li>
 <li>
-<p><strong>맥</strong>: <code>pip3</code> 명령어 사용.</p>
+<p><strong>Mac</strong>: Use <code>pip3</code> command</p>
 <ul>
-<li>아래와 같이 명령어를 수행했을때 설치메시지가 나오면 정상입니다.
+<li>Use below command
 <div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ pip3 install requests
 </pre></div></li>
 </ul>
 </li>
-<li><strong>윈도우</strong>: <code>pip</code> 명령어 사용.<ul>
-<li>아래와 같이 명령어를 수행했을때 설치메시지가 나오면 정상입니다.
+<li><strong>Windows</strong>: Use <code>pip</code> command<ul>
+<li>Use below command
   <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;pip install requests
 </pre></div></li>
 </ul>
 </li>
 </ul>
-<h2 id="5">5. 스크립트 실행<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<h2 id="5-running-script">5. Running script.<a class="headerlink" href="#5-running-script" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>스크립트 실행 이전에 아래의 설정파일에 대한 설명을 먼저 참고하세요.</strong></li>
-<li>스크립트는 새폴더 생성 후 특정 디렉토리에 아래의 파일들을 저장합니다.<ul>
-<li>실행에 필요한 파일목록 : <code>export.py, config.json, fields_install.csv, fields_event.csv, fields_open.csv</code></li>
+<li><strong>Please read configuration guide in below in advance, before running the script.</strong></li>
+<li>Create a folder, and store all the below files in it.<ul>
+<li>File list: <code>export.py, config.json, fields_install.csv, fields_event.csv, fields_open.csv</code></li>
 </ul>
 </li>
-<li>스크립트가 저장된 폴더로 이동합니다.<ul>
-<li><strong>맥</strong> : <code>terminal</code>명령어로 터미널 프로그램을 실행한 후 <code>cd</code> 명령어로 해당 폴더로 이동합니다.</li>
-<li><strong>윈도우</strong> : <code>cmd</code>명령어로 명령프롬프트를 프로그램을 실행한 후 <code>cd</code> 명령어로 해당 폴더로 이동합니다.</li>
+<li>Move to the folder where the files are located.<ul>
+<li><strong>Mac</strong> : Run Terminal with <code>terminal</code> command, and move to the folder with <code>cd</code> command.</li>
+<li><strong>Windows</strong> : Run Command Prompt with <code>cmd</code> command, and move to the folder with <code>cd</code> command.</li>
 </ul>
 </li>
 <li>
-<p><strong>맥</strong>: <code>python3</code> 명령어 사용.</p>
+<p><strong>Mac</strong>: User <code>python3</code> command</p>
 <ul>
-<li><strong>기본설정으로 실행</strong><ul>
-<li>아래와 같이 추가 파라메터가 없는경우 스크립트와 같은 디렉토리의 <code>config.json</code> 파일을 사용해서 <code>install</code>로그를 익스포트 합니다.</li>
-<li>아래 두가지 명령은 실제 동일합니다.
+<li><strong>Default Configuration</strong><ul>
+<li>If there is no additional params, scirpt export <code>install</code> log using <code>config.json</code> file in the same folder.</li>
+<li>Below two sample commands are identical.
 <div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py
 Bo-hyungs-MacBook:log son$ python3 export.py --config config.json --log install
 </pre></div></li>
 </ul>
 </li>
 <li>
-<p><strong>설정파일을 명시적으로 지정</strong></p>
+<p><strong>Explicitly specify configuration file.</strong></p>
 <ul>
-<li>아래와 같이 <code>--config</code> 파라메터 뒤에 파일명을 지정하면 특정 설정파일을 사용해서 실행합니다.
+<li>specify config file with <code>--config</code> as below sample.
 <div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py --config config2.json
 </pre></div></li>
 </ul>
 </li>
 <li>
-<p><strong>익스포트할 로그를 지정</strong></p>
+<p><strong>Explicitly specify log to export</strong></p>
 <ul>
-<li>아래와 같이 <code>--log</code> 파라메터 뒤에 로그를 지정하면 해당 로그를 익스포트 합니다.</li>
-<li>아래는 install, event, open 로그를 각각 익스포트 하는 3가지 예시 입니다.
+<li>specify log to export with <code>--log</code> as below sample.</li>
+<li>3 examples for export of <code>install</code>, <code>event</code>, <code>open</code> log.
 <div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py --log install
 Bo-hyungs-MacBook:log son$ python3 export.py --log event
 Bo-hyungs-MacBook:log son$ python3 export.py --log open
@@ -481,29 +483,27 @@ Bo-hyungs-MacBook:log son$ python3 export.py --log open
 </ul>
 </li>
 <li>
-<p><strong>윈도우</strong>: <code>python</code> 명령어 사용.</p>
+<p><strong>Windows</strong>: Use <code>python</code> command.</p>
 <ul>
-<li><strong>기본설정으로 실행</strong><ul>
-<li>아래와 같이 추가 파라메터가 없는경우 스크립트와 같은 디렉토리의 <code>config.json</code> 파일을 사용해서 <code>install</code>로그를 익스포트 합니다.</li>
-<li>아래 두가지 명령은 실제 동일합니다.
-<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py
+<li><strong>Default Configuration</strong></li>
+<li>If there is no additional params, scirpt export <code>install</code> log using <code>config.json</code> file in the same folder.</li>
+<li>Below two sample commands are identical.
+    <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py
 C:\Users\Bo\log&gt;python export.py --config config.json --log install
 </pre></div></li>
-</ul>
-</li>
 <li>
-<p><strong>설정파일을 명시적으로 지정</strong></p>
+<p><strong>Explicitly specify configuration file.</strong></p>
 <ul>
-<li>아래와 같이 <code>--config</code> 파라메터 뒤에 파일명을 지정하면 특정 설정파일을 사용해서 실행합니다.
+<li>specify config file with <code>--config</code> as below sample.
 <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py --config config2.json
 </pre></div></li>
 </ul>
 </li>
 <li>
-<p><strong>익스포트할 로그를 지정</strong></p>
+<p><strong>Explicitly specify log to export</strong></p>
 <ul>
-<li>아래와 같이 <code>--log</code> 파라메터 뒤에 로그를 지정하면 해당 로그를 익스포트 합니다.</li>
-<li>아래는 install, event, open 로그를 각각 익스포트 하는 3가지 예시 입니다.
+<li>specify log to export with <code>--log</code> as below sample.</li>
+<li>3 examples for export of <code>install</code>, <code>event</code>, <code>open</code> log.
 <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py --log install
 C:\Users\Bo\log&gt;python export.py --log event
 C:\Users\Bo\log&gt;python export.py --log open
@@ -513,17 +513,14 @@ C:\Users\Bo\log&gt;python export.py --log open
 </ul>
 </li>
 </ul>
-<h2 id="6">6. 스크립트 설정파일<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h2 id="6-script-configuration">6. Script Configuration<a class="headerlink" href="#6-script-configuration" title="Permanent link">&para;</a></h2>
 <ul>
-<li>스크립트 : <code>export.py</code></li>
+<li>Python script : <code>export.py</code></li>
 <li>
-<p>설정파일 (<code>config.json</code>) 값 설정 :</p>
+<p>Configuration file: <code>config.json</code></p>
 <ul>
 <li>
-<p>샘플 : JSON 형식입니다.</p>
-<ul>
-<li>스크립트 수행중 에러가 난다면 아마 잘못된 JSON 형식이기 때문일 것입니다.</li>
-<li>콤마를 주의하시고 모든 값들은 쌍따옴표로 감싸시기 바랍니다.
+<p>Sample : JSON
 <div class="codehilite"><pre><span></span>    {
       &quot;advertiser.name&quot;: &quot;HelloWorld&quot;,
       &quot;advertiser_id&quot;: &quot;112233&quot;,
@@ -536,66 +533,64 @@ C:\Users\Bo\log&gt;python export.py --log open
       &quot;filter_site_event_names&quot;: [&quot;purchase&quot;],
       &quot;branch_redirect&quot;: &quot;&quot;
     }
-</pre></div></li>
-</ul>
+</pre></div></p>
 </li>
 <li>
-<p><code>advertiser.name</code> (옵션) : 광고주 이름을 설정합니다.</p>
+<p><code>advertiser.name</code> (Optional) : Name of advertiser.</p>
 </li>
-<li><code>advertiser_id</code> (필수) : 광고주 아이디를 설정합니다.<ul>
-<li>TUNE 대쉬보드의 <code>[ACCOUNTS]-[Advertiser Account]-[Details]</code> 의 <code>Advertiser ID</code>에서 확인하실 수 있습니다.</li>
+<li><code>advertiser_id</code> (Required) : Site ID of advertiser.<ul>
+<li>Check out from <code>[ACCOUNTS]-[Advertiser Account]-[Details]</code> in TUNE dashboard</li>
 </ul>
 </li>
-<li><code>api_key</code> (필수) :<ul>
-<li>TUNE 대쉬보드의 <code>[ACCOUNTS]-[Users]</code>에서 사용자를 선택한 후 <code>API Keys</code>탭에서 확인합니다.</li>
-<li><strong>계정이 마이그레이션 되기 이전에 이미 생성된 API Key여야 양측 시스템 모두에서 동작합니다. 신규로 생성한것을 설정 하시면 TUNE에서만 동작합니다.</strong></li>
-<li>키를 신규로 생성하시고 Branch에서도 동작하게 하시려면 서포트팀(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>)을 통해서 요청해주시기 바랍니다.</li>
+<li><code>api_key</code> (Required) :<ul>
+<li>Selected user from <code>[ACCOUNTS]-[Users]</code> in TUNE dashboard, and check out <code>API Keys</code> tab.</li>
+<li><strong>Only API Key created before app migration works from both system. Newly created API keys will be only work on TUNE system.</strong></li>
+<li>If you need to create new key please reach out to support team (<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>).</li>
 </ul>
 </li>
-<li><code>start_date</code> (필수) : 년월일 <code>YYYY-MM-DD</code>형식 또는 년월일시분초 <code>YYYY-MM-DDTHH-MM-SS</code>형식<ul>
-<li>시간대 별로 익스포트 할 경우에는 일시가 모두 포함된 <code>YYYY-MM-DDTHH-MM-SS</code>형식으로 하시면됩니다. 일단위 익스포트시에는 년월일 형식을 사용하시면됩니다.</li>
-<li>예) <code>2019-04-15</code> : 2019년 4월 15일 0시 0분 0초</li>
-<li>예) <code>2019-04-05T00:00:00</code>: 2019년 4월 5일 0시 0분 0초</li>
-<li>예) <code>2019-04-05T01:00:00</code>: 2019년 4월 5일 1시 0분 0초</li>
+<li><code>start_date</code> (Required) : <code>YYYY-MM-DD</code> or <code>YYYY-MM-DDTHH-MM-SS</code> format.<ul>
+<li><code>YYYY-MM-DDTHH-MM-SS</code> only required only when you export log file for 1 hour range.</li>
+<li>Ex) <code>2019-04-15</code></li>
+<li>Ex) <code>2019-04-05T00:00:00</code></li>
+<li>Ex) <code>2019-04-05T01:00:00</code></li>
 </ul>
 </li>
-<li><code>days</code>, <code>'hours</code> (둘중 하나 필수) :<ul>
-<li><code>start_date</code>로부터 어느 기간동안의 로그를 익스포트 할지 설정하며, 이값으로 <code>end_date</code>가 설정됩니다.</li>
-<li><code>days</code>와 <code>hours</code> 둘중 하나만 설정하셔야 하며, 둘다 설정될 경우 <code>days</code>값이 사용됩니다.</li>
-<li><strong>값을 설정하지 않으려는 경우</strong> <code>"days": ""</code>, <code>"hours": ""</code>과 같이 설정하시면됩니다.</li>
+<li><code>days</code>, <code>'hours</code> (One of the two are required) :<ul>
+<li>Specify the range from <code>start_date</code>. <code>end_date</code> picked using this value.</li>
+<li>Should  set one between <code>days</code> or <code>hours</code>, if both are set <code>days</code> value is used.</li>
+<li><strong>For no filtering:</strong> Please set like <code>"days": ""</code>, <code>"hours": ""</code></li>
 </ul>
 </li>
-<li><code>timezone</code> (필수) :<ul>
-<li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">타임존 데이터베이스 페이지</a>의 TZ database name 컬럼의 값을 설정합니다.</li>
-<li>한국표준시는 <code>Asia/Seoul</code>, UTC는 <code>UTC</code>를 설정합니다.</li>
+<li><code>timezone</code> (Required) :<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">Timezone database page</a>: use valuse in <code>TZ database name</code> column.</li>
+<li>Value for Korea standard time is <code>Asia/Seoul</code>, value for UTC is <code>UTC</code>.</li>
 </ul>
 </li>
-<li><code>filter_site_ids</code> (필수) :<ul>
-<li>특정 앱의 로그만 익스포트 할경우 설정하며, 설정하지 않으면 모든 앱의 로그가 익스포트 됩니다.</li>
-<li><strong>필터링 하지 않을 경우</strong> <code>"filter_site_ids": []</code>와 같이 설정합니다.</li>
-<li>필터링이 필요한 경우 : <code>"filter_site_ids": ["111111", "222222"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+<li><code>filter_site_ids</code> (Required) :<ul>
+<li>Only set if you would like to export specified apps. All the apps logs are export when not set.</li>
+<li><strong>For no filtering:</strong>, set like <code>"filter_site_ids": []</code></li>
+<li>If filtering is needed: please enclose IDs with double-quote and delimit with comma like <code>"filter_site_ids": ["111111", "222222"]</code></li>
 </ul>
 </li>
-<li><code>filter_site_event_names</code> (필수) :<ul>
-<li>이벤트로그에서만 사용되며, 특정 이벤트의 로그만 익스포트 할경우 설정하며, 설정하지 않으면 모든 이벤트의 로그가 익스포트 됩니다.</li>
-<li><strong>필터링 하지 않을 경우</strong> <code>"filter_site_event_names": []</code>와 같이 설정합니다.</li>
-<li>필터링이 필요한 경우 : <code>"filter_site_event_names": ["purchase", "login"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+<li><code>filter_site_event_names</code> (Required) :<ul>
+<li>Only used for event log export.</li>
+<li><strong>For no filtering:</strong> Set like <code>"filter_site_event_names": []</code></li>
+<li>If filtering is needed: please enclose event names with double-quote and delimit with comma like <code>"filter_site_event_names": ["purchase", "login"]</code></li>
 </ul>
 </li>
-<li><code>branch_redirect</code> (필수) :<ul>
-<li>로그를 TUNE 시스템에서 추출할지 Branch 시스템에서 추출할지 설정합니다.</li>
-<li><strong>마이그레이션이 완료된 경우 TUNE에서는 신규데이터가 기록되지 않으며, 4월말까지는 TUNE시스템에서 로그 익스포트가 가능합니다.</strong></li>
-<li><strong>TUNE 시스템에서 익스포트 할 경우</strong>  <code>"branch_redirect": ""</code>와 같이 설정합니다.</li>
-<li><strong>Branch 시스템에서 익스포트 할 경우</strong>  <code>"branch_redirect": "3"</code>와 같이 설정합니다.</li>
-</ul>
-</li>
+<li><code>branch_redirect</code> (Required) :<ul>
+<li>Specify system to export log.</li>
+<li><strong>Export from TUNE:</strong>  <code>"branch_redirect": ""</code></li>
+<li><strong>Export from Branch:</strong>  <code>"branch_redirect": "3"</code></li>
 </ul>
 </li>
 </ul>
-<h2 id="7">7. 추출필드 설정파일<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+</li>
+</ul>
+<h2 id="7-field-configuration">7. Field configuration<a class="headerlink" href="#7-field-configuration" title="Permanent link">&para;</a></h2>
 <ul>
-<li>파일: <code>fields_install.json</code>, <code>fields_event.json</code>, <code>fields_open.json</code></li>
-<li>샘플
+<li>Files: <code>fields_install.json</code>, <code>fields_event.json</code>, <code>fields_open.json</code></li>
+<li>Sample
     <div class="codehilite"><pre><span></span>  created
 id
 status
@@ -608,18 +603,18 @@ ios_ifa
 ios_ifv
 #platform_aid
 </pre></div><ul>
-<li>스크립트 실행시 3개의 파일을 모두 스크립트 파일과 동일한 디렉토리에 있어야합니다.</li>
-<li>로그별로 <code>fields_</code>로 시작하며 뒤에 각각의 로그이름이 붙으며, 해당 로그 익스포트시 사용됩니다.</li>
-<li>필드명은 기존에 로그익스포트시 CSV파일의 첫번째 열에 설정되었던 필드명을 사용하시기 바랍니다.</li>
-<li>한줄에 하나씩 익스포트할 필드를 설정하시기 바랍니다.</li>
-<li><code>#</code>를 필드명 앞에 추가하면 해당 필드를 임시로 제외할 수 있습니다.</li>
-<li>값이 없는 행을 추가하실 수 있습니다.</li>
+<li>Three config files should exist within the same folder with the script.</li>
+<li>Per each log, field configuration file's name starts with <code>fields_</code> prefix.</li>
+<li>Use field names from from header row in csv file export from TUNE dashboard.</li>
+<li>List app each field to export one in one line.</li>
+<li>You can temporarily exclude specific fields by put <code>#</code> in front of the field name.</li>
+<li>You can freely add empty row.</li>
 </ul>
 </li>
 </ul>
-<h2 id="8">8. 다운로드된 로그파일<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<h2 id="8-filename-of-exported-log">8. Filename of exported log.<a class="headerlink" href="#8-filename-of-exported-log" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>데이터소스_광고주이름_광고주아이디_로그이름_시작일시_끝일시_타임존_익스포트작업ID.csv</code>의 형식으로 스크립트가 있는 디렉토리에 저장됩니다.</li>
+<li><code>DATA_SOURCE_ADVERTISER_NAME_ADVERTISER_ID_LOG_NAME_START_DATE_END_DATE_TIMEZONE_EXPORT_JOB_ID.csv</code></li>
 </ul>
                 
                   
