@@ -1,0 +1,699 @@
+
+
+
+
+<!doctype html>
+<html lang="kr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="클립보드로 복사">
+      
+        <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="검색어와 일치하는 문서가 없습니다">
+      
+        <meta name="lang:search.result.one" content="1개의 일치하는 문서">
+      
+        <meta name="lang:search.result.other" content="#개의 일치하는 문서">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+    
+    
+      
+        <title>로그 익스포트 스크립트 가이드 - Branch Korea Solutions Engineering</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#_1" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Branch Korea Solutions Engineering" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Branch Korea Solutions Engineering
+              </span>
+              <span class="md-header-nav__topic">
+                로그 익스포트 스크립트 가이드
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            검색어를 입력하세요
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Branch Korea Solutions Engineering" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Branch Korea Solutions Engineering
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../branch/" title="Guides" class="md-nav__link">
+      Guides
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Migration" class="md-nav__link">
+      Migration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../pages/" title="Translations" class="md-nav__link">
+      Translations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../data_feeds/" title="Data Feeds" class="md-nav__link">
+      Data Feeds
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../fraud/" title="Fraud" class="md-nav__link">
+      Fraud
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">목차</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="개요" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" title="1. 파이썬 설치" class="md-nav__link">
+    1. 파이썬 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-python" title="2. Python 설치확인" class="md-nav__link">
+    2. Python 설치확인
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pip" title="3. PIP 설치확인" class="md-nav__link">
+    3. PIP 설치확인
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-requests" title="4. requests 패키지(라이브러리) 설치" class="md-nav__link">
+    4. requests 패키지(라이브러리) 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" title="5. 스크립트 실행" class="md-nav__link">
+    5. 스크립트 실행
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" title="6. 스크립트 설정파일" class="md-nav__link">
+    6. 스크립트 설정파일
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" title="7. 추출필드 설정파일" class="md-nav__link">
+    7. 추출필드 설정파일
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8" title="8. 다운로드된 로그파일" class="md-nav__link">
+    8. 다운로드된 로그파일
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="_1">로그 익스포트 스크립트 가이드<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span>최종 수정일 : 2019년 4월 15일
+</pre></div>
+
+
+<hr />
+<h2 id="_2">개요<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이 스크립트는 TUNE과 Branch시스템에서 익스포트 하는 스크립트입니다.</li>
+<li>이 스크립트는 Python v3.7.x에서 실행되며, v2.x에서는 실행되지 않습니다.</li>
+</ul>
+<h2 id="1">1. 파이썬 설치<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>아래의 웹사이트에서 Python 3.7.x을 설치합니다. Python 2.x와는 호환되지 않습니다.</strong></p>
+<ul>
+<li><a href="https://www.python.org">https://www.python.org</a></li>
+<li><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
+</ul>
+</li>
+<li>
+<p><strong>맥</strong>: 특이사항 없음.</p>
+</li>
+<li>
+<p><strong>윈도우</strong>: 설치시 주의사항</p>
+<ul>
+<li>설치 인스톨러의 화면하단 <code>Add Python 3.7. to PATH</code> 체크</li>
+</ul>
+<p><img alt="image" src="../../img/python_install_windows.png" /></p>
+</li>
+</ul>
+<h2 id="2-python">2. Python 설치확인<a class="headerlink" href="#2-python" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>맥</strong>: 맥에서는 2.x가 기본적으로 설치되어 있으며, 여기에 3.x를 추가로 설치하게 됩니다.<ul>
+<li><code>python</code> 명령어로는 2.x가 사용되며, <code>python3</code> 명령으로 3.x버전을 사용할 수 있습니다.</li>
+<li>아래와 같이 명령어가 수행되면 정상입니다.
+<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python --version
+Python 2.7.10
+
+Bo-hyungs-MacBook:~ son$ python3 --version
+Python 3.7.3
+</pre></div></li>
+</ul>
+</li>
+<li><strong>윈도우</strong>: Python이 기본으로 설치되어있지 않으며, 3.7을 설치하게 되면 <code>python</code>명령어로 Python 3.x를 사용하게 됩니다.<ul>
+<li>아래와 같이 명령어가 수행되면 정상입니다.
+<div class="codehilite"><pre><span></span>C:\Users\Bo&gt;python --version
+Python 3.7.3
+</pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-pip">3. PIP 설치확인<a class="headerlink" href="#3-pip" title="Permanent link">&para;</a></h2>
+<ul>
+<li>PIP는 Python에서 패키지(라이브러리)를 설치해주는 툴입니다. PIP가 정상적으로 실행되는지 확인합니다.</li>
+<li><strong>맥</strong>: <code>python3</code> 명령어 사용.<ul>
+<li>아래와 같이 명령어가 수행되면 정상입니다.
+<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:~ son$ pip3 --version
+pip 19.0.3 from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pip (python 3.7)
+</pre></div></li>
+</ul>
+</li>
+<li><strong>윈도우</strong>: <code>python</code> 명령어 사용.<ul>
+<li>아래와 같이 명령어가 수행되면 정상입니다.
+<div class="codehilite"><pre><span></span>C:\Users\Bo&gt;pip --version
+pip 19.0.3 from c:\users\bo\appdata\local\programs\python\python37-32\lib\site-packages\pip (python 3.7)
+</pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="4-requests">4. <code>requests</code> 패키지(라이브러리) 설치<a class="headerlink" href="#4-requests" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><code>requests</code>는 로그 익스포트에서 사용되는 추가 설치가 필요한 패키지(라이브러리)이므로 스크립트 실행전 인스톨 하셔야합니다.</p>
+</li>
+<li>
+<p><strong>맥</strong>: <code>pip3</code> 명령어 사용.</p>
+<ul>
+<li>아래와 같이 명령어를 수행했을때 설치메시지가 나오면 정상입니다.
+<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ pip3 install requests
+</pre></div></li>
+</ul>
+</li>
+<li><strong>윈도우</strong>: <code>pip</code> 명령어 사용.<ul>
+<li>아래와 같이 명령어를 수행했을때 설치메시지가 나오면 정상입니다.
+  <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;pip install requests
+</pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="5">5. 스크립트 실행<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>스크립트 실행 이전에 아래의 설정파일에 대한 설명을 먼저 참고하세요.</strong></li>
+<li>
+<p><strong>맥</strong>: <code>python3</code> 명령어 사용.</p>
+<ul>
+<li><strong>기본설정으로 실행</strong><ul>
+<li>아래와 같이 추가 파라메터가 없는경우 스크립트와 같은 디렉토리의 <code>config.json</code> 파일을 사용해서 <code>install</code>로그를 익스포트 합니다.</li>
+<li>아래 두가지 명령은 실제 동일합니다.
+<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py
+Bo-hyungs-MacBook:log son$ python3 export.py --config config.json --log install
+</pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>설정파일을 명시적으로 지정</strong></p>
+<ul>
+<li>아래와 같이 <code>--config</code> 파라메터 뒤에 파일명을 지정하면 특정 설정파일을 사용해서 실행합니다.
+<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py --config config2.json
+</pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>익스포트할 로그를 지정</strong></p>
+<ul>
+<li>아래와 같이 <code>--log</code> 파라메터 뒤에 로그를 지정하면 해당 로그를 익스포트 합니다.</li>
+<li>아래는 install, event, open 로그를 각각 익스포트 하는 3가지 예시 입니다.
+<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py --log install
+Bo-hyungs-MacBook:log son$ python3 export.py --log event
+Bo-hyungs-MacBook:log son$ python3 export.py --log open
+</pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>윈도우</strong>: <code>python</code> 명령어 사용.</p>
+<ul>
+<li><strong>기본설정으로 실행</strong><ul>
+<li>아래와 같이 추가 파라메터가 없는경우 스크립트와 같은 디렉토리의 <code>config.json</code> 파일을 사용해서 <code>install</code>로그를 익스포트 합니다.</li>
+<li>아래 두가지 명령은 실제 동일합니다.
+<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py
+C:\Users\Bo\log&gt;python export.py --config config.json --log install
+</pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>설정파일을 명시적으로 지정</strong></p>
+<ul>
+<li>아래와 같이 <code>--config</code> 파라메터 뒤에 파일명을 지정하면 특정 설정파일을 사용해서 실행합니다.
+<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py --config config2.json
+</pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>익스포트할 로그를 지정</strong></p>
+<ul>
+<li>아래와 같이 <code>--log</code> 파라메터 뒤에 로그를 지정하면 해당 로그를 익스포트 합니다.</li>
+<li>아래는 install, event, open 로그를 각각 익스포트 하는 3가지 예시 입니다.
+<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py --log install
+C:\Users\Bo\log&gt;python export.py --log event
+C:\Users\Bo\log&gt;python export.py --log open
+</pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6">6. 스크립트 설정파일<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>스크립트 : <code>export.py</code></li>
+<li>
+<p>설정파일 (<code>config.json</code>) 값 설정 :</p>
+<ul>
+<li>
+<p>샘플 : JSON 형식입니다.</p>
+<ul>
+<li>스크립트 수행중 에러가 난다면 아마 잘못된 JSON 형식이기 때문일 것입니다.</li>
+<li>콤마를 주의하시고 모든 값들은 쌍따옴표로 감싸시기 바랍니다.
+<div class="codehilite"><pre><span></span>    {
+      &quot;advertiser.name&quot;: &quot;HelloWorld&quot;,
+      &quot;advertiser_id&quot;: &quot;22012&quot;,
+      &quot;api_key&quot; : &quot;YOUR_API_KEY&quot;,
+      &quot;start_date&quot;: &quot;2019-04-10&quot;,
+      &quot;days&quot;: &quot;&quot;,
+      &quot;hours&quot;: &quot;&quot;,
+      &quot;timezone&quot;: &quot;Asia/Seoul&quot;,
+      &quot;filter_site_ids&quot;: [&quot;1111&quot;, &quot;222222&quot;],
+      &quot;filter_site_event_names&quot;: [&quot;purchase&quot;],
+      &quot;branch_redirect&quot;: &quot;&quot;
+    }
+</pre></div></li>
+</ul>
+</li>
+<li>
+<p><code>advertiser.name</code> (옵션) : 광고주 이름을 설정합니다.</p>
+</li>
+<li><code>advertiser_id</code> (필수) : 광고주 아이디를 설정합니다.<ul>
+<li>TUNE 대쉬보드의 <code>[ACCOUNTS]-[Advertiser Account]-[Details]</code> 의 <code>Advertiser ID</code>에서 확인하실 수 있습니다.</li>
+</ul>
+</li>
+<li><code>api_key</code> (필수) :<ul>
+<li>TUNE 대쉬보드의 <code>[ACCOUNTS]-[Users]</code>에서 사용자를 선택한 후 <code>API Keys</code>탭에서 확인합니다.</li>
+<li><strong>계정이 마이그레이션 되기 이전에 이미 생성된 API Key여야 양측 시스템 모두에서 동작합니다. 신규로 생성한것을 설정 하시면 TUNE에서만 동작합니다.</strong></li>
+<li>키를 신규로 생성하시고 Branch에서도 동작하게 하시려면 서포트팀(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>)을 통해서 요청해주시기 바랍니다.</li>
+</ul>
+</li>
+<li><code>start_date</code> (필수) : 년월일 <code>YYYY-MM-DD</code>형식 또는 년월일시분초 <code>YYYY-MM-DDTHH-MM-SS</code>형식<ul>
+<li>시간대 별로 익스포트 할 경우에는 일시가 모두 포함된 <code>YYYY-MM-DDTHH-MM-SS</code>형식으로 하시면됩니다. 일단위 익스포트시에는 년월일 형식을 사용하시면됩니다.</li>
+<li>예) <code>2019-04-15</code> : 2019년 4월 15일 0시 0분 0초</li>
+<li>예) <code>2019-04-05T00:00:00</code>: 2019년 4월 5일 0시 0분 0초</li>
+<li>예) <code>2019-04-05T01:00:00</code>: 2019년 4월 5일 1시 0분 0초</li>
+</ul>
+</li>
+<li><code>days</code>, <code>'hours</code> (둘중 하나 필수) :<ul>
+<li><code>start_date</code>로부터 어느 기간동안의 로그를 익스포트 할지 설정하며, 이값으로 <code>end_data</code>가 설정됩니다.</li>
+<li><code>days</code>와 <code>hours</code> 둘중 하나만 설정하셔야 하며, 둘다 설정될 경우 <code>days</code>값이 사용됩니다.</li>
+<li><strong>값을 설정하지 않으려는 경우</strong> <code>"days": ""</code>, <code>"hours": ""</code>과 같이 설정하시면됩니다.</li>
+</ul>
+</li>
+<li><code>timezone</code> (필수) :<ul>
+<li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">타임존 데이터 베이스 페이지</a>의 TZ database name 컬럼의 값을 설정합니다.</li>
+<li>한국표준시는 <code>Asia/Seoul</code>, UTC는 <code>UTC</code>를 설정합니다.</li>
+</ul>
+</li>
+<li><code>filter_site_ids</code> (필수) :<ul>
+<li>특정 앱의 로그만 익스포트 할경우 설정하며, 설정하지 않으면 모든 앱의 로그가 익스포트 됩니다.</li>
+<li><strong>필터링 하지 않을 경우</strong> <code>"filter_site_ids": []</code>와 같이 설정합니다.</li>
+<li>필터링이 필요한 경우 : <code>"filter_site_ids": ["111111", "222222"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+</ul>
+</li>
+<li><code>filter_site_event_names</code> (필수) :<ul>
+<li>이벤트로그에서만 사용되며, 특정 이벤트의 로그만 익스포트 할경우 설정하며, 설정하지 않으면 모든 이벤트의 로그가 익스포트 됩니다.</li>
+<li><strong>필터링 하지 않을 경우</strong> <code>"filter_site_event_names": []</code>와 같이 설정합니다.</li>
+<li>필터링이 필요한 경우 : <code>"filter_site_event_names": ["purchase", "login"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+</ul>
+</li>
+<li><code>branch_redirect</code> (필수) :<ul>
+<li>로그를 TUNE 시스템에서 추출할지 Branch 시스템에서 추출할지 설정합니다.</li>
+<li><strong>마이그레이션이 완료된 경우 TUNE에서는 신규데이터가 기록되지 않으며, 4월말까지는 TUNE시스템에서 로그 익스포트가 가능합니다.</strong></li>
+<li><strong>TUNE 시스템에서 익스포트 할 경우</strong>  <code>"branch_redirect": ""</code>와 같이 설정합니다.</li>
+<li><strong>Branch 시스템에서 익스포트 할 경우</strong>  <code>"branch_redirect": "3"</code>와 같이 설정합니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="7">7. 추출필드 설정파일<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<ul>
+<li>파일: <code>fields_install.json</code>, <code>fields_event.json</code>, <code>fields_open.json</code></li>
+<li>샘플
+    <div class="codehilite"><pre><span></span>  created
+id
+status
+status_code
+
+mat_id
+google_aid
+os_id
+ios_ifa
+ios_ifv
+#platform_aid
+</pre></div><ul>
+<li>스크립트 실행시 3개의 파일을 모두 스크립트 파일과 동일한 디렉토리에 있어야합니다.</li>
+<li>로그별로 <code>fields_</code>로 시작하며 뒤에 각각의 로그이름이 붙으며, 해당 로그 익스포트시 사용됩니다.</li>
+<li>필드명은 기존에 로그익스포트시 CSV파일의 첫번째 열에 설정되었던 필드명을 사용하시기 바랍니다.</li>
+<li>한줄에 하나씩 익스포트할 필드를 설정하시기 바랍니다.</li>
+<li><code>#</code>를 필드명 앞에 추가하면 해당 필드를 임시로 제외할 수 있습니다.</li>
+<li>값이 없는 행을 추가하실 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="8">8. 다운로드된 로그파일<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>광고주아이디_로그이름_시작일시_끝일시_타임존_익스포트작업ID.csv</code>의 형식으로 스크립트가 있는 디렉토리에 저장됩니다.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/router.js"></script>
+      
+        <script src="../../../js/events.js"></script>
+      
+        <script src="../../../js/modals.js"></script>
+      
+        <script src="../../../js/images.js"></script>
+      
+        <script src="../../../js/buttons.js"></script>
+      
+        <script src="../../../js/progress.js"></script>
+      
+        <script src="../../../js/tabs.js"></script>
+      
+        <script src="../../../js/languages.js"></script>
+      
+        <script src="../../../js/utils.js"></script>
+      
+        <script src="../../../js/main.js"></script>
+      
+    
+    
+      
+        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+  </body>
+</html>
