@@ -17,7 +17,7 @@
       
         <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
       
       
         
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -64,6 +64,34 @@
     
     
       <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -103,22 +131,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Branch Korea Solutions Engineering
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Branch Korea Solutions Engineering
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Attribution Analytics Bridge Page 가이드 (마이그레이션 이후)
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -141,7 +168,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -311,7 +337,7 @@
                 
                 
                 <h1 id="attribution-analytics-bridge-page">Attribution Analytics Bridge Page 가이드 (마이그레이션 이후)<a class="headerlink" href="#attribution-analytics-bridge-page" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>Modified on: Feb 27, 2019
+<div class="codehilite"><pre><span></span><span class="n">Modified</span> <span class="k">on</span><span class="p">:</span> <span class="n">Feb</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">2019</span>
 </pre></div>
 
 
@@ -329,12 +355,12 @@
     클릭 측정 가이드 (광고매체용)</li>
 </ul>
 <h2 id="tune-link">TUNE Link 구조<a class="headerlink" href="#tune-link" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>https://az1-4.tlnk.io/serve?
-        action=click&amp;
-        site_id_android=142773&amp;site_id_ios=142753&amp;site_id_web=142774
-        campaign_id_android=442580&amp;campaign_id_ios=442555&amp;campaign_id_web=442581&amp;
-        publisher_id=366935&amp;
-        destination_id_android=536339&amp;destination_id_ios=536281&amp;destination_id_web=536340
+<div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">az1</span><span class="o">-</span><span class="mi">4</span><span class="p">.</span><span class="n">tlnk</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">serve</span><span class="o">?</span>
+        <span class="n">action</span><span class="o">=</span><span class="n">click</span><span class="o">&amp;</span>
+        <span class="n">site_id_android</span><span class="o">=</span><span class="mi">142773</span><span class="o">&amp;</span><span class="n">site_id_ios</span><span class="o">=</span><span class="mi">142753</span><span class="o">&amp;</span><span class="n">site_id_web</span><span class="o">=</span><span class="mi">142774</span>
+        <span class="n">campaign_id_android</span><span class="o">=</span><span class="mi">442580</span><span class="o">&amp;</span><span class="n">campaign_id_ios</span><span class="o">=</span><span class="mi">442555</span><span class="o">&amp;</span><span class="n">campaign_id_web</span><span class="o">=</span><span class="mi">442581</span><span class="o">&amp;</span>
+        <span class="n">publisher_id</span><span class="o">=</span><span class="mi">366935</span><span class="o">&amp;</span>
+        <span class="n">destination_id_android</span><span class="o">=</span><span class="mi">536339</span><span class="o">&amp;</span><span class="n">destination_id_ios</span><span class="o">=</span><span class="mi">536281</span><span class="o">&amp;</span><span class="n">destination_id_web</span><span class="o">=</span><span class="mi">536340</span>
 </pre></div>
 
 <ul>
@@ -342,13 +368,13 @@
 <p><strong>베이스 도메인 URL</strong></p>
 <ul>
 <li>TUNE 대쉬보드에서 TUNE Link 생성시 아래와 같은 형식으로 생성됩니다.
-    <div class="codehilite"><pre><span></span>https://az1-4.tlnk.io/serve
+    <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">az1</span><span class="o">-</span><span class="mi">4</span><span class="p">.</span><span class="n">tlnk</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">serve</span>
 </pre></div><ul>
 <li><code>tlnk.io</code>는 TUNE Link용 도메인이며, <code>az1-4</code>와 같은 서브도메인은 앱별로 고유하게 생성된 문자열이 사용됩니다.</li>
 </ul>
 </li>
 <li>광고매체에서 클릭측정을 위한 URL 생성시 아래와 같은 형식으로 베이스 도메인 URL을 생성할 수 있습니다.
-    <div class="codehilite"><pre><span></span>https://YOUR_PUBLISHER_ID.api-01.com/serve
+    <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">YOUR_PUBLISHER_ID</span><span class="p">.</span><span class="n">api</span><span class="o">-</span><span class="mi">01</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">serve</span>
 </pre></div><ul>
 <li><code>YOUR_PUBLISHER_ID</code>는 해당 광고주 계정에서 매체에게 부여된 ID이며, 동일한 광고매체라도 광고주 별로 각각 다른 ID가 부여됩니다.</li>
 </ul>
@@ -564,15 +590,13 @@ TUNE Link 생성 페이지에서 웹앱 선택 후 "Manually enter URL" 선택�
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -584,7 +608,7 @@ TUNE Link 생성 페이지에서 웹앱 선택 후 "Manually enter URL" 선택�
                 <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
@@ -612,12 +636,6 @@ TUNE Link 생성 페이지에서 웹앱 선택 후 "Manually enter URL" 선택�
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

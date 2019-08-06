@@ -17,7 +17,7 @@
       
         <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
       
       
         
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -64,6 +64,34 @@
     
     
       <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -103,22 +131,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Branch Korea Solutions Engineering
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Branch Korea Solutions Engineering
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Log Export Script Guide
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -141,7 +168,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -346,7 +372,7 @@
                 
                 
                 <h1 id="log-export-script-guide">Log Export Script Guide<a class="headerlink" href="#log-export-script-guide" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>Last updated: Apr 15th, 2019
+<div class="codehilite"><pre><span></span><span class="k">Last</span> <span class="n">updated</span><span class="p">:</span> <span class="n">Apr</span> <span class="mi">15</span><span class="n">th</span><span class="p">,</span> <span class="mi">2019</span>
 </pre></div>
 
 
@@ -386,18 +412,18 @@
 <li><strong>Mac</strong>: 2.x is install by default. We need to additionally install 3.x.<ul>
 <li><code>python</code> command run Python 2.x interpreter, <code>python3</code> command run Python 3.x interpreter.</li>
 <li>Please verify installed Python version with below command.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python --version
-Python 2.7.10
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python</span> <span class="c1">--version</span>
+<span class="n">Python</span> <span class="mi">2</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">10</span>
 
-Bo-hyungs-MacBook:~ son$ python3 --version
-Python 3.7.3
+<span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="o">~</span> <span class="n">son$</span> <span class="n">python3</span> <span class="c1">--version</span>
+<span class="n">Python</span> <span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">3</span>
 </pre></div></li>
 </ul>
 </li>
 <li><strong>Windows</strong>: Python is not installed by default. Once install Python 3.7, you can run Python 4.x using <code>python</code> command.<ul>
 <li>Please verify installed Python version with below command.
-<div class="codehilite"><pre><span></span>C:\Users\Bo&gt;python --version
-Python 3.7.3
+<div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="o">&gt;</span><span class="n">python</span> <span class="c1">--version</span>
+<span class="n">Python</span> <span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">3</span>
 </pre></div></li>
 </ul>
 </li>
@@ -407,15 +433,15 @@ Python 3.7.3
 <li>PIP is Python's package(library) installation too. please verify whether PIP is properly installed.</li>
 <li><strong>Mac</strong>: Use <code>python3</code> command.<ul>
 <li>Please verify PIP installation with below command.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:~ son$ pip3 --version
-pip 19.0.3 from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pip (python 3.7)
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="o">~</span> <span class="n">son$</span> <span class="n">pip3</span> <span class="c1">--version</span>
+<span class="n">pip</span> <span class="mi">19</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span> <span class="k">from</span> <span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Frameworks</span><span class="o">/</span><span class="n">Python</span><span class="p">.</span><span class="n">framework</span><span class="o">/</span><span class="n">Versions</span><span class="o">/</span><span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="p">.</span><span class="mi">7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
 </pre></div></li>
 </ul>
 </li>
 <li><strong>Windows</strong>: Use <code>python</code> command.<ul>
 <li>Please verify PIP installation with below command.
-<div class="codehilite"><pre><span></span>C:\Users\Bo&gt;pip --version
-pip 19.0.3 from c:\users\bo\appdata\local\programs\python\python37-32\lib\site-packages\pip (python 3.7)
+<div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="o">&gt;</span><span class="n">pip</span> <span class="c1">--version</span>
+<span class="n">pip</span> <span class="mi">19</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span> <span class="k">from</span> <span class="k">c</span><span class="p">:</span><span class="err">\</span><span class="n">users</span><span class="err">\</span><span class="n">bo</span><span class="err">\</span><span class="n">appdata</span><span class="err">\</span><span class="k">local</span><span class="err">\</span><span class="n">programs</span><span class="err">\</span><span class="n">python</span><span class="err">\</span><span class="n">python37</span><span class="o">-</span><span class="mi">32</span><span class="err">\</span><span class="n">lib</span><span class="err">\</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="err">\</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
 </pre></div></li>
 </ul>
 </li>
@@ -429,16 +455,16 @@ pip 19.0.3 from c:\users\bo\appdata\local\programs\python\python37-32\lib\site-p
 <p><strong>Mac</strong>: Use <code>pip3</code> command</p>
 <ul>
 <li>Use below command
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ pip3 install requests
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">requests</span>
 </pre></div></li>
 </ul>
 </li>
 <li><strong>Windows</strong>: Use <code>pip</code> command<ul>
 <li>Use below command
-  <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;pip install requests
+  <div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">pip</span> <span class="n">install</span> <span class="n">requests</span>
 </pre></div></li>
 <li>If above command fails, please retry after below command.
-  <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org python-certifi-win32
+  <div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">pip</span> <span class="n">install</span> <span class="c1">--trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org python-certifi-win32</span>
 </pre></div></li>
 </ul>
 </li>
@@ -461,8 +487,8 @@ pip 19.0.3 from c:\users\bo\appdata\local\programs\python\python37-32\lib\site-p
 <li><strong>Default Configuration</strong><ul>
 <li>If there is no additional params, scirpt export <code>install</code> log using <code>config.json</code> file in the same folder.</li>
 <li>Below two sample commands are identical.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py
-Bo-hyungs-MacBook:log son$ python3 export.py --config config.json --log install
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span>
+<span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--config config.json --log install</span>
 </pre></div></li>
 </ul>
 </li>
@@ -470,7 +496,7 @@ Bo-hyungs-MacBook:log son$ python3 export.py --config config.json --log install
 <p><strong>Explicitly specify configuration file.</strong></p>
 <ul>
 <li>specify config file with <code>--config</code> as below sample.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py --config config2.json
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--config config2.json</span>
 </pre></div></li>
 </ul>
 </li>
@@ -479,9 +505,9 @@ Bo-hyungs-MacBook:log son$ python3 export.py --config config.json --log install
 <ul>
 <li>specify log to export with <code>--log</code> as below sample.</li>
 <li>3 examples for export of <code>install</code>, <code>event</code>, <code>open</code> log.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py --log install
-Bo-hyungs-MacBook:log son$ python3 export.py --log event
-Bo-hyungs-MacBook:log son$ python3 export.py --log open
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--log install</span>
+<span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--log event</span>
+<span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--log open</span>
 </pre></div></li>
 </ul>
 </li>
@@ -493,14 +519,14 @@ Bo-hyungs-MacBook:log son$ python3 export.py --log open
 <li><strong>Default Configuration</strong></li>
 <li>If there is no additional params, scirpt export <code>install</code> log using <code>config.json</code> file in the same folder.</li>
 <li>Below two sample commands are identical.
-    <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py
-C:\Users\Bo\log&gt;python export.py --config config.json --log install
+    <div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span>
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--config config.json --log install</span>
 </pre></div></li>
 <li>
 <p><strong>Explicitly specify configuration file.</strong></p>
 <ul>
 <li>specify config file with <code>--config</code> as below sample.
-<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py --config config2.json
+<div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--config config2.json</span>
 </pre></div></li>
 </ul>
 </li>
@@ -509,9 +535,9 @@ C:\Users\Bo\log&gt;python export.py --config config.json --log install
 <ul>
 <li>specify log to export with <code>--log</code> as below sample.</li>
 <li>3 examples for export of <code>install</code>, <code>event</code>, <code>open</code> log.
-<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py --log install
-C:\Users\Bo\log&gt;python export.py --log event
-C:\Users\Bo\log&gt;python export.py --log open
+<div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--log install</span>
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--log event</span>
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--log open</span>
 </pre></div></li>
 </ul>
 </li>
@@ -526,18 +552,18 @@ C:\Users\Bo\log&gt;python export.py --log open
 <ul>
 <li>
 <p>Sample : JSON
-<div class="codehilite"><pre><span></span>    {
-      &quot;advertiser.name&quot;: &quot;HelloWorld&quot;,
-      &quot;advertiser_id&quot;: &quot;112233&quot;,
-      &quot;api_key&quot; : &quot;YOUR_API_KEY&quot;,
-      &quot;start_date&quot;: &quot;2019-04-10&quot;,
-      &quot;days&quot;: &quot;&quot;,
-      &quot;hours&quot;: &quot;&quot;,
-      &quot;timezone&quot;: &quot;Asia/Seoul&quot;,
-      &quot;filter_site_ids&quot;: [&quot;1111&quot;, &quot;222222&quot;],
-      &quot;filter_site_event_names&quot;: [&quot;purchase&quot;],
-      &quot;branch_redirect&quot;: &quot;&quot;
-    }
+<div class="codehilite"><pre><span></span>    <span class="err">{</span>
+      <span class="ss">&quot;advertiser.name&quot;</span><span class="p">:</span> <span class="ss">&quot;HelloWorld&quot;</span><span class="p">,</span>
+      <span class="ss">&quot;advertiser_id&quot;</span><span class="p">:</span> <span class="ss">&quot;112233&quot;</span><span class="p">,</span>
+      <span class="ss">&quot;api_key&quot;</span> <span class="p">:</span> <span class="ss">&quot;YOUR_API_KEY&quot;</span><span class="p">,</span>
+      <span class="ss">&quot;start_date&quot;</span><span class="p">:</span> <span class="ss">&quot;2019-04-10&quot;</span><span class="p">,</span>
+      <span class="ss">&quot;days&quot;</span><span class="p">:</span> <span class="ss">&quot;&quot;</span><span class="p">,</span>
+      <span class="ss">&quot;hours&quot;</span><span class="p">:</span> <span class="ss">&quot;&quot;</span><span class="p">,</span>
+      <span class="ss">&quot;timezone&quot;</span><span class="p">:</span> <span class="ss">&quot;Asia/Seoul&quot;</span><span class="p">,</span>
+      <span class="ss">&quot;filter_site_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;1111&quot;</span><span class="p">,</span> <span class="ss">&quot;222222&quot;</span><span class="p">],</span>
+      <span class="ss">&quot;filter_site_event_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;purchase&quot;</span><span class="p">],</span>
+      <span class="ss">&quot;branch_redirect&quot;</span><span class="p">:</span> <span class="ss">&quot;&quot;</span>
+    <span class="err">}</span>
 </pre></div></p>
 </li>
 <li>
@@ -596,17 +622,17 @@ C:\Users\Bo\log&gt;python export.py --log open
 <ul>
 <li>Files: <code>fields_install.json</code>, <code>fields_event.json</code>, <code>fields_open.json</code></li>
 <li>Sample
-    <div class="codehilite"><pre><span></span>  created
-id
-status
-status_code
+    <div class="codehilite"><pre><span></span>  <span class="n">created</span>
+<span class="n">id</span>
+<span class="n">status</span>
+<span class="n">status_code</span>
 
-mat_id
-google_aid
-os_id
-ios_ifa
-ios_ifv
-#platform_aid
+<span class="n">mat_id</span>
+<span class="n">google_aid</span>
+<span class="n">os_id</span>
+<span class="n">ios_ifa</span>
+<span class="n">ios_ifv</span>
+<span class="o">#</span><span class="n">platform_aid</span>
 </pre></div><ul>
 <li>Three config files should exist within the same folder with the script.</li>
 <li>Per each log, field configuration file's name starts with <code>fields_</code> prefix.</li>
@@ -649,15 +675,13 @@ ios_ifv
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -669,7 +693,7 @@ ios_ifv
                 <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
@@ -697,12 +721,6 @@ ios_ifv
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

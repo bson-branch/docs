@@ -17,7 +17,7 @@
       
         <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
       
       
         
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -64,6 +64,34 @@
     
     
       <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -103,22 +131,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Branch Korea Solutions Engineering
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Branch Korea Solutions Engineering
+            </span>
+            <span class="md-header-nav__topic">
+              
                 로그 익스포트 스크립트 가이드
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -141,7 +168,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -266,6 +292,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#2019-8-6" title="최종 수정일 : 2019년 8월 6일" class="md-nav__link">
+    최종 수정일 : 2019년 8월 6일
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" title="개요" class="md-nav__link">
     개요
   </a>
@@ -301,22 +334,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" title="5. 스크립트 실행" class="md-nav__link">
-    5. 스크립트 실행
+  <a href="#5" title="5. 스크립트 실행전 확인 사항" class="md-nav__link">
+    5. 스크립트 실행전 확인 사항
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" title="6. 스크립트 설정파일" class="md-nav__link">
-    6. 스크립트 설정파일
+  <a href="#6" title="6. 로그별 익스포트시 추출필드 설정" class="md-nav__link">
+    6. 로그별 익스포트시 추출필드 설정
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7" title="7. 추출필드 설정파일" class="md-nav__link">
-    7. 추출필드 설정파일
+  <a href="#7" title="7. 스크립트 실행" class="md-nav__link">
+    7. 스크립트 실행
   </a>
   
 </li>
@@ -346,17 +379,13 @@
                 
                 
                 <h1 id="_1">로그 익스포트 스크립트 가이드<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>최종 수정일 : 2019년 4월 15일
-</pre></div>
-
-
-<hr />
+<h2 id="2019-8-6">최종 수정일 : 2019년 8월 6일<a class="headerlink" href="#2019-8-6" title="Permanent link">&para;</a></h2>
 <h2 id="_2">개요<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>이 스크립트는 TUNE과 Branch시스템에서 익스포트 하는 스크립트입니다.</li>
 <li>이 스크립트는 Python v3.7.x에서 실행되며, v2.x에서는 실행되지 않습니다.</li>
-<li><strong>현재 API키에는 사용자별 앱접근 권한이 적용되지 않고 있어서 모든 앱의 로그를 익스포트할수 있음에 유의해 주시고, API키 공유시 주의해 주시기 바랍니다.</strong></li>
-<li>현재는 <strong>한번의 요청당 최대 2백만개의 레코드까지만 익스포트가 가능</strong>합니다. 그러므로 익스포트시 레코드 갯수가 2백만개 라면, 더 많은 레코드가 있으나 일부 레코드가 익스포트되지 못함을 의미합니다. 볼륨이 많은 특정이벤트나 오픈로그의 이런 경우가 있을 수 있으며, 이 경우 시간별 또는 이벤트별로 나누어서 익스포트 하시기 바랍니다.</li>
+<li><strong>API키 공유시 항상 주의해 주시기 바라며, 유출이 우려되는 경우는 support@branch.io로 해당키의 삭제와 재생성을 요청하실 수 있습니다.</strong></li>
+<li>현재는 <strong>한번의 요청당 최대 2백만개의 레코드까지만 익스포트가 가능</strong>합니다. 그러므로 익스포트시 레코드 갯수가 2백만개 라면, 더 많은 레코드가 있으나 일부 레코드가 익스포트되지 못함을 의미합니다. 볼륨이 많은 특정이벤트나 오픈로그에서 이런 경우가 발생할 수 있으며, 이 경우 좀더 좁은 시간범위별 또는 이벤트별로 나누어서 익스포트 하시기 바랍니다.</li>
 <li><a href="../LogExportInstallationSteps.mp4">설치방법 안내 동영상(임시버전)</a></li>
 </ul>
 <h2 id="1">1. 파이썬 설치<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
@@ -384,18 +413,18 @@
 <li><strong>맥</strong>: 맥에서는 2.x가 기본적으로 설치되어 있으며, 여기에 3.x를 추가로 설치하게 됩니다.<ul>
 <li><code>python</code> 명령어로는 2.x가 사용되며, <code>python3</code> 명령으로 3.x버전을 사용할 수 있습니다.</li>
 <li>아래와 같이 명령어가 수행되면 정상입니다.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python --version
-Python 2.7.10
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python</span> <span class="c1">--version</span>
+<span class="n">Python</span> <span class="mi">2</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">10</span>
 
-Bo-hyungs-MacBook:~ son$ python3 --version
-Python 3.7.3
+<span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="o">~</span> <span class="n">son$</span> <span class="n">python3</span> <span class="c1">--version</span>
+<span class="n">Python</span> <span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">3</span>
 </pre></div></li>
 </ul>
 </li>
 <li><strong>윈도우</strong>: Python이 기본으로 설치되어있지 않으며, 3.7을 설치하게 되면 <code>python</code>명령어로 Python 3.x를 사용하게 됩니다.<ul>
 <li>아래와 같이 명령어가 수행되면 정상입니다.
-<div class="codehilite"><pre><span></span>C:\Users\Bo&gt;python --version
-Python 3.7.3
+<div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="o">&gt;</span><span class="n">python</span> <span class="c1">--version</span>
+<span class="n">Python</span> <span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="p">.</span><span class="mi">3</span>
 </pre></div></li>
 </ul>
 </li>
@@ -405,15 +434,15 @@ Python 3.7.3
 <li>PIP는 Python에서 패키지(라이브러리)를 설치해주는 툴입니다. PIP가 정상적으로 실행되는지 확인합니다.</li>
 <li><strong>맥</strong>: <code>python3</code> 명령어 사용.<ul>
 <li>아래와 같이 명령어가 수행되면 정상입니다.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:~ son$ pip3 --version
-pip 19.0.3 from /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages/pip (python 3.7)
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="o">~</span> <span class="n">son$</span> <span class="n">pip3</span> <span class="c1">--version</span>
+<span class="n">pip</span> <span class="mi">19</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span> <span class="k">from</span> <span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Frameworks</span><span class="o">/</span><span class="n">Python</span><span class="p">.</span><span class="n">framework</span><span class="o">/</span><span class="n">Versions</span><span class="o">/</span><span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="p">.</span><span class="mi">7</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
 </pre></div></li>
 </ul>
 </li>
 <li><strong>윈도우</strong>: <code>python</code> 명령어 사용.<ul>
 <li>아래와 같이 명령어가 수행되면 정상입니다.
-<div class="codehilite"><pre><span></span>C:\Users\Bo&gt;pip --version
-pip 19.0.3 from c:\users\bo\appdata\local\programs\python\python37-32\lib\site-packages\pip (python 3.7)
+<div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="o">&gt;</span><span class="n">pip</span> <span class="c1">--version</span>
+<span class="n">pip</span> <span class="mi">19</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span> <span class="k">from</span> <span class="k">c</span><span class="p">:</span><span class="err">\</span><span class="n">users</span><span class="err">\</span><span class="n">bo</span><span class="err">\</span><span class="n">appdata</span><span class="err">\</span><span class="k">local</span><span class="err">\</span><span class="n">programs</span><span class="err">\</span><span class="n">python</span><span class="err">\</span><span class="n">python37</span><span class="o">-</span><span class="mi">32</span><span class="err">\</span><span class="n">lib</span><span class="err">\</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="err">\</span><span class="n">pip</span> <span class="p">(</span><span class="n">python</span> <span class="mi">3</span><span class="p">.</span><span class="mi">7</span><span class="p">)</span>
 </pre></div></li>
 </ul>
 </li>
@@ -427,204 +456,225 @@ pip 19.0.3 from c:\users\bo\appdata\local\programs\python\python37-32\lib\site-p
 <p><strong>맥</strong>: <code>pip3</code> 명령어 사용.</p>
 <ul>
 <li>아래와 같이 명령어를 수행했을때 설치메시지가 나오면 정상입니다.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ pip3 install requests
+<div class="codehilite"><pre><span></span><span class="n">Bo</span><span class="o">-</span><span class="n">hyungs</span><span class="o">-</span><span class="n">MacBook</span><span class="p">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">pip3</span> <span class="n">install</span> <span class="n">requests</span>
 </pre></div></li>
 </ul>
 </li>
 <li><strong>윈도우</strong>: <code>pip</code> 명령어 사용.<ul>
 <li>아래와 같이 명령어를 수행했을때 설치메시지가 나오면 정상입니다.
-  <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;pip install requests
+  <div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">pip</span> <span class="n">install</span> <span class="n">requests</span>
 </pre></div></li>
 <li>에러가 발생할경우 아래의 명령어 수행후 다시 시도해 보시기 바랍니다.
-  <div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org python-certifi-win32
+  <div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">pip</span> <span class="n">install</span> <span class="c1">--trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org python-certifi-win32</span>
 </pre></div></li>
 </ul>
 </li>
 </ul>
-<h2 id="5">5. 스크립트 실행<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<ul>
-<li><strong>스크립트 실행 이전에 아래의 설정파일에 대한 설명을 먼저 참고하세요.</strong></li>
-<li>스크립트는 새폴더 생성 후 특정 디렉토리에 아래의 파일들을 저장합니다.<ul>
-<li>실행에 필요한 파일목록 : <code>export.py, config.json, fields_install.csv, fields_event.csv, fields_open.csv</code></li>
-</ul>
-</li>
-<li>스크립트가 저장된 폴더로 이동합니다.<ul>
-<li><strong>맥</strong> : <code>terminal</code>명령어로 터미널 프로그램을 실행한 후 <code>cd</code> 명령어로 해당 폴더로 이동합니다.</li>
-<li><strong>윈도우</strong> : <code>cmd</code>명령어로 명령프롬프트를 프로그램을 실행한 후 <code>cd</code> 명령어로 해당 폴더로 이동합니다.</li>
-</ul>
-</li>
-<li>
-<p><strong>맥</strong>: <code>python3</code> 명령어 사용.</p>
-<ul>
-<li><strong>기본설정으로 실행</strong><ul>
-<li>아래와 같이 추가 파라메터가 없는경우 스크립트와 같은 디렉토리의 <code>config.json</code> 파일을 사용해서 <code>install</code>로그를 익스포트 합니다.</li>
-<li>아래 두가지 명령은 실제 동일합니다.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py
-Bo-hyungs-MacBook:log son$ python3 export.py --config config.json --log install
-</pre></div></li>
-</ul>
-</li>
-<li>
-<p><strong>설정파일을 명시적으로 지정</strong></p>
-<ul>
-<li>아래와 같이 <code>--config</code> 파라메터 뒤에 파일명을 지정하면 특정 설정파일을 사용해서 실행합니다.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py --config config2.json
-</pre></div></li>
-</ul>
-</li>
-<li>
-<p><strong>익스포트할 로그를 지정</strong></p>
-<ul>
-<li>아래와 같이 <code>--log</code> 파라메터 뒤에 로그를 지정하면 해당 로그를 익스포트 합니다.</li>
-<li>아래는 install, event, open 로그를 각각 익스포트 하는 3가지 예시 입니다.
-<div class="codehilite"><pre><span></span>Bo-hyungs-MacBook:log son$ python3 export.py --log install
-Bo-hyungs-MacBook:log son$ python3 export.py --log event
-Bo-hyungs-MacBook:log son$ python3 export.py --log open
-</pre></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p><strong>윈도우</strong>: <code>python</code> 명령어 사용.</p>
-<ul>
-<li><strong>기본설정으로 실행</strong><ul>
-<li>아래와 같이 추가 파라메터가 없는경우 스크립트와 같은 디렉토리의 <code>config.json</code> 파일을 사용해서 <code>install</code>로그를 익스포트 합니다.</li>
-<li>아래 두가지 명령은 실제 동일합니다.
-<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py
-C:\Users\Bo\log&gt;python export.py --config config.json --log install
-</pre></div></li>
-</ul>
-</li>
-<li>
-<p><strong>설정파일을 명시적으로 지정</strong></p>
-<ul>
-<li>아래와 같이 <code>--config</code> 파라메터 뒤에 파일명을 지정하면 특정 설정파일을 사용해서 실행합니다.
-<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py --config config2.json
-</pre></div></li>
-</ul>
-</li>
-<li>
-<p><strong>익스포트할 로그를 지정</strong></p>
-<ul>
-<li>아래와 같이 <code>--log</code> 파라메터 뒤에 로그를 지정하면 해당 로그를 익스포트 합니다.</li>
-<li>아래는 install, event, open 로그를 각각 익스포트 하는 3가지 예시 입니다.
-<div class="codehilite"><pre><span></span>C:\Users\Bo\log&gt;python export.py --log install
-C:\Users\Bo\log&gt;python export.py --log event
-C:\Users\Bo\log&gt;python export.py --log open
-</pre></div></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="6">6. 스크립트 설정파일<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h2 id="5">5. 스크립트 실행전 확인 사항<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <ul>
 <li>스크립트 : <code>export.py</code></li>
 <li>
-<p>설정파일 (<code>config.json</code>) 값 설정 :</p>
+<p>설정파일 :</p>
 <ul>
+<li>함께 제공되는 <code>config.json</code>파일이 스크립트 실행에 사용되는 JSON으로 작성된 설정파일 샘플입니다.</li>
 <li>
-<p>샘플 : JSON 형식입니다.</p>
+<p>샘플 설정파일 :</p>
 <ul>
-<li>스크립트 수행중 에러가 난다면 아마 잘못된 JSON 형식이기 때문일 것입니다.</li>
-<li>콤마를 주의하시고 모든 값들은 쌍따옴표로 감싸시기 바랍니다.
-<div class="codehilite"><pre><span></span>    {
-      &quot;advertiser.name&quot;: &quot;HelloWorld&quot;,
-      &quot;advertiser_id&quot;: &quot;112233&quot;,
-      &quot;api_key&quot; : &quot;YOUR_API_KEY&quot;,
-      &quot;start_date&quot;: &quot;2019-04-10&quot;,
-      &quot;days&quot;: &quot;&quot;,
-      &quot;hours&quot;: &quot;&quot;,
-      &quot;timezone&quot;: &quot;Asia/Seoul&quot;,
-      &quot;filter_site_ids&quot;: [&quot;1111&quot;, &quot;222222&quot;],
-      &quot;filter_site_event_names&quot;: [&quot;purchase&quot;],
-      &quot;branch_redirect&quot;: &quot;&quot;
-    }
-</pre></div></li>
+<li>스크립트 수행중 에러가 난다면 샘플파일을 변경시 잘못된 JSON 형식으로 저장되었기 때문일 것입니다.</li>
+<li>기존 버전의 설정파일에서 일부 변경사항이 있으니 새로운 파일을 사용하시기 바랍니다.<ul>
+<li>변경사항:<ul>
+<li><code>advertiser.name</code>에서 <code>advertiser_name</code>로 Key 이름변경.</li>
+<li><code>days</code>와 <code>hours</code> 대신 <code>datetime_range</code>로 변경</li>
+<li>지원 필터링 옵션 추가</li>
+<li><code>branch_redirect</code> 제거</li>
 </ul>
+</li>
+</ul>
+</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="err">{</span>
+    <span class="ss">&quot;advertiser_name&quot;</span><span class="p">:</span> <span class="ss">&quot;Awesome Corp&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;advertiser_id&quot;</span><span class="p">:</span> <span class="ss">&quot;123456&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;api_key&quot;</span> <span class="p">:</span> <span class="ss">&quot;YOUR_API_KEY&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;start_date&quot;</span><span class="p">:</span> <span class="ss">&quot;2019-07-05T00:00:00&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;datetime_range&quot;</span><span class="p">:</span> <span class="ss">&quot;1d&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;timezone&quot;</span><span class="p">:</span> <span class="ss">&quot;Asia/Seoul&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;filter_site_ids&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;123456&quot;</span><span class="p">,</span> <span class="ss">&quot;456789&quot;</span><span class="p">],</span>
+    <span class="ss">&quot;filter_app_ids&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="ss">&quot;filter_publisher_ids&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="ss">&quot;filter_publisher_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;Google AdWords&quot;</span><span class="p">],</span>
+    <span class="ss">&quot;filter_site_event_names&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;purchase&quot;</span><span class="p">],</span>
+    <span class="ss">&quot;filter_site_event_types&quot;</span><span class="p">:</span> <span class="p">[]</span>
+<span class="err">}</span>
+</pre></div>
+
 </li>
 <li>
-<p><code>advertiser.name</code> (옵션) : 광고주 이름을 설정합니다.</p>
-</li>
-<li><code>advertiser_id</code> (필수) : 광고주 아이디를 설정합니다.<ul>
-<li>TUNE 대쉬보드의 <code>[ACCOUNTS]-[Advertiser Account]-[Details]</code> 의 <code>Advertiser ID</code>에서 확인하실 수 있습니다.</li>
+<p><strong>필수 설정 값</strong></p>
+<ul>
+<li><strong><code>advertiser_name</code></strong>: 광고주이름(Branch에서는 Organization Name), 로그파일 다운로드시 파일이름의 프리픽스로만 사용됨.</li>
+<li><strong><code>advertiser_id</code></strong>: 광고주ID(Branch에서는 Organization ID)<ul>
+<li>Branch 대쉬보드의 광고주 페이지의 <a href="https://branch.dashboard.branch.io/account-settings/profile">Account Settings</a>페이지에서 확인 (앱페이지 아님)</li>
 </ul>
 </li>
-<li><code>api_key</code> (필수) :<ul>
-<li>TUNE 대쉬보드의 <code>[ACCOUNTS]-[Users]</code>에서 사용자를 선택한 후 <code>API Keys</code>탭에서 확인합니다.</li>
-<li><strong>계정이 마이그레이션 되기 이전에 이미 생성된 API Key여야 양측 시스템 모두에서 동작합니다. 신규로 생성한것을 설정 하시면 TUNE에서만 동작합니다.</strong></li>
-<li>키를 신규로 생성하시고 Branch에서도 동작하게 하시려면 서포트팀(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>)을 통해서 요청해주시기 바랍니다.</li>
+<li><strong><code>api_key</code></strong>:<ul>
+<li>키를 신규로 생성하시려는 경우 서포트팀(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>)을 통해서 요청해주시기 바랍니다.</li>
 </ul>
 </li>
-<li><code>start_date</code> (필수) : 년월일 <code>YYYY-MM-DD</code>형식 또는 년월일시분초 <code>YYYY-MM-DDTHH-MM-SS</code>형식<ul>
-<li>시간대 별로 익스포트 할 경우에는 일시가 모두 포함된 <code>YYYY-MM-DDTHH-MM-SS</code>형식으로 하시면됩니다. 일단위 익스포트시에는 년월일 형식을 사용하시면됩니다.</li>
-<li>예) <code>2019-04-15</code> : 2019년 4월 15일 0시 0분 0초</li>
-<li>예) <code>2019-04-05T00:00:00</code>: 2019년 4월 5일 0시 0분 0초</li>
-<li>예) <code>2019-04-05T01:00:00</code>: 2019년 4월 5일 1시 0분 0초</li>
+<li><strong><code>start_date</code></strong>: 년월일시분초 <code>YYYY-MM-DDTHH-MM-SS</code> 형식의 시작시각<ul>
+<li>예시)<ul>
+<li><code>2019-04-05T00:00:00</code>: 2019년 4월 5일 0시 0분 0초</li>
+<li><code>2019-04-05T01:00:00</code>: 2019년 4월 5일 1시 0분 0초</li>
 </ul>
 </li>
-<li><code>days</code>, <code>'hours</code> (둘중 하나 필수) :<ul>
-<li><code>start_date</code>로부터 어느 기간동안의 로그를 익스포트 할지 설정하며, 이값으로 <code>end_date</code>가 설정됩니다.</li>
-<li><code>days</code>와 <code>hours</code> 둘중 하나만 설정하셔야 하며, 둘다 설정될 경우 <code>days</code>값이 사용됩니다.</li>
-<li><strong>값을 설정하지 않으려는 경우</strong> <code>"days": ""</code>, <code>"hours": ""</code>과 같이 설정하시면됩니다.</li>
 </ul>
 </li>
-<li><code>timezone</code> (필수) :<ul>
+<li><strong><code>datetime_range</code></strong>:<ul>
+<li><code>start_date</code>로부터 얼마 만큼의 기간 동안의 로그를 익스포트 할지 설정합니다.</li>
+<li>기간은 주,일,시간,분 단위로 지정가능하며, 각각 w, d, h, m을 사용합니다.</li>
+<li>예시)<ul>
+<li>시작일시부터 1주일간의 로그 익스포트: <code>1w</code></li>
+<li>시작일시부터 2일간의 로그 익스포트: <code>2d</code></li>
+<li>시작일시부터 3시간의 로그 익스포트: <code>3h</code></li>
+<li>시작일시부터 10분간의 로그 익스포트: <code>10m</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>timezone</code></strong>:<ul>
 <li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">타임존 데이터베이스 페이지</a>의 TZ database name 컬럼의 값을 설정합니다.</li>
 <li>한국표준시는 <code>Asia/Seoul</code>, UTC는 <code>UTC</code>를 설정합니다.</li>
 </ul>
 </li>
-<li><code>filter_site_ids</code> (필수) :<ul>
-<li>특정 앱의 로그만 익스포트 할경우 설정하며, 설정하지 않으면 모든 앱의 로그가 익스포트 됩니다.</li>
-<li><strong>필터링 하지 않을 경우</strong> <code>"filter_site_ids": []</code>와 같이 설정합니다.</li>
-<li>필터링이 필요한 경우 : <code>"filter_site_ids": ["111111", "222222"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
 </ul>
 </li>
-<li><code>filter_site_event_names</code> (필수) :<ul>
-<li>이벤트로그에서만 사용되며, 특정 이벤트의 로그만 익스포트 할경우 설정하며, 설정하지 않으면 모든 이벤트의 로그가 익스포트 됩니다.</li>
-<li><strong>필터링 하지 않을 경우</strong> <code>"filter_site_event_names": []</code>와 같이 설정합니다.</li>
-<li>필터링이 필요한 경우 : <code>"filter_site_event_names": ["purchase", "login"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
-</ul>
-</li>
-<li><code>branch_redirect</code> (필수) :<ul>
-<li>로그를 TUNE 시스템에서 추출할지 Branch 시스템에서 추출할지 설정합니다.</li>
-<li><strong>마이그레이션이 완료된 경우 TUNE에서는 신규데이터가 기록되지 않으며, 4월말까지는 TUNE시스템에서 로그 익스포트가 가능합니다.</strong></li>
-<li><strong>TUNE 시스템에서 익스포트 할 경우</strong>  <code>"branch_redirect": ""</code>와 같이 설정합니다.</li>
-<li><strong>Branch 시스템에서 익스포트 할 경우</strong>  <code>"branch_redirect": "3"</code>와 같이 설정합니다.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="7">7. 추출필드 설정파일<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<li>
+<p><strong>필터링용 옵셔널 설정 값</strong></p>
 <ul>
-<li>파일: <code>fields_install.json</code>, <code>fields_event.json</code>, <code>fields_open.json</code></li>
-<li>샘플
-    <div class="codehilite"><pre><span></span>  created
-id
-status
-status_code
+<li><strong><code>filter_site_ids</code></strong>:<ul>
+<li>특정 TUNE앱(TUNE Site)들의 로그만 익스포트할 경우 설절합니다.</li>
+<li>필터링을 하지 않을 경우: <code>"filter_site_ids": []</code>와 같이 설정합니다.</li>
+<li>필터링이 필요한 경우: <code>"filter_site_ids": ["111111", "222222"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+</ul>
+</li>
+<li><strong><code>filter_app_ids</code></strong>:<ul>
+<li>특정 Branch앱들의 로그만 익스포트할 경우 설정합니다.<ul>
+<li>Branch에서는 Android 와 iOS 앱이 각각의 별도의 TUNE Site로 되어있는 것과 달리 두 OS가 하나의 Branch앱으로 묶여져 있습니다.</li>
+<li>Branch 앱ID 확인은 Branch 대쉬보드의 해당앱 페이지 내의 <a href="https://branch.dashboard.branch.io/account-settings/profile">Account Settings</a>페이지에서 확인합니다.</li>
+</ul>
+</li>
+<li>필터링을 하지 않을 경우: <code>"filter_app_ids": []</code>와 같이 설정합니다.</li>
+<li>필터링이 필요한 경우: <code>"filter_app_ids": ["123456789012345678", "123456789012345679"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+<li><strong><code>filter_site_ids</code>와 <code>filter_app_ids</code> 둘 중 하나만 설정합니다.</strong></li>
+</ul>
+</li>
+<li><strong><code>filter_publisher_ids</code></strong>: <strong>특정 경우를 제외하고는 사용을 추천하지 않습니다.</strong><ul>
+<li>특정 매체의 로그만 익스포트할 경우 TUNE에서 매체별로 할당되었던 publisher_id를 설정합니다.</li>
+<li><strong>TUNE에서 사용하지 않던 신규매체의 경우는 publisher_id가 0으로 설정되므로, Organic만 필터링할때만 사용하는 것이 좋습니다. 오가닉의 <code>publisher_id</code>는 <code>0</code>입니다.</strong></li>
+<li>필터링 하지 않을 경우: <code>"filter_publisher_ids": []</code>와 같이 설정합니다.</li>
+<li>필터링이 필요한 경우: <code>"filter_publisher_ids": ["0", "222222"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+</ul>
+</li>
+<li><strong><code>filter_publisher_names</code></strong>:<ul>
+<li>특정 매체의 로그만 익스포트할 경우 매체이름을 설정합니다.</li>
+<li>Branch 대쉬보드의 <a href="https://branch.dashboard.branch.io/ads/partner-management">Ads - Partner Management</a> 페이지의 매체명을 사용합니다.</li>
+<li>필터링 하지 않을 경우: <code>"filter_publisher_names": []</code>와 같이 설정합니다.</li>
+<li>필터링이 필요한 경우: <code>"filter_publisher_names": ["Google AdWords", "Facebook"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+</ul>
+</li>
+<li><strong><code>filter_site_event_names</code></strong>:<ul>
+<li><strong>이벤트로그 익스포트시만 적용되며 인스톨 등 다른 로그의 익스포트시는 무시됩니다.</strong></li>
+<li>특정 이벤트들만 필터링할 경우에 설정합니다.</li>
+<li>필터링 하지 않을 경우: <code>"filter_site_event_names": []</code>와 같이 설정합니다.</li>
+<li>필터링이 필요한 경우: <code>"filter_site_event_names": ["purchase", "login"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+</ul>
+</li>
+<li><strong><code>filter_site_event_types</code></strong>: <strong>일반적인 경우 사용을 추천하지 않습니다.</strong><ul>
+<li><strong>이벤트로그 익스포트시만 적용되며 인스톨 등 다른 로그의 익스포트시는 무시됩니다.</strong></li>
+<li>특정 이벤트타입들만 필터링할 경우에 설정합니다.</li>
+<li>필터링 하지 않을 경우: <code>"filter_site_event_types": []</code>와 같이 설정합니다.</li>
+<li>필터링이 필요한 경우: <code>"filter_site_event_types": ["purchase", "registration"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="6">6. 로그별 익스포트시 추출필드 설정<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>로그별 익스포트 필드 설정파일:<ul>
+<li>인스톨로그: <code>fields_install.json</code></li>
+<li>이벤트로그: <code>fields_event.json</code></li>
+<li>오픈로그: <code>fields_open.json</code></li>
+<li>리인스톨로그: <code>fields_reinstall.json</code></li>
+</ul>
+</li>
+<li>설정파일 샘플
+    <div class="codehilite"><pre><span></span>  <span class="n">created</span>
+<span class="n">id</span>
+<span class="n">status</span>
+<span class="n">status_code</span>
 
-mat_id
-google_aid
-os_id
-ios_ifa
-ios_ifv
-#platform_aid
+<span class="n">mat_id</span>
+<span class="n">google_aid</span>
+<span class="n">os_id</span>
+<span class="n">ios_ifa</span>
+<span class="n">ios_ifv</span>
+<span class="o">#</span><span class="n">platform_aid</span>
 </pre></div><ul>
-<li>스크립트 실행시 3개의 파일을 모두 스크립트 파일과 동일한 디렉토리에 있어야합니다.</li>
-<li>로그별로 <code>fields_</code>로 시작하며 뒤에 각각의 로그이름이 붙으며, 해당 로그 익스포트시 사용됩니다.</li>
-<li>필드명은 기존에 로그익스포트시 CSV파일의 첫번째 열에 설정되었던 필드명을 사용하시기 바랍니다.</li>
-<li>한줄에 하나씩 익스포트할 필드를 설정하시기 바랍니다.</li>
-<li><code>#</code>를 필드명 앞에 추가하면 해당 필드를 임시로 제외할 수 있습니다.</li>
-<li>값이 없는 행을 추가하실 수 있습니다.</li>
+<li>스크립트 실행시 4개의 파일을 모두 스크립트 파일과 동일한 디렉토리에 있어야합니다.</li>
+<li>스트립트와 함께 전달드리는 CSV파일에서 필요한 필드들만 남겨두시고 필요없는 필드들은 삭제후 사용하시기 바랍니다.</li>
+<li>CSV파일 수정시 메모장 같은 텍스트에디터를 사용하거나 엑셀로 열어 수정한뒤 CSV로 저장하시기 바랍니다.</li>
+<li>필드명은 기존에 로그익스포트 했던 CSV파일의 첫번째 열(헤더행)에 설정되었던 필드명이 사용됩니다.</li>
+<li>익스포트할 필드들을 한줄에 하나씩 설정하시기 바랍니다.</li>
+<li><code>#</code>를 필드명 앞에 추가하면 해당 필드의 익스포트를 임시로 제외할 수 있습니다.</li>
+<li>시인성을 위해서 값이 없는 빈행을 추가하거나 필드명앞에 공백문자를 추가할 수 있으며, 빈행과 필드명앞 공백문자는 무시됩니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="7">7. 스크립트 실행<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>스크립트 실행 이전에 위의 설정파일들에 대한 설명을 먼저 참고하세요.</strong></li>
+<li>압축파일로 공유되는 이 스크립트는 새폴더 생성 후 특정 디렉토리에 아래의 파일들을 저장합니다.<ul>
+<li>실행에 필요한 파일목록 : <code>export.py, config.json, fields_install.csv, fields_event.csv, fields_open.csv, fields_reinstall.csv</code></li>
+</ul>
+</li>
+<li><strong>스크립트가 저장된 폴더로 이동</strong><ul>
+<li><strong>맥</strong> : <code>terminal</code>명령어로 터미널 프로그램을 실행한 후 <code>cd</code> 명령어로 해당 폴더로 이동합니다.</li>
+<li><strong>윈도우</strong> : <code>cmd</code>명령어로 명령프롬프트를 프로그램을 실행한 후 <code>cd</code> 명령어로 해당 폴더로 이동합니다.</li>
+</ul>
+</li>
+<li><strong>설정파일과 익스포트할 로그 지정방법</strong><ul>
+<li><strong><code>--config 설정파일명</code></strong> : 실행시 사용할 설정파일을 지정합니다. 미지정시 <code>config.json</code>파일이 디폴트로 사용됩니다.</li>
+<li><strong><code>--log 로그명</code></strong> : 익스포트할 로그를 지정합니다. 로그명은 <code>install</code>, <code>event</code>, <code>open</code>, <code>reinstall</code> 중에서 하나를 선택합니다. 미지정시 인스톨로그가 디폴트로 설정됩니다.</li>
+</ul>
+</li>
+<li><strong>맥에서 실행</strong>: <code>python3</code> 명령어 사용.<ul>
+<li><code>python3</code> 대신 <code>python</code>을 사용하면 맥에서 기본으로 설치되어있는 Python 2.7로 실행되어 에러가 발생합니다.</li>
+<li><strong>로그별 명령어 샘플</strong>
+    <div class="codehilite"><pre><span></span><span class="n">MacBook</span><span class="o">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="o">.</span><span class="na">py</span> <span class="o">--</span><span class="n">config</span> <span class="n">config</span><span class="o">.</span><span class="na">json</span> <span class="o">--</span><span class="n">log</span> <span class="n">install</span>
+<span class="n">MacBook</span><span class="o">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="o">.</span><span class="na">py</span> <span class="o">--</span><span class="n">config</span> <span class="n">config</span><span class="o">.</span><span class="na">json</span> <span class="o">--</span><span class="n">log</span> <span class="n">event</span>
+<span class="n">MacBook</span><span class="o">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="o">.</span><span class="na">py</span> <span class="o">--</span><span class="n">config</span> <span class="n">config</span><span class="o">.</span><span class="na">json</span> <span class="o">--</span><span class="n">log</span> <span class="n">open</span>
+<span class="n">MacBook</span><span class="o">:</span><span class="n">log</span> <span class="n">son$</span> <span class="n">python3</span> <span class="n">export</span><span class="o">.</span><span class="na">py</span> <span class="o">--</span><span class="n">config</span> <span class="n">config</span><span class="o">.</span><span class="na">json</span> <span class="o">--</span><span class="n">log</span> <span class="n">reinstall</span>
+</pre></div></li>
+</ul>
+</li>
+<li><strong>윈도우에서 실행</strong>: <code>python</code> 명령어 사용.<ul>
+<li><strong>로그별 명령어 샘플</strong>
+    <div class="codehilite"><pre><span></span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--config config.json --log install</span>
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--config config.json --log event</span>
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--config config.json --log open</span>
+<span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\</span><span class="n">Bo</span><span class="err">\</span><span class="n">log</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">export</span><span class="p">.</span><span class="n">py</span> <span class="c1">--config config.json --log reinstall</span>
+</pre></div></li>
 </ul>
 </li>
 </ul>
 <h2 id="8">8. 다운로드된 로그파일<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>데이터소스_광고주이름_광고주아이디_로그이름_시작일시_끝일시_타임존_익스포트작업ID.csv</code>의 형식으로 스크립트가 있는 디렉토리에 저장됩니다.</li>
+<li><code>광고주이름_광고주아이디_로그이름_시작일시_끝일시_타임존도시_익스포트작업ID.csv</code>의 형식으로 스크립트가 있는 디렉토리에 저장됩니다.</li>
+<li>설정파일중 <code>advertiser_name</code>은 익스포트된 로그의 파일이름을 정하는 부분에만 사용되므로 예를 들어 앱별로 각각 다른 config파일을 사용해서 익스포트 하는 경우에 해당값을 활용할 수 있습니다.</li>
+<li>파일네임중 끝일시는 해당 시각 1초전 까지의 로그까지 익스포트 됩는것으로 이해하시면 됩니다.</li>
 </ul>
                 
                   
@@ -654,15 +704,13 @@ ios_ifv
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -674,7 +722,7 @@ ios_ifv
                 <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
@@ -702,12 +750,6 @@ ios_ifv
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

@@ -17,7 +17,7 @@
       
         <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
       
       
         
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -64,6 +64,34 @@
     
     
       <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -103,22 +131,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Branch Korea Solutions Engineering
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Branch Korea Solutions Engineering
+            </span>
+            <span class="md-header-nav__topic">
+              
                 Integrate
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -141,7 +168,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -1374,7 +1400,7 @@
 </li>
 <li>
 <p>Website will open to <a href="/pages/links/integrate/#redirections">$fallback_url</a> with <code>_branch_match_id</code></p>
-<div class="codehilite"><pre><span></span>https://example.app.link/kJNbhZ1PrF?$fallback_url=https://www.website.com/&amp;_branch_match_id=418480444086051524
+<div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">example</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="n">link</span><span class="o">/</span><span class="n">kJNbhZ1PrF</span><span class="o">?</span><span class="err">$</span><span class="n">fallback_url</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">website</span><span class="p">.</span><span class="n">com</span><span class="o">/&amp;</span><span class="n">_branch_match_id</span><span class="o">=</span><span class="mi">418480444086051524</span>
 </pre></div>
 
 </li>
@@ -1432,7 +1458,7 @@
 <ul>
 <li>
 <p>Make sure the Branch key is the same within the deep link and website</p>
-<div class="codehilite"><pre><span></span>XMLHttpRequest cannot load https://api2.branch.io/v1/open. No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource. Origin &#39;null&#39; is therefore not allowed access. The response had HTTP status code 400.
+<div class="codehilite"><pre><span></span><span class="n">XMLHttpRequest</span> <span class="n">cannot</span> <span class="k">load</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api2</span><span class="p">.</span><span class="n">branch</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="k">open</span><span class="p">.</span> <span class="k">No</span> <span class="s1">&#39;Access-Control-Allow-Origin&#39;</span> <span class="n">header</span> <span class="k">is</span> <span class="n">present</span> <span class="k">on</span> <span class="n">the</span> <span class="n">requested</span> <span class="n">resource</span><span class="p">.</span> <span class="n">Origin</span> <span class="s1">&#39;null&#39;</span> <span class="k">is</span> <span class="n">therefore</span> <span class="k">not</span> <span class="n">allowed</span> <span class="k">access</span><span class="p">.</span> <span class="n">The</span> <span class="n">response</span> <span class="n">had</span> <span class="n">HTTP</span> <span class="n">status</span> <span class="n">code</span> <span class="mi">400</span><span class="p">.</span>
 </pre></div>
 
 </li>
@@ -1443,7 +1469,7 @@
 <ul>
 <li>
 <p>In case you need to access your user's Browser Fingerprint ID for user deletion, use the function below.</p>
-<div class="codehilite"><pre><span></span>branch.getBrowserFingerprintId(function(err, data) { console.log(data); });
+<div class="codehilite"><pre><span></span><span class="n">branch</span><span class="p">.</span><span class="n">getBrowserFingerprintId</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">err</span><span class="p">,</span> <span class="k">data</span><span class="p">)</span> <span class="err">{</span> <span class="n">console</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="k">data</span><span class="p">);</span> <span class="err">}</span><span class="p">);</span>
 </pre></div>
 
 </li>
@@ -1455,7 +1481,7 @@
 <li>Generate a dynamic nonce value, and include that value as a <code>script-src</code> and <code>style-src</code> exception within your Content Security Policy</li>
 <li>
 <p>Pass that same value to <code>branch.init()</code></p>
-<div class="codehilite"><pre><span></span>branch.init(YOUR_BRANCH_KEY, {&#39;nonce&#39;: &#39;GENERATED_NONCE_VALUE&#39; });
+<div class="codehilite"><pre><span></span><span class="n">branch</span><span class="p">.</span><span class="n">init</span><span class="p">(</span><span class="n">YOUR_BRANCH_KEY</span><span class="p">,</span> <span class="err">{</span><span class="s1">&#39;nonce&#39;</span><span class="p">:</span> <span class="s1">&#39;GENERATED_NONCE_VALUE&#39;</span> <span class="err">}</span><span class="p">);</span>
 </pre></div>
 
 </li>
@@ -1490,15 +1516,13 @@
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1510,7 +1534,7 @@
                 <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
@@ -1538,12 +1562,6 @@
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

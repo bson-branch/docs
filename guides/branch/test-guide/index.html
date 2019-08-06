@@ -17,7 +17,7 @@
       
         <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
       
       
         
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -64,6 +64,34 @@
     
     
       <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -103,22 +131,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Branch Korea Solutions Engineering
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Branch Korea Solutions Engineering
+            </span>
+            <span class="md-header-nav__topic">
+              
                 테스트 가이드 (작성중..)
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -141,7 +168,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -392,16 +418,16 @@
 <ul>
 <li>
 <p>Install 이벤트 샘플
-    <div class="codehilite"><pre><span></span>I/BranchSDK: posting to https://api2.branch.io/v1/install
-I/BranchSDK: Post value = {&quot;hardware_id&quot;:&quot;92b67271-824c-4c42-96cf-3636bbeeb637&quot;,&quot;is_hardware_id_real&quot;:false,&quot;brand&quot;:&quot;samsung&quot;,&quot;model&quot;:&quot;SM-G955N&quot;,&quot;screen_dpi&quot;:560,&quot;screen_height&quot;:2792,&quot;screen_width&quot;:1440,&quot;wifi&quot;:false,&quot;ui_mode&quot;:&quot;UI_MODE_TYPE_NORMAL&quot;,&quot;os&quot;:&quot;Android&quot;,&quot;os_version&quot;:28,&quot;country&quot;:&quot;US&quot;,&quot;language&quot;:&quot;en&quot;,&quot;local_ip&quot;:&quot;102.45.125.187&quot;,&quot;app_version&quot;:&quot;1.0.2&quot;,&quot;facebook_app_link_checked&quot;:false,&quot;is_referrable&quot;:1,&quot;debug&quot;:true,&quot;update&quot;:0,&quot;latest_install_time&quot;:1554446038595,&quot;latest_update_time&quot;:1554446038595,&quot;first_install_time&quot;:1554446038595,&quot;previous_update_time&quot;:0,&quot;environment&quot;:&quot;FULL_APP&quot;,&quot;cd&quot;:{&quot;mv&quot;:&quot;-1&quot;,&quot;pn&quot;:&quot;com.bson.branchtesters&quot;},&quot;install_begin_ts&quot;:1554444525,&quot;metadata&quot;:{},&quot;google_advertising_id&quot;:&quot;4fd96af5-98d3-4681-9d1d-33292ffecc83&quot;,&quot;lat_val&quot;:0,&quot;instrumentation&quot;:{&quot;v1\/install-qwt&quot;:&quot;0&quot;},&quot;sdk&quot;:&quot;android3.1.1&quot;,&quot;branch_key&quot;:&quot;key_live_1gfd5689QW53b54H456451234567891&quot;}
-I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600168734516567&quot;,&quot;identity_id&quot;:&quot;642600168721700181&quot;,&quot;link&quot;:&quot;https://branchtesters.app.link?%24identity_id=642600168721700181&quot;,&quot;data&quot;:&quot;{\&quot;+clicked_branch_link\&quot;:false,\&quot;+is_first_session\&quot;:true}&quot;,&quot;device_fingerprint_id&quot;:&quot;642600168667338007&quot;}
+    <div class="codehilite"><pre><span></span><span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">posting</span> <span class="k">to</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api2</span><span class="p">.</span><span class="n">branch</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">install</span>
+<span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">Post</span> <span class="n">value</span> <span class="o">=</span> <span class="err">{</span><span class="ss">&quot;hardware_id&quot;</span><span class="p">:</span><span class="ss">&quot;92b67271-824c-4c42-96cf-3636bbeeb637&quot;</span><span class="p">,</span><span class="ss">&quot;is_hardware_id_real&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;brand&quot;</span><span class="p">:</span><span class="ss">&quot;samsung&quot;</span><span class="p">,</span><span class="ss">&quot;model&quot;</span><span class="p">:</span><span class="ss">&quot;SM-G955N&quot;</span><span class="p">,</span><span class="ss">&quot;screen_dpi&quot;</span><span class="p">:</span><span class="mi">560</span><span class="p">,</span><span class="ss">&quot;screen_height&quot;</span><span class="p">:</span><span class="mi">2792</span><span class="p">,</span><span class="ss">&quot;screen_width&quot;</span><span class="p">:</span><span class="mi">1440</span><span class="p">,</span><span class="ss">&quot;wifi&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;ui_mode&quot;</span><span class="p">:</span><span class="ss">&quot;UI_MODE_TYPE_NORMAL&quot;</span><span class="p">,</span><span class="ss">&quot;os&quot;</span><span class="p">:</span><span class="ss">&quot;Android&quot;</span><span class="p">,</span><span class="ss">&quot;os_version&quot;</span><span class="p">:</span><span class="mi">28</span><span class="p">,</span><span class="ss">&quot;country&quot;</span><span class="p">:</span><span class="ss">&quot;US&quot;</span><span class="p">,</span><span class="ss">&quot;language&quot;</span><span class="p">:</span><span class="ss">&quot;en&quot;</span><span class="p">,</span><span class="ss">&quot;local_ip&quot;</span><span class="p">:</span><span class="ss">&quot;102.45.125.187&quot;</span><span class="p">,</span><span class="ss">&quot;app_version&quot;</span><span class="p">:</span><span class="ss">&quot;1.0.2&quot;</span><span class="p">,</span><span class="ss">&quot;facebook_app_link_checked&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;is_referrable&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="ss">&quot;debug&quot;</span><span class="p">:</span><span class="k">true</span><span class="p">,</span><span class="ss">&quot;update&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="ss">&quot;latest_install_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;latest_update_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;first_install_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;previous_update_time&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="ss">&quot;environment&quot;</span><span class="p">:</span><span class="ss">&quot;FULL_APP&quot;</span><span class="p">,</span><span class="ss">&quot;cd&quot;</span><span class="p">:</span><span class="err">{</span><span class="ss">&quot;mv&quot;</span><span class="p">:</span><span class="ss">&quot;-1&quot;</span><span class="p">,</span><span class="ss">&quot;pn&quot;</span><span class="p">:</span><span class="ss">&quot;com.bson.branchtesters&quot;</span><span class="err">}</span><span class="p">,</span><span class="ss">&quot;install_begin_ts&quot;</span><span class="p">:</span><span class="mi">1554444525</span><span class="p">,</span><span class="ss">&quot;metadata&quot;</span><span class="p">:</span><span class="err">{}</span><span class="p">,</span><span class="ss">&quot;google_advertising_id&quot;</span><span class="p">:</span><span class="ss">&quot;4fd96af5-98d3-4681-9d1d-33292ffecc83&quot;</span><span class="p">,</span><span class="ss">&quot;lat_val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="ss">&quot;instrumentation&quot;</span><span class="p">:</span><span class="err">{</span><span class="ss">&quot;v1\/install-qwt&quot;</span><span class="p">:</span><span class="ss">&quot;0&quot;</span><span class="err">}</span><span class="p">,</span><span class="ss">&quot;sdk&quot;</span><span class="p">:</span><span class="ss">&quot;android3.1.1&quot;</span><span class="p">,</span><span class="ss">&quot;branch_key&quot;</span><span class="p">:</span><span class="ss">&quot;key_live_1gfd5689QW53b54H456451234567891&quot;</span><span class="err">}</span>
+<span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">returned</span> <span class="err">{</span><span class="ss">&quot;session_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168734516567&quot;</span><span class="p">,</span><span class="ss">&quot;identity_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;link&quot;</span><span class="p">:</span><span class="ss">&quot;https://branchtesters.app.link?%24identity_id=642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;data&quot;</span><span class="p">:</span><span class="ss">&quot;{\&quot;</span><span class="o">+</span><span class="n">clicked_branch_link</span><span class="err">\</span><span class="ss">&quot;:false,\&quot;</span><span class="o">+</span><span class="n">is_first_session</span><span class="err">\</span><span class="ss">&quot;:true}&quot;</span><span class="p">,</span><span class="ss">&quot;device_fingerprint_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168667338007&quot;</span><span class="err">}</span>
 </pre></div></p>
 </li>
 <li>
 <p>Open 이벤트 샘플
-    <div class="codehilite"><pre><span></span>I/BranchSDK: posting to https://api2.branch.io/v1/open
-I/BranchSDK: Post value = {&quot;device_fingerprint_id&quot;:&quot;642600168667338007&quot;,&quot;identity_id&quot;:&quot;642600168721700181&quot;,&quot;hardware_id&quot;:&quot;92b67271-824c-4c42-96cf-3636bbeeb637&quot;,&quot;is_hardware_id_real&quot;:false,&quot;brand&quot;:&quot;samsung&quot;,&quot;model&quot;:&quot;SM-G955N&quot;,&quot;screen_dpi&quot;:560,&quot;screen_height&quot;:2792,&quot;screen_width&quot;:1440,&quot;wifi&quot;:false,&quot;ui_mode&quot;:&quot;UI_MODE_TYPE_NORMAL&quot;,&quot;os&quot;:&quot;Android&quot;,&quot;os_version&quot;:28,&quot;country&quot;:&quot;US&quot;,&quot;language&quot;:&quot;en&quot;,&quot;local_ip&quot;:&quot;102.45.125.187&quot;,&quot;app_version&quot;:&quot;1.0.2&quot;,&quot;facebook_app_link_checked&quot;:false,&quot;is_referrable&quot;:1,&quot;debug&quot;:true,&quot;update&quot;:1,&quot;latest_install_time&quot;:1554446038595,&quot;latest_update_time&quot;:1554446038595,&quot;first_install_time&quot;:1554446038595,&quot;previous_update_time&quot;:1554446038595,&quot;environment&quot;:&quot;FULL_APP&quot;,&quot;cd&quot;:{&quot;mv&quot;:&quot;-1&quot;,&quot;pn&quot;:&quot;com.bson.branchtesters&quot;},&quot;metadata&quot;:{},&quot;google_advertising_id&quot;:&quot;4fd96af5-98d3-4681-9d1d-33292ffecc83&quot;,&quot;lat_val&quot;:0,&quot;instrumentation&quot;:{&quot;v1\/close-brtt&quot;:&quot;677&quot;,&quot;v1\/open-qwt&quot;:&quot;0&quot;},&quot;sdk&quot;:&quot;android3.1.1&quot;,&quot;branch_key&quot;:&quot;key_live_1gfd5689QW53b54H456451234567891&quot;}
-I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&quot;identity_id&quot;:&quot;642600168721700181&quot;,&quot;link&quot;:&quot;https://branchtesters.app.link?%24identity_id=642600168721700181&quot;,&quot;data&quot;:&quot;{\&quot;+clicked_branch_link\&quot;:false,\&quot;+is_first_session\&quot;:false}&quot;,&quot;device_fingerprint_id&quot;:&quot;642600168667338007&quot;}
+    <div class="codehilite"><pre><span></span><span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">posting</span> <span class="k">to</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api2</span><span class="p">.</span><span class="n">branch</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="k">open</span>
+<span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">Post</span> <span class="n">value</span> <span class="o">=</span> <span class="err">{</span><span class="ss">&quot;device_fingerprint_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168667338007&quot;</span><span class="p">,</span><span class="ss">&quot;identity_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;hardware_id&quot;</span><span class="p">:</span><span class="ss">&quot;92b67271-824c-4c42-96cf-3636bbeeb637&quot;</span><span class="p">,</span><span class="ss">&quot;is_hardware_id_real&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;brand&quot;</span><span class="p">:</span><span class="ss">&quot;samsung&quot;</span><span class="p">,</span><span class="ss">&quot;model&quot;</span><span class="p">:</span><span class="ss">&quot;SM-G955N&quot;</span><span class="p">,</span><span class="ss">&quot;screen_dpi&quot;</span><span class="p">:</span><span class="mi">560</span><span class="p">,</span><span class="ss">&quot;screen_height&quot;</span><span class="p">:</span><span class="mi">2792</span><span class="p">,</span><span class="ss">&quot;screen_width&quot;</span><span class="p">:</span><span class="mi">1440</span><span class="p">,</span><span class="ss">&quot;wifi&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;ui_mode&quot;</span><span class="p">:</span><span class="ss">&quot;UI_MODE_TYPE_NORMAL&quot;</span><span class="p">,</span><span class="ss">&quot;os&quot;</span><span class="p">:</span><span class="ss">&quot;Android&quot;</span><span class="p">,</span><span class="ss">&quot;os_version&quot;</span><span class="p">:</span><span class="mi">28</span><span class="p">,</span><span class="ss">&quot;country&quot;</span><span class="p">:</span><span class="ss">&quot;US&quot;</span><span class="p">,</span><span class="ss">&quot;language&quot;</span><span class="p">:</span><span class="ss">&quot;en&quot;</span><span class="p">,</span><span class="ss">&quot;local_ip&quot;</span><span class="p">:</span><span class="ss">&quot;102.45.125.187&quot;</span><span class="p">,</span><span class="ss">&quot;app_version&quot;</span><span class="p">:</span><span class="ss">&quot;1.0.2&quot;</span><span class="p">,</span><span class="ss">&quot;facebook_app_link_checked&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;is_referrable&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="ss">&quot;debug&quot;</span><span class="p">:</span><span class="k">true</span><span class="p">,</span><span class="ss">&quot;update&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="ss">&quot;latest_install_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;latest_update_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;first_install_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;previous_update_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;environment&quot;</span><span class="p">:</span><span class="ss">&quot;FULL_APP&quot;</span><span class="p">,</span><span class="ss">&quot;cd&quot;</span><span class="p">:</span><span class="err">{</span><span class="ss">&quot;mv&quot;</span><span class="p">:</span><span class="ss">&quot;-1&quot;</span><span class="p">,</span><span class="ss">&quot;pn&quot;</span><span class="p">:</span><span class="ss">&quot;com.bson.branchtesters&quot;</span><span class="err">}</span><span class="p">,</span><span class="ss">&quot;metadata&quot;</span><span class="p">:</span><span class="err">{}</span><span class="p">,</span><span class="ss">&quot;google_advertising_id&quot;</span><span class="p">:</span><span class="ss">&quot;4fd96af5-98d3-4681-9d1d-33292ffecc83&quot;</span><span class="p">,</span><span class="ss">&quot;lat_val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="ss">&quot;instrumentation&quot;</span><span class="p">:</span><span class="err">{</span><span class="ss">&quot;v1\/close-brtt&quot;</span><span class="p">:</span><span class="ss">&quot;677&quot;</span><span class="p">,</span><span class="ss">&quot;v1\/open-qwt&quot;</span><span class="p">:</span><span class="ss">&quot;0&quot;</span><span class="err">}</span><span class="p">,</span><span class="ss">&quot;sdk&quot;</span><span class="p">:</span><span class="ss">&quot;android3.1.1&quot;</span><span class="p">,</span><span class="ss">&quot;branch_key&quot;</span><span class="p">:</span><span class="ss">&quot;key_live_1gfd5689QW53b54H456451234567891&quot;</span><span class="err">}</span>
+<span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">returned</span> <span class="err">{</span><span class="ss">&quot;session_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600288330627530&quot;</span><span class="p">,</span><span class="ss">&quot;identity_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;link&quot;</span><span class="p">:</span><span class="ss">&quot;https://branchtesters.app.link?%24identity_id=642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;data&quot;</span><span class="p">:</span><span class="ss">&quot;{\&quot;</span><span class="o">+</span><span class="n">clicked_branch_link</span><span class="err">\</span><span class="ss">&quot;:false,\&quot;</span><span class="o">+</span><span class="n">is_first_session</span><span class="err">\</span><span class="ss">&quot;:false}&quot;</span><span class="p">,</span><span class="ss">&quot;device_fingerprint_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168667338007&quot;</span><span class="err">}</span>
 </pre></div></p>
 </li>
 </ul>
@@ -422,7 +448,7 @@ I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&qu
 <li>구글 광고아이디가 잘 수집되었는지 확인합니다.<ul>
 <li><code>google_advertising_id</code>에 Google 광고아이디가 설정됩니다. (단, 라이브키 일때 만 실제 기기의 광고아이디가 설정됩니다.)</li>
 <li>미수집 된 경우에는 그래들에 아래와 같이 구글 플레이서비스 라이브러리가 임포트 되었는지 확인합니다.
-<div class="codehilite"><pre><span></span>implementation &#39;com.google.android.gms:play-services-ads:9+&#39; // GAID matching
+<div class="codehilite"><pre><span></span><span class="k">implementation</span> <span class="s1">&#39;com.google.android.gms:play-services-ads:9+&#39;</span> <span class="o">//</span> <span class="n">GAID</span> <span class="n">matching</span>
 </pre></div></li>
 </ul>
 </li>
@@ -431,7 +457,7 @@ I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&qu
 <div class="codehilite"><pre><span></span><span class="nt">ReferrerClientWrapper</span> <span class="nt">Exception</span><span class="o">:</span> <span class="nt">Failed</span> <span class="nt">resolution</span> <span class="nt">of</span><span class="o">:</span> <span class="nt">Lcom</span><span class="o">/</span><span class="nt">android</span><span class="o">/</span><span class="nt">installreferrer</span><span class="o">/</span><span class="nt">api</span><span class="o">/</span><span class="nt">InstallReferrerClient</span><span class="o">;</span>
 </pre></div>
 
-<div class="codehilite"><pre><span></span>implementation &#39;com.android.installreferrer:installreferrer:1.0&#39;
+<div class="codehilite"><pre><span></span><span class="k">implementation</span> <span class="s1">&#39;com.android.installreferrer:installreferrer:1.0&#39;</span>
 </pre></div>
 
 </li>
@@ -464,15 +490,13 @@ I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&qu
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -484,7 +508,7 @@ I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&qu
                 <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
@@ -512,12 +536,6 @@ I/BranchSDK: returned {&quot;session_id&quot;:&quot;642600288330627530&quot;,&qu
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

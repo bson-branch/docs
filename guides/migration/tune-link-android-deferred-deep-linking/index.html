@@ -17,7 +17,7 @@
       
         <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
       
       
         
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -64,6 +64,34 @@
     
     
       <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -103,22 +131,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Branch Korea Solutions Engineering
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Branch Korea Solutions Engineering
+            </span>
+            <span class="md-header-nav__topic">
+              
                 TUNE Link Deferred Deep Linking 가이드 (안드로이드)
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -141,7 +168,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -344,7 +370,7 @@
                 
                 
                 <h1 id="tune-link-deferred-deep-linking">TUNE Link Deferred Deep Linking 가이드 (안드로이드)<a class="headerlink" href="#tune-link-deferred-deep-linking" title="Permanent link">&para;</a></h1>
-<div class="codehilite"><pre><span></span>Modified on: Mar 8, 2019
+<div class="codehilite"><pre><span></span><span class="n">Modified</span> <span class="k">on</span><span class="p">:</span> <span class="n">Mar</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2019</span>
 </pre></div>
 
 
@@ -400,14 +426,14 @@
 </li>
 <li>
 <p>샘플페이지내의 TUNE Link 및 구현 설명
-<div class="codehilite"><pre><span></span>https://s9u-6.tlnk.io/serve?
-          action=click&amp;
-          publisher_id=174354&amp;
-          site_id_android=2385&amp;site_id_ios=2962&amp;
-          campaign_id_android=236537&amp;
-          campaign_id_ios=237906&amp;
-          url_android=https%3A%2F%2Fbson-branch.github.io%2Fdocs%2Fguides%2Fmigration%2Fbridge%2Fbridge.html&amp;
-          url_ios=https%3A%2F%2Fbson-branch.github.io%2Fdocs%2Fguides%2Fmigration%2Fbridge%2Fbridge.html
+<div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">s9u</span><span class="o">-</span><span class="mi">6</span><span class="p">.</span><span class="n">tlnk</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">serve</span><span class="o">?</span>
+          <span class="n">action</span><span class="o">=</span><span class="n">click</span><span class="o">&amp;</span>
+          <span class="n">publisher_id</span><span class="o">=</span><span class="mi">174354</span><span class="o">&amp;</span>
+          <span class="n">site_id_android</span><span class="o">=</span><span class="mi">2385</span><span class="o">&amp;</span><span class="n">site_id_ios</span><span class="o">=</span><span class="mi">2962</span><span class="o">&amp;</span>
+          <span class="n">campaign_id_android</span><span class="o">=</span><span class="mi">236537</span><span class="o">&amp;</span>
+          <span class="n">campaign_id_ios</span><span class="o">=</span><span class="mi">237906</span><span class="o">&amp;</span>
+          <span class="n">url_android</span><span class="o">=</span><span class="n">https</span><span class="o">%</span><span class="mi">3</span><span class="n">A</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">Fbson</span><span class="o">-</span><span class="n">branch</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">%</span><span class="mi">2</span><span class="n">Fdocs</span><span class="o">%</span><span class="mi">2</span><span class="n">Fguides</span><span class="o">%</span><span class="mi">2</span><span class="n">Fmigration</span><span class="o">%</span><span class="mi">2</span><span class="n">Fbridge</span><span class="o">%</span><span class="mi">2</span><span class="n">Fbridge</span><span class="p">.</span><span class="n">html</span><span class="o">&amp;</span>
+          <span class="n">url_ios</span><span class="o">=</span><span class="n">https</span><span class="o">%</span><span class="mi">3</span><span class="n">A</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">Fbson</span><span class="o">-</span><span class="n">branch</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="o">%</span><span class="mi">2</span><span class="n">Fdocs</span><span class="o">%</span><span class="mi">2</span><span class="n">Fguides</span><span class="o">%</span><span class="mi">2</span><span class="n">Fmigration</span><span class="o">%</span><span class="mi">2</span><span class="n">Fbridge</span><span class="o">%</span><span class="mi">2</span><span class="n">Fbridge</span><span class="p">.</span><span class="n">html</span>
 </pre></div></p>
 <ul>
 <li>위의 샘플링크는 안드로이드와 iOS모두 <a href="https://bson-branch.github.io/docs/guides/migration/bridge/bridge.html">https://bson-branch.github.io/docs/guides/migration/bridge/bridge.html</a> 페이지로 랜딩시키도록 되어있습니다.</li>
@@ -436,12 +462,12 @@
     단, 이미 쿼리파라메터가 있다면 <code>&amp;</code>를 추가한 뒤에 설정하고, 없다면 <code>?</code>를 추가한 뒤에 설정합니다.</p>
 <ul>
 <li>예1:
-  <div class="codehilite"><pre><span></span>hellochatty://hellochatty.co/chat
-hellochatty://hellochatty.co/chat?mat_click_id=2e7ea400184b74689770fc371b538254-20190301-877
+  <div class="codehilite"><pre><span></span><span class="n">hellochatty</span><span class="p">:</span><span class="o">//</span><span class="n">hellochatty</span><span class="p">.</span><span class="n">co</span><span class="o">/</span><span class="n">chat</span>
+<span class="n">hellochatty</span><span class="p">:</span><span class="o">//</span><span class="n">hellochatty</span><span class="p">.</span><span class="n">co</span><span class="o">/</span><span class="n">chat</span><span class="o">?</span><span class="n">mat_click_id</span><span class="o">=</span><span class="mi">2</span><span class="n">e7ea400184b74689770fc371b538254</span><span class="o">-</span><span class="mi">20190301</span><span class="o">-</span><span class="mi">877</span>
 </pre></div></li>
 <li>예2:
-  <div class="codehilite"><pre><span></span>hellochatty://hellochatty.co/chat?friend_name=test
-hellochatty://hellochatty.co/chat?friend_name=test&amp;mat_click_id=2e7ea400184b74689770fc371b538254-20190301-877
+  <div class="codehilite"><pre><span></span><span class="n">hellochatty</span><span class="p">:</span><span class="o">//</span><span class="n">hellochatty</span><span class="p">.</span><span class="n">co</span><span class="o">/</span><span class="n">chat</span><span class="o">?</span><span class="n">friend_name</span><span class="o">=</span><span class="n">test</span>
+<span class="n">hellochatty</span><span class="p">:</span><span class="o">//</span><span class="n">hellochatty</span><span class="p">.</span><span class="n">co</span><span class="o">/</span><span class="n">chat</span><span class="o">?</span><span class="n">friend_name</span><span class="o">=</span><span class="n">test</span><span class="o">&amp;</span><span class="n">mat_click_id</span><span class="o">=</span><span class="mi">2</span><span class="n">e7ea400184b74689770fc371b538254</span><span class="o">-</span><span class="mi">20190301</span><span class="o">-</span><span class="mi">877</span>
 </pre></div></li>
 </ul>
 </li>
@@ -449,18 +475,18 @@ hellochatty://hellochatty.co/chat?friend_name=test&amp;mat_click_id=2e7ea400184b
 <p><strong>마켓URL의 referrer파라메터</strong>: 구글 플레이 랜딩 URL에 브릿지페이지 랜딩시 전달 받은 <code>referrer</code>를 그대로 추가합니다.</p>
 <ul>
 <li>원본 구글 플레이 URL:
-  <div class="codehilite"><pre><span></span>https://play.google.com/store/apps/details?id=com.hellochatty
+  <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">play</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">store</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">details</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="n">com</span><span class="p">.</span><span class="n">hellochatty</span>
 </pre></div></li>
 <li>인스톨 애트리뷰션을 위한 구글 플레이 URL :
-  <div class="codehilite"><pre><span></span>https://play.google.com/store/apps/details?id=com.hellochatty&amp;referrer=mat_click_id%3D2e7ea400184b74689770fc371b538254-20190301-877
+  <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">play</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">store</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">details</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="n">com</span><span class="p">.</span><span class="n">hellochatty</span><span class="o">&amp;</span><span class="n">referrer</span><span class="o">=</span><span class="n">mat_click_id</span><span class="o">%</span><span class="mi">3</span><span class="n">D2e7ea400184b74689770fc371b538254</span><span class="o">-</span><span class="mi">20190301</span><span class="o">-</span><span class="mi">877</span>
 </pre></div></li>
 </ul>
 </li>
 <li><strong>마켓URL의 url파라메터</strong>: 그다음 3단계에서 만든 딥링크URL을 한번 URL인코딩한 후 <code>url</code>파라메터에 설정합니다.<ul>
 <li>인스톨 애트리뷰션 및 디퍼드 딥링킹을 위해 구글 클레이 URL :
-  <div class="codehilite"><pre><span></span>https://play.google.com/store/apps/details?id=com.hellochatty&amp;
-    referrer=mat_click_id%3D2e7ea400184b74689770fc371b538254-20190301-877&amp;
-    url=hellochatty%3A%2F%2Fhellochatty.co%2Fchat%3Fmat_click_id%3D2e7ea400184b74689770fc371b538254-20190301-877
+  <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">play</span><span class="p">.</span><span class="n">google</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">store</span><span class="o">/</span><span class="n">apps</span><span class="o">/</span><span class="n">details</span><span class="o">?</span><span class="n">id</span><span class="o">=</span><span class="n">com</span><span class="p">.</span><span class="n">hellochatty</span><span class="o">&amp;</span>
+    <span class="n">referrer</span><span class="o">=</span><span class="n">mat_click_id</span><span class="o">%</span><span class="mi">3</span><span class="n">D2e7ea400184b74689770fc371b538254</span><span class="o">-</span><span class="mi">20190301</span><span class="o">-</span><span class="mi">877</span><span class="o">&amp;</span>
+    <span class="n">url</span><span class="o">=</span><span class="n">hellochatty</span><span class="o">%</span><span class="mi">3</span><span class="n">A</span><span class="o">%</span><span class="mi">2</span><span class="n">F</span><span class="o">%</span><span class="mi">2</span><span class="n">Fhellochatty</span><span class="p">.</span><span class="n">co</span><span class="o">%</span><span class="mi">2</span><span class="n">Fchat</span><span class="o">%</span><span class="mi">3</span><span class="n">Fmat_click_id</span><span class="o">%</span><span class="mi">3</span><span class="n">D2e7ea400184b74689770fc371b538254</span><span class="o">-</span><span class="mi">20190301</span><span class="o">-</span><span class="mi">877</span>
 </pre></div></li>
 </ul>
 </li>
@@ -493,15 +519,13 @@ hellochatty://hellochatty.co/chat?friend_name=test&amp;mat_click_id=2e7ea400184b
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -513,7 +537,7 @@ hellochatty://hellochatty.co/chat?friend_name=test&amp;mat_click_id=2e7ea400184b
                 <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
@@ -541,12 +565,6 @@ hellochatty://hellochatty.co/chat?friend_name=test&amp;mat_click_id=2e7ea400184b
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>

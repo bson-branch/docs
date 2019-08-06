@@ -17,7 +17,7 @@
       
         <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
       
-        <meta name="lang:search.language" content="jp">
+        <meta name="lang:search.language" content="ja">
       
         <meta name="lang:search.pipeline.stopwords" content="True">
       
@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.2.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
       
       
         
@@ -51,12 +51,12 @@
       
     
     
-      <script src="../../../assets/javascripts/modernizr.8c900955.js"></script>
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -64,6 +64,34 @@
     
     
       <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -103,22 +131,21 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Branch Korea Solutions Engineering
-              </span>
-              <span class="md-header-nav__topic">
+            <span class="md-header-nav__topic">
+              Branch Korea Solutions Engineering
+            </span>
+            <span class="md-header-nav__topic">
+              
                 안드로이드 SDK 연동가이드
-              </span>
-            
+              
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -141,7 +168,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -990,7 +1016,7 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
 <li>이미 앱이 설치되어 있는경우 Intent의 Data로 전달되는 딥링크<ul>
 <li>딥링크를 설정하지 않은 경우 쿼리파라메터에 <code>open?link_click_id=123456789</code>가 추가되어 앱을 실행시킵니다.</li>
 <li>예) 샘플앱 Branch Testers
-<div class="codehilite"><pre><span></span>branchtesters://open?link_click_id=633895650092880072
+<div class="codehilite"><pre><span></span><span class="n">branchtesters</span><span class="p">:</span><span class="o">//</span><span class="k">open</span><span class="o">?</span><span class="n">link_click_id</span><span class="o">=</span><span class="mi">633895650092880072</span>
 </pre></div></li>
 </ul>
 </li>
@@ -1020,7 +1046,7 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
 <li>이미 앱이 설치되어 있는 경우 Intent의 Data로 전달되는 딥링크<ul>
 <li>딥링크를 설정하지 않은 경우 쿼리파라메터에 <code>link_click_id</code> 가 추가되어 앱을 실행시킵니다.</li>
 <li>예) 샘플앱 Branch Testers
-<div class="codehilite"><pre><span></span>branchtesters://test?link_click_id=633895650092880072
+<div class="codehilite"><pre><span></span><span class="n">branchtesters</span><span class="p">:</span><span class="o">//</span><span class="n">test</span><span class="o">?</span><span class="n">link_click_id</span><span class="o">=</span><span class="mi">633895650092880072</span>
 </pre></div></li>
 </ul>
 </li>
@@ -1052,7 +1078,7 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
 <li>이미 앱이 설치되어 있는 경우 Intent의 Data로 전달되는 딥링크<ul>
 <li>딥링크를 설정하지 않은 경우 쿼리파라메터에 <code>link_click_id</code> 가 추가되어 앱을 실행시킵니다.</li>
 <li>예) 샘플앱 Branch Testers
-<div class="codehilite"><pre><span></span>branchtesters://test?link_click_id=633895650092880072
+<div class="codehilite"><pre><span></span><span class="n">branchtesters</span><span class="p">:</span><span class="o">//</span><span class="n">test</span><span class="o">?</span><span class="n">link_click_id</span><span class="o">=</span><span class="mi">633895650092880072</span>
 </pre></div></li>
 </ul>
 </li>
@@ -1745,15 +1771,13 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
           Material for MkDocs</a>
       </div>
       
-        
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../../../assets/javascripts/application.b41f3d20.js"></script>
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
       
         
         
@@ -1765,7 +1789,7 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
                 <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
               
               
-                <script src="../../../assets/javascripts/lunr/lunr.jp.js"></script>
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
               
             
           
@@ -1793,12 +1817,6 @@ Single Task 모드로 설정할 경우 앱 전체가 재시작되지 않을 것�
         <script src="../../../js/utils.js"></script>
       
         <script src="../../../js/main.js"></script>
-      
-    
-    
-      
-        <script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-134914613-1","bson-branch.github.io/docs/"),ga("set","anonymizeIp",!0),ga("send","pageview");var links=document.getElementsByTagName("a");if(Array.prototype.map.call(links,function(a){a.host!=document.location.host&&a.addEventListener("click",function(){var e=a.getAttribute("data-md-action")||"follow";ga("send","event","outbound",e,a.href)})}),document.forms.search){var query=document.forms.search.query;query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
   </body>
