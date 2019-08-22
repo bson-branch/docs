@@ -363,8 +363,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_8" title="포스트백 설정" class="md-nav__link">
-    포스트백 설정
+  <a href="#postback-webhook" title="Postback 및 WebHook설정" class="md-nav__link">
+    Postback 및 WebHook설정
   </a>
   
 </li>
@@ -421,7 +421,26 @@
 <h2 id="_4">온보딩 순서<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <h3 id="_5">신규앱 생성<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <ul>
-<li>...</li>
+<li>기존에는 각각의 앱이 별도로 존재 했으나, 지금은 하나의 Organization 하위에 복수의 앱이 포함되도록 설정할 수 있습니다.</li>
+<li>복수의 앱이 있거나 있을 것으로 예상되시는 경우 Organization을 생성하고 그 아래에 앱들을 등록 해야 하므로 담당 CSM에게 해당 내용을 알려주시기 바랍니다.</li>
+<li>
+<p>Organization이 생성된 상태에서 신규앱을 생성하시는 경우, 대쉬보드 좌측상단의 건물그림이 있는 Organization페이지에서 해당 이름을 클릭할때 좌측 하단에 표시되는 [Create New App]버튼을 통해서 앱을 생성하셔야 해당 Organization 하위로 신규앱이 생성됩니다</p>
+<div class="admonition tip">
+<p class="admonition-title">하나의 Organization 아래에 복수의 앱이 존재하는 경우, 추후 제공될 Cross-platform ID가 앱간에 서로 공유될 수 있습니다. 이것은 한사용자가 고객사의 서로다는 앱을 설치했을 경우에도 동일한 Cross-platform ID가 설정되게 됩니다.</p>
+</div>
+</li>
+<li>
+<p>앱생성후 URL스킴, 기본 마켓 랜딩페이지, 패키지네임, 번들아이디, 애플 앱프리픽스들은 <a href="https://branch.dashboard.branch.io/link-settings/general">Link Settings</a> 페이지에서 설정해 주시기 바랍니다.</p>
+</li>
+<li>
+<p>SDK 연동시 필요한 Branch Key와 Branch Secret은 <code>[SETUP &amp; TESTING] - [Account Settings]</code> 페이지의 <a href="https://branch.dashboard.branch.io/account-settings/profile">Profile</a>탭에서 확인할 수 있습니다.</p>
+<div class="admonition tip">
+<p class="admonition-title">Branch Key와 Branch Secret은 외부에 유출이 되지 않도록 유의해 주시기 바랍니다.</p>
+</div>
+</li>
+<li>
+<p><a href="https://branch.dashboard.branch.io/account-settings/profile">Profile</a>탭 하단의 타임존은 Facebook등의 매체와의 데이터 매칭시 사용되므로 적절하게 설정하시기 바라며 한번 설정후 변경하지 않으시는것을 권장합니다.</p>
+</li>
 </ul>
 <h3 id="branch-link">Branch Link 도메인 선정<a class="headerlink" href="#branch-link" title="Permanent link">&para;</a></h3>
 <ul>
@@ -439,7 +458,7 @@
 </ul>
 </li>
 <li>
-<p><strong><code>app.link</code> 커스텀 서브 도메인</strong></p>
+<p><strong><code>app.link</code> 커스텀 서브도메인</strong></p>
 <ul>
 <li>원하시는 경우 <strong>미사용</strong>중인 <code>app.link</code>의 서브도메인 중에서 선택하실 수 있습니다.</li>
 <li><code>app.link</code> 서브 도메인은 주로 광고링크에 사용됩니다.</li>
@@ -453,18 +472,22 @@
 </ul>
 </li>
 <li>
-<p><strong>커스텀 도메인 사용하기</strong></p>
+<p><strong>커스텀 도메인</strong></p>
 <ul>
 <li>주로 광고용 링크가 아닌 Quick Link에서 활용합니다.</li>
 <li>사용자가 문자, SNS등으로 브랜치링크를 받았을때 해당 링크를 신뢰하고 클릭할 수 있도록 <code>myapp.mycorp.com</code>과 같이 회사의 도메인네임을 Branch Link에 사용하실 수 있습니다.<ul>
 <li>샘플 Branch Quick Link : <code>https://myapp.mycorp.com/PKrIVEJe0K</code></li>
 </ul>
 </li>
-<li>이를 위해서는 회사IT팀에서 해당 서브도메인을 <code>CNAME</code>레코드를 <code>custom.bnc.lt</code>로 설정 해주시는 간단한 작업입니다.<ul>
-<li>회사의 도메인을 Branch에서 사용하게 되는 것이기 때문에 일반적으로 사내 IT팀에서 할당전 사전 검토가 필요할 것입니다.</li>
-</ul>
+<li>
+<p>회사IT팀에서 해당 서브도메인을 <code>CNAME</code>레코드를 <code>custom.bnc.lt</code>로 설정 해주시는 간단한 작업입니다.</p>
+<div class="admonition tip">
+<p class="admonition-title">커스텀 도메인의 경우 회사의 도메인을 Branch에서 사용하게 되는 것이기 때문에 사내 IT팀의 사전 검토가 필요할 것입니다.</p>
+</div>
 </li>
-<li>관련된 자세한 사항은 아래의 문서를 참고해 주시기 바랍니다.</li>
+<li>
+<p>관련된 자세한 사항은 아래의 문서를 참고해 주시기 바랍니다.</p>
+</li>
 <li><a href="https://docs.branch.io/links/advanced-settings-configuration/#use-custom-subdomain">Link Settings : Advanced Settings Configuration</a></li>
 </ul>
 </li>
@@ -500,14 +523,14 @@
 <li><strong>Branch를 사용하시기 이전에 이미 앱이 마켓에 릴리즈되어 이미 많은 인스톨이 발생되어 있는 경우에만 필요</strong>하며, 해당 기기들에 대한 광고아이디를 보유하고 계셔야 합니다.</li>
 <li>이미 인스톨한 기기들의 광고아이디를 확보하지 못한 경우 Branch SDK를 연동한 앱을 미리 라이브 시키고 인스톨 추이를 확인하시면서 기존 인스톨 사용자들의 앱업데이트 추이를 대략적으로 확인할 수 있습니다. Universal Ads를 사용하시는 고객분들은 기존 인스톨했던 유저들로 부터 인스톨이 대부분 발생한 것을 확인 후 광고캠페인을 집행 하시기 바랍니다.</li>
 <li>Persona임포트는 이미 인스톨이 발생한 기기의 광고아이디및 추가정보들을 시스템에 임포트 하는 작업이며, 이후 Branch SDK가 연동된 앱이 릴리즈된 후 이미 임포트된 기기인 경우 해당 릴리즈로 사용자가 앱업데이트를 할때 인스톨이 발생하지 않게 됩니다.</li>
-<li>Persona임포트를 하기 위해서는 Branch SDK가 연동된 앱이 라이브되기 최소 2주 이전에 CSM팀 또는 서포트팀(<code>support@branch.io</code>)으로 임포트할 데이터를 전달해 주시기 바랍니다.</li>
+<li>CSM팀 또는 서포트팀(<code>support@branch.io</code>)으로 임포트할 데이터를 전달해 주시기 바랍니다.</li>
 <li>
 <p>자세한 사항은 아래의 문서를 참고해주시기 바랍니다.</p>
 <ul>
 <li><a href="https://docs.branch.io/dashboard/importing-historical-user-data/">Importing Historical User Data</a></li>
 </ul>
 <div class="admonition tip">
-<p class="admonition-title">Attribution Analystics에서 마이그래이션된 앱의 경우 마이그레이션 과정중에 Persona임포트가 수행되므로 별도 Persona임포트가 필요하지 않습니다.</p>
+<p class="admonition-title">Persona임포트를 하기 위해서는 Branch SDK가 연동된 앱이 라이브되기 최소 2주 이전에 데이터를 전달 해 주시기 바랍니다.</p>
 </div>
 </li>
 </ul>
@@ -523,9 +546,15 @@
 <h3 id="_7">트래킹할 이벤트 선정<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
 <li>마케팅팀과 개발팀이 함께 작업하셔야 하는 부분입니다.</li>
-<li>마케팅팀은 마케팅효율을 측정하기 위한 이벤트를 선정하셔야하며, 개발팀에서도 트래킹이 필요한 이벤트들을 추가 하실 수 있습니다.</li>
-<li><strong>개인정보에 관련된 정보들은 가급적으로 설정하지 않으시는것을 권장드리며, 개인정보로 판단될수 있는 정보를 이벤트에 설정시 사내 개인정보 관련부서의 리뷰를 받으시는 것을 권장드립니다.</strong></li>
-<li><strong>개발팀에서는 이벤트연동시 사내 개인정보관련팀에서 검토후 명확히 설정을 요청받은 정보들만 설정하시고, 요청되지 않은 정보를 개인적인 판단으로 설정하시는것은 지양해 주시기 바랍니다.</strong></li>
+<li>
+<p>마케팅팀은 마케팅효율을 측정하기 위한 이벤트를 선정하셔야하며, 개발팀에서도 트래킹이 필요한 이벤트들을 추가 하실 수 있습니다.</p>
+<div class="admonition tip">
+<p class="admonition-title">개인정보에 관련된 정보들은 가급적 설정하지 않으시는것을 권장드리며, 개인정보로 판단될수 있는 정보를 이벤트에 설정시 사내 개인정보 관련부서의 리뷰를 받으신후 진행하시기 바랍니다.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">개발팀에서는 이벤트연동시 사내 개인정보관련팀에서 검토후 명확히 설정을 요청받은 정보들만 설정하시고, 요청되지 않은 정보를 개인적인 판단으로 설정하시는것은 지양해 주시기 바랍니다.</p>
+</div>
+</li>
 <li>
 <p>Branch에서 수집하는 정보들과 개인정보 정책은 아래의 문서를 참고 해주시기 바랍니다.</p>
 <ul>
@@ -542,7 +571,7 @@
 <li><a href="../">Branch 연동 메인 페이지</a>의 가이드들을 참고해 주시기바랍니다.</li>
 </ul>
 </li>
-<li>GDPR및 개인정보 보호관련 법규를 준수 관련<ul>
+<li>GDPR및 개인정보 보호관련 법규 준수 관련<ul>
 <li>Branch SDK에서는 특정 기기의 데이터를 전히 트래킹하지 않기 위한 방법이 제공됩니다.<ul>
 <li><strong>SDK의 <code>Do Not Track Mode</code>를 활성화 하시면 Branch SDK에서 Branch 서버로 해당 사용자/기기의 데이터가 전송되지 않습니다.</strong><ul>
 <li><a href="https://docs.branch.io/apps/android/#enable-disable-user-tracking">Android SDK</a>,
@@ -559,7 +588,6 @@
 </li>
 <li><code>Do Not Track Mode</code>이 활성화된 기기의 경우에도 Branch Link는 동작합니다만 딥링킹의 정확도가 낮아질 수 있습니다.</li>
 <li>사용자가 데이터 요청한 경우 이미 Branch 시스템에 기록된 데이터의 삭제가 필요한 경우 서포트팀으로 요청해 주시기 바랍니다.</li>
-<li>Branch에서는 기본적으로 7일 이후에 광고아이디등의 정보를 자동으로 해슁하합니다. (고객사의 요청이 있는경우 최대 2달까지 해슁을 하지 않을 수 있습니다.)</li>
 </ul>
 </li>
 </ul>
@@ -567,23 +595,38 @@
 </ul>
 <h3 id="branch-sdk_1">Branch SDK 연동중 또는 연동후 테스트<a class="headerlink" href="#branch-sdk_1" title="Permanent link">&para;</a></h3>
 <ul>
-<li><a href="test-guide-for-app_dev_team.md">앱 개발팀을 위한 테스트 가이드 (작업중)</a></li>
+<li><a href="test-guide-for-app_dev_team.md">앱 개발팀을 위한 기본연동 테스트 가이드 (작업중)</a></li>
 <li><a href="test-guide.md">테스트 가이드 (작업중)</a></li>
 </ul>
-<h3 id="_8">포스트백 설정<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<h3 id="postback-webhook">Postback 및 WebHook설정<a class="headerlink" href="#postback-webhook" title="Permanent link">&para;</a></h3>
 <ul>
-<li>주로 Universal Ads 고객분들께 적용됩니다.</li>
-<li>앱의 모든 이벤트에 대해서 내부 데이터 시스템또는 광고매체로 준실시간 포스트백을 각각의 이벤트의 발생을 알려줄 수 있습니다.</li>
+<li><strong>포스트백</strong><ul>
+<li>광고매체에 대해서 인스톨및 이벤트가 발생했을 경우 실시간으로 정보를 전달합니다.</li>
+<li><code>[CHANNELS &amp; LINKS] - [Ads] - [Partner Management]</code> 페이지에서 매체별로 설정합니다.</li>
+</ul>
+</li>
+<li><strong>웹훅</strong><div class="admonition tip">
+<p class="admonition-title">Facebook, Twitter와 같은 일부 SAN의 경우 웹훅을 통해서만 매체 및 캠페인 정보가 포함된 기기레벨 데이터를 전달할 수 있습니다.</p>
+</div>
+</li>
 </ul>
 <h3 id="branch">Branch 데이터 익스포트<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h3>
 <ul>
+<li>자세한 설명은 <a href="../../data_feeds/">Data Feeds</a>를 참고하기시 바랍니다.</li>
 <li>Branch 시스템은 딥링킹 플랫폼이면서 다양한 채널로부터의 사용자 유입및 이후 행동을 측정하고 분석을 도와주는 플랫폼 입니다.</li>
-<li>DataFeeds 제품(유료상품)을 통해서 Branch 시스템내에 있는 데이터를 고객사의 시스템으로 익스포트 하실 수 있습니다.</li>
-<li>Branch는 GDPR및 다양한 국제적인 개인정보보호 관련 법률들과 함께 Facebook등 몇몇 파트너의 개인정보보호관련 요구사항들을 준수해야 하므로
-   데이터 프로세서(Data Processor)의 입장에서 수집된 데이터를 원본그대로 장기간 저장하는 것에 제약이 있습니다.
-   그러므로 Branch를 통해서 수집된 데이터로 다양한 장기/단기 분석을 원하시는 경우 Data Feeds를 통해 내부 데이터웨어하우스에 저장하시는 것을 권장드립니다.</li>
-<li>Branch에서는 고객사에서 데이터를 효과적으로 익스포트 하실 수 있도록 가이드및 지원을 드리고 있습니다.</li>
-<li><a href="../../data_feeds/">Data Feeds</a></li>
+<li>DataFeeds를 통해서 Branch 시스템내에 있는 데이터를 API를 통해서 익스포트 하실 수 있습니다.</li>
+<li>
+<p>Branch에서는 고객사에서 데이터를 효과적으로 익스포트 하실 수 있도록 가이드및 지원을 드리고 있습니다.</p>
+<div class="admonition tip">
+<p class="admonition-title">Branch는 내부 정책, GDPR 및 각종 데이터 보호 관련 법률을 준수하기 위해서 광고아이디, IP등의 정보들은 7일 이후에 자동 해슁하고 있습니다. 그러므로 해슁이전의 원본데이터를 내부적으로 장기분석의 용도로 사용하시기 위해서는 7일이내에 데이터를 익스포트 하시기 바랍니다.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">일부 고객사의 경우 요청시 최대 60일까지 해슁을 지연시킬 수 있습니다.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">DataFeeds는 별도 구매하셔야하는 유료상품입니다.</p>
+</div>
+</li>
 </ul>
                 
                   
