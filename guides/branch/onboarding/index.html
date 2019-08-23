@@ -574,11 +574,11 @@
 </ul>
 <h3 id="branch-sdk">Branch SDK 연동<a class="headerlink" href="#branch-sdk" title="Permanent link">&para;</a></h3>
 <ul>
-<li>아래의 SDK 연동 가이드를 참고해 주시기 바랍니다.<ul>
-<li><a href="../">Branch 연동 메인 페이지</a>의 가이드들을 참고해 주시기바랍니다.</li>
+<li>아래의 SDK 연동 메인 페이지를 참고해 주시기 바랍니다.<ul>
+<li><a href="../">Branch 연동 메인 페이지</a></li>
 </ul>
 </li>
-<li>GDPR및 개인정보 보호관련 법규 준수 관련<ul>
+<li><strong>GDPR및 개인정보 보호관련 법규 준수 관련</strong><ul>
 <li>Branch SDK에서는 특정 기기의 데이터를 전히 트래킹하지 않기 위한 방법이 제공됩니다.<ul>
 <li><strong>SDK의 <code>Do Not Track Mode</code>를 활성화 하시면 Branch SDK에서 Branch 서버로 해당 사용자/기기의 데이터가 전송되지 않습니다.</strong><ul>
 <li><a href="https://docs.branch.io/apps/android/#enable-disable-user-tracking">Android SDK</a>,
@@ -594,7 +594,7 @@
 </ul>
 </li>
 <li><code>Do Not Track Mode</code>이 활성화된 기기의 경우에도 Branch Link는 동작합니다만 딥링킹의 정확도가 낮아질 수 있습니다.</li>
-<li>사용자가 데이터 요청한 경우 이미 Branch 시스템에 기록된 데이터의 삭제가 필요한 경우 서포트팀으로 요청해 주시기 바랍니다.</li>
+<li>사용자가 데이터 요청에 의해 이미 Branch 시스템에 기록된 데이터의 삭제가 필요한 경우 서포트팀을 통해서 문의해 주시기 바랍니다.</li>
 </ul>
 </li>
 </ul>
@@ -607,12 +607,20 @@
 </ul>
 <h3 id="postback-webhook">Postback 및 WebHook설정<a class="headerlink" href="#postback-webhook" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong>포스트백</strong><ul>
-<li>광고매체에 대해서 인스톨및 이벤트가 발생했을 경우 실시간으로 정보를 전달합니다.</li>
+<li>
+<p><strong>포스트백</strong></p>
+<ul>
+<li>Branch 시스템에 기록된 데이터를 광고매체로 실시간으로 정보를 전달합니다.</li>
 <li><code>[CHANNELS &amp; LINKS] - [Ads] - [Partner Management]</code> 페이지에서 매체별로 설정합니다.</li>
 </ul>
 </li>
-<li><strong>웹훅</strong><div class="admonition tip">
+<li>
+<p><strong>웹훅</strong></p>
+<ul>
+<li>기술적으로 포스트백과 동일하나 Branch 시스템에 기록된 데이터를 사내 데이터 시스템으로 실시간으로 전달하기 위해서 설정합니다.</li>
+<li><code>[SETUP &amp; TESTING] - [Data Import &amp; Export] - [Data Feeds]</code> 페이지에서 설정합니다.</li>
+</ul>
+<div class="admonition tip">
 <p class="admonition-title">Facebook, Twitter와 같은 일부 SAN의 경우 웹훅을 통해서만 매체 및 캠페인 정보가 포함된 기기레벨 데이터를 전달할 수 있습니다.</p>
 </div>
 </li>
@@ -622,13 +630,14 @@
 <li>자세한 설명은 <a href="../../data_feeds/">Data Feeds</a>를 참고하기시 바랍니다.</li>
 <li>Branch 시스템은 딥링킹 플랫폼이면서 다양한 채널로부터의 사용자 유입및 이후 행동을 측정하고 분석을 도와주는 플랫폼 입니다.</li>
 <li>DataFeeds를 통해서 Branch 시스템내에 있는 데이터를 API를 통해서 익스포트 하실 수 있습니다.</li>
+<li>Branch에서는 고객사에서 데이터를 효과적으로 익스포트 하실 수 있도록 가이드및 지원을 드리고 있습니다.</li>
 <li>
-<p>Branch에서는 고객사에서 데이터를 효과적으로 익스포트 하실 수 있도록 가이드및 지원을 드리고 있습니다.</p>
+<p>Facebook, Twitter 등의 일부 SAN(Self Attributing Network)의 경우는 해당 매체의 관련 규약에 동의하신 이후에만 해당 매체의 <strong>기기레벨의 애트리뷰션 데이터</strong>를 익스포트 하실수 있습니다. 대규모 캠페인 집행 이전에 소규모 테스트 캠페인을 통해서 기기레벨 로그에서 Facebook 애트리뷰션 정보가 정상적으로 설정되는지 사전에 확인하시는 것이 권장됩니다.</p>
+<ul>
+<li>Facebook: <a href="https://docs.branch.io/deep-linked-ads/facebook-ads-overview/#sharing-facebook-data">https://docs.branch.io/deep-linked-ads/facebook-ads-overview/#sharing-facebook-data</a></li>
+</ul>
 <div class="admonition tip">
-<p class="admonition-title">Branch는 내부 정책, GDPR 및 각종 데이터 보호 관련 법률을 준수하기 위해서 광고아이디, IP등의 정보들은 7일 이후에 자동 해슁하고 있습니다. 그러므로 해슁이전의 원본데이터를 내부적으로 장기분석의 용도로 사용하시기 위해서는 7일이내에 데이터를 익스포트 하시기 바랍니다.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">일부 고객사의 경우 요청시 최대 60일까지 해슁을 지연시킬 수 있습니다.</p>
+<p class="admonition-title">Branch는 내부 정책, GDPR 및 각종 데이터 보호 관련 법률을 준수하기 위해서 광고아이디, IP등의 정보들은 7일 이후에 자동 해슁하고 있습니다. 그러므로 해슁이전의 원본데이터를 내부적으로 장기분석의 용도로 사용하시기 위해서는 7일이내에 데이터를 익스포트 하시기 바랍니다. 일부 고객사의 경우 요청시 최대 60일까지 해슁을 지연시킬 수 있습니다.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">DataFeeds는 별도 구매하셔야하는 유료상품입니다.</p>
