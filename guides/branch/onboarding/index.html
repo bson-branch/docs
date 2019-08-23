@@ -447,10 +447,13 @@
 <li>Branch Link는 앱별로 고유한 도메인이 할당되며, 일반적인 단축URL 같은 기능을 지원합니다.</li>
 <li>iOS의 경우에는 기본적으로 애플의 <a href="https://developer.apple.com/ios/universal-links/">Universal Links</a>를 활성화합니다.</li>
 <li>
-<p><strong><code>app.link</code> 서브 도메인</strong></p>
+<p><strong>3가지 도메인 종류</strong></p>
+<ul>
+<li>
+<p><strong><code>app.link</code> (랜덤) 서브도메인</strong></p>
 <ul>
 <li>대쉬보드를 통한 앱등록 과정에서 기본적으로는 <code>a1b2.app.link</code>와 같이 랜덤한 <code>app.link</code>의 하위의 서브도메인네임이 할당됩니다.</li>
-<li><code>app.link</code> 서브 도메인은 주로 광고링크에 사용됩니다.<ul>
+<li><code>app.link</code> 서브도메인은 주로 광고링크에 사용됩니다.<ul>
 <li>샘플 Branch Quick Link : <code>https://a1b2.app.link/PcKIVEJe0K</code></li>
 <li>샘플 Branch Ads Link : <code>https://a1b2.app.link/PcKIVEJe0K?%243p=a_awesome_publisher</code></li>
 </ul>
@@ -461,12 +464,12 @@
 <p><strong><code>app.link</code> 커스텀 서브도메인</strong></p>
 <ul>
 <li>원하시는 경우 <strong>미사용</strong>중인 <code>app.link</code>의 서브도메인 중에서 선택하실 수 있습니다.</li>
-<li><code>app.link</code> 서브 도메인은 주로 광고링크에 사용됩니다.</li>
+<li><code>app.link</code> 서브도메인&amp;커스텀서브도메인은 주로 광고링크에 사용됩니다.</li>
 <li>샘플 Branch Quick Link : <code>https://branchmonster.app.link/PcKIVEJe0K</code></li>
 <li>
 <p>샘플 Branch Ads Link : <code>https://branchmonster.app.link/PcKIVEJe0K?%243p=a_awesome_publisher</code></p>
 <div class="admonition tip">
-<p class="admonition-title">앱등록 이전에 앱별로 미리 사용할 서버도메인 이름을 정해 두시는 것을 권장드립니다.</p>
+<p class="admonition-title">앱등록 이전에 앱별로 미리 사용할 커스텀 서버도메인 이름을 정해 두시는 것을 권장드립니다.</p>
 </div>
 </li>
 </ul>
@@ -475,8 +478,8 @@
 <p><strong>커스텀 도메인</strong></p>
 <ul>
 <li>주로 광고용 링크가 아닌 Quick Link에서 활용합니다.</li>
-<li>사용자가 문자, SNS등으로 브랜치링크를 받았을때 해당 링크를 신뢰하고 클릭할 수 있도록 <code>myapp.mycorp.com</code>과 같이 회사의 도메인네임을 Branch Link에 사용하실 수 있습니다.<ul>
-<li>샘플 Branch Quick Link : <code>https://myapp.mycorp.com/PKrIVEJe0K</code></li>
+<li>사용자가 문자, SNS등으로 브랜치링크를 받았을때 해당 링크를 신뢰하고 클릭할 수 있도록 <code>https://branchmonster.branch.io</code>와 같이 회사의 도메인 네임을 Branch Link에 사용하실 수 있습니다.<ul>
+<li>샘플 Branch Quick Link : <code>https://branchmonster.branch.io/PKrIVEJe0K</code></li>
 </ul>
 </li>
 <li>
@@ -491,24 +494,28 @@
 <li><a href="https://docs.branch.io/links/advanced-settings-configuration/#use-custom-subdomain">Link Settings : Advanced Settings Configuration</a></li>
 </ul>
 </li>
+</ul>
+</li>
 <li>
-<p>권장되는 도메인 설정 순서</p>
+<p>(권장) 도메인 설정 순서</p>
 <ol>
-<li>앱생성시 <code>app.link</code> 랜덤 서브 도메인이 할당됨</li>
+<li>앱생성시 <code>app.link</code> 랜덤 서브도메인이 기본으로 할당됨</li>
 <li>(권장) 대쉬보드에서 원하시는 <code>app.link</code> 커스텀 서브 도메인 으로 변경<ul>
+<li>예: <code>branchmoster.app.link</code></li>
 <li>설정페이지: <a href="https://branch.dashboard.branch.io/link-settings/general">https://branch.dashboard.branch.io/link-settings/general</a>
 <img alt="image" src="../../img/app.link_subdomain.png" /></li>
 </ul>
 </li>
 <li>(선택사항) IT부서를 통해 신규 앱별 도메인의 생성및 CNAME을 custom.bnc.lt으로 변경</li>
 <li>(선택사항) 대쉬보드에서 원하시는 커스텀 도메인으로 변경<ul>
+<li>예: <code>branchmoster.branch.io</code></li>
 <li>설정페이지: <a href="https://branch.dashboard.branch.io/link-settings/general">https://branch.dashboard.branch.io/link-settings/general</a>
 <img alt="image" src="../../img/custom_domain.png" /></li>
 </ul>
 </li>
 <li>변경된 도메인 정보를 iOS앱 개발팀으로 공지. (Android앱은 별도 공지가 필요 없습니다.)<ul>
-<li><code>app.link</code> 커스텀 서브 도메인 변경시 해당 도메인 정보 전달</li>
-<li>커스텀 도메인 설정시 해당 도메인 정보 전달</li>
+<li>랜덤 <code>app.link</code> 도메인에서 커스텀 <code>app.link</code> 서브도메인으로 변경시 개발팀 공지 필요.</li>
+<li>커스텀 도메인 설정시 개발팀 공지 필요.</li>
 <li>iOS개발팀은 아래의 내용 가이드 문서를 참고하셔서 도메인 변경사항을 적용하셔야 합니다.<ul>
 <li><a href="https://docs.branch.io/apps/ios/#configure-associated-domains">https://docs.branch.io/apps/ios/#configure-associated-domains</a></li>
 </ul>
@@ -545,7 +552,7 @@
 </ul>
 <h3 id="_7">트래킹할 이벤트 선정<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ul>
-<li>마케팅팀과 개발팀이 함께 작업하셔야 하는 부분입니다.</li>
+<li>마케팅팀과 개발팀이 함께 진행하셔야 하는 작업입니다.</li>
 <li>
 <p>마케팅팀은 마케팅효율을 측정하기 위한 이벤트를 선정하셔야하며, 개발팀에서도 트래킹이 필요한 이벤트들을 추가 하실 수 있습니다.</p>
 <div class="admonition tip">
