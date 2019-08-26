@@ -430,17 +430,35 @@
 </div>
 </li>
 <li>
-<p>앱생성후 URL스킴, 기본 마켓 랜딩페이지, 패키지네임, 번들아이디, 애플 앱프리픽스들은 <a href="https://branch.dashboard.branch.io/link-settings/general">Link Settings</a> 페이지에서 설정해 주시기 바랍니다.</p>
+<p>앱정보 설정</p>
+<ul>
+<li><a href="https://branch.dashboard.branch.io/link-settings/general">Link Settings</a> 페이지</li>
+<li>iOS:<ul>
+<li>Universal Links : 유니버셜 링크는 Branch의 강점중 하나입니다. 디폴트로 활성화 해주시기 바랍니다.</li>
+<li>URI Scheme: 앱의 딥링크 스킴 설정.</li>
+<li>AppStore URL: 앱스토어 랜딩 페이지 URL. (앱이 라이브된 경우 검색을 통한 설정 가능)</li>
+<li>Bundle Identifier: 애플 개발자 계정에서 Bundle ID를 확인해서 설정합니다. <a href="https://docs.branch.io/apps/ios/#confirm-app-prefix">가이드</a></li>
+<li>Apple App Prefix: 애플 개발자 계정에서 Apple App Prefix를 확인해서 설정합니다. <a href="https://docs.branch.io/apps/ios/#confirm-app-prefix">가이드</a></li>
+</ul>
 </li>
-<li>
-<p>SDK 연동시 필요한 Branch Key와 Branch Secret은 <code>[SETUP &amp; TESTING] - [Account Settings]</code> 페이지의 <a href="https://branch.dashboard.branch.io/account-settings/profile">Profile</a>탭에서 확인할 수 있습니다.</p>
-<div class="admonition tip">
-<p class="admonition-title">Branch Key와 Branch Secret은 외부에 유출이 되지 않도록 유의해 주시기 바랍니다.</p>
-</div>
+<li>Android:<ul>
+<li>App Links : (선택사항) 앱에서 지원하는 경우에 한해서 활성화 합니다.</li>
+<li>URI Scheme: 앱의 딥링크 스킴 설정.</li>
+<li>Google Play URL: 앱스토어 랜딩 페이지 URL.(앱이 라이브된 경우 검색을 통한 설정 가능)</li>
+<li>Package Name: 앱의 패키지 네임은 Google Play URL에서 확인 가능합니다. id로 값이 설정된 부분.</li>
+</ul>
 </li>
-<li>
-<p><a href="https://branch.dashboard.branch.io/account-settings/profile">Profile</a>탭 하단의 타임존은 Facebook등의 매체와의 데이터 매칭시 사용되므로 적절하게 설정하시기 바라며 한번 설정후 변경하지 않으시는것을 권장합니다.</p>
+</ul>
 </li>
+</ul>
+<p>앱생성후 URL스킴, 기본 마켓 랜딩페이지, 패키지네임, 번들아이디, 애플 앱프리픽스들은 <a href="https://branch.dashboard.branch.io/link-settings/general">Link Settings</a> 페이지에서 설정해 주시기 바랍니다.
+* SDK 연동시 필요한 Branch Key와 Branch Secret은 <code>[SETUP &amp; TESTING] - [Account Settings]</code> 페이지의 <a href="https://branch.dashboard.branch.io/account-settings/profile">Profile</a>탭에서 확인할 수 있습니다.</p>
+<div class="codehilite"><pre><span></span><span class="o">!!!</span> <span class="n">tip</span> <span class="ss">&quot;Branch Key와 Branch Secret은 외부에 유출이 되지 않도록 유의해 주시기 바랍니다.&quot;</span>
+</pre></div>
+
+
+<ul>
+<li><a href="https://branch.dashboard.branch.io/account-settings/profile">Profile</a>탭 하단의 타임존은 Facebook등의 매체와의 데이터 매칭시 사용되므로 적절하게 설정하시기 바라며 한번 설정후 변경하지 않으시는것을 권장합니다.</li>
 </ul>
 <h3 id="branch-link">Branch Link 도메인 선정<a class="headerlink" href="#branch-link" title="Permanent link">&para;</a></h3>
 <ul>
