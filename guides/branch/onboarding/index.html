@@ -592,32 +592,186 @@
 </ul>
 <h3 id="branch-sdk">Branch SDK 연동<a class="headerlink" href="#branch-sdk" title="Permanent link">&para;</a></h3>
 <ul>
-<li>아래의 SDK 연동 메인 페이지를 참고해 주시기 바랍니다.<ul>
+<li>
+<p>아래의 SDK 연동 메인 페이지를 참고해 주시기 바랍니다.</p>
+<ul>
 <li><a href="../">Branch 연동 메인 페이지</a></li>
 </ul>
 </li>
-<li><strong>GDPR및 개인정보 보호관련 법규 준수 관련</strong><ul>
-<li>Branch SDK에서는 특정 기기의 데이터를 전히 트래킹하지 않기 위한 방법이 제공됩니다.<ul>
-<li><strong>SDK의 <code>Do Not Track Mode</code>를 활성화 하시면 Branch SDK에서 Branch 서버로 해당 사용자/기기의 데이터가 전송되지 않습니다.</strong><ul>
-<li><a href="https://docs.branch.io/apps/android/#enable-disable-user-tracking">Android SDK</a>,
-  <a href="https://docs.branch.io/apps/ios/#enable-disable-user-tracking">iOS SDK</a>,
-  <a href="https://docs.branch.io/web/integrate/#enable-disable-user-tracking">Web SDK</a></li>
+<li>
+<p>Branch Link와 Branch SDK에 의해서 수집되는 정보.</p>
+<ul>
+<li><a href="https://branch.io/policies/#privacy-what-information-does-branch-collect-from-our-services">Privacy Policy (개인정보 보호정책)</a> : 최신데이터 및 자세한 설명은 이 문서를 참고하시기 바랍니다.</li>
+<li>
+<p>Branch Link &amp; Pixel에 의해서 수집되는 데이터</p>
+<table>
+<thead>
+<tr>
+<th align="center">수집 정보</th>
+<th align="center">수집 목적</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">IP Address</td>
+<td align="center">표준 Web HTTP Request. 매칭과 일반적인 위치 파악.</td>
+</tr>
+<tr>
+<td align="center">Cookie</td>
+<td align="center">표준 웹 쿠키. 매칭을 위해 사용</td>
+</tr>
+<tr>
+<td align="center">Link Data</td>
+<td align="center">고객사에 의해서 컨트롤되는 메타데이터. 리포팅및 분석을 위해서 데이터를 이해하기위해 사용될 수 있습니다</td>
+</tr>
+<tr>
+<td align="center">User Agent</td>
+<td align="center">표준 웹 브라우저 유저에이전트 메타데이터. 매칭을 위해  사용</td>
+</tr>
+<tr>
+<td align="center">Referrer</td>
+<td align="center">표준 웹 브라우저 HTTP 레퍼러: 리포팅관 분석을 위해서 사용될 수 있습니다.</td>
+</tr>
+<tr>
+<td align="center">Request</td>
+<td align="center">표준 웹 HTTP Request</td>
+</tr>
+<tr>
+<td align="center">Phone Number</td>
+<td align="center">"Text me the app" 기능을 사용할대에 한해 SMS를 보내기위해 사용됩니다</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Branch SDK 의해서 수집되는 데이터</p>
+<table>
+<thead>
+<tr>
+<th align="center">수집정보</th>
+<th align="center">목적</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">iOS Identifier for Advertising (IDFA)</td>
+<td align="center">식별및 매칭을 위해 사용</td>
+</tr>
+<tr>
+<td align="center">iOS Identifier for Vendors (IDFV)</td>
+<td align="center">식별및 매칭을 위해 사용</td>
+</tr>
+<tr>
+<td align="center">Android Advertising ID (GAID)</td>
+<td align="center">식별및 매칭을 위해 사용</td>
+</tr>
+<tr>
+<td align="center">Android ID</td>
+<td align="center">식별및 매칭을 위해 사용. Android SDK에서 수집 비활성화 가능</td>
+</tr>
+<tr>
+<td align="center">Branch Cookie ID</td>
+<td align="center">식별및 매칭을 위해 사용.</td>
+</tr>
+<tr>
+<td align="center">IP Address</td>
+<td align="center">표준 Web HTTP Request. 매칭과 일반적인 위치 파악</td>
+</tr>
+<tr>
+<td align="center">Application version</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Device model</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Manufacturer</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Operating system</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Operating system version</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Screen size</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Screen resolution</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Session start/stop time</td>
+<td align="center">리포팅과 분석을 위해 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Mobile network status (WiFi, etc)</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Application installed time</td>
+<td align="center">리포팅과 분석을 위해 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Application updated time</td>
+<td align="center">리포팅과 분석을 위해 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Device locale (country and language)</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Local IP address</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Mobile platform</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Branch SDK version</td>
+<td align="center">식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+<tr>
+<td align="center">Developer ID</td>
+<td align="center">(선택사항) 고객사에서 제공되는 고유 식별자. 식별과 매칭을 위해서 사용되는 메타데이터</td>
+</tr>
+</tbody>
+</table>
+</li>
 </ul>
 </li>
-<li>사용자가 요청하는 경우 해당 시점이후 해당 사용자의 데이터의 수집을 앱단에서 중단시키기 위해서 SDK에서 <code>Do Not Track Mode</code> 기능을 앱단에서 활성화 해주실 수 있습니다.</li>
+<li>
+<p>SDK Privacy Control</p>
+<ul>
+<li><a href="https://docs.branch.io/apps/sdk-privacy-controls/#enabling-disabling-sdk-privacy-controls">SDK Privacy Controls 가이드</a></li>
+<li>Branch는 고객사의 개인정보를 매우 중요하게 여기며 특정 데이터수집기능을 비활성화하는 기능을 제공하고 있습니다.
+  Branch의 서비스를 통해서 수집되는 데이터에 대해서는 <a href="https://branch.io/policies/#privacy">Privacy Policy</a> 페이지에 자세한 내용들이 설명되어 있습니다.</li>
+<li>Branch는 딥링킹, 애트리뷰션, 분석 서비스를 위해서 제한적인 기기정보를 수집하고 있습니다만 일부 엔드유저들은 이 Data Processing에서 제외될 필요가 있다는 것과
+  또는 법(또는 Branch정책)에 의해서 특정 엔드유저(예를틀면, 13세 미만의 아동)들의 특정 타입의 개인정보가 Branch로 제공되는것을 허용하지 않는 경우들이 있다는 것을 알고 있습니다.
+  이러한 이유를로 인해서 고객사에 SDK Privacy Control 기능을 제공하고 있습니다.</li>
+<li>SDK Privacy Control기능을 통해서, Branch가 연동된 앱 또는 웹사이트을 가진 고객사에서는 특정 엔드유저의 개인정보 Processing 중지를 요청할 수 있습니다.
+  SDK Privacy Control기능이 특정 엔드유저에 대해 활성화 되었을때도 해당유저는 Branch Link의 생성 및 공유가 가능하며 기본적인 딥링킹 기능은 계속 동작할 것입니다.
+  다만, 이후의 모든 행동들에 대해서 브랜치로는 해당 엔드유저를 특정할수 있는 정보들이 제외되므로, 해당 엔드유저들에 대해서는 Branch에서 크로스플랫폼 데이터를 통해 제공하는 매끄러운 고객의 여정 서비스를 제공받지 못하게 됩니다.</li>
+<li>SDK Privacy Control 기능 구현 관련<ul>
 <li><code>Do Not Track Mode</code> 활성화 구현 예<ul>
 <li>사용자가 요청시 원격으로 해당 기기에 대해서 활성화 시키도록 구현</li>
 <li>앱내 설정 메뉴에서 사용자가 직접 활성화 시킬 수 있는 메뉴를 추가</li>
 <li>사용자 인증단계에서 미성년인것이 확인된 경우 자동 활성화</li>
 </ul>
 </li>
-<li><code>Do Not Track Mode</code>이 활성화된 기기의 경우에도 Branch Link는 동작합니다만 딥링킹의 정확도가 낮아질 수 있습니다.</li>
-<li>사용자가 데이터 요청에 의해 이미 Branch 시스템에 기록된 데이터의 삭제가 필요한 경우 서포트팀을 통해서 문의해 주시기 바랍니다.</li>
+</ul>
+</li>
+<li>사용자가 데이터 요청에 의해 이미 Branch 시스템에 기록된 데이터의 삭제가 필요한 경우 서포트팀(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>)을 통해서 문의해 주시기 바랍니다.</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
+<p><a href="https://docs.branch.io/apps/sdk-privacy-controls/">https://docs.branch.io/apps/sdk-privacy-controls/</a></p>
 <h3 id="branch-sdk_1">Branch SDK 연동중 또는 연동후 테스트<a class="headerlink" href="#branch-sdk_1" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="test-guide-for-app_dev_team.md">앱 개발팀을 위한 기본연동 테스트 가이드 (작업중)</a></li>
