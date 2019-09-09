@@ -292,21 +292,28 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="개요" class="md-nav__link">
+  <a href="#_1" title="작성자 : 손보형" class="md-nav__link">
+    작성자 : 손보형
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="개요" class="md-nav__link">
     개요
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="신규버전으로 업데이트시 주의사항" class="md-nav__link">
+  <a href="#_3" title="신규버전으로 업데이트시 주의사항" class="md-nav__link">
     신규버전으로 업데이트시 주의사항
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="릴리즈 히스토리" class="md-nav__link">
+  <a href="#_4" title="릴리즈 히스토리" class="md-nav__link">
     릴리즈 히스토리
   </a>
   
@@ -386,26 +393,25 @@
                 
                 
                 <h1 id="tune">TUNE형식 로그 익스포트 스크립트 가이드<a class="headerlink" href="#tune" title="Permanent link">&para;</a></h1>
-<p>최종 수정일 : 2019년 9월 9일
-작성자 : 손보형</p>
-<hr />
-<h2 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>최종 수정일 : 2019년 9월 9일</p>
+<h2 id="_1">작성자 : 손보형<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_2">개요<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>이 스크립트는 <a href="https://docs.branch.io/exports/custom-exports/">Custom Export API</a>를 사용해서 (구)TUNE 포멧의 로그를 익스포트 하는 샘플 스크립트입니다.</li>
-<li>필요시 이 스크립트를 사용하실 수 있으며, ETL스크립트 작성시 참고용으로 사용하실 수 있습니다.</li>
+<li>필요시 이 스크립트를 사용해서 로그 익스포트를 하실 수 있으며, ETL스크립트 작성시 참고용으로도 사용하실 수 있습니다.</li>
 <li>현재는 Branch의 필드중 일부만 제한적으로 익스포트가 가능하며, 올 연말쯤 대부분의 Branch 전용 필드들도 Customer Export API 및 이 스크립트를 통해서 익스포트가 가능해 질 것입니다.</li>
 <li>이 스크립트는 Python v3.7.x에서 실행이 가능하며, v2.x에서는 실행되지 않습니다.</li>
 <li><strong>API Key는 가급적 공유하지 마시고 개인의 키를 개인만 사용해 주시기 바랍니다. API Key의 유출이 우려되는 경우는 서포트팀(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>)으로 해당키의 삭제와 신규생성을 요청하실 수 있습니다.</strong></li>
 <li>디폴트로 <strong>한번의 요청당 최대 2백만개의 레코드까지만 익스포트가 가능</strong>합니다. 그러므로 익스포트시 레코드 갯수가 정확히 2백만개 라면, 더 많은 레코드가 있으나 일부 레코드가 익스포트되지 못함을 의미합니다. 볼륨이 많은 특정이벤트나 오픈로그에서 이런 경우가 발생할 수 있으며, 이 경우 좀더 좁은 시간범위별 또는 이벤트별로 나누어서 익스포트 하시기 바랍니다.</li>
 <li><a href="../LogExportInstallationSteps.mp4">설치방법 안내 동영상(임시버전)</a></li>
 </ul>
-<h2 id="_2">신규버전으로 업데이트시 주의사항<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="_3">신규버전으로 업데이트시 주의사항<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <ul>
 <li>기존 스크립트는 계속 사용가능합니다.</li>
 <li>신규버전은 일단 기존 스크립트와 다른 디렉토리에 설치후, 정상동작이 확인되면 그때 부터 신규 스크립트로 바꿔서 사용하는 것을 권장합니다.</li>
 <li>config.json파일은 가급적 신규버전과 함께 릴리즈 된 파일에 기존 버전의 설정값을 업데이트 해서 사용하는 것이 권장됩니다.</li>
 </ul>
-<h2 id="_3">릴리즈 히스토리<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h2 id="_4">릴리즈 히스토리<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <ul>
 <li>v0.1 : 최초 릴리즈 (2019년 4월 26일)</li>
 <li>v0.1.1 : (2019년 8월 6일)<ul>
