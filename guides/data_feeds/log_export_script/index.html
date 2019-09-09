@@ -452,13 +452,13 @@
 </ul>
 <h2 id="1">1. 파이썬 설치<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>아래의 웹사이트에서 Python 3.7.x을 설치합니다. Python 2.x와는 호환되지 않습니다.</strong></li>
-<li>
-<p>다른 파이썬 스크립트들도 사용 하신다면 가상환경에 설치하는 것이 바람직 합니다.</p>
-<ul>
+<li><strong>아래의 웹사이트에서 Python 3.7.x을 설치합니다. Python 2.x와는 호환되지 않습니다.</strong><ul>
 <li><a href="https://www.python.org">https://www.python.org</a></li>
 <li><a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
 </ul>
+</li>
+<li>
+<p>다른 파이썬 스크립트들도 사용 하신다면 가상환경에 설치하는 것이 바람직 합니다.</p>
 </li>
 <li>
 <p><strong>맥</strong>: 특이사항 없음.</p>
@@ -590,9 +590,15 @@
 <li><code>2019-04-05T01:00:00</code>: 2019년 4월 5일 1시 0분 0초</li>
 </ul>
 </li>
+<li>명령어 옵션으로 설정파일의 값을 덮어쓸 수 있습니다.<ul>
+<li><code>python3 export.py --log install --start_date 2019-04-05T00:00:00</code></li>
 </ul>
 </li>
-<li><strong><code>datetime_range</code></strong>:<ul>
+</ul>
+</li>
+<li>
+<p><strong><code>datetime_range</code></strong>:</p>
+<ul>
 <li><code>start_date</code>로부터 얼마 만큼의 기간 동안의 로그를 익스포트 할지 설정합니다.</li>
 <li>기간은 주,일,시간,분 단위로 지정가능하며, 각각 w, d, h, m을 사용합니다.</li>
 <li>예시)<ul>
@@ -602,9 +608,15 @@
 <li>시작일시부터 10분간의 로그 익스포트: <code>10m</code></li>
 </ul>
 </li>
+<li>명령어 옵션으로 설정파일의 값을 덮어쓸 수 있습니다.<ul>
+<li><code>python3 export.py --log event --datetime_range 10m</code> </li>
 </ul>
 </li>
-<li><strong><code>timezone</code></strong>:<ul>
+</ul>
+</li>
+<li>
+<p><strong><code>timezone</code></strong>:</p>
+<ul>
 <li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">타임존 데이터베이스 페이지</a>의 TZ database name 컬럼의 값을 설정합니다.</li>
 <li>한국표준시는 <code>Asia/Seoul</code>, UTC는 <code>UTC</code>를 설정합니다.</li>
 </ul>
