@@ -609,7 +609,7 @@
 </ul>
 </li>
 <li>명령어 옵션으로 설정파일의 값을 덮어쓸 수 있습니다.<ul>
-<li><code>python3 export.py --log event --datetime_range 10m</code> </li>
+<li><code>python3 export.py --log event --datetime_range 10m</code></li>
 </ul>
 </li>
 </ul>
@@ -630,6 +630,7 @@
 <li>특정 TUNE앱(TUNE Site)들의 로그만 익스포트할 경우 설절합니다.</li>
 <li>필터링을 하지 않을 경우: <code>"filter_site_ids": []</code>와 같이 설정합니다.</li>
 <li>필터링이 필요한 경우: <code>"filter_site_ids": ["111111", "222222"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+<li>API의 캐슁기능 우회: API에서는 동일한 요청을 반복할 경우 기존 익스포트된 로그를 리턴해주는 기능이 있습니다. <code>"filter_site_ids": ["123456789012345678", "random"]</code>와 random을 추가하면 실행시 랜덤 아이디가 설정되며 항상 새로은 익스포트 작업이 수행되게 할 수 있습니다.</li>
 </ul>
 </li>
 <li><strong><code>filter_app_ids</code></strong>:<ul>
@@ -640,6 +641,7 @@
 </li>
 <li>필터링을 하지 않을 경우: <code>"filter_app_ids": []</code>와 같이 설정합니다.</li>
 <li>필터링이 필요한 경우: <code>"filter_app_ids": ["123456789012345678", "123456789012345679"]</code>와 같이 쌍따옴표(<code>"</code>) 안에 사이트 아이디를 콤마(<code>,</code>)를 구분자로 설정합니다.</li>
+<li>API의 캐슁기능 우회: API에서는 동일한 요청을 반복할 경우 기존 익스포트된 로그를 리턴해주는 기능이 있습니다. <code>"filter_app_ids": ["123456789012345678", "random"]</code>와 random을 추가하면 실행시 랜덤 아이디가 설정되며 항상 새로은 익스포트 작업이 수행되게 할 수 있습니다.</li>
 <li><strong><code>filter_site_ids</code>와 <code>filter_app_ids</code> 둘 중 하나만 설정합니다.</strong></li>
 </ul>
 </li>
