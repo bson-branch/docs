@@ -229,7 +229,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="Migration" class="md-nav__link">
+    <a href="../../migration/" title="Migration" class="md-nav__link">
       Migration
     </a>
   </li>
@@ -253,7 +253,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../data_feeds/" title="Data Feeds" class="md-nav__link">
+    <a href="../" title="Data Feeds" class="md-nav__link">
       Data Feeds
     </a>
   </li>
@@ -427,8 +427,13 @@
 </li>
 </ul>
 </li>
+<li>v0.1.1 : (2019년 9월 9일)<ul>
+<li>Custom Export API의 Caching 기능을 우회하기 위해서 filter_site_ids 또는 filter_app_ids에 실제 앱아이디 또는 사이트 아이디 대신 random 문자열을 추가하면 랜덤 아이디가 추가됨.</li>
+<li>실패시 재시도 전반적인 재작성</li>
+<li>config파일의 start_date, datetime_range 를 커먼드 라인에서 동적설정 가능.</li>
+</ul>
+</li>
 <li>TODO: 원하시는 기능 추가 요청이 있으신 경우 bson@branch.io로 연락주시기 바랍니다.<ul>
-<li>Too Many Request 응답 수신시 10~30분 정도 대기후 다시 처음부터 익스포트 작업 재시작 로직 추가.</li>
 <li>이벤트 필터링시 like로 패턴매칭 기능 추가. (현재는 이벤트 이름이 정확하게 매칭되어야만 익스포트)</li>
 <li><code>click</code>, <code>event_item</code> 로그 익스포트 기능 추가.</li>
 <li>GitHub를 통한 배포</li>
