@@ -96,11 +96,13 @@
   max-width: 750px;
   max-height: 800px;
 }
+/*
 .md-typeset h2 {
   font-weight: 700;
   border-bottom: 1px solid #eaecef;
   padding-bottom: 0.3em;
 }
+*/
 /*.md-typeset h3, h4, h5 {
   font-weight: 600;
   margin: 2rem 0 0.5rem !important;
