@@ -125,7 +125,6 @@
 
 /* font-size: 1.75rem; */
 .md-typeset h4 {
-  font-weight: 200;
   font-size: 1.0rem;
 }
 
@@ -133,7 +132,6 @@
 .md-typeset h5 {
   text-transform: none;
   color: rgba(0,0,0,.87);
-  font-weight: 100;
   font-size: 0.8rem;
 }
 .md-typeset li > h3:before, .md-typeset li > h4:before, .md-typeset li > h5:before, .md-typeset li > h6:before {
