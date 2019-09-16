@@ -567,15 +567,16 @@ TUNE Link 생성 페이지에서 웹앱 선택 후 "Manually enter URL" 선택�
 새로운 Destination URL로 랜딩 시키려는 경우, 신규로 발급하시는 TUNE Link에 <code>url_{ios|android|web}</code>파라메터를 사용해서 랜딩시킬 웹URL자체을 TUNE Link에 직접 설정 하시기 바랍니다. Branch 대쉬보드의 TUNE Link 생성 페이지에서 앱 선택 후 드랍다운 메뉴에서 "Manually enter URL" 선택후 직접 URL을 설정하는 방식을 사용하시면 됩니다. <code>url</code>의 경우는 대쉬보드에서 직접설정은 안되며, TUNE Link생성후 생성된 URL에 직접 설정하셔야 합니다.</p>
 </div>
 <ul>
-<li><strong>구글플레이앱의 딥링킹&amp;디퍼드딥링킹 지원 기능</strong><ul>
-<li>이 내용은 구글 플레이를 통해서 배포되는 앱에서만 지원되는 기능입니다.</li>
-<li>구글플레이앱의 경우 아래와 같은 웹URL 형식으로 <code>id</code> 파라메터에 앱의 패키지네임 <code>url</code>파라메터에 딥링크가 설정되어 랜딩시키면 앱설치 유무에 따라서 딥링킹 또는 디퍼드딥링킹을 지원됩니다.<ul>
+<li>
+<p><strong>구글플레이앱의 딥링킹&amp;디퍼드딥링킹 지원 기능</strong></p>
+<ul>
+<li>구글플레이앱에서 지원하는 기능으로 구글 플레이를 통해서 배포되는 앱에서만 지원되는 기능입니다.</li>
+<li>구글플레이앱의 경우 아래와 같은 웹URL 형식으로 <code>id</code> 파라메터에 앱의 패키지네임 <code>url</code>파라메터에 딥링크가 설정되어 랜딩시키면 앱설치 유무에 따라서 딥링킹 또는 디퍼드딥링킹이 지원됩니다.<ul>
 <li><a href="https://play.google.com/store/apps/details?id=앱의패키지네임&amp;url=URL인코딩된딥링크">https://play.google.com/store/apps/details?id=앱의패키지네임&amp;url=URL인코딩된딥링크</a></li>
 <li>위 형식의 웹URL 전체를 URL인코딩한 뒤 TUNE Link의 Destination URL로 설정하면 됩니다.</li>
 </ul>
 </li>
-<li>이 방식으로 랜딩시에는 앱 미설치시에는 앱설치 완료시 실행 버튼이 <code>Continue</code> 또는 <code>계속</code>버튼으로 변경되어 클릭시 (디퍼드)딥링킹이 수행됩니다.</li>
-<li>이 기능은 구글플레이앱에서 지원하는 기능으로, 앱스토어에는 동일한 기능을제공하지 않으므로 iOS에서는 해당 기능이 지원되지 않습니다.</li>
+<li>이 방식으로 구글플레이앱에 랜딩시에는 앱 미설치시에는 앱설치 완료시 실행 버튼이 <code>Continue</code> 또는 <code>계속</code>버튼으로 변경되어 클릭시 (디퍼드)딥링킹이 수행됩니다.</li>
 </ul>
 </li>
 </ul>
