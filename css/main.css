@@ -120,19 +120,19 @@
 /* font-size: 1.9rem; */
 .md-typeset h3 {
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
 }
 
 /* font-size: 1.75rem; */
 .md-typeset h4 {
-  font-size: 1.0rem;
+  font-size: 0.8rem;
 }
 
 /* font-size: 1.6rem; */
 .md-typeset h5 {
   text-transform: none;
   color: rgba(0,0,0,.87);
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 .md-typeset li > h3:before, .md-typeset li > h4:before, .md-typeset li > h5:before, .md-typeset li > h6:before {
   /* corrects headers on the same line as bullet points */
