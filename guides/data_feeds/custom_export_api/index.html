@@ -533,14 +533,14 @@
 <li>
 <p><strong>TUNE에서의 논리적 이벤트 구분</strong></p>
 <ul>
-<li>Click, Install, Open, Update, Event 로그로 구분되어 각각의 해당 로그에서 익스포트.</li>
+<li><strong>Click, Install, Open, Update, Event</strong> 로그로 구분되어 각각의 해당 로그에서 익스포트.</li>
 <li>인스톨이후 발생되는 이벤트(Post-install Event)는 모두 하나의 이벤트로그에서 익스포트 되며, 이벤트타입(<code>site_event.type</code>필드)으로 논리적 구분.</li>
 <li>표준이벤트들은 이벤트타입에 해당 이벤트타입 이름이 자동 설정되며, 비표준 이벤트들은 <code>event</code>라는 이벤트타입 이름이 설정됨.</li>
 </ul>
 </li>
 <li><strong>Branch에서의 논리적 이벤트 구분</strong><ul>
-<li>Click, Install, Open, Reinstall, User LifeCycle Event, Content Event, Commerce Event, Custom Event 로그로 분리되어 각각의 로그에서 익스포트.</li>
-<li>인스톨이후 발생되는 이벤트(Post-install Event)들은 V2표준이벤트와 커스텀이벤트로 크게 구분되며, V2표준이벤트들은 User LifeCycle Event, Content Event, Commerce Event 로그에서 각각 익스포트 되며, 비표준 이벤트들은 Custom 이벤트로그에서 모두 익스포트됨.</li>
+<li><strong>Click, Install, Open, Reinstall, User LifeCycle Event, Content Event, Commerce Event, Custom Event</strong> 로그로 분리되어 각각의 로그에서 익스포트.</li>
+<li>인스톨이후 발생되는 이벤트(Post-install Event)들은 <strong>V2표준이벤트</strong>와 *<em>비표준이벤트</em>의 크게 두가지로 구분되며, V2표준이벤트들은 User LifeCycle Event, Content Event, Commerce Event 로그에서 각각 익스포트 되며, 비표준 이벤트들은 Custom 이벤트로그에서 모두 익스포트됨.</li>
 </ul>
 </li>
 <li>LiveView에서 로그 확인시 이 카테고리를 우선 선택후 해당 카테고리내의 이벤트들을 확인을 할 수 있습니다.</li>
