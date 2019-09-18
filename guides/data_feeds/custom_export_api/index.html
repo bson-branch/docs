@@ -1,0 +1,829 @@
+
+
+
+
+<!doctype html>
+<html lang="kr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="클립보드로 복사">
+      
+        <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="검색어와 일치하는 문서가 없습니다">
+      
+        <meta name="lang:search.result.one" content="1개의 일치하는 문서">
+      
+        <meta name="lang:search.result.other" content="#개의 일치하는 문서">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Custom Export API Guide - Solutions Engineering (Korea)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#custom-export-api-guide" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Solutions Engineering (Korea)" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Solutions Engineering (Korea)
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Custom Export API Guide
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            검색어를 입력하세요
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Solutions Engineering (Korea)" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Solutions Engineering (Korea)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../branch/" title="Guides" class="md-nav__link">
+      Guides
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../migration/" title="Migration" class="md-nav__link">
+      Migration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../pages/" title="Translations" class="md-nav__link">
+      Translations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Data Feeds" class="md-nav__link">
+      Data Feeds
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../fraud/" title="Fraud" class="md-nav__link">
+      Fraud
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">목차</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tune-sdk-branch-sdk" title="TUNE SDK에서 Branch SDK로 변경시 주의사항" class="md-nav__link">
+    TUNE SDK에서 Branch SDK로 변경시 주의사항
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#field-reference" title="Field Reference" class="md-nav__link">
+    Field Reference
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" title="추가수집 권장 신규 필드" class="md-nav__link">
+    추가수집 권장 신규 필드
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" title="신규 필드" class="md-nav__link">
+    신규 필드
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" title="기존 필드 설명" class="md-nav__link">
+    기존 필드 설명
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branch" title="Branch 이벤트 카테고리" class="md-nav__link">
+    Branch 이벤트 카테고리
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branch-v2" title="Branch V2 이벤트 카테고리" class="md-nav__link">
+    Branch V2 이벤트 카테고리
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-lifecycle-event" title="User lifecycle Event" class="md-nav__link">
+    User lifecycle Event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#content-event" title="Content Event" class="md-nav__link">
+    Content Event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#commerce-event" title="Commerce Event" class="md-nav__link">
+    Commerce Event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-event" title="Custom Event" class="md-nav__link">
+    Custom Event
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="custom-export-api-guide">Custom Export API Guide<a class="headerlink" href="#custom-export-api-guide" title="Permanent link">&para;</a></h1>
+<div class="codehilite"><pre><span></span><span class="k">Last</span> <span class="n">updated</span><span class="p">:</span> <span class="n">Sep</span><span class="p">.</span> <span class="mi">18</span><span class="n">th</span><span class="p">,</span> <span class="mi">2019</span>
+</pre></div>
+
+
+<hr />
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<ul>
+<li>기존에 TUNE에서 로그익스포트를 위해서 제공 되었던 Reporting API를 최소한의 변경으로 Branch에서도 동일하게 사용하실수 있도록 새롭게 개발된 API 입니다.</li>
+<li><a href="https://docs.branch.io/exports/custom-exports/">영문 공식 가이드 문서</a>를 함께 참고해 주시기 바랍니다.</li>
+</ul>
+<h2 id="tune-sdk-branch-sdk">TUNE SDK에서 Branch SDK로 변경시 주의사항<a class="headerlink" href="#tune-sdk-branch-sdk" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong><code>site_id</code>, <code>site_name</code></strong>:<ul>
+<li>TUNE에서 제공되던 OS별로 각각 앱에 부여된 아이디와 이름입니다.</li>
+<li><strong>Branch SDK를 통해서 기록된 이벤트에는 이 값들이 설정되지 않습니다.</strong></li>
+<li>Branch에서는 OS에 상관없이 앱에 부여되는 아이디와 이름이 있으며 <code>app_id</code>, <code>app_name</code>필드로 익스포트가 가능하며, 이 두 필드에 대한 추가 익스포트가 권장됩니다.<ul>
+<li>대쉬보드의 <a href="https://branch.dashboard.branch.io/account-settings/profile">Account Setting</a>페이지에서 Branch앱의 아이디와 네임의 확인이 가능합니다.</li>
+<li><strong>브랜치앱에서는 OS별로 각각 별도로 아이디와 네임이 부여되지 않습니다.</strong></li>
+<li>OS 구분은 <code>sdk</code>를 사용하실 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>site_event.name</code>, <code>site_event_id</code></strong>:<ul>
+<li>TUNE에서 제공되던 이벤트별로 각각 부여된 아이디와 이름입니다.</li>
+<li><strong>Branch SDK를 통해서 기록된 이벤트에는 이 값들이 설정되지 않습니다.</strong></li>
+<li>대신 브랜치에서 별도로 이벤트에 부여되는 <code>name</code> 필드에 대한 추가 익스포트가 권장됩니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="field-reference">Field Reference<a class="headerlink" href="#field-reference" title="Permanent link">&para;</a></h2>
+<h3 id="_1">추가수집 권장 신규 필드<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">필드</th>
+<th align="center">설명</th>
+<th align="center">샘플</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>datasource</code></td>
+<td align="center">Branch 이벤트 카테고리</td>
+<td align="center"><code>COMMERCE_EVENT</code></td>
+</tr>
+<tr>
+<td align="center"><code>origin</code></td>
+<td align="center">이벤트 수집 소스. SDK종류.</td>
+<td align="center"><code>TUNE</code> 또는 <code>BRANCH</code></td>
+</tr>
+<tr>
+<td align="center"><code>app_id</code></td>
+<td align="center">Branch 앱 아이디</td>
+<td align="center"><code>620123451234512345</code></td>
+</tr>
+<tr>
+<td align="center"><code>app_name</code></td>
+<td align="center">Branch 앱 아이디</td>
+<td align="center"><code>Branch Monster</code></td>
+</tr>
+<tr>
+<td align="center"><code>name</code></td>
+<td align="center">Branch 이벤트 네임. V2표준이벤트는 대문자</td>
+<td align="center"><code>PURCHASE</code></td>
+</tr>
+<tr>
+<td align="center"><code>publisher_sub_channel</code></td>
+<td align="center">Branch링크에서 설정한 channel 값</td>
+<td align="center"><code>Awesome Partner</code></td>
+</tr>
+<tr>
+<td align="center"><code>publisher_sub_feature</code></td>
+<td align="center">Branch링크에서 설정한 feature 값</td>
+<td align="center"><code>paid advertising</code></td>
+</tr>
+<tr>
+<td align="center"><code>publisher_sub_tags</code></td>
+<td align="center">Branch링크에서 설정한 tags 값</td>
+<td align="center"><code>Summer</code>, <code>Swimming</code></td>
+</tr>
+<tr>
+<td align="center"><code>publisher_sub_stage</code></td>
+<td align="center">Branch링크에서 설정한 stage 값</td>
+<td align="center">``</td>
+</tr>
+<tr>
+<td align="center"><code>custom_data</code></td>
+<td align="center">이벤트내에 설정한 커스텀 데이터 값. JSON형식</td>
+<td align="center">``</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_2">신규 필드<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th align="center">필드</th>
+<th align="center">설명</th>
+<th align="center">샘플</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>user_data_os</code></td>
+<td align="center">OS</td>
+<td align="center"><code>ANDROID</code>,<code>IOS</code>, <code>LINUX</code>, <code>MAC_OS</code>, <code>ROBOTS</code>, <code>WINDOWS</code>, <code>WINDOWS_PHONE</code>, 등</td>
+</tr>
+<tr>
+<td align="center"><code>user_data_platform</code></td>
+<td align="center">플랫폼</td>
+<td align="center"><code>ANDROID_APP</code>, <code>ANDROID_WEB</code>,  <code>IOS_APP</code>, <code>IOS_WEB</code>, <code>DESKTOP_WEB</code>, <code>OTHER</code>, <code>ROBOT</code>, 등</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_3">기존 필드 설명<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>준비중</li>
+</ul>
+<h2 id="branch">Branch 이벤트 카테고리<a class="headerlink" href="#branch" title="Permanent link">&para;</a></h2>
+<ul>
+<li>이벤트 카테고리는 Branch에서 이벤트들을 논리적으로 분류한 것 입니다.</li>
+<li><strong>TUNE에서의 논리적 이벤트 구분</strong><ul>
+<li>Click, Install, Open, Update, Event 로그로 구분되어 각각의 해당 로그에서 익스포트.</li>
+<li>인스톨이후 발생되는 이벤트(Reinstall포함)는 모두 Event로그에서 익스포트 되며, 이벤트타입(<code>site_event.type</code>필드)으로 논리적 구분.</li>
+<li>표준이벤트들은 이벤트타입에 해당 이벤트타입 이름이 자동 설정되며, 비표준 이벤트들은 <code>event</code>라는 이벤트타입 이름이 설정됨.</li>
+</ul>
+</li>
+<li><strong>Branch에서의 논리적 이벤트 구분</strong><ul>
+<li>Click, Install, Open, Reinstall, User LifeCycle Event, Content Event, Commerce Event, Custom Event로그로 구분되어 각각의 로그에서 익스포트.</li>
+<li>인스톨이후 발생되는 이벤트들은 V2표준이벤트와 커스텀이벤트로 크게 구분되며, V2표준이벤트들은 User LifeCycle Event, Content Event, Commerce Event 로그에서 각각 익스포트 되며, 비표준 이벤트들은 Custom 이벤트로그에서 모두 익스포트됨.</li>
+<li>Custom Export API로 로그익스포트시 <code>datasource</code> 필드로 해당 이벤트가 소속된 이벤트 카테고리를 알수 있음.</li>
+</ul>
+</li>
+<li>LiveView에서 로그 확인시 이 카테고리별를 우선 선택후 해당 카테고리내의 이벤트들을 확인을 할 수 있습니다.</li>
+<li>관련 공식 참고 문서<ul>
+<li><a href="https://docs.branch.io/apps/v2event/">V2 이벤트 영문 문서</a></li>
+<li><a href="https://docs.branch.io/exports/event_ontology_data_schema/#event-ontology-data-schema">V2 이벤트 온쏠로지 데이터 스키마 문서</a></li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트 카테고리</th>
+<th align="center"><code>datasource</code> 값</th>
+<th align="center">설명</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Click</td>
+<td align="center">CLICK</td>
+<td align="center">클릭이벤트 로그</td>
+</tr>
+<tr>
+<td align="center">Install</td>
+<td align="center">INSTALL</td>
+<td align="center">인스톨이벤트 로그</td>
+</tr>
+<tr>
+<td align="center">Open</td>
+<td align="center">OPEN</td>
+<td align="center">오픈이벤트 로그</td>
+</tr>
+<tr>
+<td align="center">Reinstall</td>
+<td align="center">REINSTALL</td>
+<td align="center">리인스톨이벤트 로그</td>
+</tr>
+<tr>
+<td align="center">User lifecycle Event</td>
+<td align="center">USER_LIFECYCLE_EVENT</td>
+<td align="center">앱사용중 단계별로 발생되는 이벤트들이 포함된 로그</td>
+</tr>
+<tr>
+<td align="center">Content Event</td>
+<td align="center">CONTENT_EVENT</td>
+<td align="center">컨텐츠에 관련된 이벤트들이 포함된 로그</td>
+</tr>
+<tr>
+<td align="center">Commerce Event</td>
+<td align="center">COMMERCE_EVENT</td>
+<td align="center">구매관련 이벤트들이 포함된 로그</td>
+</tr>
+<tr>
+<td align="center">Custom Event</td>
+<td align="center">CUSTOM_EVENT</td>
+<td align="center">커스텀 이벤트들이 포함된 로그</td>
+</tr>
+</tbody>
+</table>
+<h2 id="branch-v2">Branch V2 이벤트 카테고리<a class="headerlink" href="#branch-v2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Branch에서는 V2표준이벤트들을 논리적으로 구분하여 User Lifecycle Event, Content Event, Commerce Event 로 구분하며, V2표준이벤트가 아닌 이벤트들은 Custom Event로 구분합니다.</li>
+<li><strong>Branch API로 익스포트</strong><ul>
+<li>이 4개의 카테고리별 별도의 엔드포인트를 통해서 각각 익스포트 합니다.</li>
+<li>이벤트 카테고리별로 데이터베이스내에 각각 별도 테이블에 저장된다고 이해하시면 됩니다.</li>
+</ul>
+</li>
+<li><strong>Custom Export API로 익스포트</strong><ul>
+<li>실제로는 4개의 이벤트 카테고리별로 각각 별도로 저장되는 이벤트를을 하나의 <code>events</code> 엔드포인트를 통해서 모두 익스포트됩니다.</li>
+<li>이것은 (구)TUNE과의 호환성을 제공하기 위함입니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="user-lifecycle-event"><strong>User lifecycle Event</strong><a class="headerlink" href="#user-lifecycle-event" title="Permanent link">&para;</a></h3>
+<ul>
+<li>앱사용중 단계별로 발생되는 이벤트</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">(구)TUNE 이벤트 네임/타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">COMPLETE_REGISTRATION</td>
+<td align="center">registration</td>
+</tr>
+<tr>
+<td align="center">LOGIN</td>
+<td align="center">login</td>
+</tr>
+<tr>
+<td align="center">INVITE</td>
+<td align="center">invite</td>
+</tr>
+<tr>
+<td align="center">COMPLETE_TUTORIAL</td>
+<td align="center">tutorial_complete</td>
+</tr>
+<tr>
+<td align="center">ACHIEVE_LEVEL</td>
+<td align="center">level_achieved</td>
+</tr>
+<tr>
+<td align="center">UNLOCK_ACHIEVEMENT</td>
+<td align="center">achievement_unlocked</td>
+</tr>
+<tr>
+<td align="center">START_TRIAL</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">SUBSCRIBE</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">RESERVE</td>
+<td align="center">N/A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="content-event"><strong>Content Event</strong><a class="headerlink" href="#content-event" title="Permanent link">&para;</a></h3>
+<ul>
+<li>상품에 관련된 이벤트</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">(구)TUNE 이벤트 네임/타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">VIEW_ITEM</td>
+<td align="center">content_view</td>
+</tr>
+<tr>
+<td align="center">VIEW_ITEMS</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">SEARCH</td>
+<td align="center">search</td>
+</tr>
+<tr>
+<td align="center">RATE</td>
+<td align="center">rated</td>
+</tr>
+<tr>
+<td align="center">SHARE</td>
+<td align="center">N/A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="commerce-event"><strong>Commerce Event</strong><a class="headerlink" href="#commerce-event" title="Permanent link">&para;</a></h3>
+<ul>
+<li>상품 구매활동에 관련된 이벤트</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">(구)TUNE 이벤트 네임/타입</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ADD_TO_CART</td>
+<td align="center">add_to_cart</td>
+</tr>
+<tr>
+<td align="center">ADD_TO_WISHLIST</td>
+<td align="center">add_to_wishlist</td>
+</tr>
+<tr>
+<td align="center">VIEW_CART</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">INITIATE_PURCHASE</td>
+<td align="center">checkout_initiated</td>
+</tr>
+<tr>
+<td align="center">ADD_PAYMENT_INFO</td>
+<td align="center">added_payment_info</td>
+</tr>
+<tr>
+<td align="center">PURCHASE</td>
+<td align="center">purchase</td>
+</tr>
+<tr>
+<td align="center">SPEND_CREDITS</td>
+<td align="center">spent_credits</td>
+</tr>
+<tr>
+<td align="center">VIEW_AD</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">CLICK_AD</td>
+<td align="center">N/A</td>
+</tr>
+</tbody>
+</table>
+<h3 id="custom-event"><strong>Custom Event</strong><a class="headerlink" href="#custom-event" title="Permanent link">&para;</a></h3>
+<ul>
+<li>V2표준이벤트가 아닌 광고주의 필요에 의해서 추가로 트래킹되는 이벤트</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/router.js"></script>
+      
+        <script src="../../../js/events.js"></script>
+      
+        <script src="../../../js/modals.js"></script>
+      
+        <script src="../../../js/images.js"></script>
+      
+        <script src="../../../js/buttons.js"></script>
+      
+        <script src="../../../js/progress.js"></script>
+      
+        <script src="../../../js/tabs.js"></script>
+      
+        <script src="../../../js/languages.js"></script>
+      
+        <script src="../../../js/utils.js"></script>
+      
+        <script src="../../../js/main.js"></script>
+      
+    
+  </body>
+</html>
