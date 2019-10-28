@@ -292,49 +292,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="테스트 순서" class="md-nav__link">
-    테스트 순서
+  <a href="#liveview_1" title="LiveView 개요" class="md-nav__link">
+    LiveView 개요
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-sdk" title="1. SDK의 로깅기능 활성화" class="md-nav__link">
-    1. SDK의 로깅기능 활성화
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#android" title="로깅기능 활성화 (Android)" class="md-nav__link">
-    로깅기능 활성화 (Android)
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ios" title="로깅기능 활성화 (iOS)" class="md-nav__link">
-    로깅기능 활성화 (iOS)
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" title="2. 기기 로그 샘플" class="md-nav__link">
-    2. 기기 로그 샘플
+  <a href="#datasource" title="Datasource" class="md-nav__link">
+    Datasource
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" title="3. 로그확인" class="md-nav__link">
-    3. 로그확인
+  <a href="#liveview_2" title="LiveView 페이지" class="md-nav__link">
+    LiveView 페이지
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="사용시 주의사항" class="md-nav__link">
+    사용시 주의사항
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liveview_3" title="LiveView를 활용한 로그확인 순서" class="md-nav__link">
+    LiveView를 활용한 로그확인 순서
   </a>
   
 </li>
@@ -359,108 +346,211 @@
                 <h1 id="liveview">LiveView 로그확인 가이드 (작성중..)<a class="headerlink" href="#liveview" title="Permanent link">&para;</a></h1>
 <ul>
 <li>작성자 : 손보형</li>
-<li>업데이트: 2019년 4월 5일</li>
+<li>업데이트: 2019년 10월 28일</li>
 </ul>
 <hr />
-<h2 id="_1">테스트 순서<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="liveview_1">LiveView 개요<a class="headerlink" href="#liveview_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>LiveView는 실시간으로 시스템에 수신되고 있는 이벤트들을 대쉬보드에서 확인할 수 있는 툴입니다.</li>
+<li>테스트시 로그확인의 편의를 위한 툴이므로 테스트시 로그확인을 위한 목적으로만 사용하시기 바랍니다.</li>
+</ul>
+<h2 id="datasource">Datasource<a class="headerlink" href="#datasource" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Branch에서는 비슷한 성격의 이벤트들로 분류해서 아래의 각각의 Datasource에 저장됩니다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트 카테고리</th>
+<th align="center">EO 데이터소스</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Install</td>
+<td align="center">eo_install</td>
+</tr>
+<tr>
+<td align="center">Reinstall</td>
+<td align="center">eo_reinstall</td>
+</tr>
+<tr>
+<td align="center">Open</td>
+<td align="center">eo_open</td>
+</tr>
+<tr>
+<td align="center">User lifecycle Event</td>
+<td align="center">eo_user_lifecycle_event</td>
+</tr>
+<tr>
+<td align="center">Content Event</td>
+<td align="center">eo_content_event</td>
+</tr>
+<tr>
+<td align="center">Commerce Event</td>
+<td align="center">eo_commerce_event</td>
+</tr>
+<tr>
+<td align="center">Custom Event</td>
+<td align="center">eo_cucstom_event</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Install, Reinstall, Open을 제외한 이벤트들은 각각 종류별로 아래의 4개의 Datasource에 저장됩니다.</p>
+<ul>
+<li>
+<p><strong>User lifecycle Event</strong> : 사용자가 앱을 사용하면서 어떤 단계별로 발생되는 이벤트</p>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">TUNE 이벤트네임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">COMPLETE_REGISTRATION</td>
+<td align="center">registration</td>
+</tr>
+<tr>
+<td align="center">LOGIN</td>
+<td align="center">login</td>
+</tr>
+<tr>
+<td align="center">INVITE</td>
+<td align="center">invite</td>
+</tr>
+<tr>
+<td align="center">COMPLETE_TUTORIAL</td>
+<td align="center">tutorial_complete</td>
+</tr>
+<tr>
+<td align="center">ACHIEVE_LEVEL</td>
+<td align="center">level_achieved</td>
+</tr>
+<tr>
+<td align="center">UNLOCK_ACHIEVEMENT</td>
+<td align="center">achievement_unlocked</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Content Event</strong> : 앱내 컨텐츠에 관련된 이벤트</p>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">TUNE 이벤트네임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">VIEW_ITEM</td>
+<td align="center">content_view</td>
+</tr>
+<tr>
+<td align="center">SEARCH</td>
+<td align="center">search</td>
+</tr>
+<tr>
+<td align="center">RATE</td>
+<td align="center">rated</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Commerce Event</strong> : 상품 구매에 관련된 이벤트</p>
+<table>
+<thead>
+<tr>
+<th align="center">Branch 이벤트네임</th>
+<th align="center">TUNE 이벤트네임</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">ADD_TO_CART</td>
+<td align="center">add_to_cart</td>
+</tr>
+<tr>
+<td align="center">ADD_TO_WISHLIST</td>
+<td align="center">add_to_wishlist</td>
+</tr>
+<tr>
+<td align="center">VIEW_CART</td>
+<td align="center">N/A</td>
+</tr>
+<tr>
+<td align="center">INITIATE_PURCHASE</td>
+<td align="center">checkout_initiated</td>
+</tr>
+<tr>
+<td align="center">ADD_PAYMENT_INFO</td>
+<td align="center">added_payment_info</td>
+</tr>
+<tr>
+<td align="center">PURCHASE</td>
+<td align="center">purchase</td>
+</tr>
+<tr>
+<td align="center">SPEND_CREDITS</td>
+<td align="center">spent_credits</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>Custom Event</strong> : 위의 표준이벤트에 속하지 않는 이벤트들</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="liveview_2">LiveView 페이지<a class="headerlink" href="#liveview_2" title="Permanent link">&para;</a></h2>
+<p><img alt="image" src="../../img/liveview.png" /></p>
+<ul>
+<li>Filters<ul>
+<li>최상단 드랍다운 메슈는 필수선택으로 확인하고자하는 이벤트가 속한 Datasource를 선택합니다.</li>
+<li><code>[Add Filter]</code>버튼을 클릭해서 다양한 필터링 옵션을 추가할수 있습니다.</li>
+<li>설정한 모든 개별 조건들은 AND 조건으로 모든 조건이 만족되는 로그만 표시됩니다.</li>
+</ul>
+</li>
+<li>로그 확인 섹션<ul>
+<li>최상단 행의 우측의 3개의 세로바를 선택후 로그에서 확인하고자하는 정보들을 추가 할수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="_1">사용시 주의사항<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>실시간으로 수신되고 로그들을 확인하는 툴 이므로 <code>[Update Session]</code>버튼을 클릭하기 이전에 이미 수신된 로그는 확인할 수 없습니다.
+   그러므로  <code>[Update Session]</code> 버튼을 클릭후 이벤트를 전송해 주시기 바랍니다.</li>
+<li>앱이 라이브된 이후 대량의 이벤트가 수신되고 있을때는 필터링 조건이 없을 경우 실시간으로 수신되는 모든 로그를 확인할 수 없습니다.
+    <strong>꼭 필터 조건을 설정하셔서 특정 기기에서 전송된 로그로 조건을 좁혀 주셔야 원하시는 로그를 확인할수 있습니다.</strong></li>
+<li>일반적으로 로그는 전송후 대략 1~2분 이후에 LiveView에서 확인이 가능합니다.</li>
+<li><strong><code>Filters</code>섹션에서 최상단 드랍다운 박스는 Datasource를 선택하는 곳입니다.</strong>
+   LiveView는 실시간으로 해당 Datasource에 해당되는 로그들만 실시간 모니터링이 가능합니다.
+   약간 번거롭지만 로그확인시 확인하고자 하는 로그가 포함된 Datasource를 선택후 해당 이벤트를 전송하셔야 로그확인이 가능합니다.</li>
+<li>권장 필터링 조건<ul>
+<li><strong>안드로이드</strong> : Google AID 설정 권장. 드랍다운 메뉴에서 <code>AAID</code>선택</li>
+<li><strong>iOS</strong> : IDFA 를 설정 권장.  드랍다운 메뉴에서 <code>AAID</code>선택</li>
+<li><strong>안드로이드/iOS</strong> : Public IP 주소 권장.  드랍다운 메뉴에서 <code>ip address</code>선택</li>
+</ul>
+</li>
+<li>특정 Datasource에서 일단 확인된 로그는 다른 Datasource를 바꿨다가 다시 돌아왔을때 다시 확인이 가능합니다.</li>
+<li>인스톨 테스트의 경우는 해당기기에서 최초설치가 아닌 앱 재설치의 경우 Install로그가 아닌 Reinstall로 기록될 수 있음에 유의하세요.</li>
+<li>TUNE SDK가 연동된 앱에서의 오픈테스트의 경우는 24시간내 1개의 오픈만 기록되도록 기록제한이 있으므로 전송한 모든 오픈이벤트가 로그에서 확인되지는 않습니다.</li>
+<li>이벤트의 기록빈도 제한이 설정된 이벤트의 경우는 이 제한에 의해서 기록이 거부된 이벤트는 확인되지 않습니다.</li>
+</ul>
+<h2 id="liveview_3">LiveView를 활용한 로그확인 순서<a class="headerlink" href="#liveview_3" title="Permanent link">&para;</a></h2>
 <ol>
-<li>SDK 로깅기능 활성화 (릴리즈 빌드에서는 꼭 제거)</li>
-<li>기기로그 에서 이벤트 전송 확인</li>
-<li>광고아이디등 주요정보 확인</li>
-</ol>
-<h2 id="1-sdk">1. SDK의 로깅기능 활성화<a class="headerlink" href="#1-sdk" title="Permanent link">&para;</a></h2>
-<ul>
-<li>기기의 로그 콘솔에서 이벤트가 실제 전송되는지 확인하고, 주요한 정보들이 잘 수집되는지 확인합니다.</li>
-</ul>
-<h3 id="android">로깅기능 활성화 (Android)<a class="headerlink" href="#android" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">마켓 릴리즈 빌드에서는 꼭 비활성화 하세요.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">테스트키일 경우에는 실제 기기의 Google AID가 전송되지 않고 랜덤UUID가 설정됩니다.</p>
-</div>
-<ul>
-<li>3.1.0에서 enableLogging()에서 enableDebugMode()로 메쏘드 이름변경</li>
-<li><code>Branch.getAutoInstance(this);</code> 앞에서 호출하세요.</li>
-<li>
-<p><em>Java</em></p>
-<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="o">.</span><span class="na">enableDebugMode</span><span class="o">();</span>
-</pre></div>
-
-</li>
-</ul>
-<h3 id="ios">로깅기능 활성화 (iOS)<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">앱스토어 릴리즈 빌드에서는 꼭 비활성화 하세요.</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">로깅기능을 활성화 하면 실제 기기의 IDFA 대신 랜덤UUID가 설정됩니다.</p>
-</div>
-<ul>
-<li><code>initSession</code> 앞에서 호출해 주세요.</li>
-<li>
-<p><code>OS_ACTIVITY_MODE</code>는 꼭 비활성화 되어야 합니다. (<a href="https://stackoverflow.com/a/39503602/2690774">link</a>)</p>
-</li>
-<li>
-<p><em>Objective C</em></p>
-<div class="codehilite"><pre><span></span><span class="p">[[</span><span class="n">Branch</span> <span class="n">getInstance</span><span class="p">]</span> <span class="n">setDebug</span><span class="p">];</span>
-</pre></div>
-
-</li>
-<li>
-<p><em>Swift</em></p>
-<div class="codehilite"><pre><span></span><span class="n">Branch</span><span class="p">.</span><span class="n">getInstance</span><span class="p">().</span><span class="n">setDebug</span><span class="p">()</span>
-</pre></div>
-
-</li>
-</ul>
-<h2 id="2">2. 기기 로그 샘플<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Install 이벤트 샘플
-    <div class="codehilite"><pre><span></span><span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">posting</span> <span class="k">to</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api2</span><span class="p">.</span><span class="n">branch</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="n">install</span>
-<span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">Post</span> <span class="n">value</span> <span class="o">=</span> <span class="err">{</span><span class="ss">&quot;hardware_id&quot;</span><span class="p">:</span><span class="ss">&quot;92b67271-824c-4c42-96cf-3636bbeeb637&quot;</span><span class="p">,</span><span class="ss">&quot;is_hardware_id_real&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;brand&quot;</span><span class="p">:</span><span class="ss">&quot;samsung&quot;</span><span class="p">,</span><span class="ss">&quot;model&quot;</span><span class="p">:</span><span class="ss">&quot;SM-G955N&quot;</span><span class="p">,</span><span class="ss">&quot;screen_dpi&quot;</span><span class="p">:</span><span class="mi">560</span><span class="p">,</span><span class="ss">&quot;screen_height&quot;</span><span class="p">:</span><span class="mi">2792</span><span class="p">,</span><span class="ss">&quot;screen_width&quot;</span><span class="p">:</span><span class="mi">1440</span><span class="p">,</span><span class="ss">&quot;wifi&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;ui_mode&quot;</span><span class="p">:</span><span class="ss">&quot;UI_MODE_TYPE_NORMAL&quot;</span><span class="p">,</span><span class="ss">&quot;os&quot;</span><span class="p">:</span><span class="ss">&quot;Android&quot;</span><span class="p">,</span><span class="ss">&quot;os_version&quot;</span><span class="p">:</span><span class="mi">28</span><span class="p">,</span><span class="ss">&quot;country&quot;</span><span class="p">:</span><span class="ss">&quot;US&quot;</span><span class="p">,</span><span class="ss">&quot;language&quot;</span><span class="p">:</span><span class="ss">&quot;en&quot;</span><span class="p">,</span><span class="ss">&quot;local_ip&quot;</span><span class="p">:</span><span class="ss">&quot;102.45.125.187&quot;</span><span class="p">,</span><span class="ss">&quot;app_version&quot;</span><span class="p">:</span><span class="ss">&quot;1.0.2&quot;</span><span class="p">,</span><span class="ss">&quot;facebook_app_link_checked&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;is_referrable&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="ss">&quot;debug&quot;</span><span class="p">:</span><span class="k">true</span><span class="p">,</span><span class="ss">&quot;update&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="ss">&quot;latest_install_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;latest_update_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;first_install_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;previous_update_time&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="ss">&quot;environment&quot;</span><span class="p">:</span><span class="ss">&quot;FULL_APP&quot;</span><span class="p">,</span><span class="ss">&quot;cd&quot;</span><span class="p">:</span><span class="err">{</span><span class="ss">&quot;mv&quot;</span><span class="p">:</span><span class="ss">&quot;-1&quot;</span><span class="p">,</span><span class="ss">&quot;pn&quot;</span><span class="p">:</span><span class="ss">&quot;com.bson.branchtesters&quot;</span><span class="err">}</span><span class="p">,</span><span class="ss">&quot;install_begin_ts&quot;</span><span class="p">:</span><span class="mi">1554444525</span><span class="p">,</span><span class="ss">&quot;metadata&quot;</span><span class="p">:</span><span class="err">{}</span><span class="p">,</span><span class="ss">&quot;google_advertising_id&quot;</span><span class="p">:</span><span class="ss">&quot;4fd96af5-98d3-4681-9d1d-33292ffecc83&quot;</span><span class="p">,</span><span class="ss">&quot;lat_val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="ss">&quot;instrumentation&quot;</span><span class="p">:</span><span class="err">{</span><span class="ss">&quot;v1\/install-qwt&quot;</span><span class="p">:</span><span class="ss">&quot;0&quot;</span><span class="err">}</span><span class="p">,</span><span class="ss">&quot;sdk&quot;</span><span class="p">:</span><span class="ss">&quot;android3.1.1&quot;</span><span class="p">,</span><span class="ss">&quot;branch_key&quot;</span><span class="p">:</span><span class="ss">&quot;key_live_1gfd5689QW53b54H456451234567891&quot;</span><span class="err">}</span>
-<span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">returned</span> <span class="err">{</span><span class="ss">&quot;session_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168734516567&quot;</span><span class="p">,</span><span class="ss">&quot;identity_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;link&quot;</span><span class="p">:</span><span class="ss">&quot;https://branchtesters.app.link?%24identity_id=642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;data&quot;</span><span class="p">:</span><span class="ss">&quot;{\&quot;</span><span class="o">+</span><span class="n">clicked_branch_link</span><span class="err">\</span><span class="ss">&quot;:false,\&quot;</span><span class="o">+</span><span class="n">is_first_session</span><span class="err">\</span><span class="ss">&quot;:true}&quot;</span><span class="p">,</span><span class="ss">&quot;device_fingerprint_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168667338007&quot;</span><span class="err">}</span>
-</pre></div></p>
-</li>
-<li>
-<p>Open 이벤트 샘플
-    <div class="codehilite"><pre><span></span><span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">posting</span> <span class="k">to</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">api2</span><span class="p">.</span><span class="n">branch</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">v1</span><span class="o">/</span><span class="k">open</span>
-<span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">Post</span> <span class="n">value</span> <span class="o">=</span> <span class="err">{</span><span class="ss">&quot;device_fingerprint_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168667338007&quot;</span><span class="p">,</span><span class="ss">&quot;identity_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;hardware_id&quot;</span><span class="p">:</span><span class="ss">&quot;92b67271-824c-4c42-96cf-3636bbeeb637&quot;</span><span class="p">,</span><span class="ss">&quot;is_hardware_id_real&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;brand&quot;</span><span class="p">:</span><span class="ss">&quot;samsung&quot;</span><span class="p">,</span><span class="ss">&quot;model&quot;</span><span class="p">:</span><span class="ss">&quot;SM-G955N&quot;</span><span class="p">,</span><span class="ss">&quot;screen_dpi&quot;</span><span class="p">:</span><span class="mi">560</span><span class="p">,</span><span class="ss">&quot;screen_height&quot;</span><span class="p">:</span><span class="mi">2792</span><span class="p">,</span><span class="ss">&quot;screen_width&quot;</span><span class="p">:</span><span class="mi">1440</span><span class="p">,</span><span class="ss">&quot;wifi&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;ui_mode&quot;</span><span class="p">:</span><span class="ss">&quot;UI_MODE_TYPE_NORMAL&quot;</span><span class="p">,</span><span class="ss">&quot;os&quot;</span><span class="p">:</span><span class="ss">&quot;Android&quot;</span><span class="p">,</span><span class="ss">&quot;os_version&quot;</span><span class="p">:</span><span class="mi">28</span><span class="p">,</span><span class="ss">&quot;country&quot;</span><span class="p">:</span><span class="ss">&quot;US&quot;</span><span class="p">,</span><span class="ss">&quot;language&quot;</span><span class="p">:</span><span class="ss">&quot;en&quot;</span><span class="p">,</span><span class="ss">&quot;local_ip&quot;</span><span class="p">:</span><span class="ss">&quot;102.45.125.187&quot;</span><span class="p">,</span><span class="ss">&quot;app_version&quot;</span><span class="p">:</span><span class="ss">&quot;1.0.2&quot;</span><span class="p">,</span><span class="ss">&quot;facebook_app_link_checked&quot;</span><span class="p">:</span><span class="k">false</span><span class="p">,</span><span class="ss">&quot;is_referrable&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="ss">&quot;debug&quot;</span><span class="p">:</span><span class="k">true</span><span class="p">,</span><span class="ss">&quot;update&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="ss">&quot;latest_install_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;latest_update_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;first_install_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;previous_update_time&quot;</span><span class="p">:</span><span class="mi">1554446038595</span><span class="p">,</span><span class="ss">&quot;environment&quot;</span><span class="p">:</span><span class="ss">&quot;FULL_APP&quot;</span><span class="p">,</span><span class="ss">&quot;cd&quot;</span><span class="p">:</span><span class="err">{</span><span class="ss">&quot;mv&quot;</span><span class="p">:</span><span class="ss">&quot;-1&quot;</span><span class="p">,</span><span class="ss">&quot;pn&quot;</span><span class="p">:</span><span class="ss">&quot;com.bson.branchtesters&quot;</span><span class="err">}</span><span class="p">,</span><span class="ss">&quot;metadata&quot;</span><span class="p">:</span><span class="err">{}</span><span class="p">,</span><span class="ss">&quot;google_advertising_id&quot;</span><span class="p">:</span><span class="ss">&quot;4fd96af5-98d3-4681-9d1d-33292ffecc83&quot;</span><span class="p">,</span><span class="ss">&quot;lat_val&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="ss">&quot;instrumentation&quot;</span><span class="p">:</span><span class="err">{</span><span class="ss">&quot;v1\/close-brtt&quot;</span><span class="p">:</span><span class="ss">&quot;677&quot;</span><span class="p">,</span><span class="ss">&quot;v1\/open-qwt&quot;</span><span class="p">:</span><span class="ss">&quot;0&quot;</span><span class="err">}</span><span class="p">,</span><span class="ss">&quot;sdk&quot;</span><span class="p">:</span><span class="ss">&quot;android3.1.1&quot;</span><span class="p">,</span><span class="ss">&quot;branch_key&quot;</span><span class="p">:</span><span class="ss">&quot;key_live_1gfd5689QW53b54H456451234567891&quot;</span><span class="err">}</span>
-<span class="n">I</span><span class="o">/</span><span class="n">BranchSDK</span><span class="p">:</span> <span class="n">returned</span> <span class="err">{</span><span class="ss">&quot;session_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600288330627530&quot;</span><span class="p">,</span><span class="ss">&quot;identity_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;link&quot;</span><span class="p">:</span><span class="ss">&quot;https://branchtesters.app.link?%24identity_id=642600168721700181&quot;</span><span class="p">,</span><span class="ss">&quot;data&quot;</span><span class="p">:</span><span class="ss">&quot;{\&quot;</span><span class="o">+</span><span class="n">clicked_branch_link</span><span class="err">\</span><span class="ss">&quot;:false,\&quot;</span><span class="o">+</span><span class="n">is_first_session</span><span class="err">\</span><span class="ss">&quot;:false}&quot;</span><span class="p">,</span><span class="ss">&quot;device_fingerprint_id&quot;</span><span class="p">:</span><span class="ss">&quot;642600168667338007&quot;</span><span class="err">}</span>
-</pre></div></p>
-</li>
-</ul>
-<h2 id="3">3. 로그확인<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<ol>
-<li>아래와 같이 install (최초실행시) 또는 open 이벤트가 앱실행시 전송되는지 확인합니다.<ul>
-<li><code>posting to</code> 뒤의 엔드포인트 URL로 어떤 종류의 이벤트가 전송되는지 확인할 수 있습니다.</li>
-</ul>
-</li>
-<li>현재 라이브 또는 테스트 빌드/키 인지 확인하는 방법<ul>
-<li>이벤트의 정보는 POST요청의 바디에 JSON으로 설정되며, <code>Post value</code> 뒤에 출력됩니다.</li>
-<li><code>branch_key</code>에 설정된 키값을 확인합니다. <code>key_live_</code>로 시작되면 라이브키, <code>key_test_</code>로 시작되면 테스트 키입니다.</li>
-</ul>
-</li>
-<li>
-<p>Android에서의 확인 사항</p>
-<ul>
-<li>구글 광고아이디가 잘 수집되었는지 확인합니다.<ul>
-<li><code>google_advertising_id</code>에 Google 광고아이디가 설정됩니다. (단, 라이브키 일때 만 실제 기기의 광고아이디가 설정됩니다.)</li>
-<li>미수집 된 경우에는 그래들에 아래와 같이 구글 플레이서비스 라이브러리가 임포트 되었는지 확인합니다.
-<div class="codehilite"><pre><span></span><span class="k">implementation</span> <span class="s1">&#39;com.google.android.gms:play-services-ads:9+&#39;</span> <span class="o">//</span> <span class="n">GAID</span> <span class="n">matching</span>
-</pre></div></li>
-</ul>
-</li>
-<li>앱 실행시 아래와 같은 익셉션로그가 출력되면 Gradle파일에 구글 인스톨 레퍼러 라이브러리를 추가 합니다.</li>
-</ul>
-<div class="codehilite"><pre><span></span><span class="nt">ReferrerClientWrapper</span> <span class="nt">Exception</span><span class="o">:</span> <span class="nt">Failed</span> <span class="nt">resolution</span> <span class="nt">of</span><span class="o">:</span> <span class="nt">Lcom</span><span class="o">/</span><span class="nt">android</span><span class="o">/</span><span class="nt">installreferrer</span><span class="o">/</span><span class="nt">api</span><span class="o">/</span><span class="nt">InstallReferrerClient</span><span class="o">;</span>
-</pre></div>
-
-<div class="codehilite"><pre><span></span><span class="k">implementation</span> <span class="s1">&#39;com.android.installreferrer:installreferrer:1.0&#39;</span>
-</pre></div>
-
-</li>
+<li>LiveView최상단 드랍다운 박스에서 Datasource를 선택
+  테스트시 이벤트별로 어떤 것을 선택해야하는 지는 위의 Datasource 섹션의 표를 참고 해주시기 바랍니다.</li>
+<li>이벤트를 발생시키기전에 먼저 드랍다운 박스에서 해당 이벤트가 속한 Datasource를 선택한 뒤 <code>[Update Session]</code>클릭후 이벤트 전송.
+    보통 이벤트 전송 1~2분후에 이벤트가 표시됩니다.</li>
+<li>가끔 Warning 메시지가 노출되면 <code>Start listening again.</code> 링크를 클릭합니다.</li>
 </ol>
                 
                   
