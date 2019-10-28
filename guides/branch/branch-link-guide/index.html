@@ -1,0 +1,761 @@
+
+
+
+
+<!doctype html>
+<html lang="kr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="클립보드로 복사">
+      
+        <meta name="lang:clipboard.copied" content="클립보드에 복사됨">
+      
+        <meta name="lang:search.language" content="ja">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="검색어와 일치하는 문서가 없습니다">
+      
+        <meta name="lang:search.result.one" content="1개의 일치하는 문서">
+      
+        <meta name="lang:search.result.other" content="#개의 일치하는 문서">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>TUNE Link 가이드 (마이그레이션 이후) - Solutions Engineering (Korea)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/application.0284f74d.css">
+      
+        <link rel="stylesheet" href="../../../assets/stylesheets/application-palette.01803549.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../assets/fonts/material-icons.css">
+    
+    
+      <link rel="stylesheet" href="../../../css/main.css">
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-134914613-1", "bson-branch.github.io/docs/")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#tune-link" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../.." title="Solutions Engineering (Korea)" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Solutions Engineering (Korea)
+            </span>
+            <span class="md-header-nav__topic">
+              
+                TUNE Link 가이드 (마이그레이션 이후)
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="검색" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            검색어를 입력하세요
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../.." title="Solutions Engineering (Korea)" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Solutions Engineering (Korea)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Guides" class="md-nav__link">
+      Guides
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../migration/" title="Migration" class="md-nav__link">
+      Migration
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../pages/" title="Translations" class="md-nav__link">
+      Translations
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../data_feeds/" title="Data Feeds" class="md-nav__link">
+      Data Feeds
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../fraud/" title="Fraud" class="md-nav__link">
+      Fraud
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">목차</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="개요" class="md-nav__link">
+    개요
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="참고문서" class="md-nav__link">
+    참고문서
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="마이그레이션 관련 유의사항" class="md-nav__link">
+    마이그레이션 관련 유의사항
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tune-link_1" title="TUNE Link 구조" class="md-nav__link">
+    TUNE Link 구조
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#url" title="베이스 도메인 URL" class="md-nav__link">
+    베이스 도메인 URL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#action" title="Action 파라메터" class="md-nav__link">
+    Action 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#site-id" title="Site ID 파라메터" class="md-nav__link">
+    Site ID 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id" title="캠페인 ID 파라메터" class="md-nav__link">
+    캠페인 ID 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partner-id" title="Partner ID 파라메터" class="md-nav__link">
+    Partner ID 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#destination-idurl" title="Destination ID/URL 파라메터" class="md-nav__link">
+    Destination ID/URL 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deep-link-idurl" title="Deep Link ID/URL 파라메터" class="md-nav__link">
+    Deep Link ID/URL 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#id_1" title="광고ID 파라메터" class="md-nav__link">
+    광고ID 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" title="광고주측 캠페인 최적화 파라메터" class="md-nav__link">
+    광고주측 캠페인 최적화 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" title="교차검증용 추가 파라메터" class="md-nav__link">
+    교차검증용 추가 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" title="참조 아이디 파라메터" class="md-nav__link">
+    참조 아이디 파라메터
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" title="서버사이드 클릭시 사용되는 파라메터" class="md-nav__link">
+    서버사이드 클릭시 사용되는 파라메터
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sla" title="애트리뷰션을 위해 클릭에 요구되는 SLA (광고매체 관련사항)" class="md-nav__link">
+    애트리뷰션을 위해 클릭에 요구되는 SLA (광고매체 관련사항)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="tune-link">TUNE Link 가이드 (마이그레이션 이후)<a class="headerlink" href="#tune-link" title="Permanent link">&para;</a></h1>
+<ul>
+<li>작성자 : 손보형</li>
+<li>업데이트: 2019년 9월 16일</li>
+</ul>
+<hr />
+<h2 id="_1">개요<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Branch로의 마이그레이션 이후에도 TUNE Link는 그대로 동작합니다.
+다만 몇가지 제약사항을 고려해서 신규 TUNE Link 생성및 현재 사용중인 TUNE Link 변경에 참고하시기 바랍니다.</p>
+<h2 id="_2">참고문서<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://help.tune.com/marketing-console/effective-tune-links/">Effective TUNE Links</a> :
+    TUNE Link 생성 가이드 (광고주용)</li>
+<li><a href="https://developers.tune.com/measurement-docs/measuring-clicks/">Measuring Clicks</a> :
+    클릭 측정 가이드 (광고매체용)</li>
+</ul>
+<h2 id="_3">마이그레이션 관련 유의사항<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li>TUNE Link는 계속 서비스가 유지되므로 기존에 사용하시고 계시던 Link들과 신규 생성하시는것 모두 동작합니다.</li>
+<li>Branch 대쉬보드에서도 TUNE 대쉬보드와 거의 동일한 TUNE Link 생성 페이지가 제공되고 있습니다.</li>
+<li>Branch 대쉬보드에서는 TUNE 대쉬보드의 <code>PARTNERS - TUNE Links</code> 페이지에서 확인하실 수 있었던 저장했던 TUNE Link들의 기록을 보는 기능은 제공되지 않으며,
+   Branch 대쉬보드에서 신규 생성하신 TUNE Link에 대해서는 저장하는 기능은 지원되지 않습니다.</li>
+<li>Internal Publisher (미연동 매체) :<ul>
+<li>마이그레이션 완료 이후에는 Branch 대쉬보드내 생성 페이지 개발이 완료될 때 까지는 필요시 서포트팀(<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#98;&#114;&#97;&#110;&#99;&#104;&#46;&#105;&#111;</a>)으로 별도로 요청해주시면 생성을 해드리며, 1~2일 정도 소요됩니다.</li>
+</ul>
+</li>
+<li><strong>Destination ID &amp; Deep Link ID</strong> :<ul>
+<li>기존에 이미 생성된 <code>Destination ID</code>과 <code>Deep Link ID</code>는 계속 사용이 가능하나 신규 생성 기능은 제공되지 않을 예정입니다.</li>
+<li>(구) TUNE 대쉬보드의 Campaign 페이지에서 생성 후 드랍다운 메뉴에서 미리 생성된 URL을 선택하는 방법을 사용하셨던 경우<ul>
+<li>이 경우 TUNE Link에 선택한 URL의 ID가 <code>destination_id_{ios|android|web}</code> &amp; <code>invoke_id_{ios|android}</code>에 설정되었습니다.</li>
+<li>마이그레이션 이후 <code>Destination URL</code>과 <code>Deep Link URL</code>을 TUNE Link에 직접 설정하는 방법으로 변경하셔야 합니다.<ul>
+<li>이는 <code>url_{ios|android|web}</code> 과 <code>invoke_url_{ios|android}</code> 에 URL인코딩 한 후 직접 설정하시면 됩니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>관련된 자세한 사항은 현재문서 아래에 좀더 자세히 설명되어 있습니다.</li>
+</ul>
+</li>
+<li><strong>웹앱 (Web App)</strong><ul>
+<li>TUNE Link 생성시 PC에서 클릭시 단순 랜딩시킬 목적으로 생성하셨던 웹앱은 마이그레이션 되지 않습니다.</li>
+<li>기존에 데스크탑에서 클릭시 특정 웹페이지로 (단순) 랜딩을 시키기 위한 목적의 Web App을 생성하고 TUNE Link에서 해당앱을 선택했던 경우에는 TUNE Link에 <code>site_id_web=123456</code> 과 같은 형식으로 파라메터가 추가되었습니다.
+이와 같은 경우 웹앱은 마이그레이션이 되지 않기 때문에 <code>site_id_web</code>은 TUNE Link에서 제거하신 후, <code>url_web</code> 파라메터에 해당 URL을 URL인코딩한다음 TUNE Link에 직접 설정하시면됩니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tune-link_1">TUNE Link 구조<a class="headerlink" href="#tune-link_1" title="Permanent link">&para;</a></h2>
+<div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">az1</span><span class="o">-</span><span class="mi">4</span><span class="p">.</span><span class="n">tlnk</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">serve</span><span class="o">?</span>
+        <span class="n">action</span><span class="o">=</span><span class="n">click</span><span class="o">&amp;</span>
+        <span class="n">site_id_android</span><span class="o">=</span><span class="mi">142773</span><span class="o">&amp;</span><span class="n">site_id_ios</span><span class="o">=</span><span class="mi">142753</span><span class="o">&amp;</span><span class="n">site_id_web</span><span class="o">=</span><span class="mi">142774</span>
+        <span class="n">campaign_id_android</span><span class="o">=</span><span class="mi">442580</span><span class="o">&amp;</span><span class="n">campaign_id_ios</span><span class="o">=</span><span class="mi">442555</span><span class="o">&amp;</span><span class="n">campaign_id_web</span><span class="o">=</span><span class="mi">442581</span><span class="o">&amp;</span>
+        <span class="n">publisher_id</span><span class="o">=</span><span class="mi">366935</span><span class="o">&amp;</span>
+        <span class="n">destination_id_android</span><span class="o">=</span><span class="mi">536339</span><span class="o">&amp;</span><span class="n">destination_id_ios</span><span class="o">=</span><span class="mi">536281</span><span class="o">&amp;</span><span class="n">destination_id_web</span><span class="o">=</span><span class="mi">536340</span>
+</pre></div>
+
+<h3 id="url"><strong>베이스 도메인 URL</strong><a class="headerlink" href="#url" title="Permanent link">&para;</a></h3>
+<ul>
+<li>TUNE 대쉬보드에서 TUNE Link 생성시 아래와 같은 형식으로 생성됩니다.
+    <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">az1</span><span class="o">-</span><span class="mi">4</span><span class="p">.</span><span class="n">tlnk</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">serve</span>
+</pre></div><ul>
+<li><code>tlnk.io</code>는 TUNE Link용 도메인이며, <code>az1-4</code>와 같은 서브도메인은 앱별로 고유하게 생성된 문자열이 사용됩니다.</li>
+</ul>
+</li>
+<li>광고매체에서 클릭측정을 위한 URL 생성시 아래와 같은 형식으로 베이스 도메인 URL을 생성할 수 있습니다.
+    <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">YOUR_PUBLISHER_ID</span><span class="p">.</span><span class="n">api</span><span class="o">-</span><span class="mi">01</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">serve</span>
+</pre></div><ul>
+<li><code>YOUR_PUBLISHER_ID</code>는 해당 광고주 계정에서 매체에게 부여된 ID이며, 동일한 광고매체라도 광고주 별로 각각 다른 ID가 부여됩니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="action"><strong>Action 파라메터</strong><a class="headerlink" href="#action" title="Permanent link">&para;</a></h3>
+<ul>
+<li>action : 클릭과 임프레션(뷰)를 구분합니다. <code>click</code> 또는 <code>impression</code>이 설정됩니다.</li>
+</ul>
+<h3 id="site-id"><strong>Site ID 파라메터</strong><a class="headerlink" href="#site-id" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>site_id_{ios|android|web}</code> : 플랫폼별로 앱(사이트) 아이디를 설정합니다.</li>
+<li>복수의 앱을 위한 TUNE Link가 아닌 경우, <code>site_id</code>에 해당 사이트아이디 하나만 설정할 수 있습니다.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">TUNE에서 Branch로 웹앱이 마이그레이션 되지 않은 경우의 <code>site_id_web</code></p>
+<p>PC에서의 랜딩목적으로 생성된 웹앱이어서 브랜치로의 TUNE Link에서 사용되던 웹앱이 마이그레이션이 안된 경우 해당 웹앱은 Branch시스템에서는 존재하지 않기 때문에 <code>site_id_web</code>으로 설정된 TUNE Link가 PC에서 클릭되었을때 정상적으로 동작하지 않습니다.
+<strong>사용중인 TUNE Link중에서 <code>site_id_web</code>이 설정된 것이 있는 경우 Branch로의 Migration이 종료되기 이전에 TUNE Link에서 <code>site_id_web</code>은 제거해 주시고 대신 <code>url_web</code>을 사용하셔야 합니다.</strong>
+<code>url_web</code>에 설정되는 URL은 <a href="urlencode.html">URL인코딩</a>후 설정하셔야 합니다.
+TUNE Link 생성 페이지에서 웹앱 선택 후 "Manually enter URL" 선택시 TUNE Link에 url_web파라메터가 추가되며, URL인코딩한 URL을 UI상에서 설정해 주시고, TUNE Link에서 <code>site_id_web=123456</code>부분은 삭제해 주시기 바라며 해당 부분을 삭제한 앞 또는 뒤에 <code>&amp;</code>이 두개가 중복된 경우 하나는 제거해 주시기 바랍니다.
+예를들어 PC에서 클릭시 <a href="https://branch.io">https://branch.io</a>로 랜딩시키려는 경우, <code>url_web</code>은  <code>url_web=https%3A%2F%2Fbranch.io</code>과 같이 설정되게 됩니다.</p>
+</div>
+<h3 id="id"><strong>캠페인 ID 파라메터</strong><a class="headerlink" href="#id" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Branch에서는 Deprecated된 사용되지 않는 파라메터입니다.</p>
+<p>"기존 TUNE Link와의 호환을 위해서 설정하셔도 에러는 발생하지 않고 기존과 동일하게 동작하지만 Branch의 로그에서는 TUNE Link에서 설정한 캠페인 ID와 이름 정보는 볼수 없습니다."</p>
+</div>
+<ul>
+<li>여기에서의 캠페인은 (구)TUNE 대쉬보드의 좌측메뉴의 <code>APPLICATION</code> - <code>Campaign</code>의 캠페인을 의미합니다.
+    앱 생성시 디폴트 캠페인이 자동으로 생성되며, 특별한 필요한 경우가 아니라면 대부분의 경우 이 디폴트 캠페인 하나만을 사용하였을 것입니다.<ul>
+<li>(구)TUNE 대쉬보드의 TUNE Link 생성 페이지에서는 앱생성시 특별히 캠페인을 지정하지 않았을 경우 자동으로 디폴트 캠페인으로 설정되었습니다.</li>
+<li>미지원 파라메터이므로 Branch 대쉬보드의 TUNE Link 생성 페이지에서는 제거되었습니다.</li>
+</ul>
+</li>
+<li>(구)TUNE의 캠페인내에서는 캠페인에서 사용할 Destination URL과 Deep Link URL들을 미리 저장해 놓을수 있었으며, 이 경우 TUNE Link 생성 페이지에서 드랍다운 메뉴를 통해서 미리 저장해둔 URL들을 쉽게 선택할 수 있었습니다. 이때 TUNE Link URL 자체에는 <code>destination_id</code>와 <code>invoke_id</code> 파라메터에 해당 캠페인 내에 미리 저장해놓은 각각의 URL에 부여된 고유한 ID가 설정되었습니다.</li>
+<li><code>campaign_id_{ios|android|web}</code> : 플랫폼별로 캠페인의 ID를 설정할수 있었습니다.</li>
+<li>복수의 앱을 위한 TUNE Link가 아닌 경우 <code>campaign_id</code>를통해서 해당 캠페인을 지정할 수 있었습니다.</li>
+</ul>
+<h3 id="partner-id"><strong>Partner ID 파라메터</strong><a class="headerlink" href="#partner-id" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>publisher_id</code> : 매체에게 고유하게 부여된 ID입니다.<ul>
+<li>같은 매체라도 광고주별로 각각 다른 고유한 ID가 부여됩니다.</li>
+</ul>
+</li>
+<li>Branch 대쉬보드에서 신규 TUNE Link 생성시는 드랍다운 메뉴에서 매체 선택시 TUNE Link에 publisher_id 대신 $3p 가 대신 설정됩니다. (% 이것은 Branch에서 Link에 광고메체를 지정하는 방식입니다.)<ul>
+<li>연동메체는 <code>a_</code>를 prefix로 하는 광고매체의 이름이 설정됩니다.</li>
+<li>미연동(구 Internal Partner)매체는 <code>a_custom_xxxxxx</code>과 같은 형식으로 설정되며, 6자리의 기존 publisher_id가 <code>xxxxxx</code>에 설정됩니다. 마이그레이션이후 신규로 생성한 미연동매체의 경우 좀더 긴 숫자가 설정됩니다.</li>
+<li>설정되는 이름의 맨앞 prefix <code>a</code>는 <strong>A</strong>dvertising(광고)를 의미합니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="destination-idurl"><strong>Destination ID/URL 파라메터</strong><a class="headerlink" href="#destination-idurl" title="Permanent link">&para;</a></h3>
+<ul>
+<li>웹랜딩시 사용될 웹URL을 지정하는 파라메터 입니다.</li>
+<li>(구)TUNE캠페인내에서는 웹랜딩 URL을 대쉬보드에서 저장하면 각각 고유한 아이디가 부여되어 저장되었으며, 이것이 Destination ID로 불렸습니다.
+   TUNE Link 생성페이지에서 드랍다운 메뉴를 통해서 미리저장해둔 Destination URL들중에서 선택할 수 있었으며, 선택시 TUNE Link 자체에는 해당 웹랜딩 URL에 부여된 고유한 Destination ID가 설정되었습니다.</li>
+<li>웹랜딩은 아래의 두가지 파라메터중 원하는 것을 사용해서 설정할 수 있습니다.<ul>
+<li><strong><code>destination_id_{ios|android|web}</code></strong> : 플랫폼(OS)별로 캠페인 내에서 미리 저장해논 Destination URL의 ID를 사용해서 지정된 웹 페이지로 랜딩시킬 수 있습니다.</li>
+<li><strong><code>url_{ios|android|web}</code></strong> : <strong>플랫폼(OS)별로</strong> 랜딩시킬 웹URL자체를 TUNE Link에 직접 설정해서 해당 페이지로 랜딩시킵니다. <strong><a href="urlencode.html">URL인코딩</a>후 설정하는것이 권장</strong>됩니다.</li>
+<li><strong><code>url</code></strong> : <strong>플랫폼(OS)에 상관없이</strong> 랜딩시킬 웹URL자체를 TUNE Link에 직접 설정해서 해당 페이지로 랜딩시킵니다. <strong><a href="urlencode.html">URL인코딩</a>후 설정하는것이 권장</strong>됩니다.</li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Branch로의 마이그레션 이후에는 웹랜딩 URL을 신규 Destination ID로 저장할 수 없습니다.</p>
+<p>마이그레이션 이전에 기존에 이미 저장된 Destination ID는 호환성을 위해서 계속 동작합니다.
+새로운 Destination URL로 랜딩 시키려는 경우, 신규로 발급하시는 TUNE Link에 <code>url_{ios|android|web}</code>파라메터를 사용해서 랜딩시킬 웹URL자체을 TUNE Link에 직접 설정 하시기 바랍니다. Branch 대쉬보드의 TUNE Link 생성 페이지에서 앱 선택 후 드랍다운 메뉴에서 "Manually enter URL" 선택후 직접 URL을 설정하는 방식을 사용하시면 됩니다. <code>url</code>의 경우는 대쉬보드에서 직접설정은 안되며, TUNE Link생성후 생성된 URL에 직접 설정하셔야 합니다.</p>
+</div>
+<ul>
+<li>
+<p><strong>구글플레이앱의 딥링킹&amp;디퍼드딥링킹 지원 기능</strong></p>
+<ul>
+<li>구글플레이앱에서 지원하는 기능으로 구글 플레이를 통해서 배포되는 앱에서만 지원되는 기능입니다.</li>
+<li>구글플레이앱의 경우 아래와 같은 웹URL 형식으로 <code>id</code> 파라메터에 앱의 패키지네임 <code>url</code>파라메터에 딥링크가 설정되어 랜딩시키면 앱설치 유무에 따라서 딥링킹 또는 디퍼드딥링킹이 지원됩니다.<ul>
+<li><a href="https://play.google.com/store/apps/details?id=앱의패키지네임&amp;url=URL인코딩된딥링크">https://play.google.com/store/apps/details?id=앱의패키지네임&amp;url=URL인코딩된딥링크</a></li>
+<li>위 형식의 웹URL 전체를 URL인코딩한 뒤 TUNE Link의 Destination URL로 설정하면 됩니다.</li>
+</ul>
+</li>
+<li>이 방식으로 구글플레이앱에 랜딩시에는 앱 미설치시에는 앱설치 완료시 실행 버튼이 <code>Continue</code> 또는 <code>계속</code>버튼으로 변경되어 클릭시 (디퍼드)딥링킹이 수행됩니다.</li>
+</ul>
+</li>
+</ul>
+<h3 id="deep-link-idurl"><strong>Deep Link ID/URL 파라메터</strong><a class="headerlink" href="#deep-link-idurl" title="Permanent link">&para;</a></h3>
+<ul>
+<li>딥링킹시 사용될 딥링크URL을 지정하는 파라메터 입니다.</li>
+<li>(구)TUNE캠페인내에서는 사용할 Deep Link URL을 대쉬보드에서 저장하면 각각 고유한 아이디가 부여되어 저장되었으며, 이는 Deep Link ID로 불렸습니다.</li>
+<li>(구)TUNE대쉬보드의 TUNE Link 생성페이지에서는 드랍다운 메뉴로 미리저장해둔 Deep Link URL을 선택하실 수 있었으며, 이 때 TUNE Link 자체에는 선택된 URL에 부여된 고유한 ID가 설정되었습니다.</li>
+<li>
+<p>Deep Link URL은 아래의 두가지 파라메터중 원하는 것으로 설정할 수 있습니다.</p>
+<ul>
+<li><code>invoke_id_{ios|android}</code> : 플랫폼(OS)별로 캠페인내에서 저장한 Deep Link URL에 부여된 Deep Link URL의 고유한 ID를 사용해서  지정된 앱내 특정 페이지로 랜딩시킬 수 있습니다.</li>
+<li><code>invoke_url_{ios|android}</code> : 플랫폼(OS)별로 딥링킹할 URL자체를 TUNE Link에 직접 설정해서 해당 앱내 화면으로 랜딩시킬 수 있습니다. <strong><a href="urlencode.html">URL인코딩</a>후 설정하는것을 권장</strong>합니다.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Branch로 마이그래이션된 이후에는 신규 Deep Link URL을 Deep Link ID로 저장할 수 없습니다.</p>
+<p>기존에 이미 저장된 Deep Link URL은 호환성을 위해서 계속 동작합니다.
+마이그레이션이후 새로운 Deep Link URL로 딥링킹 하시려는 경우, 신규로 발급하시는 TUNE Link에 <code>invoke_url_{ios|android}</code>을 사용해서 딥링크 URL자체를 TUNE Link 직접 설정 하시기 바랍니다. 이것은 TUNE Link 생성 페이지에서 앱선택 후 드드랍다운 메뉴에서 "Manually etner deep link" 선택후 설정하시면됩니다.</p>
+</div>
+</li>
+</ul>
+<h3 id="id_1"><strong>광고ID 파라메터</strong><a class="headerlink" href="#id_1" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">마이그레이션 이후에는 MD5, SHA1, SHA256으로 해슁된 광고ID를 통한 매칭이 지원되지 않습니다.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">웹브라우저에서는 광고아이디에 접근이 안되므로 앱기반 광고 인벤토리에서만 설정이 가능합니다.</p>
+</div>
+<ul>
+<li><code>ios_ifa</code> :  iOS 기기의 IDFA를 설정합니다.</li>
+<li><code>google_aid</code> : 앱기반 광고지면에서 안드로이드 기기의 Google Advertising를 설정합니다.</li>
+</ul>
+<h3 id="_4"><strong>광고주측 캠페인 최적화 파라메터</strong><a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>My파라메터라 불리는 광고주측에서 유입경로를 구분하는데 사용되는 파라메터입니다.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Acutuals리포트(집계API 엔드포인트)의 My파러메터별 고유값 갯수 제한</p>
+<p>TUNE에서는 각각의 My파라메터에는 설정될 수 있는 고유한 값의 갯수에 제한 있었습니다.
+1주일에 4만개이상의 고유한 값이 기록되면 Actuals리포트에서 설정된 값별로 구분된 갯수의 집계가 되지 않습니다.
+다만 로그리포트에서는 문제가 없으며, 이 제한에 사용되는 고유값의 갯수는 1주일마다 리셋됩니다.
+그러므로 많은 고유값이 설정될 수 있는 경우 My파라메터 대신 Sub1~5를 사용하시기 바랍니다.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">My파라메터 값 설정시 주의사항</p>
+<p>My파라메터에는 설정되는 값은 숫자와 알파벳 만으로 이루어져 있지 않은 경우 꼭 <a href="urlencode.html">URL인코딩</a>후 설정해 주시기 바랍니다. 이는 예를들어 숫자와 알파벳 이외의 문자열의 경우 브라우저에 따라 해당 값이 깨지는 경우가 발생할 수 있기 때분입니다.</p>
+</div>
+<ul>
+<li><code>my_publisher</code> : 광고매체</li>
+<li><code>my_site</code> : 사이트</li>
+<li><code>my_campaign</code> : 캠페인</li>
+<li><code>my_adgroup</code> : 광고그룹</li>
+<li><code>my_ad</code> : 광고</li>
+<li><code>my_keyword</code> : 키워드</li>
+<li><code>my_placement</code> : 광고위치</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Acutuals리포트(집계API 엔드포인트)의 Sub파러메터별 고유값 갯수 제한</p>
+<p>TUNE에서는 각각의 Sub파라메터에 설정될 수 있는 고유한 값의 갯수에 제한 있었습니다.
+1주일에 4만개이상의 고유한 값이 기록되면 Actuals리포트에서 설정된 값별로 구분된 갯수의 집계가 되지 않습니다.
+다만 로그리포트에서는 문제가 없으며, 이 제한에 사용되는 고유값의 갯수는 1주일마다 리셋됩니다.
+그러므로 많은 고유값이 설정될 수 있는 경우 Sub파라메터 대신 Sub1~5를 사용하시기 바랍니다.</p>
+</div>
+<ul>
+<li><code>sub_publisher</code> : 하위레벨 광고매체</li>
+<li><code>sub_site</code> : 사이트</li>
+<li><code>sub_campaign</code> : 캠페인</li>
+<li><code>sub_adgroup</code> : 광고그룹</li>
+<li><code>sub_ad</code> : 광고</li>
+<li><code>sub_keyword</code> : 키워드</li>
+<li><code>sub_placement</code> : 광고위치</li>
+</ul>
+<h3 id="_5"><strong>교차검증용 추가 파라메터</strong><a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>sub1</code> ~ <code>sub5</code> : 주로 광고매체에서 고유한값를 설정하는데 사용되는 파라메터. 수많은 고유한 값이 설정될 수 있으므로 (구)TUNE Actuals리포트에서 각각의 값별로 집계데이터를 제공하지 않았습니다.</li>
+</ul>
+<h3 id="_6"><strong>참조 아이디 파라메터</strong><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>ref_id</code> : 광고매체의 내부 클릭아이디를 설정합니다.</li>
+<li>이벤트가 광고클릭에 매칭된 경우 <code>publisher_ref_id</code>를 통해서 매칭된 TUNE Link의 <code>ref_id</code>에 설정된 값을 얻을수 있습니다.</li>
+</ul>
+<h3 id="_7"><strong>서버사이드 클릭시 사용되는 파라메터</strong><a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<div class="admonition tip">
+<p class="admonition-title">일반적으로 광고매체에서 서버사이드 클릭에만 활용됩니다.</p>
+</div>
+<ul>
+<li>
+<p><code>device_ip</code> : 주로 광고매체에서 사용하며, 서버사이드 클릭시 실제 클릭이 발생한 기기의 Public IP를 여기에 설정합니다. 가급적 설정하는 것이 권장됩니다.</p>
+<div class="admonition warning">
+<p class="admonition-title">서버사이드 클릭에서 <code>device_ip</code>에 실제 클릭이 발생한 기기의 Public IP가 설정되지 않는 경우 주의사항</p>
+<p>이 경우 하나의 기기에서 비정상적인 트래픽이 발생하는 것으로 간주되어 일부 클릭이 기록되지 않을 수 있습니다.</p>
+</div>
+</li>
+<li>
+<p><code>country_code</code> : 실제 클릭이 발생한 기기의 Public IP를 알수 없는 경우에는 그 대신 ISO ALPHA-2 또는 ISO ALPHA-3 형식의 국가코드를 설정해야합니다.</p>
+<ul>
+<li><a href="https://www.worldatlas.com/aatlas/ctycodes.htm">ISO호환 국가코드 정보</a></li>
+</ul>
+</li>
+<li><code>response_format=json</code> : 주로 광고매체에서 사용하며, 서버사이드 클릭임을 알려주는 필드이며, 기본 설정인 redirect 대신 클릭에 대한 정보가 JSON으로 리턴됩니다.</li>
+</ul>
+<h2 id="sla">애트리뷰션을 위해 클릭에 요구되는 SLA (광고매체 관련사항)<a class="headerlink" href="#sla" title="Permanent link">&para;</a></h2>
+<p>일반적인 클라이언트사이드 클릭이 아닌 비동기방식의 클라이언트사이드 클릭 또는 서버사이드 클릭의 경우에는 실제 클릭 발생후 5초 내에 TUNE Link클릭을 발생시켜야합니다.
+애드리뷰션을 작업을 5초 지연시키고 있으므로 5초이내에 TUNE Link 클릭이 발생되지 않는 경우 인스톨이나 이벤트가 실제 클릭후 곧바로 발생하는경우 해당 클릭은 애트리뷰션에 사용되지 못하게 됩니다.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/application.245445c6.js"></script>
+      
+        
+        
+          
+          <script src="../../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../../assets/javascripts/lunr/lunr.ja.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../.."}})</script>
+      
+        <script src="../../../js/router.js"></script>
+      
+        <script src="../../../js/events.js"></script>
+      
+        <script src="../../../js/modals.js"></script>
+      
+        <script src="../../../js/images.js"></script>
+      
+        <script src="../../../js/buttons.js"></script>
+      
+        <script src="../../../js/progress.js"></script>
+      
+        <script src="../../../js/tabs.js"></script>
+      
+        <script src="../../../js/languages.js"></script>
+      
+        <script src="../../../js/utils.js"></script>
+      
+        <script src="../../../js/main.js"></script>
+      
+    
+  </body>
+</html>
