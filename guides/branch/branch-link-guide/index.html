@@ -327,8 +327,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tune-link" title="TUNE Link 구조" class="md-nav__link">
-    TUNE Link 구조
+  <a href="#ad-link-structure" title="Ad Link Structure (광고링크구조)" class="md-nav__link">
+    Ad Link Structure (광고링크구조)
   </a>
   
     <nav class="md-nav">
@@ -464,33 +464,73 @@
 <h2 id="link-structure">Link Structure (링크 구조)<a class="headerlink" href="#link-structure" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p>Branch Link 샘플 (Quick Link):</p>
+<p>Branch Link 샘플</p>
 <ul>
-<li><code>https://a1b2a.app.link/PcKIVEJe0K</code></li>
+<li>Quick Link (퀵링크): <code>https://a1b2a.app.link/PcKIVEJe0K</code></li>
+<li>Ad Link (광고링크): <code>https://a1b2a.app.link/PcKIVEJe0K?%243p=a_google_adword</code></li>
 </ul>
 </li>
 <li>
-<p>기본 구조 :</p>
+<p><strong>Link Structure (링크구조)</strong>:</p>
 <ul>
-<li>도메인 네임<ul>
-<li>TLD (탑레벨 도메인): <strong><code>link</code></strong><ul>
-<li>인터넷에서 종류별로 나눈 도메인.</li>
+<li><strong>Domain Name</strong> (도메인 네임)<ul>
+<li><code>app.link</code> 도메인 : <strong><code>app.link</code></strong><ul>
+<li>Branch Link를 에서 사용하는 도메인 네임.</li>
+<li>기존 고객사들중 일부는 <strong><code>bnc.lt</code></strong>를 사용하는 경우도 있습니다.</li>
 </ul>
 </li>
-<li>SLD (세컨드 레벨 도메인) : <strong><code>app</code></strong><ul>
-<li>Branch에서 등록한 도메인 네임.</li>
-</ul>
-</li>
-<li>Subdomain (서브도메인): <strong><code>ABC12</code></strong><ul>
-<li>특정 호스트에 부여되는 도메인</li>
-<li>Branch에서는 앱생성시 <strong>앱별로 고유한 랜덤문자열이 부여되며 원하는 문자열로 설정 가능합니다.</strong></li>
+<li><code>app.link</code> subdomain : <strong><code>ABC12</code></strong><ul>
+<li>앱생성시 앱별로 고유하게 부여되는 서브도메인.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Alpha encoded link ID (알파벳 인코딩된 <strong>링크 아이디</strong>): <strong><code>PcKIVEJe0K</code></strong><ul>
-<li>링크 생성시 각각 고유한 아이디가 부여되며 이를 알파벳 대소문자와 숫자만으로 표시한 것입니다.</li>
-<li>Branch는 링크아이디를 통해 해당 링크 생성시에 설정한 링크데이터를 조회할수 있으며 이 링크데이터는 키(Key)와 값(Value)의 쌍으로 이루어져 있습니다.</li>
+<li><strong>Alpha Encoded Link ID</strong> (알파벳 인코딩된 <strong>링크 아이디</strong>): <strong><code>PcKIVEJe0K</code></strong><ul>
+<li>대쉬보드에서 개별 링크 생성시 설정된 링크데이터가 Branch내부의 시스템에 링크별로 저장하면서 생성되는 고유한 아이디입니다.</li>
+<li>알파벳 대소문자와 숫자만을 사용해서 표시한 이 고유한 문자열로 각각의 링크에 설정된 링크데이터를 조회하게 됩니다.</li>
+<li>링크데이터는 복수의 키(Key)와 값(Value)의 쌍으로 시스템에 저장되어 있습니다.</li>
+</ul>
+</li>
+<li><strong>Link Data</strong> (링크데이터)<ul>
+<li>링크 Behavior의 제어 또는 분석의 용도로 Branch Link에 설정하는 데이터입니다.</li>
+<li><strong>링크데이터 설정 방식에 의한 구분</strong><ul>
+<li><strong>Short Link</strong> :<ul>
+<li>가장 일반적인 링크로 대쉬보드에서 링크 생성시 해당링크에 포함된 링크데이터를 Branch 시스템상내에 저장하며 링크아이디가 부여됩니다.</li>
+<li><code>https://a1b2a.app.link/PcKIVEJe0K</code>과 같은 Quick링크는 Short링크 방식으로 생성된 것입니다.</li>
+</ul>
+</li>
+<li><strong>Long Link</strong> :<ul>
+<li>개별링크의 링크데이터를 Branch 시스템상에 저장한 다음 링크에서 링크아이디를 사용해서 참조하지 않고, 링크데이터를 Query Parameter를 통해서 URL자체에 동적으로 설정하는 것입니다.</li>
+<li><strong>Long링크 종류</strong><ul>
+<li><strong>기존생성된링크</strong>:<ul>
+<li>이미 Branch 시스템상에 생성 및 저장된 Short Link에 Query Parameter를 통해서 추가 설정하는 경우</li>
+<li>예) <code>https://a1b2a.app.link/PcKIVEJe0K?%24fallback_url=https%3A%2F%2Fbranch.io%2F</code></li>
+</ul>
+</li>
+<li><strong>다이나믹링크</strong>:<ul>
+<li>Query Parameter로 직접 모든 링크데이터를 설정하는 경우. 기존에 생성된 링크가 아니라 URL에 링크아이디가 없음.</li>
+<li>예) <code>https://a1b2a.app.link?%24fallback_url=https%3A%2F%2Fbranch.io%2F</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>링크데이터의 종류</strong><ul>
+<li><strong>컨트롤 데이터</strong>: <code>%24</code>(<code>$</code>을 URL인코딩한 것)로 시작되는 키값이며, 링크 클릭시 리다이렉션이나 기타 Behavior들을 제어하기 위해서 사용됩니다.<ul>
+<li>예) <code>$fallback_url</code> : 모든 플랫폼에서 링크 클릭시 디폴트로 리다이렉트할 URL지정. 플랫폼(OS)별로 지정된 경우에는 그것이 우선함.</li>
+</ul>
+</li>
+<li><strong>분석용 데이터</strong>: <code>~</code>로 시작되는 키 값이며, 데이터 분석에 활용합니다.<ul>
+<li>예) <code>~channel</code> : 광고 유입 채널을 구분하는 값으로 사용합니다.</li>
+<li>예) <code>~campaign</code> : 각각의 광고캠페인을 구분하는 값으로 사용합니다.</li>
+</ul>
+</li>
+<li><strong>커스텀 데이터</strong>: 고객사에서 원하시는대로 설정하실 수 있는 데이터 입니다.</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -589,15 +629,7 @@
 </ol>
 </li>
 </ul>
-<h2 id="tune-link">TUNE Link 구조<a class="headerlink" href="#tune-link" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">az1</span><span class="o">-</span><span class="mi">4</span><span class="p">.</span><span class="n">tlnk</span><span class="p">.</span><span class="n">io</span><span class="o">/</span><span class="n">serve</span><span class="o">?</span>
-        <span class="n">action</span><span class="o">=</span><span class="n">click</span><span class="o">&amp;</span>
-        <span class="n">site_id_android</span><span class="o">=</span><span class="mi">142773</span><span class="o">&amp;</span><span class="n">site_id_ios</span><span class="o">=</span><span class="mi">142753</span><span class="o">&amp;</span><span class="n">site_id_web</span><span class="o">=</span><span class="mi">142774</span>
-        <span class="n">campaign_id_android</span><span class="o">=</span><span class="mi">442580</span><span class="o">&amp;</span><span class="n">campaign_id_ios</span><span class="o">=</span><span class="mi">442555</span><span class="o">&amp;</span><span class="n">campaign_id_web</span><span class="o">=</span><span class="mi">442581</span><span class="o">&amp;</span>
-        <span class="n">publisher_id</span><span class="o">=</span><span class="mi">366935</span><span class="o">&amp;</span>
-        <span class="n">destination_id_android</span><span class="o">=</span><span class="mi">536339</span><span class="o">&amp;</span><span class="n">destination_id_ios</span><span class="o">=</span><span class="mi">536281</span><span class="o">&amp;</span><span class="n">destination_id_web</span><span class="o">=</span><span class="mi">536340</span>
-</pre></div>
-
+<h2 id="ad-link-structure">Ad Link Structure (광고링크구조)<a class="headerlink" href="#ad-link-structure" title="Permanent link">&para;</a></h2>
 <h3 id="url"><strong>베이스 도메인 URL</strong><a class="headerlink" href="#url" title="Permanent link">&para;</a></h3>
 <ul>
 <li>TUNE 대쉬보드에서 TUNE Link 생성시 아래와 같은 형식으로 생성됩니다.
