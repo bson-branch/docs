@@ -320,6 +320,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#tune-sdk" title="TUNE SDK 연동앱 주의사항" class="md-nav__link">
+    TUNE SDK 연동앱 주의사항
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#liveview_3" title="LiveView를 활용한 로그확인 순서" class="md-nav__link">
     LiveView를 활용한 로그확인 순서
   </a>
@@ -541,8 +548,12 @@
 </li>
 <li>특정 Datasource에서 일단 확인된 로그는 다른 Datasource를 바꿨다가 다시 돌아왔을때 다시 확인이 가능합니다.</li>
 <li>인스톨 테스트의 경우는 해당기기에서 최초설치가 아닌 앱 재설치의 경우 Install로그가 아닌 Reinstall로 기록될 수 있음에 유의하세요.</li>
-<li>TUNE SDK가 연동된 앱에서의 오픈테스트의 경우는 24시간내 1개의 오픈만 기록되도록 기록제한이 있으므로 전송한 모든 오픈이벤트가 로그에서 확인되지는 않습니다.</li>
 <li>이벤트의 기록빈도 제한이 설정된 이벤트의 경우는 이 제한에 의해서 기록이 거부된 이벤트는 확인되지 않습니다.</li>
+</ul>
+<h2 id="tune-sdk">TUNE SDK 연동앱 주의사항<a class="headerlink" href="#tune-sdk" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Branch의 이벤트 네임은 TUNE이벤트 네임과 다를 수 있습니다.</li>
+<li>TUNE SDK가 연동된 앱에서의 오픈테스트의 경우는 24시간내 1개의 오픈만 기록되도록 기록제한이 있으므로 전송한 모든 오픈이벤트가 로그에서 확인되지는 않습니다.</li>
 </ul>
 <h2 id="liveview_3">LiveView를 활용한 로그확인 순서<a class="headerlink" href="#liveview_3" title="Permanent link">&para;</a></h2>
 <ol>
