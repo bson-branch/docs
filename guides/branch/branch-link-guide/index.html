@@ -724,7 +724,7 @@
 </ul>
 <h3 id="3rd-party"><strong>3rd Party 광고매체 이름</strong><a class="headerlink" href="#3rd-party" title="Permanent link">&para;</a></h3>
 <ul>
-<li>광고 링크의 경우 기본적으로 해당 써드파티(3P) 광고 매체 이름을 <code>%243p</code>키를 사용하여 지정합니다.</li>
+<li>광고 링크의 경우 기본적으로 해당 써드파티(3P) 광고 매체 이름을 <code>$3p</code>키를 사용하여 지정합니다. URL에 설정시 보통 URL인코딩된 <code>%243p</code>를 설정합니다.</li>
 <li><strong>연동된 3p 광고매체의 이름</strong>은 모두 <code>a_</code>로 시작하며, 광고매체별로 고유하게 부여됩니다.<ul>
 <li>대쉬보드에서 <code>CHANNELS &amp; LINKS</code> - <code>Ads</code> - <code>Partner Management</code>에서 광고매체를 선택하면 브라우저 주소창에서 해당 광고매체에 부여된 3p네임을 확인하실 수 있습니다.<ul>
 <li>예) <code>https://branch.dashboard.branch.io/ads/partner-management/a_twitter?tab=settings</code></li>
@@ -740,7 +740,7 @@
 <li><strong>광고매체가 설정된 URL 예</strong><ul>
 <li><strong>대쉬보드에서 광고매체 링크를 생성한 경우:</strong><ul>
 <li>도메인네임뒤에 링크아이디가 포함됩니다.</li>
-<li>미연동매체는 <code>%243p</code>에 광고매체의 3p네임만 설정됩니다.</li>
+<li>미연동매체는 <code>$3p</code>에 광고매체의 3p네임만 설정됩니다.</li>
 <li>연동매체는 해당 매체에서 템플릿으로 설정한 여러 광고매체측 파러메터들이 뒤에 추가됩니다.
 <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">a1b2a</span><span class="p">.</span><span class="n">app</span><span class="p">.</span><span class="n">link</span><span class="o">/</span><span class="n">PcKIVEJe0K</span><span class="o">?%</span><span class="mi">243</span><span class="n">p</span><span class="o">=</span><span class="n">a_custom_366540</span>
 </pre></div></li>
@@ -756,11 +756,12 @@
 <ul>
 <li>앱내 지면이 있는 광고매체의 경우 광고아이디 파라메터가 추가될 수 있습니다.</li>
 <li>OS별 광고아이디 파라메터<ul>
-<li><code>%24aaid</code> : 안드로이드 기기의 Google Advertising를 설정합니다.</li>
-<li><code>%24idfa</code> : iOS 기기의 IDFA 설정합니다.</li>
+<li><code>$aaid</code> : 안드로이드 기기의 Google Advertising를 설정합니다.</li>
+<li><code>$idfa</code> : iOS 기기의 IDFA 설정합니다.</li>
 </ul>
 </li>
 <li>주의사항:<ul>
+<li>URL에 설정시 일반적으로 <code>$</code>문자는 URL인코딩된 <code>%24</code>로 설정합니다.</li>
 <li>대쉬보드에서 매체링크 생성시 아래와 같이 매체의 매크로를 포함한 링크가 생성됩니다.<ul>
 <li><code>%24aaid={GAID}&amp;%24idfa={IDFA}</code></li>
 </ul>
