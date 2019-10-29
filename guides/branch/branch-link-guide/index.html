@@ -768,7 +768,11 @@
 </ul>
 </li>
 <li>주의사항:<ul>
-<li>URL에 설정시 일반적으로 <code>$</code>문자는 URL인코딩된 <code>%24</code>로 설정합니다.</li>
+<li>링크의 URL에 설정시 일반적으로 파라메터 맨앞의 <code>$</code>문자는 URL인코딩된 <code>%24</code>로 변경하여 설정합니다.<ul>
+<li><code>$aaid</code> ==&gt; <code>%24aaid</code></li>
+<li><code>$idfa</code> ==&gt; <code>%24idfa</code></li>
+</ul>
+</li>
 <li>대쉬보드에서 광고링크 생성시 광고아이디 파라메터에 매체의 매크로를 설정된 경우가 있을 것입니다.<ul>
 <li>예) <code>%24aaid={GAID}&amp;%24idfa={IDFA}</code>, <code>%24aaid=$GAID&amp;%24idfa=$IDFA</code></li>
 <li>해당 URL의 <code>{GAID}</code>, <code>{IDFA}</code>과 같은 매크로는 실제 캠페인이 집행되어 광고가 노출될 때는 해당 매크로가 실제 기기의 광고아이디로 치환되어 호출이 됩니다.</li>
