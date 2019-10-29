@@ -602,26 +602,33 @@
 <h4 id="short-link"><strong>Short Link</strong><a class="headerlink" href="#short-link" title="Permanent link">&para;</a></h4>
 <ul>
 <li>가장 일반적인 링크로 대쉬보드에서 링크 생성시 링크데이터를 포함해서 Branch 시스템상내에 저장하며 이때 고유한 링크아이디가 부여됩니다.</li>
-<li><code>https://a1b2a.app.link/PcKIVEJe0K</code>과 같은 Quick링크는 Short링크 방식으로 생성된 것입니다.</li>
+<li>아래의 샘플 Quick링크는 Short링크 방식으로 생성된 것입니다.
+<img alt="image" src="../../img/short_link_quick_link.png" /></li>
 </ul>
 <h4 id="long-link"><strong>Long Link</strong><a class="headerlink" href="#long-link" title="Permanent link">&para;</a></h4>
 <ul>
 <li>Short Link와 달리 링크데이터를 링크URL의 Query Parameter를 통해서 동적으로 설정하는 것입니다.</li>
 <li>미리 생성된 링크또는 다이나믹 링크 모두에 사용가능합니다.</li>
-<li><strong>기존 생성된 링크에 사용</strong>:<ul>
-<li>이미 Branch 시스템상에 생성 및 저장된 Short Link에 Query Parameter를 통해서 값을 추가 설정하는 경우</li>
-<li>예) <code>https://a1b2a.app.link/PcKIVEJe0K?%24fallback_url=https%3A%2F%2Fbranch.io%2F</code></li>
+<li>
+<p><strong>기존 생성된 링크에 사용</strong>:</p>
+<ul>
+<li>Branch 시스템상해서 생성해서 시스템에 저장된 Short Link에 Query 파라메터를 통해서 링크레이터를 추가 설정하거나 업데이트하는 경우
+<img alt="image" src="../../img/long_link_existing.png" /></li>
 </ul>
 </li>
-<li><strong>다이나믹링크에 사용</strong>:<ul>
-<li>사용이전에 링크를 미리 생성하지 않고, Query Parameter로 직접 모든 링크데이터를 설정하는 경우. 기존에 생성된 링크가 아니라 URL에 링크아이디가 없음.</li>
-<li>예) <code>https://a1b2a.app.link?%24fallback_url=https%3A%2F%2Fbranch.io%2F</code></li>
+<li>
+<p><strong>다이나믹링크에 사용</strong>:</p>
+<ul>
+<li>사용 이전에 링크를 미리 생성하지 않고, Query 파라메터로 직접 모든 링크데이터를 설정하는 경우.</li>
+<li>기존에 생성된 링크가 아니고 동적으로 모든 링크데이터를 설정하기 때문에 URL에 링크아이디가 없음.
+<img alt="image" src="../../img/long_link_dynamic.png" /></li>
 </ul>
 </li>
 </ul>
 <h4 id="_3"><strong>링크데이터의 종류</strong><a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <ul>
-<li><strong>컨트롤 데이터</strong>: <code>%24</code>(<code>$</code>을 URL인코딩한 것)로 시작되는 키값이며, 링크 클릭시 리다이렉션이나 기타 Behavior들을 제어하기 위해서 사용됩니다.<ul>
+<li><strong>컨트롤 데이터</strong>: <code>$</code>로 시작되는 키값이며, 링크 클릭시 리다이렉션이나 기타 Behavior들을 제어하기 위해서 사용됩니다.<ul>
+<li><code>$</code>문자는 링크 URL에 직접 설정시에는 URL인코딩된 <code>%24</code>로 설정하고, 대쉬보드에서 링크생성 과정에서 설정할때는 <code>$</code>을 그대로 설정합니다.</li>
 <li>예) <code>$fallback_url</code> : 모든 플랫폼에서 링크 클릭시 디폴트로 리다이렉트할 URL지정. 플랫폼(OS)별로 지정된 경우에는 그것이 우선함.</li>
 </ul>
 </li>
