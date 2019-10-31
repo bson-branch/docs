@@ -363,8 +363,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#dbtnull-install-only" title="DBT:Null (Install Only)" class="md-nav__link">
-    DBT:Null (Install Only)
+  <a href="#ibtnull-android-install-only" title="IBT:Null (Android Install Only)" class="md-nav__link">
+    IBT:Null (Android Install Only)
   </a>
   
 </li>
@@ -408,6 +408,73 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sample-charts" title="Sample Charts" class="md-nav__link">
+    Sample Charts
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bctibtbctdit-chart" title="BCTIBT/BCTDIT Chart" class="md-nav__link">
+    BCTIBT/BCTDIT Chart
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-installs" title="Normal Installs" class="md-nav__link">
+    Normal Installs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#click-injected-installs" title="Click Injected Installs" class="md-nav__link">
+    Click Injected Installs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bctdit-bctbit-chart" title="BCTDIT &amp; BCTBIT Chart" class="md-nav__link">
+    BCTDIT &amp; BCTBIT Chart
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-installs_1" title="Normal Installs" class="md-nav__link">
+    Normal Installs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#click-injected-installs_1" title="Click Injected Installs" class="md-nav__link">
+    Click Injected Installs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -438,20 +505,20 @@
 </ul>
 <hr />
 <h2 id="introduction-to-custom-fraud-categories">Introduction to Custom Fraud Categories.<a class="headerlink" href="#introduction-to-custom-fraud-categories" title="Permanent link">&para;</a></h2>
-<h4 id="normal">Normal<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h4>
+<h3 id="normal"><strong>Normal</strong><a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Devices currently regarded as normal device.</li>
 <li>Fraud detection logic is keep being improved, so some normal devices could be categorized as suspicious or fraudulent in the next analysis.</li>
 </ul>
-<h4 id="custom-fraud-rule-install-only">Custom Fraud Rule (install only)<a class="headerlink" href="#custom-fraud-rule-install-only" title="Permanent link">&para;</a></h4>
+<h3 id="custom-fraud-rule-install-only"><strong>Custom Fraud Rule (install only)</strong><a class="headerlink" href="#custom-fraud-rule-install-only" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Installs marked as suspicious by custom fraud rule which was enabled by advertiser.</li>
 </ul>
-<h4 id="country-conflict-install-only">Country Conflict (install only)<a class="headerlink" href="#country-conflict-install-only" title="Permanent link">&para;</a></h4>
+<h3 id="country-conflict-install-only"><strong>Country Conflict (install only)</strong><a class="headerlink" href="#country-conflict-install-only" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Installs marked as suspicious by country conflict fraud rule which was enabled by advertiser.</li>
 </ul>
-<h4 id="ci-1000-install-only">CI:-100~0 (install only)<a class="headerlink" href="#ci-1000-install-only" title="Permanent link">&para;</a></h4>
+<h3 id="ci-1000-install-only"><strong>CI:-100~0 (install only)</strong><a class="headerlink" href="#ci-1000-install-only" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Installs attributed(hijacked) to the publishers by click injection fraud.</li>
 <li>Detection logic is based on the BCTDBT which is computation of time difference between click timestamp and download button click timestamp.</li>
@@ -459,19 +526,19 @@
 <li>Click injecting fraudsters install malware's on devices in advance, and fire clicks as soon as the malware detects new app installation. By doing so, the injected click take credit for the install as a last click.
    So most of click injected installs, clicks are fired right after device installation or app download start.</li>
 </ul>
-<h4 id="emul">Emul<a class="headerlink" href="#emul" title="Permanent link">&para;</a></h4>
+<h3 id="emul"><strong>Emul</strong><a class="headerlink" href="#emul" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Devices recognized as either emulator or abnormal device(SDK Spoofing) or fraud tool by various data points.</li>
 <li>May some normal devices could fall into this category, but this volume would be a tiny fraction of the total because current detection logic is conservative.</li>
 <li>For some (mostly MMORPG) games' normal users use emulators for easier gaming control. Please be aware that some real users emulators could be categorized as 'Emul' along with fraudulent devices.</li>
 </ul>
-<h4 id="susdevice">SusDevice<a class="headerlink" href="#susdevice" title="Permanent link">&para;</a></h4>
+<h3 id="susdevice"><strong>SusDevice</strong><a class="headerlink" href="#susdevice" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Devices recognized as suspicious using various data points like brand, model, carrier, language, and etc.</li>
 <li>It does not mean all the devices in this category are fraud. If small proportion of these devices are evenly appear across all the publishers, you can regard it as normal. But noticeably high proportion of devices appear from some publishers or sub-publishers, many of them could be fraudulent devices.</li>
 <li>It is recommended to set baseline as proportions of these devices from internal advertising channel and trusted publishers</li>
 </ul>
-<h4 id="fpbctbit1h-install-only">FP:BCTBIT&gt;1H (Install Only)<a class="headerlink" href="#fpbctbit1h-install-only" title="Permanent link">&para;</a></h4>
+<h3 id="fpbctbit1h-install-only"><strong>FP:BCTBIT&gt;1H (Install Only)</strong><a class="headerlink" href="#fpbctbit1h-install-only" title="Permanent link">&para;</a></h3>
 <ul>
 <li><em>It is strongly recommended to set fingerprint window of all the publishers to 1 hour</em></li>
 <li>Fingerprint installs having greater than 1 hour of click to install lag-time are categorized as this category.</li>
@@ -480,7 +547,7 @@
 <li>It is recommended to set baseline as proportions of these devices from internal advertising channel and trusted publishers.</li>
 <li>If small proportion of these devices evenly appear across all the publishers, you can regard it as normal. But noticeably high proportion of devices appears only from some publishers or sub-publishers, many of them could be fraudulent devices.</li>
 </ul>
-<h4 id="fpcs-suspicious-install-only-na-for-now">FP:CS Suspicious (Install Only) N/A for now.<a class="headerlink" href="#fpcs-suspicious-install-only-na-for-now" title="Permanent link">&para;</a></h4>
+<h3 id="fpcs-suspicious-install-only-na-for-now"><strong>FP:CS Suspicious (Install Only) N/A for now.</strong><a class="headerlink" href="#fpcs-suspicious-install-only-na-for-now" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Among fingerprint installs which are suspicious as click spamming.</li>
 <li>This is a characteristic grouping of fingerprint installs, and does not mean each install falls into this category is fraudulent.</li>
@@ -489,12 +556,12 @@
 <li>If small proportion of these devices evenly appear across all the publishers, you can regard it as normal. But noticeably high proportion of devices appears only from some publishers or sub-publishers, many of them could be fraudulent devices.</li>
 <li>If volume of both "FP:TCTTIT&gt;1H" and "FP:CS Suspicious" are noticeably higher than the other publishers, this is stronger indication of click spamming/flooding.</li>
 </ul>
-<h4 id="dbtnull-install-only">DBT:Null (Install Only)<a class="headerlink" href="#dbtnull-install-only" title="Permanent link">&para;</a></h4>
+<h3 id="ibtnull-android-install-only"><strong>IBT:Null (Android Install Only)</strong><a class="headerlink" href="#ibtnull-android-install-only" title="Permanent link">&para;</a></h3>
 <ul>
 <li>download begin timestamp, which is collected from Google Play Install Referrer Library, is not collected.</li>
 <li>This timestamp is supported from Google Play Store v8.3.78 which was released in Oct. 2017. So missing install begin timestamp means Play Store app is not updated more than 1 year, so these devices are most likely not real user's ones.</li>
 </ul>
-<h4 id="note">NOTE:<a class="headerlink" href="#note" title="Permanent link">&para;</a></h4>
+<h3 id="note">NOTE:<a class="headerlink" href="#note" title="Permanent link">&para;</a></h3>
 <ol>
 <li>For each category, if per publisher or sub-publisher proportions are lower than 5~10% and appear evenly across all the publishers, we could regard it as normal.
    I recommend to to set baseline using proportions of the internal advertising channel and trusted publisher. If noticeably high proportions are detected from some publishers or sub-publishers, most likely many of these devices are fraudulent.</li>
@@ -505,7 +572,7 @@
 <hr />
 <h2 id="timestamps-and-lag-times-used-for-analysis">Timestamps and lag-times used for Analysis<a class="headerlink" href="#timestamps-and-lag-times-used-for-analysis" title="Permanent link">&para;</a></h2>
 <p><img alt="image" src="../../img/lag_times.png" /></p>
-<h4 id="timestamps">Timestamps<a class="headerlink" href="#timestamps" title="Permanent link">&para;</a></h4>
+<h3 id="timestamps"><strong>Timestamps</strong><a class="headerlink" href="#timestamps" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>BCT (Branch Click Timestamp) : Timestamp of matched click.</p>
@@ -538,7 +605,7 @@
 </ul>
 </li>
 </ol>
-<h4 id="lag-times">Lag-times<a class="headerlink" href="#lag-times" title="Permanent link">&para;</a></h4>
+<h3 id="lag-times"><strong>Lag-times</strong><a class="headerlink" href="#lag-times" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
 <p>BCTBIT : Lag-time between BCT and BIT</p>
@@ -589,6 +656,38 @@
 </ul>
 </li>
 </ol>
+<hr />
+<h2 id="sample-charts">Sample Charts<a class="headerlink" href="#sample-charts" title="Permanent link">&para;</a></h2>
+<h3 id="bctibtbctdit-chart"><strong>BCTIBT/BCTDIT Chart</strong><a class="headerlink" href="#bctibtbctdit-chart" title="Permanent link">&para;</a></h3>
+<h4 id="normal-installs">Normal Installs<a class="headerlink" href="#normal-installs" title="Permanent link">&para;</a></h4>
+<ul>
+<li>All most all of installs are create after click, so most of installs lag-time is positive.
+<img alt="image" src="../../img/bctdit_normal.png" /></li>
+</ul>
+<h4 id="click-injected-installs">Click Injected Installs<a class="headerlink" href="#click-injected-installs" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Once app is installed on the device, malware fires click as soon as possible to inject click before user's first app open.</li>
+<li>So most of clicks are fired after app's installation on the device.
+<img alt="image" src="../../img/bctdit_ci.png" /></li>
+</ul>
+<h3 id="bctdit-bctbit-chart"><strong>BCTDIT &amp; BCTBIT Chart</strong><a class="headerlink" href="#bctdit-bctbit-chart" title="Permanent link">&para;</a></h3>
+<ul>
+<li>BCTBIT chart is a typical "CTIT" and  "Click to Install" lag-time chart.</li>
+</ul>
+<h4 id="normal-installs_1">Normal Installs<a class="headerlink" href="#normal-installs_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Green area is normal installs in BCTDIT chart.</li>
+<li>Blue area is normal installs in BCTBIT chart.</li>
+<li>Similar distribution, but a bit logger lag-time, because app is first opened after installation on the device.
+<img alt="image" src="../../img/bctbit_normal.png" /></li>
+</ul>
+<h4 id="click-injected-installs_1">Click Injected Installs<a class="headerlink" href="#click-injected-installs_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Orange area is click injected installs in BCTDIT chart.</li>
+<li>Blue area is click injected installs in BCTBIT chart.</li>
+<li>Click injected installs already installed on the device before the clicks, so first opens surge right after click.
+<img alt="image" src="../../img/bctbit_ci.png" /></li>
+</ul>
                 
                   
                 
