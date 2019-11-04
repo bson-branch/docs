@@ -561,8 +561,33 @@
 </ul>
 </li>
 <li>특정 Datasource에서 일단 확인된 로그는 다른 Datasource를 바꿨다가 다시 돌아왔을때 다시 확인이 가능합니다.</li>
-<li>인스톨 테스트의 경우는 해당기기에서 최초설치가 아닌 앱 재설치의 경우 Install로그가 아닌 Reinstall로 기록될 수 있음에 유의하세요.</li>
-<li>이벤트의 기록빈도 제한이 설정된 이벤트의 경우는 이 제한에 의해서 기록이 거부된 이벤트는 확인되지 않습니다.</li>
+<li>
+<p><strong>인스톨 테스트 주의사항</strong></p>
+<ul>
+<li>
+<ol>
+<li>브라우저의 캐쉬 삭제.</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>앱삭제 (현재 기기에 이미 설치된 경우)</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>광고아이디 리셋</li>
+</ol>
+</li>
+<li>4.(애트리뷰션 테스트시) 가급적 크롬또는 사파리에서 클릭<ul>
+<li>메신저에서 클릭할 경우 해당 메신저의 브라우저에서 Branch 링크가 열리는 경우, 경우에 따라 브라우저 캐쉬문재로 Install 대신 Reinstall로 측정될 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>이벤트의 기록빈도 제한이 설정된 이벤트의 경우는 이 제한에 의해서 기록이 거부된 이벤트는 확인되지 않습니다.</p>
+</li>
 </ul>
 <h2 id="tune-sdk">TUNE SDK 연동앱 주의사항<a class="headerlink" href="#tune-sdk" title="Permanent link">&para;</a></h2>
 <ul>
