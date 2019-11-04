@@ -362,8 +362,8 @@
 <li>마케팅팀에 문의해서 Apple Search광고를 진행할 계획이 있는 경우 아래 페이지의 사항들을 추가 연동합니다.</li>
 <li><a href="https://docs.branch.io/deep-linked-ads/apple-mobile-tracking/#__search">https://docs.branch.io/deep-linked-ads/apple-mobile-tracking/#__search</a><ul>
 <li><strong>앱개발팀 작업사항</strong><ul>
-<li>혹시 기본 연동시 <strong>{{iAd.framework}}</strong>와 <strong>{{AdSupport.framework}}</strong>을 {{Linked Frameworks}}에 추가하지 않았다면, 이 두프레임웍을 추가합니다.</li>
-<li>{{initSession}} 호출 바로 앞에 {{delayInitToCheckForSearchAds}}메쏘드를 호출해 주세요.</li>
+<li>혹시 기본 연동시 <strong><code>iAd.framework</code></strong>와 <strong><code>AdSupport.framework</code></strong>을 <code>Linked Frameworks</code>에 추가하지 않았다면, 이 두프레임웍을 추가합니다.</li>
+<li><strong><code>initSession</code> 호출 바로 앞에 <code>delayInitToCheckForSearchAds</code>메쏘드를 호출</strong>해 주세요.</li>
 </ul>
 </li>
 </ul>
