@@ -852,6 +852,11 @@
 </ul>
 <h3 id="long-link_1"><strong>Long Link 테스트시 주의사항</strong><a class="headerlink" href="#long-link_1" title="Permanent link">&para;</a></h3>
 <ul>
+<li>매체별 베이스링크 생성시 매체에서 설정한 키&amp;값 쌍이 포함되어 있고 값 부분은 매크로가 설정되어있습니다.<ul>
+<li>예) <code>%24aaid={gaid}&amp;%24idfa={idfa}&amp;~secondary_publisher={secondary_publisher}</code></li>
+<li>실제 광고 노출시에는 매크로 부분이 실제 값으로 치환되어 설정되나, 해당 링크를 그대로 클릭시에는 매크로가 치환이 안된 상태이기 때문에 오류가 발생할 수 있습니다.</li>
+</ul>
+</li>
 <li><strong>광고아이디</strong><ul>
 <li>파라메터 %24aaid 또는 %24idfa이 있을 경우 해당 키&amp;값 쌍을 제거해야 합니다.</li>
 <li>제거하지 않을 경우 실제 광고아이디가 아닌 경우 클릭시 에러가 발생합니다.
