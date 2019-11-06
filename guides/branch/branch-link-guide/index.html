@@ -858,9 +858,19 @@
 </ul>
 </li>
 <li><strong>광고아이디</strong><ul>
-<li>파라메터 %24aaid 또는 %24idfa이 있을 경우 해당 키&amp;값 쌍을 제거해야 합니다.</li>
-<li>제거하지 않을 경우 실제 광고아이디가 아닌 경우 클릭시 에러가 발생합니다.
-*</li>
+<li>예) <code>%24aaid={gaid}&amp;%24idfa={idfa}</code></li>
+<li>광고아이디 파라메터가 있고 매크로가 설정되어 있을 경우 해당 키&amp;값 쌍을 제거해야 합니다.</li>
+<li>제거하지 않을 경우 클릭시 Branch 시스템의 검증로직에 의해 실제 광고아이디가 아닌것으로 판단될 경우 클릭시 에러가 발생합니다.</li>
+</ul>
+</li>
+<li><strong><code>%</code>가 포함된 매크로</strong><ul>
+<li>예) <code>~secondary_publisher=%secondary_publisher%</code></li>
+<li>일반적으로 URL인코딩이 된 문자는 <code>%24</code>와 같은 형식으로 <code>%</code>으로 시작하며 두자리 숫자가 붙습니다.</li>
+<li><code>%secondary_publisher%</code>와 같은 값이 설정된 경우 <code>%</code>뒤가 숫자가 잘못된 인코딩으로 인식되어 에러가 발생합니다.</li>
+</ul>
+</li>
+<li><strong><code>%24s2s=true</code>가 포함된 매크로</strong><ul>
+<li>이 파라메터는 서버사이드 클릭을 위한 용도로 설정되는것으로, 기기에서 클릭할경우 광고아이디가 없을경우 에러가 발생합니다.</li>
 </ul>
 </li>
 </ul>
