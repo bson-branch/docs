@@ -577,31 +577,31 @@
 <li>
 <p><strong>BCT</strong> (Branch Click Timestamp) : Timestamp of matched click.</p>
 <ul>
-<li>Custom Export API Log field name: session_datetime</li>
+<li>Custom Export API Log field name: <code>session_datetime</code></li>
 </ul>
 </li>
 <li>
 <p><strong>IBT</strong> (Store Install Begin Timestamp) : Install begin timestamp from Google Play Store. The time user clicked install button. <strong>(Device time)</strong></p>
 <ul>
-<li>Custom Export API Log field name: download_date</li>
+<li>Custom Export API Log field name: <code>download_date</code></li>
 </ul>
 </li>
 <li>
 <p><strong>DIT</strong> (Device Install Timestamp) : The time app is installed on the device. <strong>(Device time)</strong></p>
 <ul>
-<li>Custom Export API Log field name: install_date</li>
+<li>Custom Export API Log field name: <code>install_date</code></li>
 </ul>
 </li>
 <li>
 <p><strong>BIT</strong> (Branch Install Timestamp): The time app is first opened</p>
 <ul>
-<li>Custom Export API Log field name: created</li>
+<li>Custom Export API Log field name: <code>created</code></li>
 </ul>
 </li>
 <li>
 <p><strong>BET</strong> (Branch Event Timestamp) : The time event is sent.</p>
 <ul>
-<li>Custom Export API Log field name: created</li>
+<li>Custom Export API Log field name: <code>created</code></li>
 </ul>
 </li>
 </ol>
@@ -675,14 +675,14 @@
 </ul>
 <h4 id="normal-installs_1">Normal Installs<a class="headerlink" href="#normal-installs_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Green area is normal installs in BCTDIT chart.</li>
+<li>Green area is normal installs in BCTDIT(BCTIBT) chart.</li>
 <li>Blue area is normal installs in BCTBIT chart.</li>
 <li>Similar distribution, but a bit logger lag-time, because app is first opened after installation on the device.
 <img alt="image" src="../../img/bctbit_normal.png" /></li>
 </ul>
 <h4 id="click-injected-installs_1">Click Injected Installs<a class="headerlink" href="#click-injected-installs_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li>Orange area is click injected installs in BCTDIT chart.</li>
+<li>Orange area is click injected installs in BCTDIT(BCTIBT) chart.</li>
 <li>Blue area is click injected installs in BCTBIT chart.</li>
 <li>Click injected installs already installed on the device before the clicks, so first opens surge right after click.
 <img alt="image" src="../../img/bctbit_ci.png" /></li>
