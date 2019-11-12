@@ -259,18 +259,6 @@
   </li>
 
     
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../fraud/" title="Fraud" class="md-nav__link">
-      Fraud
-    </a>
-  </li>
-
-    
   </ul>
 </nav>
                   </div>
@@ -442,9 +430,7 @@
 <li><code>branch_key</code>에 설정된 키값을 확인합니다. <code>key_live_</code>로 시작되면 라이브키, <code>key_test_</code>로 시작되면 테스트 키입니다.</li>
 </ul>
 </li>
-<li>
-<p>Android에서의 확인 사항</p>
-<ul>
+<li>Android에서의 확인 사항<ul>
 <li>구글 광고아이디가 잘 수집되었는지 확인합니다.<ul>
 <li><code>google_advertising_id</code>에 Google 광고아이디가 설정됩니다. (단, 라이브키 일때 만 실제 기기의 광고아이디가 설정됩니다.)</li>
 <li>미수집 된 경우에는 그래들에 아래와 같이 구글 플레이서비스 라이브러리가 임포트 되었는지 확인합니다.
@@ -452,14 +438,33 @@
 </pre></div></li>
 </ul>
 </li>
-<li>앱 실행시 아래와 같은 익셉션로그가 출력되면 Gradle파일에 구글 인스톨 레퍼러 라이브러리를 추가 합니다.</li>
-</ul>
+<li>
+<p>앱 실행시 아래와 같은 익셉션로그가 출력되면 Gradle파일에 <a href="https://developer.android.com/google/play/installreferrer/library.html">구글 인스톨 레퍼러 라이브러리</a>를 추가 합니다.
+   구글 인스톨 레퍼러 라이브러리를 임포트하면, 사용자가 클릭한 시각과 인스톨 버튼을 클릭한 시각이 추가로 수집됩니다.</p>
+<ul>
+<li>
+<p>LogCat 에러 로그
 <div class="codehilite"><pre><span></span><span class="nt">ReferrerClientWrapper</span> <span class="nt">Exception</span><span class="o">:</span> <span class="nt">Failed</span> <span class="nt">resolution</span> <span class="nt">of</span><span class="o">:</span> <span class="nt">Lcom</span><span class="o">/</span><span class="nt">android</span><span class="o">/</span><span class="nt">installreferrer</span><span class="o">/</span><span class="nt">api</span><span class="o">/</span><span class="nt">InstallReferrerClient</span><span class="o">;</span>
-</pre></div>
-
+</pre></div></p>
+</li>
+<li>
+<p>Gradle
 <div class="codehilite"><pre><span></span><span class="k">implementation</span> <span class="s1">&#39;com.android.installreferrer:installreferrer:1.0&#39;</span>
-</pre></div>
-
+</pre></div></p>
+</li>
+<li>
+<p><a href="https://developer.android.com/google/play/installreferrer/library.html">구글 인스톨 레퍼러 라이브러리</a>를 추가하신 경우 <code>AndroidManifest.xml</code> 파일의 아래 부분은 중복되므로 제거하셔도 무방합니다.
+<div class="codehilite"><pre><span></span><span class="c">&lt;!-- Branch install referrer tracking (optional) --&gt;</span>
+<span class="nt">&lt;receiver</span> <span class="na">android:name=</span><span class="s">&quot;io.branch.referral.InstallListener&quot;</span> <span class="na">android:exported=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+        <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&quot;com.android.vending.INSTALL_REFERRER&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+<span class="nt">&lt;/receiver&gt;</span>
+</pre></div></p>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ol>
                 
