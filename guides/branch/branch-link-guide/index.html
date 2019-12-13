@@ -788,11 +788,11 @@
 </ul>
 <h3 id="branch"><strong>Branch의 분석용 파라메터</strong><a class="headerlink" href="#branch" title="Permanent link">&para;</a></h3>
 <ul>
-<li><strong><code>~channel</code></strong>: 광고 채널/매체</li>
-<li><strong><code>~campaign (구 [publisher_]sub_campaign)</code></strong>: 캠페인 네임</li>
-<li><strong><code>~feature</code></strong>:   광고링크의 경우 paid advertising이 자동 설정됨</li>
-<li><strong><code>~stage</code></strong>: Stage</li>
-<li><strong><code>~tags</code></strong>: 원하시는 태그<ul>
+<li><strong><code>~channel (TUNE [publisher_[sub_channel)</code></strong>: 광고 채널/매체</li>
+<li><strong><code>~campaign (TUNE [publisher_]sub_campaign)</code></strong>: 캠페인 네임</li>
+<li><strong><code>~feature (TUNE [publisher_]sub_feature)</code></strong>:    광고링크의 경우 paid advertising이 자동 설정됨</li>
+<li><strong><code>~stage (TUNE [publisher_]sub_stage)</code></strong>:    Stage</li>
+<li><strong><code>~tags (TUNE [publisher_]sub_tags)</code></strong>: 원하시는 태그<ul>
 <li>복수의 태그를 설정시 <code>&amp;~tags=tag1&amp;~tags=tag2</code> 와 같은 형식으로 설정합니다.</li>
 </ul>
 </li>
@@ -800,13 +800,13 @@
 <h3 id="tune"><strong>TUNE호환 광고주측 캠페인 최적화 파라메터</strong><a class="headerlink" href="#tune" title="Permanent link">&para;</a></h3>
 <ul>
 <li>기존 TUNE에서 My파라메터라 불리던 광고주측에서 세부 유입경로를 구분하는데 사용하던 분석용 파라메터</li>
-<li><strong><code>~customer_secondary_publisher (구 my_publisher/advertiser_sub_publisher)</code></strong>: 광고매체</li>
-<li><strong><code>~customer_sub_site_name (구 my_site/advertiser_sub_site)</code></strong>: 사이트</li>
-<li><strong><code>~customer_campaign (구 my_campaign/advertiser_sub_campaign)</code></strong>: 캠페인</li>
-<li><strong><code>~customer_ad_set_name (구 my_adgroup/advertiser_sub_adgroup)</code></strong>: 광고그룹</li>
-<li><strong><code>~customer_ad_name (구 my_ad/advertiser_sub_ad)</code></strong>: 광고</li>
-<li><strong><code>~customer_keyword (구 my_keyword/advertiser_sub_keyword)</code></strong>: 키워드</li>
-<li><strong><code>~customer_placement (구 my_placement/advertiser_sub_placement)</code></strong>: 광고위치</li>
+<li><strong><code>~customer_secondary_publisher (TUNE my_publisher/advertiser_sub_publisher)</code></strong>: 광고매체</li>
+<li><strong><code>~customer_sub_site_name (TUNE my_site/advertiser_sub_site)</code></strong>: 사이트</li>
+<li><strong><code>~customer_campaign (TUNE my_campaign/advertiser_sub_campaign)</code></strong>: 캠페인</li>
+<li><strong><code>~customer_ad_set_name (TUNE my_adgroup/advertiser_sub_adgroup)</code></strong>: 광고그룹</li>
+<li><strong><code>~customer_ad_name (TUNE my_ad/advertiser_sub_ad)</code></strong>: 광고</li>
+<li><strong><code>~customer_keyword (TUNE my_keyword/advertiser_sub_keyword)</code></strong>: 키워드</li>
+<li><strong><code>~customer_placement (TUNE my_placement/advertiser_sub_placement)</code></strong>: 광고위치</li>
 </ul>
 <h3 id="tune_1"><strong>(TUNE호환) 광고매체측 캠페인 최적화 파라메터</strong><a class="headerlink" href="#tune_1" title="Permanent link">&para;</a></h3>
 <ul>
@@ -814,14 +814,14 @@
 <p>기존 TUNE에서 Sub파라메터라 불리던 광고매체측에서 세부 유입경로를 구분하는데 사용하던 분석용 파라메터</p>
 </li>
 <li>
-<p><strong><code>~secondary_publisher (구 [publisher_]sub_publisher)</code></strong>: 하위 광고매체</p>
+<p><strong><code>~secondary_publisher (TUNE [publisher_]sub_publisher)</code></strong>: 하위 광고매체</p>
 </li>
-<li><strong><code>~sub_site_name (구 [publisher_]sub_site)</code></strong>: 사이트</li>
-<li><strong><code>~campaign (구 [publisher_]sub_campaign)</code></strong>: Branch의 캠페인에 맵핑됨</li>
-<li><strong><code>~ad_set_name (구 [publisher_]sub_adgroup)</code></strong>: 광고그룹</li>
-<li><strong><code>~ad_name (구 [publisher_]sub_ad)</code></strong>: 광고</li>
-<li><strong><code>~keyword (구 [publisher_]sub_keyword)</code></strong>: 키워드</li>
-<li><strong><code>~placement (구 [publisher_]sub_placement)</code></strong>: 광고노출 위치</li>
+<li><strong><code>~sub_site_name (TUNE [publisher_]sub_site)</code></strong>: 사이트</li>
+<li><strong><code>~campaign (TUNE [publisher_]sub_campaign)</code></strong>: Branch의 캠페인에 맵핑됨</li>
+<li><strong><code>~ad_set_name (TUNE [publisher_]sub_adgroup)</code></strong>: 광고그룹</li>
+<li><strong><code>~ad_name (TUNE [publisher_]sub_ad)</code></strong>: 광고</li>
+<li><strong><code>~keyword (TUNE [publisher_]sub_keyword)</code></strong>: 키워드</li>
+<li><strong><code>~placement (TUNE [publisher_]sub_placement)</code></strong>: 광고노출 위치</li>
 <li><strong><code>~click_id</code></strong> : 매체측 클릭아이디</li>
 </ul>
 <h3 id="_6"><strong>리다이렉트(랜딩) 관련 파라메터</strong><a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
